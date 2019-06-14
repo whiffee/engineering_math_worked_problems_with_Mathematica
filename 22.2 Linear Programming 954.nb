@@ -1,0 +1,935 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     28447,        934]
+NotebookOptionsPosition[     25897,        846]
+NotebookOutlinePosition[     26285,        863]
+CellTagsIndexPosition[     26242,        860]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769349313969043*^9, 3.769349334128495*^9}, 
+   3.76935107981225*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "7.  Location of maximum. Could we find a profit ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"f", "[", 
+     RowBox[{
+      SubscriptBox["x", "1"], ",", 
+      SubscriptBox["x", "2"]}], "]"}], " ", "=", " ", 
+    RowBox[{
+     RowBox[{
+      SubscriptBox["a", "1"], 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{
+      SubscriptBox["a", "2"], 
+      SubscriptBox["x", "2"]}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " whose maximum is at an interior point of the quadrangle in figure 474? \
+Give a reason for your answer."
+}], "Text",
+ CellChangeTimes->{{3.765215761818349*^9, 3.765215854389419*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d1", "=", 
+  RowBox[{"ImplicitRegion", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"x", ">", "0"}], ",", 
+      RowBox[{"y", ">", "0"}], ",", 
+      RowBox[{"y", "<", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"-", 
+          FractionBox["5", "2"]}], "x"}], "+", "30"}]}], ",", 
+      RowBox[{"y", "<", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2.5", "/", 
+           RowBox[{"-", "10"}]}], ")"}], "x"}], "+", "7.75"}]}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765233761638372*^9, 3.7652337812041607`*^9}, {
+  3.765233911577639*^9, 3.765233994477742*^9}, {3.765234066164777*^9, 
+  3.765234071571149*^9}, {3.765234577283806*^9, 3.76523465308008*^9}, {
+  3.765234723790112*^9, 3.765234728349278*^9}, {3.765234977582951*^9, 
+  3.7652349961251297`*^9}, {3.765235146159892*^9, 3.7652351638951693`*^9}, {
+  3.7652358481378736`*^9, 3.765235854736246*^9}, {3.765236255691476*^9, 
+  3.765236269034507*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ImplicitRegion", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", ">", "0"}], "&&", 
+    RowBox[{"y", ">", "0"}], "&&", 
+    RowBox[{"y", "<", 
+     RowBox[{"30", "-", 
+      FractionBox[
+       RowBox[{"5", " ", "x"}], "2"]}]}], "&&", 
+    RowBox[{"y", "<", 
+     RowBox[{"7.75`", "\[VeryThinSpace]", "-", 
+      RowBox[{"0.25`", " ", "x"}]}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{{3.7652339783553953`*^9, 3.765233995639482*^9}, 
+   3.765234073278269*^9, 3.765235165605023*^9, {3.765235834098634*^9, 
+   3.7652358562923403`*^9}, 3.765236270319151*^9, 3.765236470364295*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ziz", "=", 
+   RowBox[{"Plot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"5", " ", "x"}], "2"]}], "+", "30"}], ",", 
+       RowBox[{
+        RowBox[{"-", 
+         FractionBox[
+          RowBox[{"2.5`", " ", "x"}], "10"]}], "+", "7.5`"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"x", ",", "0", ",", "20"}], "}"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "Automatic"}]}], "]"}]}], ";"}]], \
+"Input",
+ CellChangeTimes->{{3.765235897479723*^9, 3.765235898886256*^9}, {
+  3.765236134512651*^9, 3.7652361422548103`*^9}, {3.7652362172846203`*^9, 
+  3.765236232483581*^9}, {3.765236285995545*^9, 3.765236291609867*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"dip", "=", 
+   RowBox[{"Graphics", "[", 
+    RowBox[{"Polygon", "[", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"12", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"10", ",", "5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "7.5"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}]}], "}"}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.7652359589215612`*^9, 3.765236053817655*^9}, 
+   3.765236319673094*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Show", "[", 
+   RowBox[{"ziz", ",", "dip"}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.765236298340643*^9, 3.7652363130028553`*^9}}],
+
+Cell["\<\
+The answer to the question is no, as demonstrated below. I changed the \
+less-than-or-equals signs for strictly less-than, and it blew up. So no \
+solution is available which is interior to the boundary lines.\
+\>", "Text",
+ CellChangeTimes->{{3.765237217275611*^9, 3.765237266369973*^9}, {
+  3.7652816347338753`*^9, 3.765281656964848*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"40", " ", "x"}], " ", "+", 
+      RowBox[{"88", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], " ", "+", " ", 
+       RowBox[{"8", " ", "y"}]}], " ", "\[LessEqual]", "60"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", " ", "x"}], "+", 
+       RowBox[{"2", " ", "y"}]}], "\[LessEqual]", "60"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765281598008683*^9, 3.765281611287187*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"840", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "10"}], ",", 
+     RowBox[{"y", "\[Rule]", "5"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765281613052074*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"40", " ", "x"}], " ", "+", 
+      RowBox[{"88", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], " ", "+", " ", 
+       RowBox[{"8", " ", "y"}]}], " ", "<", "60"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", " ", "x"}], "+", 
+       RowBox[{"2", " ", "y"}]}], "<", "60"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7652334520397463`*^9, 3.76523350342936*^9}, {
+  3.765233557380383*^9, 3.76523356668331*^9}, {3.765236450830172*^9, 
+  3.765236526978527*^9}, {3.7652368881338043`*^9, 3.765236893326315*^9}, {
+  3.765237177054167*^9, 3.765237196468552*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Maximize", "::", "wksol"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Warning: there is no maximum in the region in which the \
+objective function is defined and the constraints are satisfied; a result on \
+the boundary will be returned. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/Maximize/wksol\\\", ButtonNote -> \
+\\\"Maximize::wksol\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.765237198480949*^9, 3.76528161855604*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"840", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "10"}], ",", 
+     RowBox[{"y", "\[Rule]", "5"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.765236460809147*^9, 3.765236488895178*^9}, 
+   3.765236528480687*^9, {3.7652368977594337`*^9, 3.765236913104388*^9}, {
+   3.765237180816999*^9, 3.765237198488841*^9}, 3.7652816185657578`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "9.  What is the meaning of the slack variables ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "3"], ",", " ", 
+    SubscriptBox["x", "4"], " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "in example 2 in terms of the problem in example 1?"
+}], "Text",
+ CellChangeTimes->{{3.765215857654297*^9, 3.765215902099742*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["Looking at example 1.", "Text",
+ CellChangeTimes->{{3.7652332165914927`*^9, 3.765233223006126*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"40", " ", "x"}], " ", "+", 
+      RowBox[{"88", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], " ", "+", " ", 
+       RowBox[{"8", " ", "y"}]}], " ", "\[LessEqual]", "60"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"5", " ", "x"}], "+", 
+       RowBox[{"2", " ", "y"}]}], "\[LessEqual]", "60"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76523294685494*^9, 3.765233020964974*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"840", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "10"}], ",", 
+     RowBox[{"y", "\[Rule]", "5"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.765233022291572*^9, 3.765233045859188*^9}}]
+}, Open  ]],
+
+Cell["\<\
+The above expression shows that the slack variables are unnecessary here, \
+unlike problem 17, where I found them to be necessary. I guess if I knew that \
+the problem would find x and y positive, I could leave out the slacks. And if \
+it wouldn\[CloseCurlyQuote]t solve, or the signs came out wrong, I could put \
+them in.\
+\>", "Text",
+ CellChangeTimes->{{3.765233086395812*^9, 3.765233196055367*^9}}],
+
+Cell["\<\
+11 - 16 Maximization, minimization
+Maximize or minimize the given objective function f subject to the give \
+constraints.\
+\>", "Text",
+ CellChangeTimes->{{3.7652159442841177`*^9, 3.765215983792481*^9}}],
+
+Cell[TextData[{
+ "11.  Maximize f = 30 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in the region in problem 5."
+}], "Text",
+ CellChangeTimes->{{3.765215992599938*^9, 3.7652160368143682`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "The region of problem 5: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"-", 
+    SubscriptBox["x", "1"]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[GreaterEqual] 0; ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[LessEqual] 5; -2 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[LessEqual] 16"
+}], "Text",
+ CellChangeTimes->{{3.765222209420039*^9, 3.765222291752095*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"30", " ", "x"}], " ", "+", " ", 
+      RowBox[{"10", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "x"}], "+", "y"}], "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"x", "+", "y"}], "\[LessEqual]", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "x"}], "+", "y"}], "\[LessEqual]", "16"}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765223032280542*^9, 3.765223101595951*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"100", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["5", "2"]}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      FractionBox["5", "2"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7652230000265837`*^9, 3.765223105393702*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "13.  Maximize f = 5 ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    RowBox[{"25", " ", 
+     SubscriptBox["x", "2"]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in the region in problem 5."
+}], "Text",
+ CellChangeTimes->{{3.7652160397197437`*^9, 3.7652160895242023`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", " ", "x"}], " ", "+", " ", 
+      RowBox[{"25", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "x"}], "+", "y"}], "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{
+      RowBox[{"x", "+", "y"}], "\[LessEqual]", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "x"}], "+", "y"}], "\[LessEqual]", "16"}]}], 
+    "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765223155267551*^9, 3.765223163457823*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["595", "3"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["11", "3"]}]}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      FractionBox["26", "3"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765223170432412*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "15.  Maximize f = 20 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + 30 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " subject to 4 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + 3 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[GreaterEqual] 12, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " - ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[GreaterEqual] -3, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[LessEqual] 6, 2 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "-3 ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[LessEqual] 0."
+}], "Text",
+ CellChangeTimes->{{3.765216094716064*^9, 3.7652162286079273`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"20", " ", "x"}], " ", "+", " ", 
+      RowBox[{"30", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", "x"}], "+", 
+       RowBox[{"3", "y"}]}], "\[GreaterEqual]", "12"}], ",", 
+     RowBox[{
+      RowBox[{"x", "-", "y"}], "\[GreaterEqual]", 
+      RowBox[{"-", "3"}]}], ",", 
+     RowBox[{"y", "\[LessEqual]", "6"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", "x"}], "-", 
+       RowBox[{"3", "y"}]}], "\[LessEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765223281143065*^9, 3.765223379410282*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"360", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "9"}], ",", 
+     RowBox[{"y", "\[Rule]", "6"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765223406719211*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "17.  Maximum profit. United Metal, Inc., produces alloys ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " (special brass) and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " (yellow tombac). ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " contains 50% copper and 50% zinc. (Ordinary brass contains about 65% \
+copper and 35% zinc.) ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " contains 75% copper and 25% zinc. Net profits are $120 per ton of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and $100 per ton of ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["B", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". The daily copper supply is 45 tons. The daily zinc supply is 30 tons. \
+Maximize the net profit of the daily production. "
+}], "Text",
+ CellChangeTimes->{{3.765216533876006*^9, 3.765216609967847*^9}, {
+  3.765216658622012*^9, 3.76521678369725*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+This took longer than it should have due to my befuddlement. In this \
+analysis, I have x as the weight per day of B1, and y as weight per day of \
+B2. The 120 and 100 profit is also on per weight basis, so those weight units \
+cancel. The tons units don\[CloseCurlyQuote]t need to show in the raw ore \
+weight either, since they are included in the x and y, which stand on the \
+other side of the equals sign. The Maximize expression was judged as \
+unbounded by Mathematica until I put in the constraints for both x and y to \
+be greater than or equal to zero (the slacks). The other thing that I should \
+point out is that what I am trying to maximize is actually a function of two \
+variables.\
+\>", "Text",
+ CellChangeTimes->{{3.7652298315192738`*^9, 3.765229875316947*^9}, {
+  3.765229944826511*^9, 3.765230003120872*^9}, {3.765231473721933*^9, 
+  3.765231646538484*^9}, {3.7652316934170427`*^9, 3.765231717288417*^9}, {
+  3.765231853085165*^9, 3.7652318561476707`*^9}, {3.76528171130129*^9, 
+  3.7652817764326687`*^9}, {3.76934926925944*^9, 3.769349269617262*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"120", "x"}], " ", "+", " ", 
+      RowBox[{"100", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"0.5", "  ", "x"}], " ", "+", " ", 
+       RowBox[{"0.75", " ", "y"}]}], "\[LessEqual]", "45"}], " ", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"0.5", " ", "x"}], " ", "+", " ", 
+       RowBox[{"0.25", " ", "y"}]}], " ", "\[LessEqual]", " ", "30"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}]}], " ", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765229750962832*^9, 3.7652297759204283`*^9}, {
+  3.765229922052079*^9, 3.765229935019341*^9}, {3.7652303016714497`*^9, 
+  3.765230314406534*^9}, {3.765230913820078*^9, 3.76523095087359*^9}, {
+  3.7652312638568277`*^9, 3.765231289336137*^9}, {3.765231366477683*^9, 
+  3.765231375315669*^9}, {3.765231423692045*^9, 3.7652314290204363`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"8400.`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "45.`"}], ",", 
+     RowBox[{"y", "\[Rule]", "29.999999999999996`"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{
+  3.76523095241574*^9, 3.765231191327869*^9, 3.7652312905886593`*^9, {
+   3.765231377223031*^9, 3.765231383202135*^9}, 3.7652314302060747`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "19.  Maximum output. Giant Ladders, Inc., wants to maximize its daily total \
+output of large step ladders by producing ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " of them by a process ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " by a process ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", where ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " requires 2 hours of labor and 4 machine hours per ladder, and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["P", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " requires 3 hours of labor and 2 machine hours. For this kind of work, 1200 \
+hours of labor and 1600 hours on the machines are, at most, available per \
+day. Find the optimal ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7652168094492197`*^9, 3.765216965738761*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "Here x and y will both be ladders per day. ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    FractionBox["L", "D"], "P1", " "}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "= x and ",
+ Cell[BoxData[
+  FormBox[
+   FractionBox["L", "D"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "P2 = y."
+}], "Text",
+ CellChangeTimes->{{3.765232051348723*^9, 3.765232121114511*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "+", "y"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], "+", 
+       RowBox[{"3", "y"}]}], "\[LessEqual]", "1200"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", " ", "x"}], "+", 
+       RowBox[{"2", " ", "y"}]}], "\[LessEqual]", "1600"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765232151012746*^9, 3.7652321715128*^9}, {
+  3.7652322139514923`*^9, 3.765232312756115*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"500", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "300"}], ",", 
+     RowBox[{"y", "\[Rule]", "200"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7652323141277657`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "21.  Maximum profit. Universal Electric, Inc., manufactures and sells two \
+models of lamps, ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", the profit being $150 and $100 respectively. The process involves two \
+workers ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["W", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["W", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " who are available for this kind of work 100 and 80 hours per month, \
+respectively. ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["W", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " assembles ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in 20 min and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in 30 min.  ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["W", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " paints ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in 20 min and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["L", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " in 10 min. Assuming that all lamps made can be sold without difficulty, \
+determine production figures that maximize the profit."
+}], "Text",
+ CellChangeTimes->{{3.765216998202519*^9, 3.765217177971057*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+The profit from lamps. Where x represents the profit from L1 lamp and y the \
+profit from L2 lamp. Remembering to convert hours to minutes.\
+\>", "Text",
+ CellChangeTimes->{{3.7652324050111094`*^9, 3.7652324679906673`*^9}, {
+  3.765233289644453*^9, 3.765233300251773*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"150", "x"}], "+", 
+      RowBox[{"100", "y"}]}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"20", " ", "x"}], "+", 
+       RowBox[{"30", "y"}]}], "\[LessEqual]", "6000"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"20", " ", "x"}], "+", 
+       RowBox[{"10", " ", "y"}]}], "\[LessEqual]", "4800"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765232498357752*^9, 3.765232656929103*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"37500", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "210"}], ",", 
+     RowBox[{"y", "\[Rule]", "60"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76523266999501*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Showing agreement with the text answer is the monthly profit in dollars, and \
+the number of lamps produced and sold of the two types.\
+\>", "Text",
+ CellChangeTimes->{{3.765232726158141*^9, 3.7652327488936377`*^9}, {
+  3.765232787340295*^9, 3.765232797836112*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 244, 6, 51, "Text",
+ Evaluatable->False],
+Cell[647, 21, 73, 1, 45, "Input"],
+Cell[723, 24, 686, 21, 112, "Text"],
+Cell[CellGroupData[{
+Cell[1434, 49, 1057, 27, 74, "Input"],
+Cell[2494, 78, 660, 17, 74, "Output"]
+}, Open  ]],
+Cell[3169, 98, 749, 21, 76, "Input"],
+Cell[3921, 121, 610, 19, 45, "Input"],
+Cell[4534, 142, 171, 4, 45, "Input"],
+Cell[4708, 148, 350, 6, 86, "Text"],
+Cell[5061, 156, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[5159, 161, 602, 18, 45, "Input"],
+Cell[5764, 181, 231, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6032, 193, 775, 21, 45, "Input"],
+Cell[6810, 216, 574, 11, 59, "Message"],
+Cell[7387, 229, 403, 9, 45, "Output"]
+}, Open  ]],
+Cell[7805, 241, 400, 11, 77, "Text"],
+Cell[8208, 254, 105, 1, 51, "Text"],
+Cell[8316, 257, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[8414, 262, 601, 18, 45, "Input"],
+Cell[9018, 282, 255, 7, 45, "Output"]
+}, Open  ]],
+Cell[9288, 292, 413, 7, 120, "Text"],
+Cell[9704, 301, 213, 5, 86, "Text"],
+Cell[9920, 308, 371, 12, 76, "Text"],
+Cell[10294, 322, 873, 34, 52, "Text"],
+Cell[CellGroupData[{
+Cell[11192, 360, 636, 20, 45, "Input"],
+Cell[11831, 382, 342, 10, 98, "Output"]
+}, Open  ]],
+Cell[12188, 395, 372, 12, 76, "Text"],
+Cell[CellGroupData[{
+Cell[12585, 411, 635, 20, 45, "Input"],
+Cell[13223, 433, 365, 12, 100, "Output"]
+}, Open  ]],
+Cell[13603, 448, 1263, 49, 76, "Text"],
+Cell[CellGroupData[{
+Cell[14891, 501, 720, 22, 45, "Input"],
+Cell[15614, 525, 268, 8, 69, "Output"]
+}, Open  ]],
+Cell[15897, 536, 1248, 37, 182, "Text"],
+Cell[17148, 575, 73, 1, 45, "Input"],
+Cell[17224, 578, 1081, 16, 224, "Text"],
+Cell[CellGroupData[{
+Cell[18330, 598, 1030, 24, 75, "Input"],
+Cell[19363, 624, 417, 11, 69, "Output"]
+}, Open  ]],
+Cell[19795, 638, 1437, 47, 182, "Text"],
+Cell[21235, 687, 401, 14, 58, "Text"],
+Cell[CellGroupData[{
+Cell[21661, 705, 679, 19, 45, "Input"],
+Cell[22343, 726, 274, 8, 69, "Output"]
+}, Open  ]],
+Cell[22632, 737, 1704, 58, 217, "Text"],
+Cell[24339, 797, 282, 5, 86, "Text"],
+Cell[CellGroupData[{
+Cell[24646, 806, 682, 20, 45, "Input"],
+Cell[25331, 828, 272, 8, 69, "Output"]
+}, Open  ]],
+Cell[25618, 839, 275, 5, 86, "Text"]
+}
+]
+*)
+

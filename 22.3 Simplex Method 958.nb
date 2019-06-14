@@ -1,0 +1,1466 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     47412,       1465]
+NotebookOptionsPosition[     42978,       1315]
+NotebookOutlinePosition[     43366,       1332]
+CellTagsIndexPosition[     43323,       1329]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.769349578557538*^9}],
+
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769349579923107*^9, 3.769349582438303*^9}, 
+   3.769351093659977*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "2 - 14 Simplex method\nWrite in normal form and solve by the simplex \
+method, assuming all ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "j"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " to be nonnegative."
+}], "Text",
+ CellChangeTimes->{{3.765282724251544*^9, 3.765282766424753*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"3.", "  ", "Maximize", " ", "f"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"3", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "2"], " ", "subject", " ", "to", " ", "3", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"4", " ", 
+      SubscriptBox["x", "2"]}]}], "\[LessEqual]", "60"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "2"]}]}], "\[LessEqual]", "60"}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "2"]}]}], "\[LessEqual]", "120"}]}]], "Text",
+ CellChangeTimes->{{3.765282779972465*^9, 3.765282876140401*^9}, 
+   3.765283641470636*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Having heard of the simplex method, I wouldn\[CloseCurlyQuote]t mind trying \
+to find out about it. However, if regular Maximize works, I prefer to stick \
+with it.\
+\>", "Text",
+ CellChangeTimes->{{3.76528407855643*^9, 3.765284116321949*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"3", " ", "x"}], "+", 
+      RowBox[{"2", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", "x"}], " ", "+", " ", 
+       RowBox[{"4", " ", "y"}]}], " ", "\[LessEqual]", "60"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", " ", "x"}], "+", 
+       RowBox[{"3", " ", "y"}]}], "\[LessEqual]", "60"}], ",", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"10", " ", "x"}], "+", 
+       RowBox[{"2", " ", "y"}]}], "\[LessEqual]", "120"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7652838714294643`*^9, 3.765283952096961*^9}, {
+  3.765284043177026*^9, 3.765284045743153*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["480", "11"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["120", "11"]}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      FractionBox["60", "11"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765283957685004*^9, 3.765284049104011*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Reversing my position, I decide to try the simplex method, with no pivoting.\
+\>", "Text",
+ CellChangeTimes->{{3.7652901127138243`*^9, 3.765290130625148*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aa", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      RowBox[{"-", "3"}], 
+      RowBox[{"-", "2"}], "0", "0", "0"},
+     {"0", "3", "4", "1", "0", "0"},
+     {"0", "4", "3", "0", "1", "0"},
+     {"0", "10", "2", "0", "0", "1"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.765285813167753*^9, 3.765285860063182*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "2"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3", ",", "4", ",", "1", ",", "0", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", "3", ",", "0", ",", "1", ",", "0"}], "}"}], 
+   ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "10", ",", "2", ",", "0", ",", "0", ",", "1"}], "}"}]}],
+   "}"}]], "Output",
+ CellChangeTimes->{3.7652858621868753`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bb", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0"},
+     {"60"},
+     {"60"},
+     {"120"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.765285898776595*^9, 3.765285923628718*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "60", "}"}], ",", 
+   RowBox[{"{", "60", "}"}], ",", 
+   RowBox[{"{", "120", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765285925133625*^9}]
+}, Open  ]],
+
+Cell["\<\
+In this case the simplex method comes up with the right answer.\
+\>", "Text",
+ CellChangeTimes->{{3.76529013693682*^9, 3.765290150560444*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"aa", ",", "bb"}], "]"}]], "Input",
+ CellChangeTimes->{{3.765285930128561*^9, 3.765285939957353*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    FractionBox["480", "11"], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["120", "11"], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["60", "11"], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["60", "11"], "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765285940681697*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"5.", "  ", "Minimize", " ", "f"}], " ", "=", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"5", " ", 
+      SubscriptBox["x", "1"]}], "-", 
+     RowBox[{"20", " ", 
+      SubscriptBox["x", "2"], " ", "subject", " ", "to"}], " ", "-", 
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"10", " ", 
+      SubscriptBox["x", "2"]}]}], "\[LessEqual]", "5"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "2"]}]}], "\[LessEqual]", "10"}]}]], "Text",
+ CellChangeTimes->{{3.7652829255407877`*^9, 3.765282989127795*^9}, 
+   3.765283631142887*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+When the problem is na\[IDoubleDot]vely entered, it is not solved by \
+Mathematica. What it needs is some slack relations.\
+\>", "Text",
+ CellChangeTimes->{{3.7652901877991667`*^9, 3.765290237213554*^9}, {
+  3.7652912929201927`*^9, 3.765291295170673*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", " ", "x"}], "-", 
+      RowBox[{"20", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "x"}], " ", "+", " ", 
+       RowBox[{"10", " ", "y"}]}], " ", "\[LessEqual]", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], "+", 
+       RowBox[{"5", " ", "y"}]}], "\[LessEqual]", "10"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765290178049258*^9, 3.765290179119878*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Minimize", "::", "natt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"The minimum is not attained at any point satisfying the \
+given constraints. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\
+\\\"Link\\\", ButtonFrame->None, ButtonData:>\\\"paclet:ref/Minimize\\\", \
+ButtonNote -> \\\"Minimize::natt\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7652901803959637`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "\[Infinity]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "Indeterminate"}], ",", 
+     RowBox[{"y", "\[Rule]", "Indeterminate"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76529018040228*^9}]
+}, Open  ]],
+
+Cell["First I will try a simplex method approach, no pivoting.", "Text",
+ CellChangeTimes->{{3.765290246332947*^9, 3.76529026228472*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aa", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", 
+      RowBox[{"-", "5"}], "20", "0", "0"},
+     {"0", 
+      RowBox[{"-", "2"}], "10", "1", "0"},
+     {"0", "2", "5", "0", "1"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.7652861508777933`*^9, 3.765286231866802*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "5"}], ",", "20", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "2"}], ",", "10", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "5", ",", "0", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7652862328192587`*^9, 3.76528636995468*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bb", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0"},
+     {"5"},
+     {"10"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.765286247889283*^9, 3.765286272441203*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "5", "}"}], ",", 
+   RowBox[{"{", "10", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7652862730593653`*^9, 3.76528637383323*^9}]
+}, Open  ]],
+
+Cell["\<\
+The solution by the raw simplex method works, but does not produce the \
+minimum, which apparently is -10. I do not take the time to understand how to \
+manipulate the simplex matrix, though the text answer hints that doing so \
+would get to the correct answer. \
+\>", "Text",
+ CellChangeTimes->{{3.76528818105811*^9, 3.765288203936041*^9}, {
+   3.7652902734280643`*^9, 3.765290295731559*^9}, {3.7652916312949266`*^9, 
+   3.7652916684512978`*^9}, 3.765301962354707*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"aa", ",", "bb"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7652862771444263`*^9, 3.7652862847367563`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"-", 
+     FractionBox["15", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["5", "2"], "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "0", "}"}], ",", 
+   RowBox[{"{", "0", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765286286530013*^9, 3.765286376977789*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "I haven\[CloseCurlyQuote]t had much luck with",
+ StyleBox[" LinearProgramming", "Input"],
+ ". From the many failures I have experienced I believe that it simply will \
+not accept two sets of constraints. One set works fine, and I did not notice \
+any examples in the documentation that showed it solving two standard \
+constraint relations. For instance, this works"
+}], "Text",
+ CellChangeTimes->{{3.765290395401073*^9, 3.765290481580983*^9}, {
+  3.7652984963463163`*^9, 3.765298525980291*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearProgramming", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "20"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "10"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76529850854484*^9, 3.765298514624558*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["95", "2"], ",", "10"}], "}"}]], "Output",
+ CellChangeTimes->{3.765298516652938*^9}]
+}, Open  ]],
+
+Cell["but this does not.", "Text",
+ CellChangeTimes->{{3.765298534612096*^9, 3.765298538475535*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearProgramming", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "20"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "10"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "5"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"10", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765288299694107*^9, 3.765288305012465*^9}, {
+  3.7652883786368217`*^9, 3.7652884315198717`*^9}, {3.765288583892174*^9, 
+  3.76528861445748*^9}, {3.765290326246048*^9, 3.765290371113427*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"LinearProgramming", "::", "nonopt"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Options expected (instead of \[NoBreak]\\!\\(\\*RowBox[{\\\
+\"{\\\", RowBox[{\\\"10\\\", \\\",\\\", \\\"10\\\"}], \
+\\\"}\\\"}]\\)\[NoBreak]) beyond position \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"5\\\"}]\\)\[NoBreak] in \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"LinearProgramming\\\", \\\"[\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"5\\\", \\\",\\\", RowBox[{\\\"-\\\", \
+\\\"20\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\",\\\", \\\"10\\\"}], \\\"}\\\"}], \
+\\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", RowBox[{\\\"5\\\
+\", \\\",\\\", RowBox[{\\\"-\\\", \\\"1\\\"}]}], \\\"}\\\"}], \\\"}\\\"}], \\\
+\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"{\\\", RowBox[{\\\"2\\\", \\\",\\\", \
+\\\"5\\\"}], \\\"}\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\
+\\\"{\\\", RowBox[{\\\"10\\\", \\\",\\\", RowBox[{\\\"-\\\", \\\"1\\\"}]}], \
+\\\"}\\\"}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", RowBox[{\\\"10\\\", \
+\\\",\\\", \\\"10\\\"}], \\\"}\\\"}]}], \\\"]\\\"}]\\)\[NoBreak]. An option \
+must be a rule or a list of rules. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/nonopt\\\", \
+ButtonNote -> \\\"LinearProgramming::nonopt\\\"]\\)\"\>"}]], "Message", "MSG",
+ 
+ CellChangeTimes->{{3.765290361180297*^9, 3.765290371904366*^9}}],
+
+Cell[BoxData[
+ RowBox[{"LinearProgramming", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "20"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "10"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "5"}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{"10", ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "10"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.765288458148684*^9, {3.765288589909814*^9, 3.7652886156211023`*^9}, {
+   3.765290361305398*^9, 3.765290371913889*^9}}]
+}, Open  ]],
+
+Cell["\<\
+The way to get Minimize to work is to add some slack relations. I play with \
+the four possibilities around the origin.\
+\>", "Text",
+ CellChangeTimes->{{3.765290501428111*^9, 3.765290521587575*^9}, {
+  3.765290556186199*^9, 3.7652905882971067`*^9}, {3.765290841232683*^9, 
+  3.7652908660392942`*^9}, {3.7652918855017157`*^9, 3.765291886027351*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", " ", "x"}], "-", 
+      RowBox[{"20", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "x"}], " ", "+", " ", 
+       RowBox[{"10", " ", "y"}]}], " ", "\[LessEqual]", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], "+", 
+       RowBox[{"5", " ", "y"}]}], "\[LessEqual]", "10"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765284134314719*^9, 3.765284202895114*^9}, {
+   3.765284389481698*^9, 3.765284398487322*^9}, {3.765284461862729*^9, 
+   3.7652844629811363`*^9}, 3.7652853335662746`*^9, {3.7652887526936827`*^9, 
+   3.765288756555903*^9}, {3.7652888773370743`*^9, 3.765288888127129*^9}, {
+   3.76528991241999*^9, 3.7652899412166452`*^9}, {3.7652900041760178`*^9, 
+   3.765290024799925*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "10"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "0"}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      FractionBox["1", "2"]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7652842040013866`*^9, {3.7652843921114063`*^9, 3.765284399305688*^9}, 
+   3.765284464522883*^9, {3.765285334942273*^9, 3.765285339588726*^9}, 
+   3.76528875786657*^9, {3.7652888784567633`*^9, 3.76528888910166*^9}, {
+   3.7652899226107607`*^9, 3.7652899420385237`*^9}, 3.7652900261211367`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.765290885494632*^9, 3.7652908938143997`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"5", " ", "x"}], "-", 
+      RowBox[{"20", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "2"}], " ", "x"}], " ", "+", " ", 
+       RowBox[{"10", " ", "y"}]}], " ", "\[LessEqual]", "5"}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"2", " ", "x"}], "+", 
+       RowBox[{"5", " ", "y"}]}], "\[LessEqual]", "10"}], ",", 
+     RowBox[{"x", "\[LessEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76529065443265*^9, 3.765290660982918*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["25", "2"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      RowBox[{"-", 
+       FractionBox["5", "2"]}]}], ",", 
+     RowBox[{"y", "\[Rule]", "0"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765290664935397*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell[TextData[{
+ "The above cell reports an answer which is less than the text answer. \
+Belatedly I see the restriction on ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "j"], TraditionalForm]]],
+ " in the problem description to be nonnegative, so the answer is merely a \
+curiosity. "
+}], "Text",
+ CellChangeTimes->{{3.765290925035103*^9, 3.765290997898652*^9}, {
+  3.765291385807679*^9, 3.765291430227693*^9}, {3.7652914651478357`*^9, 
+  3.765291469282311*^9}, {3.7652915175859823`*^9, 3.765291567110766*^9}, {
+  3.7652917670237427`*^9, 3.765291777287181*^9}, {3.765298614416534*^9, 
+  3.765298617392449*^9}, {3.76529877017276*^9, 3.765298794873445*^9}, {
+  3.765301913046262*^9, 3.765301951443171*^9}, {3.7653039322197857`*^9, 
+  3.765303937465086*^9}, {3.7693494622193727`*^9, 3.7693494686016693`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"5", " ", "x"}], "-", 
+   RowBox[{"20", " ", "y"}]}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", 
+     RowBox[{"-", 
+      FractionBox["5", "2"]}]}], ",", 
+    RowBox[{"y", "\[Rule]", "0"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765290790491426*^9, 3.765290822120846*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["25", "2"]}]], "Output",
+ CellChangeTimes->{3.765290823439055*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Another possibility, a somewhat desperate one, would have been to use ",
+ StyleBox["FindInstance", "Input"],
+ " to generate a big table, use the table\[CloseCurlyQuote]s list, cranking \
+the values through the starting expression, then use ",
+ StyleBox["Min", "Input"],
+ " on the output list. This would not be definitive, but then neither is the \
+way I did it."
+}], "Text",
+ CellChangeTimes->{{3.765291051225759*^9, 3.765291122358491*^9}, {
+  3.7652911993969927`*^9, 3.765291245058105*^9}, {3.765292002825968*^9, 
+  3.7652920191348963`*^9}, {3.765298658384379*^9, 3.7652986595586567`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"intab", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"FindInstance", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"5", " ", "x"}], "-", 
+           RowBox[{"20", " ", "y"}]}], "\[LessEqual]", "n"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{
+            RowBox[{"-", "2"}], " ", "x"}], " ", "+", " ", 
+           RowBox[{"10", " ", "y"}]}], " ", "\[LessEqual]", "5"}], "&&", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"2", " ", "x"}], "+", 
+           RowBox[{"5", " ", "y"}]}], "\[LessEqual]", "10"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "5", ",", 
+       RowBox[{"-", "5"}], ",", 
+       RowBox[{"-", "0.2"}]}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7652873036556473`*^9, 3.765287365063377*^9}, {
+   3.765287419621998*^9, 3.7652874245412617`*^9}, {3.765287528233809*^9, 
+   3.765287573399931*^9}, {3.765287604776486*^9, 3.765287654605399*^9}, 
+   3.765288024472753*^9, {3.765298904398614*^9, 3.765298906046544*^9}, 
+   3.7652989886836357`*^9, 3.765299289430109*^9}],
+
+Cell[TextData[{
+ "7.  Suppose we produce ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "1"], TraditionalForm]]],
+ " AA batteries by process P1 and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "2"], TraditionalForm]]],
+ " by process P2, furthermore ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "3"], TraditionalForm]]],
+ " A batteries by process P3 and ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "4"], TraditionalForm]]],
+ " by process P4. Let the profit for 100 batteries be $10 for AA and $20 for \
+A. Maximize the total profit subject to the constraints \n",
+ Cell[BoxData[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"8", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "3"]}], "+", 
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "4"]}]}], "\[LessEqual]", 
+   RowBox[{"120", "  ", 
+    RowBox[{"(", "Material", ")"}]}]}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "3"]}], "+", 
+    RowBox[{"24", " ", 
+     SubscriptBox["x", "4"]}]}], "\[LessEqual]", 
+   RowBox[{"180", "  ", 
+    RowBox[{"(", "Labor", ")"}]}]}]}], "Text",
+  CellChangeTimes->{{3.765283128803413*^9, 3.765283230584943*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.7652829942645082`*^9, 3.765283122321871*^9}, {
+  3.765283240686747*^9, 3.7652832468891706`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Some battery manufacturing processes yield no profit but have to be present \
+in constraint conditions. If x is profit (for 100 batteries) for process P1 \
+and y is profit (for 100 batteries) for process P2 and z is profit (for 100 \
+batteries) for process P3 and w is profit (for 100 batteries) for process P4, \
+then\
+\>", "Text",
+ CellChangeTimes->{{3.76529991304554*^9, 3.765299939347299*^9}, {
+  3.7652999782496853`*^9, 3.765300032207512*^9}, {3.765300900301976*^9, 
+  3.765300921059559*^9}, {3.765300973812229*^9, 3.765300982586671*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"10", "x"}], " ", "+", " ", 
+      RowBox[{"10", "y"}], "+", 
+      RowBox[{"20", "z"}], "+", 
+      RowBox[{"20", "w"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"12", " ", "x"}], "+", 
+       RowBox[{"8", " ", "y"}], "+", 
+       RowBox[{"6", " ", "z"}], "+", 
+       RowBox[{"4", " ", "w"}]}], "\[LessEqual]", "120"}], " ", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", "x"}], "+", 
+       RowBox[{"6", " ", "y"}], "+", 
+       RowBox[{"12", " ", "z"}], "+", 
+       RowBox[{"24", " ", "w"}]}], "\[LessEqual]", "180"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}], " ", ",", 
+     RowBox[{"z", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"w", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z", ",", "w"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76530014603515*^9, 3.765300149170897*^9}, {
+  3.765300218264134*^9, 3.765300242287272*^9}, {3.7653003183432713`*^9, 
+  3.76530038128951*^9}, {3.76530042164962*^9, 3.7653004234958963`*^9}, {
+  3.765300621144494*^9, 3.765300629791486*^9}, {3.765300740597039*^9, 
+  3.765300756274622*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   FractionBox["2200", "7"], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      FractionBox["20", "7"]}], ",", 
+     RowBox[{"y", "\[Rule]", "0"}], ",", 
+     RowBox[{"z", "\[Rule]", 
+      FractionBox["100", "7"]}], ",", 
+     RowBox[{"w", "\[Rule]", "0"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.765300384852063*^9, 3.765300424870995*^9}, 
+   3.76530063203201*^9, 3.7653007576652527`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The above cell matches the answer in the text. It looks like processes P2 and \
+P4 do not accrue net profits.\
+\>", "Text",
+ CellChangeTimes->{{3.765300999974345*^9, 3.765301053998014*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"9.", "  ", "Maximize", " ", "f"}], " ", "=", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    SubscriptBox["x", "2"], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "3"], " ", "subject", " ", "to", " ", "4", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "12"}]}]], "Text",
+ CellChangeTimes->{{3.7652832856700363`*^9, 3.765283363338892*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+The answer I got here is the same answer as text\[CloseCurlyQuote]s for the \
+maximum, but the text answer has more info on the starting point.\
+\>", "Text",
+ CellChangeTimes->{{3.7653014603192368`*^9, 3.765301489309166*^9}, {
+  3.765301721893018*^9, 3.7653017773217697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"2", "x"}], " ", "+", " ", "y", "+", 
+      RowBox[{"3", "z"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"4", " ", "x"}], "+", 
+       RowBox[{"3", " ", "y"}], "+", 
+       RowBox[{"6", " ", "z"}]}], "\[LessEqual]", "12"}], ",", 
+     RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"y", "\[GreaterEqual]", "0"}], ",", 
+     RowBox[{"z", "\[GreaterEqual]", "0"}]}], "}"}], " ", ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y", ",", "z"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765301222689312*^9, 3.76530136469172*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"6", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "0"}], ",", 
+     RowBox[{"y", "\[Rule]", "0"}], ",", 
+     RowBox[{"z", "\[Rule]", "2"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.765301295136979*^9, 3.765301323539523*^9}, 
+   3.765301366338828*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"2", "x"}], " ", "+", " ", "y", "+", 
+    RowBox[{"3", "z"}]}], ")"}], "/.", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"x", "\[Rule]", "0"}], ",", 
+    RowBox[{"y", "\[Rule]", "0"}], ",", 
+    RowBox[{"z", "\[Rule]", "2"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7653017995705423`*^9, 3.765301826440151*^9}}],
+
+Cell[BoxData["6"], "Output",
+ CellChangeTimes->{3.765301827827978*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "11.  Problem 22 in problem set 22.2.\n",
+ StyleBox["22.  Nutrition. Foods A and B have 600 and 500 calories, contain \
+15 g and 30 g of protein, and cost $1.80 and $2.10 per unit, respectively. \
+Find the minimum cost diet of at least 3900 calories containing at least 150 \
+g protein.",
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.76528342363911*^9, 3.765283437189427*^9}, {
+  3.765283807591715*^9, 3.765283810263637*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Here I guess x will be the amount of food A and y will be the amount of food \
+B that will fill the requirements stated in the problem.\
+\>", "Text",
+ CellChangeTimes->{{3.765302175419408*^9, 3.7653021831538687`*^9}, {
+  3.765302289453936*^9, 3.765302319228834*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Minimize", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"d", " ", "x"}], " ", "+", " ", 
+       RowBox[{"d", " ", "y"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"a", " ", "x"}], " ", "+", 
+        RowBox[{"b", " ", "y"}]}], "\[GreaterEqual]", 
+       RowBox[{"3900", " ", "c"}]}], ",", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"a", " ", "x"}], "+", 
+        RowBox[{"b", " ", "y"}]}], "\[GreaterEqual]", 
+       RowBox[{"150", " ", "g"}]}], ",", 
+      RowBox[{"a", "\[Equal]", 
+       RowBox[{"600", " ", "c"}]}], ",", " ", 
+      RowBox[{"b", "\[Equal]", 
+       RowBox[{"500", " ", "c"}]}], ",", 
+      RowBox[{"a", "\[Equal]", 
+       RowBox[{"15", " ", "g"}]}], ",", 
+      RowBox[{"b", "=", 
+       RowBox[{"30", " ", "g"}]}], ",", " ", 
+      RowBox[{"a", "\[Equal]", 
+       RowBox[{"1.8", " ", "d"}]}], ",", " ", 
+      RowBox[{"b", " ", "=", 
+       RowBox[{"2.1", " ", "d"}]}], ",", 
+      RowBox[{"x", "\[GreaterEqual]", "0"}], ",", 
+      RowBox[{"y", "\[GreaterEqual]", "0"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}]}], "]"}], ";"}]], "Input",
+ CellChangeTimes->{{3.7653023266369267`*^9, 3.765302343356318*^9}, {
+   3.7653025012302837`*^9, 3.76530250546205*^9}, {3.765302937063286*^9, 
+   3.765303120831444*^9}, {3.765303158719136*^9, 3.765303194020562*^9}, {
+   3.765303266627572*^9, 3.765303271193676*^9}, {3.765303317800499*^9, 
+   3.765303320335992*^9}, 3.7653037538337393`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Minimize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"1.8", " ", "x"}], " ", "+", " ", 
+      RowBox[{"2.1", " ", "y"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"600", " ", "x"}], " ", "+", 
+       RowBox[{"500", " ", "y"}]}], "\[GreaterEqual]", "3900"}], " ", ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"15", " ", "x"}], "+", 
+       RowBox[{"30", " ", "y"}]}], "\[GreaterEqual]", "150"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76530333351296*^9, 3.7653033780700493`*^9}, {
+  3.7653034107407627`*^9, 3.7653034326359253`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"13.5`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", "4.`"}], ",", 
+     RowBox[{"y", "\[Rule]", "3.`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.765303433446561*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The above cell matches the answer in the text. I will buy $13.50 of food, \
+consisting of 4 units of A and 3 units of B. The first formulation, \
+unexecuted, allows me to look at the pieces. I consolidate into the second \
+formulation, which runs successfully. It\[CloseCurlyQuote]s nice that \
+completely different units do not interfere with each other. It doesn\
+\[CloseCurlyQuote]t matter what they are, only that they are constraints.\
+\>", "Text",
+ CellChangeTimes->{{3.76530355597928*^9, 3.765303699721737*^9}, {
+  3.7653037790867777`*^9, 3.76530382418149*^9}, {3.76530401982447*^9, 
+  3.7653040330457897`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"13.", "  ", "Maximize", " ", "f"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"34", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"29", " ", 
+      SubscriptBox["x", "2"]}], "+", 
+     RowBox[{"32", " ", 
+      SubscriptBox["x", "3"], " ", "subject", " ", "to", " ", "8", " ", 
+      SubscriptBox["x", "1"]}], "+", 
+     RowBox[{"2", " ", 
+      SubscriptBox["x", "2"]}], "+", 
+     SubscriptBox["x", "3"]}], "\[LessEqual]", "54"}]}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"8", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "3"]}]}], "\[LessEqual]", "59"}], ",", " ", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    SubscriptBox["x", "2"], "+", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "3"]}]}], "\[LessEqual]", "39"}]}]], "Text",
+ CellChangeTimes->{{3.765283442325597*^9, 3.765283585289008*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+The problem takes on a complicated look. I have to sort it out.\
+\>", "Text",
+ CellChangeTimes->{{3.765305121062786*^9, 3.765305147213339*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Maximize", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"34", " ", "x"}], " ", "+", " ", 
+      RowBox[{"29", " ", "y"}], "+", 
+      RowBox[{"32", " ", "z"}]}], ",", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"8", " ", "x"}], " ", "+", 
+       RowBox[{"2", " ", "y"}], "+", "z"}], "\[LessEqual]", "54"}], " ", ",", 
+     
+     RowBox[{
+      RowBox[{
+       RowBox[{"3", " ", "x"}], "+", 
+       RowBox[{"8", " ", "y"}], "+", 
+       RowBox[{"2", "z"}]}], "\[LessEqual]", "59"}], ",", 
+     RowBox[{
+      RowBox[{"x", " ", "+", "y", "+", 
+       RowBox[{"5", "z"}]}], "\[LessEqual]", "39"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "y"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765304091173091*^9, 3.765304253951322*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          RowBox[{
+           FractionBox["1", "2"], " ", 
+           RowBox[{"(", 
+            RowBox[{"2222", "-", 
+             RowBox[{"211", " ", "z"}]}], ")"}]}], 
+          RowBox[{"z", ">", "6"}]},
+         {
+          RowBox[{
+           FractionBox["1", "58"], " ", 
+           RowBox[{"(", 
+            RowBox[{"19666", "+", 
+             RowBox[{"1343", " ", "z"}]}], ")"}]}], 
+          TagBox["True",
+           "PiecewiseDefault",
+           AutoDelete->True]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"x", "\[Rule]", 
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {
+             RowBox[{
+              FractionBox["1", "29"], " ", 
+              RowBox[{"(", 
+               RowBox[{"157", "-", 
+                RowBox[{"2", " ", "z"}]}], ")"}]}], 
+             RowBox[{"z", "\[LessEqual]", "6"}]},
+            {
+             RowBox[{
+              FractionBox["1", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{
+                RowBox[{"-", "8"}], "+", 
+                RowBox[{"3", " ", "z"}]}], ")"}]}], 
+             TagBox["True",
+              "PiecewiseDefault",
+              AutoDelete->True]}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False]}], ",", 
+     RowBox[{"y", "\[Rule]", 
+      TagBox[GridBox[{
+         {"\[Piecewise]", GridBox[{
+            {
+             RowBox[{
+              FractionBox["1", "2"], " ", 
+              RowBox[{"(", 
+               RowBox[{"86", "-", 
+                RowBox[{"13", " ", "z"}]}], ")"}]}], 
+             RowBox[{"z", ">", "6"}]},
+            {
+             RowBox[{
+              FractionBox["1", "58"], " ", 
+              RowBox[{"(", 
+               RowBox[{"310", "-", 
+                RowBox[{"13", " ", "z"}]}], ")"}]}], 
+             TagBox["True",
+              "PiecewiseDefault",
+              AutoDelete->True]}
+           },
+           AllowedDimensions->{2, Automatic},
+           Editable->True,
+           
+           GridBoxAlignment->{
+            "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+           
+           GridBoxItemSize->{
+            "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, 
+             "Rows" -> {{1.}}, "RowsIndexed" -> {}},
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.27999999999999997`], {
+                Offset[0.84]}, 
+               Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+               Offset[0.2], {
+                Offset[0.4]}, 
+               Offset[0.2]}, "RowsIndexed" -> {}},
+           Selectable->True]}
+        },
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.35]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}}],
+       "Piecewise",
+       DeleteWithContents->True,
+       Editable->False,
+       SelectWithContents->True,
+       Selectable->False]}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76530426092253*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"2222", "-", 
+      RowBox[{"211", " ", "z"}]}], ")"}]}], ",", 
+   RowBox[{"z", "\[Rule]", "6"}], ",", 
+   RowBox[{"Direction", "\[Rule]", 
+    RowBox[{"-", "1"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765304825221946*^9, 3.765304849024289*^9}, {
+  3.765304881408588*^9, 3.7653048896403093`*^9}}],
+
+Cell[BoxData["478"], "Output",
+ CellChangeTimes->{3.765304890618384*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox["1", "58"], " ", 
+    RowBox[{"(", 
+     RowBox[{"19666", "+", 
+      RowBox[{"1343", " ", "z"}]}], ")"}]}], ",", 
+   RowBox[{"z", "\[Rule]", "6"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765304704002102*^9, 3.7653047239647427`*^9}, {
+  3.765304896663259*^9, 3.765304898598546*^9}}],
+
+Cell[BoxData["478"], "Output",
+ CellChangeTimes->{3.76530472503836*^9, 3.765304900184231*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["So from the above it looks like I want z = 6. And", "Text",
+ CellChangeTimes->{{3.765304920638782*^9, 3.7653049541723347`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"x", "=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    FractionBox["1", "29"], " ", 
+    RowBox[{"(", 
+     RowBox[{"157", "-", "12"}], " ", ")"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765304956328506*^9, 3.765304982395507*^9}}],
+
+Cell[BoxData["5.`"], "Output",
+ CellChangeTimes->{3.765304983346456*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["and likewise", "Text",
+ CellChangeTimes->{{3.765304989355012*^9, 3.765304991186984*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"y", "=", 
+  RowBox[{"N", "[", 
+   RowBox[{
+    FractionBox["1", "58"], " ", 
+    RowBox[{"(", 
+     RowBox[{"310", "-", 
+      RowBox[{"13", " ", "6"}]}], ")"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765304995095756*^9, 3.7653050377615223`*^9}}],
+
+Cell[BoxData["4.`"], "Output",
+ CellChangeTimes->{{3.765305025966007*^9, 3.765305039064926*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[492, 17, 245, 6, 51, "Text",
+ Evaluatable->False],
+Cell[740, 25, 73, 1, 45, "Input"],
+Cell[816, 28, 319, 9, 91, "Text"],
+Cell[1138, 39, 882, 27, 70, "Text"],
+Cell[2023, 68, 253, 5, 86, "Text"],
+Cell[CellGroupData[{
+Cell[2301, 77, 784, 23, 45, "Input"],
+Cell[3088, 102, 368, 11, 99, "Output"]
+}, Open  ]],
+Cell[3471, 116, 168, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[3664, 123, 372, 10, 132, "Input"],
+Cell[4039, 135, 547, 16, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4623, 156, 231, 8, 132, "Input"],
+Cell[4857, 166, 235, 7, 45, "Output"]
+}, Open  ]],
+Cell[5107, 176, 152, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[5284, 183, 155, 3, 45, "Input"],
+Cell[5442, 188, 401, 13, 75, "Output"]
+}, Open  ]],
+Cell[5858, 204, 740, 22, 70, "Text"],
+Cell[6601, 228, 73, 1, 45, "Input"],
+Cell[6677, 231, 265, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[6967, 240, 620, 19, 45, "Input"],
+Cell[7590, 261, 446, 9, 34, "Message"],
+Cell[8039, 272, 280, 8, 45, "Output"]
+}, Open  ]],
+Cell[8334, 283, 137, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[8496, 288, 323, 9, 102, "Input"],
+Cell[8822, 299, 432, 12, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9291, 316, 216, 7, 102, "Input"],
+Cell[9510, 325, 221, 6, 45, "Output"]
+}, Open  ]],
+Cell[9746, 334, 479, 8, 120, "Text"],
+Cell[CellGroupData[{
+Cell[10250, 346, 159, 3, 45, "Input"],
+Cell[10412, 351, 355, 11, 75, "Output"]
+}, Open  ]],
+Cell[10782, 365, 513, 9, 120, "Text"],
+Cell[CellGroupData[{
+Cell[11320, 378, 495, 16, 45, "Input"],
+Cell[11818, 396, 139, 4, 75, "Output"]
+}, Open  ]],
+Cell[11972, 403, 100, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[12097, 408, 836, 25, 45, "Input"],
+Cell[12936, 435, 1538, 25, 59, "Message"],
+Cell[14477, 462, 767, 25, 45, "Output"]
+}, Open  ]],
+Cell[15259, 490, 359, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[15643, 500, 1049, 26, 45, "Input"],
+Cell[16695, 528, 586, 14, 99, "Output"]
+}, Open  ]],
+Cell[17296, 545, 130, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[17451, 550, 716, 21, 45, "Input"],
+Cell[18170, 573, 354, 12, 99, "Output"]
+}, Open  ]],
+Cell[18539, 588, 810, 15, 91, "Text"],
+Cell[CellGroupData[{
+Cell[19374, 607, 343, 11, 74, "Input"],
+Cell[19720, 620, 109, 3, 75, "Output"]
+}, Open  ]],
+Cell[19844, 626, 609, 11, 120, "Text"],
+Cell[20456, 639, 1237, 32, 75, "Input"],
+Cell[21696, 673, 1547, 48, 204, "Text"],
+Cell[23246, 723, 553, 9, 120, "Text"],
+Cell[23802, 734, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[23900, 739, 1278, 32, 75, "Input"],
+Cell[25181, 773, 501, 14, 100, "Output"]
+}, Open  ]],
+Cell[25697, 790, 199, 4, 51, "Text"],
+Cell[25899, 796, 578, 16, 70, "Text"],
+Cell[26480, 814, 286, 5, 86, "Text"],
+Cell[26769, 821, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[26867, 826, 661, 18, 45, "Input"],
+Cell[27531, 846, 358, 10, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27926, 861, 375, 11, 45, "Input"],
+Cell[28304, 874, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[28389, 878, 490, 10, 144, "Text"],
+Cell[28882, 890, 276, 5, 86, "Text"],
+Cell[29161, 897, 73, 1, 45, "Input"],
+Cell[29237, 900, 1517, 39, 75, "Input"],
+Cell[CellGroupData[{
+Cell[30779, 943, 673, 19, 45, "Input"],
+Cell[31455, 964, 274, 8, 69, "Output"]
+}, Open  ]],
+Cell[31744, 975, 628, 10, 155, "Text"],
+Cell[32375, 987, 1023, 31, 101, "Text"],
+Cell[33401, 1020, 73, 1, 45, "Input"],
+Cell[33477, 1023, 153, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[33655, 1030, 802, 24, 75, "Input"],
+Cell[34460, 1056, 6313, 177, 100, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40810, 1238, 426, 12, 75, "Input"],
+Cell[41239, 1252, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41348, 1258, 361, 10, 76, "Input"],
+Cell[41712, 1270, 131, 2, 69, "Output"]
+}, Open  ]],
+Cell[41858, 1275, 171, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[42054, 1281, 250, 7, 76, "Input"],
+Cell[42307, 1290, 110, 2, 69, "Output"]
+}, Open  ]],
+Cell[42432, 1295, 94, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[42551, 1300, 274, 8, 76, "Input"],
+Cell[42828, 1310, 134, 2, 69, "Output"]
+}, Open  ]]
+}
+]
+*)
+
