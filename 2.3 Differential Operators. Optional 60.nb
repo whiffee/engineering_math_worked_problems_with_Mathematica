@@ -1,0 +1,778 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     21857,        777]
+NotebookOptionsPosition[     18517,        663]
+NotebookOutlinePosition[     18905,        680]
+CellTagsIndexPosition[     18862,        677]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+1 - 5 Application of differential operators
+Apply the given operator to the given functions. Show all steps in detail.\
+\>", "Text",
+ CellChangeTimes->{{3.767736480042089*^9, 3.767736510344698*^9}}],
+
+Cell[TextData[{
+ "1.  ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["D", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + 2 D; Cosh[2 x], ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " + ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " , Cos[x]"
+}], "Text",
+ CellChangeTimes->{{3.767736520881055*^9, 3.76773656678371*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.672959194985978*^9, 3.6729591971185217`*^9}, 
+   3.7677364264859943`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"r", "[", "x_", "]"}], ":=", 
+  RowBox[{"Cosh", "[", 
+   RowBox[{"2", " ", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.6729593040288763`*^9, 3.672959330733089*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{
+    RowBox[{"r", "'"}], "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672959348637204*^9, 3.672959364314492*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"4", " ", 
+   RowBox[{"Cosh", "[", 
+    RowBox[{"2", " ", "x"}], "]"}]}], "+", 
+  RowBox[{"4", " ", 
+   RowBox[{"Sinh", "[", 
+    RowBox[{"2", " ", "x"}], "]"}]}]}]], "Output",
+ CellChangeTimes->{3.672959369153832*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.672959384219499*^9, 3.672959389393969*^9}}],
+
+Cell[BoxData[
+ RowBox[{"4", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"2", " ", "x"}]]}]], "Output",
+ CellChangeTimes->{3.6729593901376743`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"s", "[", "x_", "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", "x"}]], "+", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]]}]}]], "Input",
+ CellChangeTimes->{{3.672959415641572*^9, 3.672959455459598*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"s", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{
+    RowBox[{"s", "'"}], "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672959478499187*^9, 3.672959481601269*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"-", "x"}]], "+", 
+  RowBox[{"4", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]]}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"-", "x"}]]}], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "x"}]]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.672959483296352*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.672959498148851*^9, 3.672959501937578*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"-", "x"}]], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"8", " ", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"3", " ", "x"}]]}]}], ")"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"text", " ", "answer", " ", "is"}], " ", "-", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", "x"}]], "+", 
+    RowBox[{"8", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", "x"}]]}]}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7677370990902433`*^9, 3.767737153552928*^9}},
+ Background->RGBColor[1, 1, 0.85]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"u", "[", "x_", "]"}], ":=", 
+  RowBox[{"Cos", "[", "x", "]"}]}]], "Input",
+ CellChangeTimes->{{3.67295953041888*^9, 3.67295954546999*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{"2", " ", 
+   RowBox[{
+    RowBox[{"u", "'"}], "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672959560772702*^9, 3.67295956493091*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   RowBox[{"Cos", "[", "x", "]"}]}], "-", 
+  RowBox[{"2", " ", 
+   RowBox[{"Sin", "[", "x", "]"}]}]}]], "Output",
+ CellChangeTimes->{3.672959566117893*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answers agree with the text (except yellow).", "Text",
+ CellChangeTimes->{{3.67295958019359*^9, 3.672959589177156*^9}, {
+  3.7677371842575407`*^9, 3.767737189216371*^9}}],
+
+Cell[TextData[{
+ "3.  (D - 2 I",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[")", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "; ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " , x ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "2"}], " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.7677365878563147`*^9, 3.767736623508292*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6729596155466413`*^9, 3.672959617663957*^9}, 
+   3.767736435485024*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"v", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"2", " ", "x"}]]}]], "Input",
+ CellChangeTimes->{{3.672959643993956*^9, 3.67295967903402*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"v", "''"}], "[", "x", "]"}], "-", 
+  RowBox[{"4", 
+   RowBox[{
+    RowBox[{"v", "'"}], "[", "x", "]"}]}], "+", 
+  RowBox[{"4", 
+   RowBox[{"v", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6729596898535852`*^9, 3.672959715623231*^9}, {
+   3.672960452616569*^9, 3.672960484462346*^9}, 3.672960659984787*^9, {
+   3.672960708659506*^9, 3.672960709763544*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{
+  3.672959719483109*^9, {3.672960486270934*^9, 3.672960498270822*^9}, 
+   3.672960729422179*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"w", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]]}]}]], "Input",
+ CellChangeTimes->{{3.672959730178299*^9, 3.672959756644672*^9}, {
+  3.672959801857032*^9, 3.672959803048397*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "''"}], "[", "x", "]"}], "-", 
+  RowBox[{"4", 
+   RowBox[{
+    RowBox[{"w", "'"}], "[", "x", "]"}]}], "+", 
+  RowBox[{"4", 
+   RowBox[{"w", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672959771500794*^9, 3.672959775018951*^9}, {
+  3.67296074223687*^9, 3.6729607517438183`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"4", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]]}], "+", 
+  RowBox[{"8", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]], " ", "x"}], "-", 
+  RowBox[{"4", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"2", " ", "x"}]], "+", 
+     RowBox[{"2", " ", 
+      SuperscriptBox["\[ExponentialE]", 
+       RowBox[{"2", " ", "x"}]], " ", "x"}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.672959776801684*^9, 3.672959808223962*^9, 
+  3.672960757788497*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.6729607766673183`*^9, 3.672960781079331*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.672960781976965*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"z", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", "x"}]]}]], "Input",
+ CellChangeTimes->{{3.6729608050008917`*^9, 3.672960836081731*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"z", "''"}], "[", "x", "]"}], "-", 
+  RowBox[{"4", 
+   RowBox[{
+    RowBox[{"z", "'"}], "[", "x", "]"}]}], "+", 
+  RowBox[{"4", 
+   RowBox[{"z", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672960861056986*^9, 3.672960869518908*^9}}],
+
+Cell[BoxData[
+ RowBox[{"16", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "2"}], " ", "x"}]]}]], "Output",
+ CellChangeTimes->{3.6729608714996243`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answers agree with the text.", "Text",
+ CellChangeTimes->{3.672960902615137*^9}],
+
+Cell[TextData[{
+ "5.  (D - 2 I)(D + 3 I); ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", x ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{
+     RowBox[{"-", "3"}], " ", "x"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.767736652432741*^9, 3.767736701411158*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.672960917935058*^9, 3.672960920388715*^9}, 
+   3.7677364464929113`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"r", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"2", " ", "x"}]]}]], "Input",
+ CellChangeTimes->{{3.672960949325128*^9, 3.672960972543272*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"r", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{
+   RowBox[{"r", "'"}], "[", "x", "]"}], "-", 
+  RowBox[{"6", " ", 
+   RowBox[{"r", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672960991792955*^9, 3.672961028380556*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.672961034022921*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"s", "[", "x_", "]"}], ":=", 
+  RowBox[{"x", " ", 
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"2", " ", "x"}]]}]}]], "Input",
+ CellChangeTimes->{{3.672961053874325*^9, 3.672961063600397*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"s", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{
+   RowBox[{"s", "'"}], "[", "x", "]"}], "-", 
+  RowBox[{"6", " ", 
+   RowBox[{"s", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.67296107540057*^9, 3.6729610840305243`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5", " ", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{"2", " ", "x"}]]}]], "Output",
+ CellChangeTimes->{3.672961085852072*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"u", "[", "x_", "]"}], ":=", 
+  SuperscriptBox["\[ExponentialE]", 
+   RowBox[{
+    RowBox[{"-", "3"}], " ", "x"}]]}]], "Input",
+ CellChangeTimes->{{3.6729611073487673`*^9, 3.6729611148683968`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"u", "''"}], "[", "x", "]"}], "+", 
+  RowBox[{
+   RowBox[{"u", "'"}], "[", "x", "]"}], "-", 
+  RowBox[{"6", " ", 
+   RowBox[{"u", "[", "x", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.672961129732533*^9, 3.6729611389622*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.672961140841776*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answers agree with the text.", "Text",
+ CellChangeTimes->{3.672961152804113*^9}],
+
+Cell["\<\
+6 - 12 General solution
+Facto as in the text and solve.\
+\>", "Text",
+ CellChangeTimes->{{3.7677367278555517`*^9, 3.767736740766473*^9}}],
+
+Cell[TextData[{
+ "7.  (4 ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["D", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " - I)y = 0"
+}], "Text",
+ CellChangeTimes->{{3.7677367495834*^9, 3.767736776966044*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.672961200049445*^9, 3.672961201727085*^9}, 
+   3.767736455300605*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"r", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", " ", 
+     RowBox[{
+      RowBox[{"y", "''"}], "[", "x", "]"}]}], "-", 
+    RowBox[{"y", "[", "x", "]"}]}], "\[Equal]", "0"}]}]], "Input",
+ CellChangeTimes->{{3.672961218816018*^9, 3.6729612277635393`*^9}, {
+  3.6729612666964273`*^9, 3.672961290614912*^9}, {3.672961519854513*^9, 
+  3.672961528964715*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"-", 
+    RowBox[{"y", "[", "x", "]"}]}], "+", 
+   RowBox[{"4", " ", 
+    RowBox[{
+     SuperscriptBox["y", "\[Prime]\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]}]}], "\[Equal]", 
+  "0"}]], "Output",
+ CellChangeTimes->{3.672961535107081*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"DSolve", "[", 
+  RowBox[{"r", ",", "y", ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.6729615520776663`*^9, 3.672961561306058*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"y", "\[Rule]", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", "x", "}"}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"x", "/", "2"}]], " ", 
+        RowBox[{"C", "[", "1", "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{
+          RowBox[{"-", "x"}], "/", "2"}]], " ", 
+        RowBox[{"C", "[", "2", "]"}]}]}]}], "]"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.672961563207225*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answer matches the text\[CloseCurlyQuote]s.", "Text",
+ CellChangeTimes->{{3.67296159561635*^9, 3.672961604990707*^9}}],
+
+Cell[TextData[{
+ "9.  (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["D", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " - 4.20 D + 4.41 I)y = 0"
+}], "Text",
+ CellChangeTimes->{{3.767736798958692*^9, 3.767736827525372*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.672961632511141*^9, 3.6729616343578863`*^9}, 
+   3.767736461652523*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"s", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "''"}], "[", "x", "]"}], "-", 
+    RowBox[{"4.20", " ", 
+     RowBox[{
+      RowBox[{"y", "'"}], "[", "x", "]"}]}], "+", " ", 
+    RowBox[{"4.41", " ", 
+     RowBox[{"y", "[", "x", "]"}]}]}], "\[Equal]", 
+   "0"}]}], "\[IndentingNewLine]", 
+ RowBox[{"DSolve", "[", 
+  RowBox[{"s", ",", "y", ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.672961654327115*^9, 3.672961738516601*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"4.41`", " ", 
+    RowBox[{"y", "[", "x", "]"}]}], "-", 
+   RowBox[{"4.2`", " ", 
+    RowBox[{
+     SuperscriptBox["y", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]}], "+", 
+   RowBox[{
+    SuperscriptBox["y", "\[Prime]\[Prime]",
+     MultilineFunction->None], "[", "x", "]"}]}], "\[Equal]", "0"}]], "Output",\
+
+ CellChangeTimes->{3.672961741196603*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"y", "\[Rule]", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", "x", "}"}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2.1`", " ", "x"}]], " ", 
+        RowBox[{"C", "[", "1", "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2.1`", " ", "x"}]], " ", "x", " ", 
+        RowBox[{"C", "[", "2", "]"}]}]}]}], "]"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.672961741273939*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answer matches the text\[CloseCurlyQuote]s.", "Text",
+ CellChangeTimes->{3.672961767301072*^9}],
+
+Cell[TextData[{
+ "11.  (",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["D", "2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " - 4.00 D + 3.84 I)y = 0"
+}], "Text",
+ CellChangeTimes->{{3.767736847685877*^9, 3.76773686998877*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.672961777684699*^9, 3.6729617794827843`*^9}, 
+   3.767736468124413*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"u", "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"y", "''"}], "[", "x", "]"}], "-", 
+    RowBox[{"4.00", " ", 
+     RowBox[{
+      RowBox[{"y", "'"}], "[", "x", "]"}]}], "+", 
+    RowBox[{"3.84", " ", 
+     RowBox[{"y", "[", "x", "]"}]}]}], "\[Equal]", 
+   "0"}]}], "\[IndentingNewLine]", 
+ RowBox[{"DSolve", "[", 
+  RowBox[{"u", ",", "y", ",", "x"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.672961800244483*^9, 3.67296184696432*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"3.84`", " ", 
+    RowBox[{"y", "[", "x", "]"}]}], "-", 
+   RowBox[{"4.`", " ", 
+    RowBox[{
+     SuperscriptBox["y", "\[Prime]",
+      MultilineFunction->None], "[", "x", "]"}]}], "+", 
+   RowBox[{
+    SuperscriptBox["y", "\[Prime]\[Prime]",
+     MultilineFunction->None], "[", "x", "]"}]}], "\[Equal]", "0"}]], "Output",\
+
+ CellChangeTimes->{3.672961848334391*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"y", "\[Rule]", 
+    RowBox[{"Function", "[", 
+     RowBox[{
+      RowBox[{"{", "x", "}"}], ",", 
+      RowBox[{
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"1.5999999999999996`", " ", "x"}]], " ", 
+        RowBox[{"C", "[", "1", "]"}]}], "+", 
+       RowBox[{
+        SuperscriptBox["\[ExponentialE]", 
+         RowBox[{"2.4000000000000004`", " ", "x"}]], " ", 
+        RowBox[{"C", "[", "2", "]"}]}]}]}], "]"}]}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.672961848359301*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above answer matches the text\[CloseCurlyQuote]s.", "Text",
+ CellChangeTimes->{3.672961872300688*^9}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 208, 4, 86, "Text"],
+Cell[611, 19, 579, 21, 76, "Text"],
+Cell[1193, 42, 169, 3, 45, "Input"],
+Cell[1365, 47, 202, 5, 47, "Input"],
+Cell[CellGroupData[{
+Cell[1592, 56, 235, 7, 45, "Input"],
+Cell[1830, 65, 252, 8, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2119, 78, 131, 2, 45, "Input"],
+Cell[2253, 82, 194, 5, 73, "Output"]
+}, Open  ]],
+Cell[2462, 90, 291, 8, 50, "Input"],
+Cell[CellGroupData[{
+Cell[2778, 102, 235, 7, 45, "Input"],
+Cell[3016, 111, 500, 16, 54, "Output"]
+}, Open  ]],
+Cell[3531, 130, 127, 2, 45, "Input"],
+Cell[3661, 134, 641, 19, 78, InheritFromParent],
+Cell[4305, 155, 173, 4, 47, "Input"],
+Cell[CellGroupData[{
+Cell[4503, 163, 234, 7, 45, "Input"],
+Cell[4740, 172, 233, 7, 69, "Output"]
+}, Open  ]],
+Cell[4988, 182, 186, 2, 51, "Text"],
+Cell[5177, 186, 589, 21, 76, "Text"],
+Cell[5769, 209, 167, 3, 45, "Input"],
+Cell[5939, 214, 206, 5, 50, "Input"],
+Cell[CellGroupData[{
+Cell[6170, 223, 411, 11, 45, "Input"],
+Cell[6584, 236, 183, 4, 69, "Output"]
+}, Open  ]],
+Cell[6782, 243, 281, 7, 50, "Input"],
+Cell[CellGroupData[{
+Cell[7088, 254, 337, 10, 45, "Input"],
+Cell[7428, 266, 579, 17, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8044, 288, 129, 2, 45, "Input"],
+Cell[8176, 292, 108, 2, 69, "Output"]
+}, Open  ]],
+Cell[8299, 297, 229, 6, 50, "Input"],
+Cell[CellGroupData[{
+Cell[8553, 307, 287, 9, 45, "Input"],
+Cell[8843, 318, 215, 6, 73, "Output"]
+}, Open  ]],
+Cell[9073, 327, 96, 1, 51, "Text"],
+Cell[9172, 330, 635, 22, 76, "Text"],
+Cell[9810, 354, 167, 3, 45, "Input"],
+Cell[9980, 359, 207, 5, 50, "Input"],
+Cell[CellGroupData[{
+Cell[10212, 368, 272, 8, 45, "Input"],
+Cell[10487, 378, 108, 2, 69, "Output"]
+}, Open  ]],
+Cell[10610, 383, 232, 6, 50, "Input"],
+Cell[CellGroupData[{
+Cell[10867, 393, 273, 8, 45, "Input"],
+Cell[11143, 403, 192, 5, 73, "Output"]
+}, Open  ]],
+Cell[11350, 411, 231, 6, 50, "Input"],
+Cell[CellGroupData[{
+Cell[11606, 421, 270, 8, 45, "Input"],
+Cell[11879, 431, 108, 2, 69, "Output"]
+}, Open  ]],
+Cell[12002, 436, 96, 1, 51, "Text"],
+Cell[12101, 439, 147, 4, 86, "Text"],
+Cell[12251, 445, 261, 9, 76, "Text"],
+Cell[12515, 456, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[12705, 463, 380, 10, 45, "Input"],
+Cell[13088, 475, 301, 10, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13426, 490, 160, 3, 45, "Input"],
+Cell[13589, 495, 598, 18, 78, "Output"]
+}, Open  ]],
+Cell[14202, 516, 134, 1, 51, "Text"],
+Cell[14339, 519, 275, 9, 76, "Text"],
+Cell[14617, 530, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[14809, 537, 475, 14, 75, "Input"],
+Cell[15287, 553, 414, 13, 45, "Output"],
+Cell[15704, 568, 588, 17, 78, "Output"]
+}, Open  ]],
+Cell[16307, 588, 111, 1, 51, "Text"],
+Cell[16421, 591, 275, 9, 76, "Text"],
+Cell[16699, 602, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[16891, 609, 469, 14, 75, "Input"],
+Cell[17363, 625, 413, 13, 45, "Output"],
+Cell[17779, 640, 608, 17, 78, "Output"]
+}, Open  ]],
+Cell[18402, 660, 111, 1, 51, "Text"]
+}
+]
+*)
+
