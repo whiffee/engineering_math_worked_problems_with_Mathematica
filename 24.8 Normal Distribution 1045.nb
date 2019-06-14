@@ -1,0 +1,556 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     18290,        555]
+NotebookOptionsPosition[     15352,        451]
+NotebookOutlinePosition[     15740,        468]
+CellTagsIndexPosition[     15697,        465]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{{3.769379539648892*^9, 3.769379544002795*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1.  Let X be normal with mean 10 and variance 4. Find P(X > 12), P(X < 10), \
+P(X < 11), P(9 < X < 13).\
+\>", "Text",
+ CellChangeTimes->{{3.766413651714723*^9, 3.76641370941424*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+It is necessary to convert variance to standard deviation, since that is what \
+the Mathematica function needs.\
+\>", "Text",
+ CellChangeTimes->{{3.7664200123845987`*^9, 3.766420037111052*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"x", ">", "12"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"10", ",", "2"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.766419607776944*^9, 3.766419628814889*^9}, {
+  3.7664196765334587`*^9, 3.766419679107909*^9}, {3.766419914031955*^9, 
+  3.766419916885947*^9}}],
+
+Cell[BoxData["0.15865525393145707`"], "Output",
+ CellChangeTimes->{{3.766419619302205*^9, 3.766419629736699*^9}, 
+   3.766419679906601*^9, 3.766419918166827*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"x", "<", "10"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"10", ",", "2"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.766419943686345*^9, 3.766419945732774*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{3.766419946686386*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"x", "<", "11"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"10", ",", "2"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.766419956613505*^9, 3.766419956843891*^9}, {
+  3.766419996978238*^9, 3.7664199974977083`*^9}}],
+
+Cell[BoxData["0.6914624612740131`"], "Output",
+ CellChangeTimes->{3.766419957641214*^9, 3.766419998160502*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"9", "<", "x", "<", "13"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"10", ",", "2"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7664199751646214`*^9, 3.766419979170858*^9}}],
+
+Cell[BoxData["0.624655260005155`"], "Output",
+ CellChangeTimes->{3.766419980030616*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cells above match the answer in the text.", "Text",
+ CellChangeTimes->{{3.7664200782845707`*^9, 3.766420086603847*^9}}],
+
+Cell["\<\
+3.  Let X be normal with mean 50 and variance 9. Determine c such that P(X < \
+c) = 5%, P(X > c) = 1%, P(50 - c < X < 50 + c) = 50%.\
+\>", "Text",
+ CellChangeTimes->{{3.766413714005389*^9, 3.7664138163360786`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Probability", "[", 
+     RowBox[{
+      RowBox[{"x", "<", "c"}], ",", 
+      RowBox[{"x", "\[Distributed]", " ", 
+       RowBox[{"NormalDistribution", "[", 
+        RowBox[{"50", ",", "3"}], "]"}]}]}], "]"}], "\[Equal]", "0.05"}], ",",
+    "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.766420130127*^9, 3.766420191046172*^9}, {
+  3.766420250812765*^9, 3.766420255338544*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Solve\\\"}]\\)\[NoBreak], so some solutions \
+may not be found; use Reduce for complete solution information. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
+ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7664201934220953`*^9, 3.76642025677109*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"c", "\[Rule]", "45.06543911914558`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.766420193428668*^9, 3.7664202567799683`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Probability", "[", 
+     RowBox[{
+      RowBox[{"x", ">", "c"}], ",", 
+      RowBox[{"x", "\[Distributed]", " ", 
+       RowBox[{"NormalDistribution", "[", 
+        RowBox[{"50", ",", "3"}], "]"}]}]}], "]"}], "\[Equal]", "0.01"}], ",",
+    "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.766420298640808*^9, 3.766420307415352*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Solve\\\"}]\\)\[NoBreak], so some solutions \
+may not be found; use Reduce for complete solution information. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
+ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.76642030901794*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"c", "\[Rule]", "56.979043622122525`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.76642030902433*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Probability", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"50", "-", "c"}], "<", "x", "<", 
+       RowBox[{"50", "+", "c"}]}], ",", 
+      RowBox[{"x", "\[Distributed]", " ", 
+       RowBox[{"NormalDistribution", "[", 
+        RowBox[{"50", ",", "3"}], "]"}]}]}], "]"}], "\[Equal]", "0.5"}], ",", 
+   "c"}], "]"}]], "Input",
+ CellChangeTimes->{{3.766420457375923*^9, 3.766420481933054*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ratnz"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Solve was unable to solve the system with inexact \
+coefficients. The answer was obtained by solving a corresponding exact system \
+and numericizing the result. \\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", \
+ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/Solve\\\", ButtonNote -> \
+\\\"Solve::ratnz\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.7664204843174753`*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"c", "\[Rule]", "2.0234692505882457`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.766420484323683*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+The green cell above matches the answer in the text. The text answer \
+corresponding to the top yellow is 56.978, and to the bottom yellow 2.022.\
+\>", "Text",
+ CellChangeTimes->{{3.766420553066169*^9, 3.7664206193092813`*^9}}],
+
+Cell["\<\
+5. If the lifetime X of a certain kind of automobile battery is normally \
+distributed with a mean of 5 years and a standard deviation of 1 year, and \
+the manufacturer wishes to guarantee the battery for 4 years, what percentage \
+of the batteries will he have to replace under the guarantee?\
+\>", "Text",
+ CellChangeTimes->{{3.766413857639413*^9, 3.766413936241249*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"x", "<", "4"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"5", ",", "1"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7664207135056*^9, 3.766420760997542*^9}}],
+
+Cell[BoxData["0.15865525393145707`"], "Output",
+ CellChangeTimes->{{3.766420755632328*^9, 3.766420762071054*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell above matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.766421423449629*^9, 3.7664214381837063`*^9}}],
+
+Cell["\<\
+7.  A manufacturer knows from experience that the resistance of resistors he \
+produces is normal with mean \[Mu] = 150 \[CapitalOmega] and standard \
+deviation \[Sigma] = 5 \[CapitalOmega] . What percentage of the resistors \
+will have resistance between 148 \[CapitalOmega] and 152 \[CapitalOmega]? \
+Between 140 \[CapitalOmega] and 160 \[CapitalOmega]?\
+\>", "Text",
+ CellChangeTimes->{{3.766413940248802*^9, 3.7664141231664133`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"148", "<", "x", "<", "152"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"150", ",", "5"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7664214931821833`*^9, 3.766421512523699*^9}}],
+
+Cell[BoxData["0.3108434832206485`"], "Output",
+ CellChangeTimes->{3.766421516736806*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"148", "\[LessEqual]", "x", "\[LessEqual]", "152"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"150", ",", "5"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.766421565906191*^9, 3.766421573720291*^9}}],
+
+Cell[BoxData["0.3108434832206485`"], "Output",
+ CellChangeTimes->{3.766421575220755*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"140", "<", "x", "<", "160"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"150", ",", "5"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.766421614623454*^9, 3.766421618917667*^9}}],
+
+Cell[BoxData["0.9544997361036416`"], "Output",
+ CellChangeTimes->{3.766421620205934*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cells above match the answer in the text.", "Text",
+ CellChangeTimes->{{3.766421642581161*^9, 3.766421655939246*^9}}],
+
+Cell["\<\
+9.  If the mathematics scores of the SAT college entrance exams are normal \
+with mean 480 and standard deviation 100 (these are about the actual values \
+over the past years) and if some college sets 500 as the minimum score for \
+new students, what percent of students would not reach that score?\
+\>", "Text",
+ CellChangeTimes->{{3.7664141580533667`*^9, 3.766414232871963*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"x", "<", "500"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"480", ",", "100"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",
+ CellChangeTimes->{{3.7664216891471148`*^9, 3.7664217093845997`*^9}}],
+
+Cell[BoxData["0.579259709439103`"], "Output",
+ CellChangeTimes->{3.766421711597274*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell above matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.7664217378535643`*^9, 3.7664217505498877`*^9}}],
+
+Cell["\<\
+11.  If sick-leave time X used by employees of a company in one month is \
+(very roughly) normal with mean 1000 hours and standard deviation 100 hours, \
+how much time t should be budgeted for sick leave during the next month if t \
+is to be exceeded with probability of only 20%?\
+\>", "Text",
+ CellChangeTimes->{{3.766414259111565*^9, 3.766414325338731*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Solve", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Probability", "[", 
+     RowBox[{
+      RowBox[{"x", "\[GreaterEqual]", "t"}], ",", 
+      RowBox[{"x", "\[Distributed]", " ", 
+       RowBox[{"NormalDistribution", "[", 
+        RowBox[{"1000", ",", "100"}], "]"}]}]}], "]"}], "\[Equal]", "0.2"}], 
+   ",", "t"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7664217926053753`*^9, 3.7664218017712603`*^9}, {
+  3.766421841834344*^9, 3.766421914325018*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Solve", "::", "ifun"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Inverse functions are being used by \
+\[NoBreak]\\!\\(\\*RowBox[{\\\"Solve\\\"}]\\)\[NoBreak], so some solutions \
+may not be found; use Reduce for complete solution information. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/Solve/ifun\\\", \
+ButtonNote -> \\\"Solve::ifun\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.766421917529174*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"t", "\[Rule]", "1084.1621233572914`"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.766421917535412*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell above matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.766421972889387*^9, 3.7664219819210052`*^9}}],
+
+Cell["\<\
+13.  If the resistance X of certain wires in an electrical network is normal \
+with mean 0.01 \[CapitalOmega] and standard deviation 0.001 \[CapitalOmega] , \
+how many of 1000 wires will meet the specification that they have resistance \
+between 0.009 and 0.011 \[CapitalOmega]?\
+\>", "Text",
+ CellChangeTimes->{{3.766414356290063*^9, 3.766414451907481*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["The probability for any given wire in the 1000-wire bundle.", "Text",
+ CellChangeTimes->{{3.766422123040843*^9, 3.766422142383754*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{"0.009", "<", "x", "<", "0.011"}], ",", 
+    RowBox[{"x", "\[Distributed]", " ", 
+     RowBox[{"NormalDistribution", "[", 
+      RowBox[{"0.01", ",", "0.001"}], "]"}]}]}], "]"}], "//", "N"}]], "Input",\
+
+ CellChangeTimes->{{3.766422033167781*^9, 3.766422043165595*^9}, {
+  3.766422074971981*^9, 3.766422104506338*^9}}],
+
+Cell[BoxData["0.6826894921370859`"], "Output",
+ CellChangeTimes->{3.76642210532683*^9}]
+}, Open  ]],
+
+Cell["Times the bundle population", "Text",
+ CellChangeTimes->{{3.766422217876896*^9, 3.76642222781089*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1000", " ", "%"}]], "Input",
+ CellChangeTimes->{{3.766422145714677*^9, 3.766422150135553*^9}}],
+
+Cell[BoxData["682.6894921370858`"], "Output",
+ CellChangeTimes->{3.766422151543873*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell above matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.766422169510214*^9, 3.766422180805599*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 198, 4, 51, "Text"],
+Cell[601, 19, 73, 1, 45, "Input"],
+Cell[677, 22, 228, 5, 75, "Text"],
+Cell[908, 29, 203, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[1136, 37, 423, 10, 45, "Input"],
+Cell[1562, 49, 199, 3, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1798, 57, 323, 8, 45, "Input"],
+Cell[2124, 67, 111, 2, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2272, 74, 374, 9, 45, "Input"],
+Cell[2649, 85, 148, 2, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2834, 92, 335, 8, 45, "Input"],
+Cell[3172, 102, 125, 2, 69, "Output"]
+}, Open  ]],
+Cell[3312, 107, 135, 1, 51, "Text"],
+Cell[3450, 110, 260, 5, 110, "Text"],
+Cell[CellGroupData[{
+Cell[3735, 119, 449, 12, 45, "Input"],
+Cell[4187, 133, 575, 11, 34, "Message"],
+Cell[4765, 146, 224, 5, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5026, 156, 403, 11, 45, "Input"],
+Cell[5432, 169, 551, 11, 34, "Message"],
+Cell[5986, 182, 197, 5, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6220, 192, 470, 13, 45, "Input"],
+Cell[6693, 207, 525, 11, 59, "Message"],
+Cell[7221, 220, 198, 5, 69, "Output"]
+}, Open  ]],
+Cell[7434, 228, 237, 4, 86, "Text"],
+Cell[7674, 234, 419, 7, 144, "Text"],
+Cell[CellGroupData[{
+Cell[8118, 245, 319, 8, 45, "Input"],
+Cell[8440, 255, 151, 2, 69, "Output"]
+}, Open  ]],
+Cell[8606, 260, 136, 1, 51, "Text"],
+Cell[8745, 263, 483, 8, 144, "Text"],
+Cell[CellGroupData[{
+Cell[9253, 275, 339, 8, 45, "Input"],
+Cell[9595, 285, 126, 2, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9758, 292, 359, 8, 45, "Input"],
+Cell[10120, 302, 88, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10245, 308, 337, 8, 45, "Input"],
+Cell[10585, 318, 126, 2, 69, "Output"]
+}, Open  ]],
+Cell[10726, 323, 133, 1, 51, "Text"],
+Cell[10862, 326, 426, 7, 144, "Text"],
+Cell[CellGroupData[{
+Cell[11313, 337, 331, 8, 45, "Input"],
+Cell[11647, 347, 125, 2, 69, "Output"]
+}, Open  ]],
+Cell[11787, 352, 138, 1, 51, "Text"],
+Cell[11928, 355, 406, 7, 144, "Text"],
+Cell[CellGroupData[{
+Cell[12359, 366, 473, 12, 45, "Input"],
+Cell[12835, 380, 552, 11, 34, "Message"],
+Cell[13390, 393, 201, 5, 69, "Output"]
+}, Open  ]],
+Cell[13606, 401, 136, 1, 51, "Text"],
+Cell[13745, 404, 404, 7, 144, "Text"],
+Cell[14152, 413, 141, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[14318, 418, 397, 10, 45, "Input"],
+Cell[14718, 430, 87, 1, 45, "Output"]
+}, Open  ]],
+Cell[14820, 434, 108, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[14953, 439, 118, 2, 45, "Input"],
+Cell[15074, 443, 125, 2, 69, "Output"]
+}, Open  ]],
+Cell[15214, 448, 134, 1, 51, "Text"]
+}
+]
+*)
+

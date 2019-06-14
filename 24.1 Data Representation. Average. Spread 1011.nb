@@ -1,0 +1,2456 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     87428,       2455]
+NotebookOptionsPosition[     83199,       2306]
+NotebookOutlinePosition[     83587,       2323]
+CellTagsIndexPosition[     83544,       2320]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.769358468974498*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1 - 10 Data representations
+Represent the data by a stem-and-leaf plot, a histogram, and a boxplot:\
+\>", "Text",
+ CellChangeTimes->{{3.765903475012682*^9, 3.765903508889455*^9}, 
+   3.765904252537737*^9}],
+
+Cell["1.  Length of nails [mm] 19, 21, 19, 20, 19, 20, 21, 20", "Text",
+ CellChangeTimes->{{3.765903515313094*^9, 3.765903548735173*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ln", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "19", ",", "21", ",", "19", ",", "20", ",", "19", ",", "20", ",", "21", 
+    ",", "20"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765904786399173*^9, 3.7659047987242537`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "19", ",", "21", ",", "19", ",", "20", ",", "19", ",", "20", ",", "21", ",",
+    "20"}], "}"}]], "Output",
+ CellChangeTimes->{3.765904799855541*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "ln", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765904840490641*^9, 3.765904871880478*^9}, {
+  3.76590501507203*^9, 3.7659050197595673`*^9}, {3.765905182817121*^9, 
+  3.765905183927204*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, 18.9}, {2.1960569343063403`, 21.1}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            PolygonBox[
+             NCache[{{0.8039430656936596, 
+                Rational[41, 2]}, {1.1960569343063403`, 
+                Rational[41, 2]}, {1.1960569343063403`, 19}, {
+               0.8039430656936596, 19}}, {{0.8039430656936596, 20.5}, {
+               1.1960569343063403`, 20.5}, {1.1960569343063403`, 19}, {
+               0.8039430656936596, 19}}]], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, 20}, {
+               0.8039430656936597, 20}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             LineBox[
+              NCache[{{{1., 19}, {1., 19}}, {{1., 
+                  Rational[41, 2]}, {1., 21}}}, {{{1., 19}, {1., 19}}, {{1., 
+                 20.5}, {1., 21}}}]]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, 19}, {
+                0.9019715328468298, 19}}, {{1.0980284671531702`, 21}, {
+                0.9019715328468298, 21}}}]}, {}}]},
+         ImageSizeCache->{{144.5857864376269, 
+          187.4142135623731}, {-73.4142135623731, 63.41421356237311}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "21"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], 
+             FractionBox["41", "2"]}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], "20"}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], "19"}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], "19"}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 21}, {
+            Style["75%", Bold], 
+            Rational[41, 2]}, {
+            Style["median", Bold], 20}, {
+            Style["25%", Bold], 19}, {
+            Style["min", Bold], 19}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, 18.9},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{{3.765904847985313*^9, 3.765904872959179*^9}, 
+   3.7659050206606903`*^9, 3.765905184615432*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "ln", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905187587268*^9, 3.7659052142811537`*^9}, 
+   3.765905246381907*^9}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6649999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6649999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{19., 0.}, {20., 3}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{30.203431372549176`, 
+          115.59395424836634`}, {-88.45145000580969, 64.32657988612989}}],
+        StatusArea[#, 3]& ,
+        TagBoxNote->"3"],
+       StyleBox["3", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[3, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{20., 0.}, {21., 3}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{114.84395424836634`, 
+          200.2344771241833}, {-88.45145000580969, 64.32657988612989}}],
+        StatusArea[#, 3]& ,
+        TagBoxNote->"3"],
+       StyleBox["3", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[3, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{21., 0.}, {22., 2}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{199.4844771241833, 
+          284.8750000000002}, {-37.775440041829825`, 64.32657988612989}}],
+        StatusArea[#, 2]& ,
+        TagBoxNote->"2"],
+       StyleBox["2", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[2, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{18.94, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{19., 22.}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.765905200994493*^9, 3.765905215790555*^9}, 
+   3.7659052475231752`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Needs", "[", "\"\<StatisticalPlots`\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "ln", "]"}]], "Input",
+ CellChangeTimes->{{3.7659053783556147`*^9, 3.765905385645904*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"1\"\>", "\<\"999\"\>"},
+        {"\<\"2\"\>", "\<\"00011\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*RowBox[{\\\"10\\\"}]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765905387152337*^9}]
+}, Open  ]],
+
+Cell["\<\
+3.  Systolic blood pressure of 15 female patients of ages 20-22
+156, 158, 154, 133, 141, 130, 144, 137, 151, 146, 156, 138, 138, 149, 139\
+\>", "Text",
+ CellChangeTimes->{{3.765903598741527*^9, 3.765903665672577*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"sbp", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "156", ",", "158", ",", "154", ",", "133", ",", "141", ",", "130", ",", 
+    "144", ",", "137", ",", "151", ",", "146", ",", "156", ",", "138", ",", 
+    "138", ",", "149", ",", "139"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765905442253278*^9, 3.765905466033826*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "156", ",", "158", ",", "154", ",", "133", ",", "141", ",", "130", ",", 
+   "144", ",", "137", ",", "151", ",", "146", ",", "156", ",", "138", ",", 
+   "138", ",", "149", ",", "139"}], "}"}]], "Output",
+ CellChangeTimes->{3.765905467063691*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "sbp", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905490168865*^9, 3.765905492936432*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, 128.6}, {2.1960569343063403`, 159.4}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            PolygonBox[
+             NCache[{{0.8039430656936596, 
+                Rational[613, 4]}, {1.1960569343063403`, 
+                Rational[613, 4]}, {1.1960569343063403`, 138}, {
+               0.8039430656936596, 138}}, {{0.8039430656936596, 153.25}, {
+               1.1960569343063403`, 153.25}, {1.1960569343063403`, 138}, {
+               0.8039430656936596, 138}}]], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, 144}, {
+               0.8039430656936597, 144}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             LineBox[
+              NCache[{{{1., 138}, {1., 130}}, {{1., 
+                  Rational[613, 4]}, {1., 158}}}, {{{1., 138}, {1., 130}}, {{
+                 1., 153.25}, {1., 158}}}]]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, 130}, {
+                0.9019715328468298, 130}}, {{1.0980284671531702`, 158}, {
+                0.9019715328468298, 158}}}]}, {}}]},
+         ImageSizeCache->{{142.5857864376269, 
+          185.4142135623731}, {-74.4142135623731, 64.4142135623731}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "158"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], 
+             FractionBox["613", "4"]}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], "144"}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], "138"}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], "130"}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 158}, {
+            Style["75%", Bold], 
+            Rational[613, 4]}, {
+            Style["median", Bold], 144}, {
+            Style["25%", Bold], 138}, {
+            Style["min", Bold], 130}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, 128.6},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{3.765905494966774*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "sbp", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905512135746*^9, 3.7659055140233383`*^9}, {
+  3.765905580740575*^9, 3.7659055839317503`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6649999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6649999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{130., 0.}, {140., 6}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{17.49754901960773, 
+          107.79003267973849`}, {-92.97807838452455, 68.60466366331879}}],
+        StatusArea[#, 6]& ,
+        TagBoxNote->"6"],
+       StyleBox["6", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[6, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{140., 0.}, {150., 4}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{107.04003267973849`, 
+          197.33251633986924`}, {-39.367164368576766`, 68.60466366331879}}],
+        StatusArea[#, 4]& ,
+        TagBoxNote->"4"],
+       StyleBox["4", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[4, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{150., 0.}, {160., 5}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{196.58251633986924`, 286.875}, {-66.17262137655065,
+           68.60466366331879}}],
+        StatusArea[#, 5]& ,
+        TagBoxNote->"5"],
+       StyleBox["5", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[5, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{129.4, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{130., 160.}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.765905515574232*^9, {3.765905552720409*^9, 3.765905585106659*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "sbp", "]"}]], "Input",
+ CellChangeTimes->{{3.765905596343807*^9, 3.7659056044653273`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"1\"\>", "\<\"334444445555666\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*RowBox[{\\\"100\\\"}]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765905605412027*^9}]
+}, Open  ]],
+
+Cell["\<\
+5.  Weight of filled bags [g] in an automatic filling
+203, 199, 198, 201, 200, 201, 201\
+\>", "Text",
+ CellChangeTimes->{{3.765903693776204*^9, 3.765903727124927*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wb", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "203", ",", "199", ",", "198", ",", "201", ",", "200", ",", "201", ",", 
+    "201"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765905683787014*^9, 3.765905699597472*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "203", ",", "199", ",", "198", ",", "201", ",", "200", ",", "201", ",", 
+   "201"}], "}"}]], "Output",
+ CellChangeTimes->{3.765905700858563*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "wb", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905716268906*^9, 3.765905718715417*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, 197.75}, {2.1960569343063403`, 
+     203.25}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            PolygonBox[
+             
+             NCache[{{0.8039430656936596, 201}, {1.1960569343063403`, 201}, {
+               1.1960569343063403`, 
+                Rational[797, 4]}, {0.8039430656936596, 
+                Rational[797, 4]}}, {{0.8039430656936596, 201}, {
+               1.1960569343063403`, 201}, {1.1960569343063403`, 199.25}, {
+               0.8039430656936596, 199.25}}]], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, 201}, {
+               0.8039430656936597, 201}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             LineBox[
+              NCache[{{{1., 
+                  Rational[797, 4]}, {1., 198}}, {{1., 201}, {1., 203}}}, {{{
+                 1., 199.25}, {1., 198}}, {{1., 201}, {1., 203}}}]]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, 198}, {
+                0.9019715328468298, 198}}, {{1.0980284671531702`, 203}, {
+                0.9019715328468298, 203}}}]}, {}}]},
+         ImageSizeCache->{{142.5857864376269, 
+          185.4142135623731}, {-74.4142135623731, 64.4142135623731}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "203"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], "201"}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], "201"}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], 
+             FractionBox["797", "4"]}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], "198"}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 203}, {
+            Style["75%", Bold], 201}, {
+            Style["median", Bold], 201}, {
+            Style["25%", Bold], 
+            Rational[797, 4]}, {
+            Style["min", Bold], 198}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, 197.75},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{3.765905720233234*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "wb", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905773466008*^9, 3.765905775360434*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6649999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6649999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{198., 0.}, {200., 2}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{17.497549019608414`, 
+          107.79003267973894`}, {-12.561707360602995`, 68.60466366331862}}],
+        StatusArea[#, 2]& ,
+        TagBoxNote->"2"],
+       StyleBox["2", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[2, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{200., 0.}, {202., 4}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{107.04003267973894`, 
+          197.33251633986947`}, {-92.97807838452461, 68.60466366331862}}],
+        StatusArea[#, 4]& ,
+        TagBoxNote->"4"],
+       StyleBox["4", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[4, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{202., 0.}, {204., 1}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{196.58251633986947`, 286.875}, {27.64647815135781, 
+          68.60466366331862}}],
+        StatusArea[#, 1]& ,
+        TagBoxNote->"1"],
+       StyleBox["1", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[1, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{197.88, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{198., 204.}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.765905776366282*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "wb", "]"}]], "Input",
+ CellChangeTimes->{{3.765905793976955*^9, 3.7659058068727818`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"2\"\>", "\<\"0000000\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*RowBox[{\\\"100\\\"}]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.765905798932046*^9, 3.765905808245455*^9}}]
+}, Open  ]],
+
+Cell["\<\
+7.  Release time [sec] of a relay
+1.3, 1.2, 1.4, 1.5, 1.3, 1.3, 1.4, 1.1, 1.5, 1.4, 1.6, 1.3, 1.5, 1.1, 1.4, \
+1.2, 1.3, 1.5, 1.4, 1.4\
+\>", "Text",
+ CellChangeTimes->{{3.765903760252432*^9, 3.7659038207837687`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rt", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "1.3", ",", "1.2", ",", "1.4", ",", "1.5", ",", "1.3", ",", "1.3", ",", 
+    "1.4", ",", "1.1", ",", "1.5", ",", "1.4", ",", "1.6", ",", "1.3", ",", 
+    "1.5", ",", "1.1", ",", "1.4", ",", "1.2", ",", "1.3", ",", "1.5", ",", 
+    "1.4", ",", "1.4"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765905885056284*^9, 3.76590589689144*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "1.3`", ",", "1.2`", ",", "1.4`", ",", "1.5`", ",", "1.3`", ",", "1.3`", 
+   ",", "1.4`", ",", "1.1`", ",", "1.5`", ",", "1.4`", ",", "1.6`", ",", 
+   "1.3`", ",", "1.5`", ",", "1.1`", ",", "1.4`", ",", "1.2`", ",", "1.3`", 
+   ",", "1.5`", ",", "1.4`", ",", "1.4`"}], "}"}]], "Output",
+ CellChangeTimes->{3.7659058974496326`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "rt", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659059128827877`*^9, 3.765905914041132*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, 1.0750000000000002`}, {
+     2.1960569343063403`, 1.625}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            
+            PolygonBox[{{0.8039430656936596, 1.45}, {1.1960569343063403`, 
+             1.45}, {1.1960569343063403`, 1.3}, {0.8039430656936596, 
+             1.3}}], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, 1.4}, {0.8039430656936597, 
+              1.4}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             LineBox[{{{1., 1.3}, {1., 1.1}}, {{1., 1.45}, {1., 1.6}}}]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, 1.1}, {0.9019715328468298, 
+              1.1}}, {{1.0980284671531702`, 1.6}, {0.9019715328468298, 
+              1.6}}}]}, {}}]},
+         ImageSizeCache->{{139.5857864376269, 
+          183.4142135623731}, {-76.4142135623731, 64.4142135623731}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "1.6`"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], "1.45`"}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], "1.4`"}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], "1.3`"}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], "1.1`"}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 1.6}, {
+            Style["75%", Bold], 1.45}, {
+            Style["median", Bold], 1.4}, {
+            Style["25%", Bold], 1.3}, {
+            Style["min", Bold], 1.1}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, 1.0750000000000002`},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{3.765905915746669*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "rt", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765905949560915*^9, 3.7659059501434298`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6579999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6579999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{1., 0.}, {1.2, 2}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{26.360294117647072`, 92.5514705882353}, {
+          35.1801159589463, 67.27489123396394}}],
+        StatusArea[#, 2]& ,
+        TagBoxNote->"2"],
+       StyleBox["2", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[2, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{1.2, 0.}, {1.4, 7}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{91.8014705882353, 
+          157.99264705882354`}, {-43.18182222859781, 67.27489123396394}}],
+        StatusArea[#, 7]& ,
+        TagBoxNote->"7"],
+       StyleBox["7", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[7, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{1.4, 0.}, {1.6, 10}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{157.24264705882354`, 
+          223.43382352941182`}, {-90.19898514112428, 67.27489123396394}}],
+        StatusArea[#, 10]& ,
+        TagBoxNote->"10"],
+       StyleBox["10", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[10, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{1.6, 0.}, {1.8, 1}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{222.68382352941182`, 288.8750000000001}, {
+          50.85250359645512, 67.27489123396394}}],
+        StatusArea[#, 1]& ,
+        TagBoxNote->"1"],
+       StyleBox["1", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[1, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}, {}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.984, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{1., 1.8}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.765905951202553*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "rt", "]"}]], "Input",
+ CellChangeTimes->{{3.7659059679836893`*^9, 3.765905968470374*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"1\"\>", "\<\"11223333344444455556\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*RowBox[{\\\"1\\\"}]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765905969853705*^9}]
+}, Open  ]],
+
+Cell["\<\
+9.  Efficiency [%] of seven Voith Francis turbines of runner diameter 2.3 m \
+under a head range of 185 m
+91.8, 89.1, 89.9, 92.5, 90.7, 91.2, 91.0\
+\>", "Text",
+ CellChangeTimes->{{3.765903863102428*^9, 3.7659039222658253`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"eff", "=", 
+  RowBox[{"{", 
+   RowBox[{
+   "91.8", ",", "89.1", ",", "89.9", ",", "92.5", ",", "90.7", ",", "91.2", 
+    ",", "91.0"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7659060358486013`*^9, 3.765906047059638*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "91.8`", ",", "89.1`", ",", "89.9`", ",", "92.5`", ",", "90.7`", ",", 
+   "91.2`", ",", "91.`"}], "}"}]], "Output",
+ CellChangeTimes->{3.765906047508904*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "eff", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659060632911787`*^9, 3.765906064602697*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, 88.92999999999999}, {
+     2.1960569343063403`, 92.67}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            
+            PolygonBox[{{0.8039430656936596, 91.65}, {1.1960569343063403`, 
+             91.65}, {1.1960569343063403`, 90.10000000000001}, {
+             0.8039430656936596, 90.10000000000001}}], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, 91.}, {0.8039430656936597, 
+              91.}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1., 90.10000000000001}, {1., 89.1}}, {{1., 91.65}, {
+              1., 92.5}}}]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, 89.1}, {0.9019715328468298, 
+              89.1}}, {{1.0980284671531702`, 92.5}, {0.9019715328468298, 
+              92.5}}}]}, {}}]},
+         ImageSizeCache->{{137.5857864376269, 
+          181.4142135623731}, {-77.4142135623731, 65.4142135623731}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "92.5`"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], "91.65`"}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], "91.`"}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], 
+             "90.10000000000001`"}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], "89.1`"}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 92.5}, {
+            Style["75%", Bold], 91.65}, {
+            Style["median", Bold], 91.}, {
+            Style["25%", Bold], 90.10000000000001}, {
+            Style["min", Bold], 89.1}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, 88.92999999999999},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{3.765906066053838*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "eff", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765906088161731*^9, 3.7659060892255707`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6649999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6649999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{88., 0.}, {90., 2}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{17.575980392156907`, 
+          109.17565359477112`}, {-12.261513307473095`, 70.0788193372357}}],
+        StatusArea[#, 2]& ,
+        TagBoxNote->"2"],
+       StyleBox["2", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[2, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{90., 0.}, {92., 4}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{108.42565359477112`, 
+          200.0253267973858}, {-93.85184595218189, 70.0788193372357}}],
+        StatusArea[#, 4]& ,
+        TagBoxNote->"4"],
+       StyleBox["4", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[4, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{92., 0.}, {94., 1}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{199.2753267973858, 290.875}, {28.533653014881303`, 
+          70.0788193372357}}],
+        StatusArea[#, 1]& ,
+        TagBoxNote->"1"],
+       StyleBox["1", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[1, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{87.88, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{88., 94.}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.7659060906444073`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "eff", "]"}]], "Input",
+ CellChangeTimes->{{3.765906108248521*^9, 3.765906109240312*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"8\"\>", "\<\"9\"\>"},
+        {"\<\"9\"\>", "\<\"011122\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*RowBox[{\\\"10\\\"}]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765906110817913*^9}]
+}, Open  ]],
+
+Cell["10.  -0.51, 0.12, -0.47, 0.95, 0.25, -0.18, -0.54", "Text",
+ CellChangeTimes->{{3.765903955498089*^9, 3.7659039861583157`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"nn", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"-", "0.51"}], ",", "0.12", ",", 
+    RowBox[{"-", "0.47"}], ",", "0.95", ",", "0.25", ",", 
+    RowBox[{"-", "0.18"}], ",", 
+    RowBox[{"-", "0.54"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.765906137698489*^9, 3.765906149422331*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "0.51`"}], ",", "0.12`", ",", 
+   RowBox[{"-", "0.47`"}], ",", "0.95`", ",", "0.25`", ",", 
+   RowBox[{"-", "0.18`"}], ",", 
+   RowBox[{"-", "0.54`"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76590615031531*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bwc", "=", 
+  RowBox[{"BoxWhiskerChart", "[", 
+   RowBox[{
+    RowBox[{"{", "nn", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765906188740158*^9, 3.765906189914721*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {Opacity[0], 
+    PointBox[{{-0.19605693430634064`, -0.6145}, {2.1960569343063403`, 
+     1.0245}}]}, 
+   {RGBColor[0.982864, 0.7431472, 0.3262672], {}, 
+    {RGBColor[0.982864, 0.7431472, 0.3262672], 
+     {RGBColor[0.982864, 0.7431472, 0.3262672], 
+      TagBox[
+       TooltipBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          GraphicsGroupBox[{Antialiasing -> False, 
+            
+            PolygonBox[{{0.8039430656936596, 0.2175}, {1.1960569343063403`, 
+             0.2175}, {1.1960569343063403`, -0.5}, {
+             0.8039430656936596, -0.5}}], {}, {{}, {}}, {}, {
+             GrayLevel[0], 
+             GrayLevel[1], 
+             
+             LineBox[{{1.1960569343063403`, -0.18}, {
+              0.8039430656936597, -0.18}}]}, {}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1., -0.5}, {1., -0.54}}, {{1., 0.2175}, {1., 
+              0.95}}}]}, {
+             GrayLevel[0], 
+             GrayLevel[0.5], 
+             
+             LineBox[{{{1.0980284671531702`, -0.54}, {
+              0.9019715328468298, -0.54}}, {{1.0980284671531702`, 0.95}, {
+              0.9019715328468298, 0.95}}}]}, {}}]},
+         ImageSizeCache->{{145.5857864376269, 
+          187.4142135623731}, {-72.4142135623731, 63.41421356237311}}],
+        StyleBox[
+         TagBox[
+          GridBox[{{
+             StyleBox["\"max\"", Bold, StripOnInput -> False], "0.95`"}, {
+             StyleBox["\"75%\"", Bold, StripOnInput -> False], "0.2175`"}, {
+             StyleBox["\"median\"", Bold, StripOnInput -> False], 
+             RowBox[{"-", "0.18`"}]}, {
+             StyleBox["\"25%\"", Bold, StripOnInput -> False], 
+             RowBox[{"-", "0.5`"}]}, {
+             StyleBox["\"min\"", Bold, StripOnInput -> False], 
+             RowBox[{"-", "0.54`"}]}}, 
+           GridBoxAlignment -> {"Columns" -> {Center, ".", {Left}}}, 
+           AutoDelete -> False, GridBoxDividers -> {"Columns" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}, "Rows" -> {
+               Directive[
+                GrayLevel[0.3]], {
+                Directive[
+                 GrayLevel[0.3]]}, 
+               Directive[
+                GrayLevel[0.3]]}}, 
+           GridBoxFrame -> {
+            "ColumnsIndexed" -> {{{1, -1}, {1, -1}} -> GrayLevel[0]}}, 
+           GridBoxItemSize -> {
+            "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}, BaseStyle -> 
+           Directive[
+             AbsoluteThickness[1], 
+             Dashing[{}]]], "Grid"], {}, StripOnInput -> False]],
+       Annotation[#, 
+        Style[
+         Grid[{{
+            Style["max", Bold], 0.95}, {
+            Style["75%", Bold], 0.2175}, {
+            Style["median", Bold], -0.18}, {
+            Style["25%", Bold], -0.5}, {
+            Style["min", Bold], -0.54}}, Dividers -> {{
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}, {
+             Directive[
+              GrayLevel[0.3]], {
+              Directive[
+               GrayLevel[0.3]]}, 
+             Directive[
+              GrayLevel[0.3]]}}, Alignment -> {{Center, ".", {Left}}}, Frame -> 
+          GrayLevel[0], BaseStyle -> Directive[
+            AbsoluteThickness[1], 
+            Dashing[{}]]], {}], 
+        "Tooltip"]& ]}}, {}, {}}, {{{{{{}, {}}, {}}, {}}, {}}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{False, False},
+  AxesLabel->{None, None},
+  AxesOrigin->{0.7843373722630256, -0.6145},
+  Frame->True,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {{{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}, {{1., 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+       FormBox[
+        InterpretationBox[
+         StyleBox[
+          GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+          "CacheGraphics" -> False], 
+         Spacer[0]], TraditionalForm], {0, 0}}}}},
+  GridLines->Automatic,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{{{1., 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0.008, 0}}, {0.8039430656936596, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}, {1.1960569343063403`, 
+      FormBox[
+       InterpretationBox[
+        StyleBox[
+         GraphicsBox[{}, ImageSize -> {0, 0}, BaselinePosition -> Baseline], 
+         "CacheGraphics" -> False], 
+        Spacer[0]], TraditionalForm], {0, 0}}}, Automatic}]], "Output",
+ CellChangeTimes->{3.765906191059093*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"his", "=", 
+  RowBox[{"Histogram", "[", 
+   RowBox[{
+    RowBox[{"{", "nn", "}"}], ",", 
+    RowBox[{"FrameLabel", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"GridLines", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.76590620784343*^9, 3.765906209025844*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {RGBColor[0.987148, 0.8073604000000001, 0.49470040000000004`], EdgeForm[{
+    Opacity[0.6719999999999999], Thickness[Small]}], {}, 
+    {RGBColor[0.97858, 0.678934, 0.157834], Opacity[0.5], EdgeForm[{Opacity[
+     0.6719999999999999], Thickness[Small]}], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{-1., 0.}, {0., 4}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{17.536764705882348`, 
+          153.58088235294116`}, {-92.91496216835321, 69.8417415002773}}],
+        StatusArea[#, 4]& ,
+        TagBoxNote->"4"],
+       StyleBox["4", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[4, {}], "Tooltip"]& ], 
+     TagBox[
+      TooltipBox[
+       TagBox[
+        DynamicBox[{
+          FEPrivate`If[
+           CurrentValue["MouseOver"], 
+           EdgeForm[{
+             GrayLevel[0.5], 
+             AbsoluteThickness[1.5], 
+             Opacity[0.66]}], {}, {}], 
+          RectangleBox[{0., 0.}, {1., 3}, "RoundingRadius" -> 0]},
+         ImageSizeCache->{{152.83088235294116`, 
+          288.875}, {-52.413286251195586`, 69.8417415002773}}],
+        StatusArea[#, 3]& ,
+        TagBoxNote->"3"],
+       StyleBox["3", {}, StripOnInput -> False]],
+      Annotation[#, 
+       Style[3, {}], "Tooltip"]& ]}, {}, {}}, {{{}, {}}, {}}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{-1.04, 0.},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{Automatic, Automatic},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200,
+  PlotRange->{{-1., 1.}, {All, All}},
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.7659062100817347`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"StemLeafPlot", "[", "nn", "]"}]], "Input",
+ CellChangeTimes->{{3.765906224650323*^9, 3.765906225648788*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     TagBox[GridBox[{
+        {"\<\"Stem\"\>", "\<\"Leaves\"\>"},
+        {"\<\"-5\"\>", "\<\"41\"\>"},
+        {"\<\"-4\"\>", "\<\"7\"\>"},
+        {"\<\"-1\"\>", "\<\"8\"\>"},
+        {"\<\"1\"\>", "\<\"2\"\>"},
+        {"\<\"2\"\>", "\<\"5\"\>"},
+        {"\<\"9\"\>", "\<\"5\"\>"}
+       },
+       AutoDelete->False,
+       GridBoxAlignment->{
+        "Columns" -> {Right, Left, {Center}}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {{Top}}, "RowsIndexed" -> {}},
+       GridBoxDividers->{
+        "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+         "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+       GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+       
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[1.0499999999999998`]}, 
+           Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}, "RowsIndexed" -> {}}],
+      "Grid"]},
+    {"\<\"Stem units: \\!\\(\\*FractionBox[\\\"1\\\", \\\"10\\\"]\\)\"\>"}
+   },
+   AutoDelete->False,
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[0.5599999999999999]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.8]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765906226935741*^9}]
+}, Open  ]],
+
+Cell["\<\
+11 - 16 Average and spread
+Find the mean and compare it with the median. Find the standard deviation and \
+compare it with the interquartile range.\
+\>", "Text",
+ CellChangeTimes->{{3.765903991327265*^9, 3.765904030427775*^9}}],
+
+Cell["11.  For the data in problem 1.", "Text",
+ CellChangeTimes->{{3.7659040343650827`*^9, 3.765904044962913*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Mean\>\"", ",", "\"\<Median\>\"", ",", 
+        "\"\<Standard Deviation\>\"", ",", "\"\<Interquartile Range\>\""}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Mean", "[", "ln", "]"}], ",", 
+        RowBox[{"Median", "[", "ln", "]"}], ",", 
+        RowBox[{"StandardDeviation", "[", "ln", "]"}], ",", 
+        RowBox[{"InterquartileRange", "[", "ln", "]"}]}], "}"}]}], "}"}], 
+    "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7659064063311157`*^9, 3.765906528985463*^9}, {
+  3.76590656567376*^9, 3.7659066218135147`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Mean\"\>", "\<\"Median\"\>", "\<\"Standard Deviation\"\>", \
+"\<\"Interquartile Range\"\>"},
+    {"19.875`", "20.`", "0.8345229603962802`", "1.5`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.76590646132938*^9, 3.765906495713355*^9, 
+  3.7659065298211107`*^9, 3.765906580419437*^9, 3.765906623706682*^9}]
+}, Open  ]],
+
+Cell["13.  For the medical data in problem 3.", "Text",
+ CellChangeTimes->{{3.765904048532251*^9, 3.765904061625792*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Mean\>\"", ",", "\"\<Median\>\"", ",", 
+        "\"\<Standard Deviation\>\"", ",", "\"\<Interquartile Range\>\""}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Mean", "[", "sbp", "]"}], ",", 
+        RowBox[{"Median", "[", "sbp", "]"}], ",", 
+        RowBox[{"StandardDeviation", "[", "sbp", "]"}], ",", 
+        RowBox[{"InterquartileRange", "[", "sbp", "]"}]}], "}"}]}], "}"}], 
+    "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7659066708205967`*^9, 3.7659066975552473`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Mean\"\>", "\<\"Median\"\>", "\<\"Standard Deviation\"\>", \
+"\<\"Interquartile Range\"\>"},
+    {"144.66666666666666`", "144.`", "8.973505977253792`", "15.25`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765906699102392*^9}]
+}, Open  ]],
+
+Cell["15.  For the release times in problem 7.", "Text",
+ CellChangeTimes->{{3.765904088154613*^9, 3.765904101031642*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Mean\>\"", ",", "\"\<Median\>\"", ",", 
+        "\"\<Standard Deviation\>\"", ",", "\"\<Interquartile Range\>\""}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Mean", "[", "rt", "]"}], ",", 
+        RowBox[{"Median", "[", "rt", "]"}], ",", 
+        RowBox[{"StandardDeviation", "[", "rt", "]"}], ",", 
+        RowBox[{"InterquartileRange", "[", "rt", "]"}]}], "}"}]}], "}"}], 
+    "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76590672921795*^9, 3.765906745159507*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Mean\"\>", "\<\"Median\"\>", "\<\"Standard Deviation\"\>", \
+"\<\"Interquartile Range\"\>"},
+    {"1.355`", "1.4`", "0.13562719801759993`", "0.1499999999999999`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765906747161886*^9}]
+}, Open  ]],
+
+Cell["\<\
+17.  Outlier, reduced data. Calculate s for the data 4, 1, 3, 10, 2. Then \
+reduce the data by deleting the outlier and calculate s. Comment.\
+\>", "Text",
+ CellChangeTimes->{{3.765904103968713*^9, 3.76590414445328*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"N", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Standard Deviation\>\"", ",", "\"\<Stand Dev w/o Outlier\>\""}], 
+       "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"StandardDeviation", "[", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "1", ",", "3", ",", "10", ",", "2"}], "}"}], 
+         "]"}], ",", 
+        RowBox[{"StandardDeviation", "[", 
+         RowBox[{"{", 
+          RowBox[{"4", ",", "1", ",", "3", ",", "2"}], "}"}], "]"}]}], 
+       "}"}]}], "}"}], "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76590694540905*^9, 3.7659070794482203`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"Standard Deviation\"\>", "\<\"Stand Dev w/o Outlier\"\>"},
+    {"3.5355339059327373`", "1.2909944487358056`"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{{3.765907050692775*^9, 3.765907080359496*^9}}]
+}, Open  ]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[492, 17, 73, 1, 45, "Input"],
+Cell[568, 20, 215, 5, 86, "Text"],
+Cell[786, 27, 173, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[984, 33, 242, 6, 45, "Input"],
+Cell[1229, 41, 190, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1456, 51, 464, 10, 45, "Input"],
+Cell[1923, 63, 6738, 170, 198, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8698, 238, 387, 9, 45, "Input"],
+Cell[9088, 249, 2797, 78, 205, "Output"]
+}, Open  ]],
+Cell[11900, 330, 82, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[12007, 335, 134, 2, 45, "Input"],
+Cell[12144, 339, 1577, 40, 140, "Output"]
+}, Open  ]],
+Cell[13736, 382, 263, 5, 110, "Text"],
+Cell[CellGroupData[{
+Cell[14024, 391, 338, 7, 45, "Input"],
+Cell[14365, 400, 286, 6, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14688, 411, 366, 8, 45, "Input"],
+Cell[15057, 421, 6701, 169, 200, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21795, 595, 413, 9, 45, "Input"],
+Cell[22211, 606, 2794, 78, 215, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25042, 689, 135, 2, 45, "Input"],
+Cell[25180, 693, 1550, 39, 112, "Output"]
+}, Open  ]],
+Cell[26745, 735, 213, 5, 110, "Text"],
+Cell[CellGroupData[{
+Cell[26983, 744, 236, 6, 45, "Input"],
+Cell[27222, 752, 186, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[27445, 762, 365, 8, 45, "Input"],
+Cell[27813, 772, 6724, 171, 200, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34574, 948, 359, 8, 45, "Input"],
+Cell[34936, 958, 2747, 77, 215, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37720, 1040, 134, 2, 45, "Input"],
+Cell[37857, 1044, 1566, 39, 112, "Output"]
+}, Open  ]],
+Cell[39438, 1086, 262, 6, 110, "Text"],
+Cell[CellGroupData[{
+Cell[39725, 1096, 401, 8, 75, "Input"],
+Cell[40129, 1106, 372, 7, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40538, 1118, 367, 8, 45, "Input"],
+Cell[40908, 1128, 6349, 162, 203, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47294, 1295, 361, 8, 45, "Input"],
+Cell[47658, 1305, 3360, 95, 210, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[51055, 1405, 134, 2, 45, "Input"],
+Cell[51192, 1409, 1553, 39, 112, "Output"]
+}, Open  ]],
+Cell[52760, 1451, 274, 6, 110, "Text"],
+Cell[CellGroupData[{
+Cell[53059, 1461, 246, 6, 45, "Input"],
+Cell[53308, 1469, 199, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[53544, 1479, 368, 8, 45, "Input"],
+Cell[53915, 1489, 6473, 165, 205, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[60425, 1659, 362, 8, 45, "Input"],
+Cell[60790, 1669, 2735, 77, 217, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[63562, 1751, 133, 2, 45, "Input"],
+Cell[63698, 1755, 1576, 40, 140, "Output"]
+}, Open  ]],
+Cell[65289, 1798, 169, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[65483, 1804, 314, 8, 45, "Input"],
+Cell[65800, 1814, 268, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[66105, 1826, 365, 8, 45, "Input"],
+Cell[66473, 1836, 6478, 167, 196, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72988, 2008, 358, 8, 45, "Input"],
+Cell[73349, 2018, 2116, 59, 216, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[75502, 2082, 132, 2, 45, "Input"],
+Cell[75637, 2086, 1733, 44, 266, "Output"]
+}, Open  ]],
+Cell[77385, 2133, 237, 5, 120, "Text"],
+Cell[77625, 2140, 151, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[77801, 2146, 750, 20, 104, "Input"],
+Cell[78554, 2168, 511, 11, 92, "Output"]
+}, Open  ]],
+Cell[79080, 2182, 157, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[79262, 2188, 706, 19, 104, "Input"],
+Cell[79971, 2209, 433, 10, 92, "Output"]
+}, Open  ]],
+Cell[80419, 2222, 158, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[80602, 2228, 697, 19, 104, "Input"],
+Cell[81302, 2249, 434, 10, 92, "Output"]
+}, Open  ]],
+Cell[81751, 2262, 266, 5, 110, "Text"],
+Cell[CellGroupData[{
+Cell[82042, 2271, 733, 21, 104, "Input"],
+Cell[82778, 2294, 405, 9, 92, "Output"]
+}, Open  ]]
+}
+]
+*)
+

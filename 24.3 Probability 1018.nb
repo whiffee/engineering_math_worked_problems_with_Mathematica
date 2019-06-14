@@ -1,0 +1,951 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     29251,        950]
+NotebookOptionsPosition[     24088,        769]
+NotebookOutlinePosition[     24476,        786]
+CellTagsIndexPosition[     24433,        783]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{
+  3.765980970469722*^9, 3.765981021669642*^9, 3.769374252045649*^9, {
+   3.769374308094747*^9, 3.769374308476469*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1.  In rolling 3 fair dice, what is the probability of obtaining a sum not \
+greater than 16?\
+\>", "Text",
+ CellChangeTimes->{{3.765981086007369*^9, 3.765981114916975*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "I got help from the post of Zihu Guo on ",
+ StyleBox["https://mathematica.stackexchange.com/questions/86026/rolling-a-\
+sum-of-6-or-less-on-3-dice",
+  FontSize->14,
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.7659820800139008`*^9, 3.7659821079794407`*^9}, {
+  3.7659822168641376`*^9, 3.765982219216257*^9}, {3.7659829125804443`*^9, 
+  3.7659829484178667`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"allpos", "=", 
+   RowBox[{"Tuples", "[", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"Range", "[", "6", "]"}], ",", 
+      RowBox[{"Range", "[", "6", "]"}], ",", 
+      RowBox[{"Range", "[", "6", "]"}]}], "}"}], "]"}]}], ";"}], "\n", 
+ RowBox[{
+  RowBox[{"select", "=", 
+   RowBox[{"Cases", "[", 
+    RowBox[{"allpos", ",", 
+     RowBox[{"a_", "/;", 
+      RowBox[{
+       RowBox[{"Total", "[", "a", "]"}], "\[LessEqual]", "16"}]}]}], "]"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.7659827796907377`*^9, 3.765982791088148*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"prob", "=", 
+  RowBox[{
+   RowBox[{"Length", "[", "select", "]"}], "/", 
+   RowBox[{"Length", "[", "allpos", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.765982810418344*^9, 3.765982810427298*^9}}],
+
+Cell[BoxData[
+ FractionBox["53", "54"]], "Output",
+ CellChangeTimes->{3.765982813422694*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.765982818050776*^9, 3.765982822709391*^9}}],
+
+Cell[BoxData["0.9814814814814815`"], "Output",
+ CellChangeTimes->{3.7659828233838587`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+3.  Three screws are drawn at random from a lot of 100 screws, 10 of which \
+are defective. Find the probability of the event that all 3 screws drawn are \
+nondefective, assuming that we draw (a) with replacement, (b) without \
+replacement.\
+\>", "Text",
+ CellChangeTimes->{{3.765981120772317*^9, 3.765981184736494*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+(a) In the first part I replace after drawing, then draw again. So the \
+probability will be as follows:\
+\>", "Text",
+ CellChangeTimes->{{3.765988668931213*^9, 3.765988710695879*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"MultivariateHypergeometricDistribution", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{"{", 
+     RowBox[{"90", ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659886173209057`*^9, 3.765988618469584*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MultivariateHypergeometricDistribution", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"90", ",", "10"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.765988619709972*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "1"}], "&&", 
+    RowBox[{"y", "\[Equal]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.765988634613421*^9, 3.765988634828483*^9}}],
+
+Cell[BoxData[
+ FractionBox["9", "10"]], "Output",
+ CellChangeTimes->{3.765988636489819*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["%", "3"]], "Input",
+ CellChangeTimes->{{3.7659886474802103`*^9, 3.765988650987691*^9}}],
+
+Cell[BoxData[
+ FractionBox["729", "1000"]], "Output",
+ CellChangeTimes->{3.765988652356306*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["(b) In the second part I draw without replacement.", "Text",
+ CellChangeTimes->{{3.765988726102825*^9, 3.765988745189707*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"MultivariateHypergeometricDistribution", "[", 
+   RowBox[{"3", ",", 
+    RowBox[{"{", 
+     RowBox[{"90", ",", "10"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659882938828487`*^9, 3.765988311784314*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MultivariateHypergeometricDistribution", "[", 
+  RowBox[{"3", ",", 
+   RowBox[{"{", 
+    RowBox[{"90", ",", "10"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.76598831475441*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "3"}], "&&", 
+    RowBox[{"y", "\[Equal]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.765988403116315*^9, 3.765988407986744*^9}, {
+  3.765988472652008*^9, 3.7659884778552237`*^9}}],
+
+Cell[BoxData[
+ FractionBox["178", "245"]], "Output",
+ CellChangeTimes->{3.765988409276217*^9, 3.765988479295418*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.765988416335367*^9, 3.765988422491034*^9}}],
+
+Cell[BoxData["0.726530612244898`"], "Output",
+ CellChangeTimes->{3.765988423313682*^9, 3.765988483993022*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+5.  If a box contains 10 left-handed and 20 right-handed screws, what is the \
+probability of obtaining at least one right-handed screw in drawing 2 screws \
+with replacement?\
+\>", "Text",
+ CellChangeTimes->{{3.7659812241042433`*^9, 3.765981264614176*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"MultivariateHypergeometricDistribution", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{"{", 
+     RowBox[{"10", ",", "20"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659889112695913`*^9, 3.765988926754962*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MultivariateHypergeometricDistribution", "[", 
+  RowBox[{"1", ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "20"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.765988928619755*^9, 3.76598900829212*^9}]
+}, Open  ]],
+
+Cell["\<\
+I check the probability of getting a rh screw the first time.\
+\>", "Text",
+ CellChangeTimes->{{3.765989237927891*^9, 3.7659892547346897`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "0"}], "&&", 
+    RowBox[{"y", "\[Equal]", "1"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.765988975249606*^9, 3.765989012805933*^9}}],
+
+Cell[BoxData[
+ FractionBox["2", "3"]], "Output",
+ CellChangeTimes->{{3.7659889965479116`*^9, 3.765989014058764*^9}}]
+}, Open  ]],
+
+Cell["And the probability of getting rh screws both times.", "Text",
+ CellChangeTimes->{{3.765989259378882*^9, 3.7659892761734962`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["%", "2"]], "Input",
+ CellChangeTimes->{{3.765989200238782*^9, 3.765989202946075*^9}}],
+
+Cell[BoxData[
+ FractionBox["4", "9"]], "Output",
+ CellChangeTimes->{3.765989204003421*^9}]
+}, Open  ]],
+
+Cell["\<\
+Since I only need to get one rh out of two tries, my chances of getting at \
+least one are double that.\
+\>", "Text",
+ CellChangeTimes->{{3.765989282892914*^9, 3.76598932023483*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", " ", "2"}]], "Input",
+ CellChangeTimes->{{3.765989209277968*^9, 3.7659892102896137`*^9}}],
+
+Cell[BoxData[
+ FractionBox["8", "9"]], "Output",
+ CellChangeTimes->{3.76598921114959*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+7.  Under what conditions will it make practically no difference whether we \
+sample with or without replacement?\
+\>", "Text",
+ CellChangeTimes->{{3.765981267246793*^9, 3.765981295797058*^9}, {
+  3.7663212467613583`*^9, 3.7663212471668053`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+If the sample draw is small compared with the sample from which it is drawn.\
+\>", "Text",
+ CellChangeTimes->{{3.7659895112162037`*^9, 3.765989537077405*^9}}],
+
+Cell["\<\
+9.  If we inspect photocopy paper by randomly drawing 5 sheets without \
+replacement from every pack of 500, what is the probability of getting 5 \
+clean sheets although 0.4% of the sheets contain spots?\
+\>", "Text",
+ CellChangeTimes->{{3.7659813284211197`*^9, 3.7659813812905293`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"MultivariateHypergeometricDistribution", "[", 
+   RowBox[{"5", ",", 
+    RowBox[{"{", 
+     RowBox[{"498", ",", "2"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659895912037354`*^9, 3.76598964009513*^9}, {
+  3.76598977801672*^9, 3.765989782846641*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MultivariateHypergeometricDistribution", "[", 
+  RowBox[{"5", ",", 
+   RowBox[{"{", 
+    RowBox[{"498", ",", "2"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.765989645077118*^9, 3.765989790406784*^9, 
+  3.7659898646065283`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "5"}], "&&", 
+    RowBox[{"y", "\[Equal]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.765989662671392*^9, 3.765989667341544*^9}}],
+
+Cell[BoxData[
+ FractionBox["24453", "24950"]], "Output",
+ CellChangeTimes->{3.765989668942622*^9, 3.765989795024077*^9, 
+  3.765989866947542*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.765989673032291*^9, 3.765989676102448*^9}}],
+
+Cell[BoxData["0.9800801603206413`"], "Output",
+ CellChangeTimes->{3.7659896768557577`*^9, 3.765989798511138*^9, 
+  3.765989870084661*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+11.  A batch of 200 iron rods consists of 50 oversized rods, 50 undersized \
+rods, and 100 rods of the desired length. If two rods are drawn at random \
+without replacement, what is the probability of obtaining (a) two rods of the \
+desired length, (b) exactly one of the desired length, (c) none of the \
+desired length?\
+\>", "Text",
+ CellChangeTimes->{{3.765981387481905*^9, 3.765981444512381*^9}, {
+  3.765981475848851*^9, 3.765981502534878*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"d", "=", 
+  RowBox[{"MultivariateHypergeometricDistribution", "[", 
+   RowBox[{"2", ",", 
+    RowBox[{"{", 
+     RowBox[{"100", ",", "50", ",", "50"}], "}"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765989925127254*^9, 3.765989939524617*^9}}],
+
+Cell[BoxData[
+ RowBox[{"MultivariateHypergeometricDistribution", "[", 
+  RowBox[{"2", ",", 
+   RowBox[{"{", 
+    RowBox[{"100", ",", "50", ",", "50"}], "}"}]}], "]"}]], "Output",
+ CellChangeTimes->{3.765989945605953*^9, 3.7659902688879423`*^9, 
+  3.76599083626543*^9}]
+}, Open  ]],
+
+Cell["(a) The probability of getting both rods the correct length.", "Text",
+ CellChangeTimes->{{3.7659899641643143`*^9, 3.7659899655630503`*^9}, {
+  3.765991215221278*^9, 3.765991238474666*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "2"}], "&&", 
+    RowBox[{"y", "\[Equal]", "0"}], "&&", 
+    RowBox[{"z", "\[Equal]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7659900366150093`*^9, 3.7659900753485518`*^9}}],
+
+Cell[BoxData[
+ FractionBox["99", "398"]], "Output",
+ CellChangeTimes->{3.765990096955132*^9, 3.765990271846262*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.765990101480834*^9, 3.76599010336467*^9}}],
+
+Cell[BoxData["0.24874371859296482`"], "Output",
+ CellChangeTimes->{3.7659901041575127`*^9, 3.765990274442061*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+(b) The probability of getting exactly one right and one wrong length. The y \
+cache and z cache are the same number, so I can just double the likelihood of \
+the trial.\
+\>", "Text",
+ CellChangeTimes->{{3.765990110762487*^9, 3.765990112346653*^9}, {
+  3.765990191746641*^9, 3.765990200061605*^9}, {3.765991249675456*^9, 
+  3.7659913346214457`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"x", "\[Equal]", "1"}], "&&", 
+    RowBox[{"y", "\[Equal]", "1"}], "&&", 
+    RowBox[{"z", "\[Equal]", "0"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Distributed]", "d"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.765990227077814*^9, 3.76599022763608*^9}, 
+   3.765990370533739*^9, {3.765990820220049*^9, 3.765990825338188*^9}}],
+
+Cell[BoxData[
+ FractionBox["50", "199"]], "Output",
+ CellChangeTimes->{{3.76599022954637*^9, 3.7659902496901207`*^9}, 
+   3.76599028006977*^9, {3.76599034344417*^9, 3.765990372284771*^9}, {
+   3.765990827254328*^9, 3.765990841685704*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.765990876940823*^9, 3.765990879728202*^9}}],
+
+Cell[BoxData["0.25125628140703515`"], "Output",
+ CellChangeTimes->{3.7659908807373247`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"2", " ", "%"}]], "Input",
+ CellChangeTimes->{{3.765990928721477*^9, 3.7659909308039207`*^9}}],
+
+Cell[BoxData["0.5025125628140703`"], "Output",
+ CellChangeTimes->{3.765990932039495*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+(c) The unfruitful draw has three possible aspects, all of which need to be \
+checked.\
+\>", "Text",
+ CellChangeTimes->{{3.765990958506237*^9, 3.7659909715054293`*^9}, {
+  3.7659913461485043`*^9, 3.7659914048335543`*^9}, {3.76600800780881*^9, 
+  3.7660080117580957`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pa", "=", 
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "\[Equal]", "0"}], "&&", 
+     RowBox[{"y", "\[Equal]", "1"}], "&&", 
+     RowBox[{"z", "\[Equal]", "1"}]}], ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Distributed]", "d"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659910432629633`*^9, 3.765991051549005*^9}, {
+  3.765991121353674*^9, 3.765991122713277*^9}}],
+
+Cell[BoxData[
+ FractionBox["25", "199"]], "Output",
+ CellChangeTimes->{3.76599105289159*^9, 3.7659911236178226`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pb", "=", 
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "\[Equal]", "0"}], "&&", 
+     RowBox[{"y", "\[Equal]", "2"}], "&&", 
+     RowBox[{"z", "\[Equal]", "0"}]}], ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Distributed]", "d"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.7659910886524353`*^9, 3.765991092810643*^9}, {
+  3.7659911271385098`*^9, 3.765991127856876*^9}}],
+
+Cell[BoxData[
+ FractionBox["49", "796"]], "Output",
+ CellChangeTimes->{3.7659910939142227`*^9, 3.765991128546535*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pc", "=", 
+  RowBox[{"Probability", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"x", "\[Equal]", "0"}], "&&", 
+     RowBox[{"y", "\[Equal]", "0"}], "&&", 
+     RowBox[{"z", "\[Equal]", "2"}]}], ",", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"x", ",", "y", ",", "z"}], "}"}], "\[Distributed]", "d"}]}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.765991100939692*^9, 3.765991132864786*^9}}],
+
+Cell[BoxData[
+ FractionBox["49", "796"]], "Output",
+ CellChangeTimes->{{3.765991106703727*^9, 3.76599113347659*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"pa", "+", "pb", "+", "pc"}], "]"}]], "Input",
+ CellChangeTimes->{{3.765991135545299*^9, 3.765991144097341*^9}}],
+
+Cell[BoxData["0.24874371859296482`"], "Output",
+ CellChangeTimes->{3.765991144912911*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+13.  A pressure control apparatus contains 3 electronic tubes. The apparatus \
+will not work unless all tubes are operative. If the probability of failure \
+of each tube during some interval of time is 0.04, what is the corresponding \
+probability of failure of the apparatus?\
+\>", "Text",
+ CellChangeTimes->{{3.7659815078142157`*^9, 3.765981572628641*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "Using the help of mathman in post at ",
+ StyleBox["https://www.physicsforums.com/threads/probability-over-a-period-of-\
+time.215972/. ",
+  FontSize->14,
+  FontSlant->"Italic"]
+}], "Text",
+ CellChangeTimes->{{3.765997318819442*^9, 3.765997340094708*^9}, {
+  3.765997839079138*^9, 3.7659978417509813`*^9}}],
+
+Cell[TextData[{
+ "If the probability of one burned tube over the time period of interest is \
+0.04 then the probability of that tube ",
+ StyleBox["not",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " failing is"
+}], "Text",
+ CellChangeTimes->{{3.765997846638811*^9, 3.7659979048610687`*^9}, {
+  3.765997979722846*^9, 3.765997981842703*^9}, {3.765998106008169*^9, 
+  3.765998108206799*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "0.04"}]], "Input",
+ CellChangeTimes->{{3.765997754861238*^9, 3.765997763025531*^9}}],
+
+Cell[BoxData["0.96`"], "Output",
+ CellChangeTimes->{3.765997763992701*^9, 3.765998227420601*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "and since all three tubes have the same chance of failing, the chance of \
+the three of them ",
+ StyleBox["not",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " failing over the time period of interest is"
+}], "Text",
+ CellChangeTimes->{{3.765997926172208*^9, 3.765997962987279*^9}, {
+  3.765998023521267*^9, 3.7659980309692574`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["%", "3"]], "Input",
+ CellChangeTimes->{{3.7659977822302*^9, 3.76599778465674*^9}}],
+
+Cell[BoxData["0.884736`"], "Output",
+ CellChangeTimes->{3.765997785878202*^9, 3.765998231190489*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "which means that the chance for at least one of them ",
+ StyleBox["to",
+  FontWeight->"Bold",
+  FontSlant->"Italic"],
+ " fail over that time period is"
+}], "Text",
+ CellChangeTimes->{{3.7659980420165854`*^9, 3.765998077039641*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "-", "%"}]], "Input",
+ CellChangeTimes->{{3.765997797644598*^9, 3.7659977985204763`*^9}}],
+
+Cell[BoxData["0.11526400000000003`"], "Output",
+ CellChangeTimes->{3.765997799663848*^9, 3.7659982346448708`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+I also see that Mathematica can take care of this neatly with a binomial \
+probability calculation. The time period isn\[CloseCurlyQuote]t considered, \
+but whatever the time period is, over this time period there are considered \
+to be three chances to fail, one for each tube, and because they each have \
+the same chance of failing, I can put into one expression. (The \
+\[GreaterEqual] sign on x is important.)\
+\>", "Text",
+ CellChangeTimes->{{3.7660077071833487`*^9, 3.766007857402952*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{"x", "\[GreaterEqual]", "1"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"3", ",", "0.04"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.766007676066093*^9, 3.766007682600226*^9}}],
+
+Cell[BoxData["0.11526400000000014`"], "Output",
+ CellChangeTimes->{3.766007684017371*^9}]
+}, Open  ]],
+
+Cell["\<\
+15.  What gives the greater probability of hitting at least once: (a) hitting \
+with probability 1/2 and firing 1 shot, (b) hitting with probability 1/4 and \
+firing two shots, (c) hitting with probability 1/8 and firing 4 shots? First \
+guess.\
+\>", "Text",
+ CellChangeTimes->{{3.7659816146442537`*^9, 3.765981696272703*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+This one was hard for me, I didn\[CloseCurlyQuote]t see the significance of \
+the \[GreaterEqual] sign for a long time. It makes sense that hitting \
+\[OpenCurlyDoubleQuote]at least once\[CloseCurlyDoubleQuote] is more likely \
+than hitting \[OpenCurlyDoubleQuote]exactly once\[CloseCurlyDoubleQuote].\
+\>", "Text",
+ CellChangeTimes->{{3.766007407680393*^9, 3.7660074378075666`*^9}, {
+  3.766007487101986*^9, 3.7660075103093233`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{"x", "\[Equal]", "1"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"1", ",", "0.5"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76600105836405*^9, 3.766001065778307*^9}, {
+  3.7660012560945473`*^9, 3.7660012598442373`*^9}, {3.766001309396495*^9, 
+  3.766001342265739*^9}, {3.766001461847625*^9, 3.766001471245727*^9}, {
+  3.766001630162525*^9, 3.766001634208556*^9}}],
+
+Cell[BoxData["0.5`"], "Output",
+ CellChangeTimes->{
+  3.766001067344945*^9, 3.766001261538975*^9, {3.766001323733776*^9, 
+   3.766001343011242*^9}, {3.766001464490963*^9, 3.7660014722344522`*^9}, 
+   3.766001635229846*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{"x", "\[GreaterEqual]", "1"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"2", ",", "0.25"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76600110544269*^9, 3.766001109416836*^9}, {
+  3.766001277253477*^9, 3.766001280523917*^9}, {3.7660016394820967`*^9, 
+  3.766001642800352*^9}, {3.766001963902298*^9, 3.766001964062093*^9}, {
+  3.766002116025769*^9, 3.766002116241294*^9}, {3.76600260334766*^9, 
+  3.766002645456753*^9}, {3.766005539099436*^9, 3.766005542953953*^9}, {
+  3.766005654705361*^9, 3.766005654847034*^9}, {3.766006356218924*^9, 
+  3.766006377336639*^9}, {3.766006656905497*^9, 3.766006760292705*^9}, {
+  3.766007350532483*^9, 3.766007367049981*^9}}],
+
+Cell[BoxData["0.4375`"], "Output",
+ CellChangeTimes->{
+  3.76600111060085*^9, 3.76600128158547*^9, 3.766001643698679*^9, 
+   3.766001964876684*^9, 3.766002116961899*^9, 3.766002648367218*^9, 
+   3.766005544623201*^9, 3.766005655565153*^9, {3.76600636145772*^9, 
+   3.766006378281752*^9}, {3.766006659682542*^9, 3.766006761503327*^9}, {
+   3.7660073583537273`*^9, 3.76600736813267*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Probability", "[", 
+  RowBox[{
+   RowBox[{"x", "\[GreaterEqual]", "1"}], ",", 
+   RowBox[{"x", "\[Distributed]", 
+    RowBox[{"BinomialDistribution", "[", 
+     RowBox[{"4", ",", "0.125"}], "]"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7660011225221*^9, 3.766001128680419*^9}, {
+  3.7660073800106907`*^9, 3.766007382953371*^9}}],
+
+Cell[BoxData["0.413818359375`"], "Output",
+ CellChangeTimes->{3.766001129765677*^9, 3.7660073847477083`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["17.  Show that if B is a subset of A, then P(B) \[LessEqual] P(A).", \
+"Text",
+ CellChangeTimes->{{3.765981702087943*^9, 3.765981742223198*^9}},
+ Background->RGBColor[1, 0.9, 0.8]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 271, 6, 51, "Text"],
+Cell[674, 21, 73, 1, 45, "Input"],
+Cell[750, 24, 219, 5, 75, "Text"],
+Cell[972, 31, 391, 9, 83, "Text"],
+Cell[1366, 42, 571, 17, 76, "Input"],
+Cell[CellGroupData[{
+Cell[1962, 63, 219, 5, 45, "Input"],
+Cell[2184, 70, 92, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2313, 77, 120, 2, 45, "Input"],
+Cell[2436, 81, 128, 2, 69, "Output"]
+}, Open  ]],
+Cell[2579, 86, 366, 7, 144, "Text"],
+Cell[2948, 95, 194, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[3167, 103, 259, 6, 45, "Input"],
+Cell[3429, 111, 208, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3674, 121, 333, 10, 45, "Input"],
+Cell[4010, 133, 91, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4138, 140, 118, 2, 49, "Input"],
+Cell[4259, 144, 133, 3, 100, "Output"]
+}, Open  ]],
+Cell[4407, 150, 132, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[4564, 155, 259, 6, 45, "Input"],
+Cell[4826, 163, 207, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5070, 173, 384, 11, 45, "Input"],
+Cell[5457, 186, 116, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5610, 193, 120, 2, 45, "Input"],
+Cell[5733, 197, 147, 2, 69, "Output"]
+}, Open  ]],
+Cell[5895, 202, 303, 6, 110, "Text"],
+Cell[6201, 210, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[6299, 215, 259, 6, 45, "Input"],
+Cell[6561, 223, 229, 5, 45, "Output"]
+}, Open  ]],
+Cell[6805, 231, 153, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[6983, 238, 333, 10, 45, "Input"],
+Cell[7319, 250, 116, 2, 76, "Output"]
+}, Open  ]],
+Cell[7450, 255, 136, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[7611, 260, 116, 2, 49, "Input"],
+Cell[7730, 264, 90, 2, 76, "Output"]
+}, Open  ]],
+Cell[7835, 269, 192, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[8052, 277, 117, 2, 45, "Input"],
+Cell[8172, 281, 127, 3, 100, "Output"]
+}, Open  ]],
+Cell[8314, 287, 292, 6, 75, "Text"],
+Cell[8609, 295, 168, 3, 51, "Text"],
+Cell[8780, 300, 333, 6, 110, "Text"],
+Cell[9116, 308, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[9214, 313, 306, 7, 45, "Input"],
+Cell[9523, 322, 257, 6, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9817, 333, 333, 10, 45, "Input"],
+Cell[10153, 345, 145, 3, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10335, 353, 120, 2, 45, "Input"],
+Cell[10458, 357, 175, 3, 69, "Output"]
+}, Open  ]],
+Cell[10648, 363, 496, 9, 144, "Text"],
+Cell[11147, 374, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[11245, 379, 269, 6, 45, "Input"],
+Cell[11517, 387, 268, 6, 45, "Output"]
+}, Open  ]],
+Cell[11800, 396, 195, 2, 51, "Text"],
+Cell[CellGroupData[{
+Cell[12020, 402, 390, 11, 45, "Input"],
+Cell[12413, 415, 115, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12565, 422, 119, 2, 45, "Input"],
+Cell[12687, 426, 151, 2, 69, "Output"]
+}, Open  ]],
+Cell[12853, 431, 359, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[13237, 442, 457, 12, 45, "Input"],
+Cell[13697, 456, 238, 4, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13972, 465, 120, 2, 45, "Input"],
+Cell[14095, 469, 91, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14223, 475, 117, 2, 45, "Input"],
+Cell[14343, 479, 126, 2, 69, "Output"]
+}, Open  ]],
+Cell[14484, 484, 281, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[14790, 494, 470, 13, 45, "Input"],
+Cell[15263, 509, 116, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15416, 516, 472, 13, 45, "Input"],
+Cell[15891, 531, 117, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16045, 538, 419, 12, 45, "Input"],
+Cell[16467, 552, 116, 2, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16620, 559, 156, 3, 45, "Input"],
+Cell[16779, 564, 127, 2, 69, "Output"]
+}, Open  ]],
+Cell[16921, 569, 404, 7, 144, "Text"],
+Cell[17328, 578, 73, 1, 45, "Input"],
+Cell[17404, 581, 322, 8, 51, "Text"],
+Cell[17729, 591, 391, 10, 86, "Text"],
+Cell[CellGroupData[{
+Cell[18145, 605, 118, 2, 45, "Input"],
+Cell[18266, 609, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[18377, 613, 353, 9, 86, "Text"],
+Cell[CellGroupData[{
+Cell[18755, 626, 113, 2, 49, "Input"],
+Cell[18871, 630, 100, 1, 45, "Output"]
+}, Open  ]],
+Cell[18986, 634, 249, 7, 51, "Text"],
+Cell[CellGroupData[{
+Cell[19260, 645, 117, 2, 45, "Input"],
+Cell[19380, 649, 151, 2, 69, "Output"]
+}, Open  ]],
+Cell[19546, 654, 506, 8, 155, "Text"],
+Cell[CellGroupData[{
+Cell[20077, 666, 306, 7, 45, "Input"],
+Cell[20386, 675, 89, 1, 45, "Output"]
+}, Open  ]],
+Cell[20490, 679, 372, 7, 144, "Text"],
+Cell[20865, 688, 444, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[21334, 699, 494, 10, 45, "Input"],
+Cell[21831, 711, 260, 5, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22128, 721, 787, 14, 45, "Input"],
+Cell[22918, 737, 423, 7, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23378, 749, 356, 8, 45, "Input"],
+Cell[23737, 759, 146, 2, 69, "Output"]
+}, Open  ]],
+Cell[23898, 764, 186, 3, 75, "Text"]
+}
+]
+*)
+
