@@ -1,0 +1,1383 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     44931,       1382]
+NotebookOptionsPosition[     40150,       1214]
+NotebookOutlinePosition[     40538,       1231]
+CellTagsIndexPosition[     40495,       1228]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769382448099494*^9, 3.769382450070644*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1 - 10 Sample Regression Line
+Find and graph the sample regression line of y on x and the given data as \
+points on the same axes. \
+\>", "Text",
+ CellChangeTimes->{{3.767295040953011*^9, 3.767295098813878*^9}}],
+
+Cell["1.  (0, 1.0), (2, 2.1), (4, 2.9), (6, 3.6), (8, 5.2)", "Text",
+ CellChangeTimes->{{3.767295103069661*^9, 3.767295137060563*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"dat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "1.0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", " ", "2.2"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"4", ",", "2.9"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"6", ",", "3.6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"8", ",", "5.2"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7672996435567017`*^9, 3.767299741413795*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "2.9`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "3.6`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"8", ",", "5.2`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767299743298514*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fit", "[", 
+  RowBox[{"dat", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7672997464410973`*^9, 3.767299768173081*^9}, {
+  3.7672998079811373`*^9, 3.7672998186428967`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.0199999999999985`", "\[VeryThinSpace]", "+", 
+  RowBox[{"0.4899999999999998`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.767299750200169*^9, 3.767299820211879*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+The fitting line found by the text answer is 0.98+0.495 x. As shown in the \
+plot below, there is not a great difference between Mathematica's line and \
+the text\[CloseCurlyQuote]s.\
+\>", "Text",
+ CellChangeTimes->{{3.767299910912427*^9, 3.7672999402220287`*^9}, {
+  3.767300797447926*^9, 3.767300824325603*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"pch", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{"dat", ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", "Red"}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "9"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.5", ",", "6"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.4", ",", "0.4", ",", "0.9"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"0", ",", "1.02"}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"9", ",", 
+              RowBox[{"1.02", "+", 
+               RowBox[{"0.49", "*", "9"}]}]}], "}"}]}], "}"}], "]"}]}], "}"}],
+        ",", 
+       RowBox[{"{", 
+        RowBox[{"{", 
+         RowBox[{"Green", ",", 
+          RowBox[{"Line", "[", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{"0", ",", "0.98"}], "}"}], ",", 
+             RowBox[{"{", 
+              RowBox[{"9", ",", 
+               RowBox[{"0.98", "+", 
+                RowBox[{"0.495", "*", "9"}]}]}], "}"}]}], "}"}], "]"}]}], 
+         "}"}], "}"}]}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767300166519405*^9, 3.767300213956399*^9}, {
+  3.7673002627405663`*^9, 3.7673005262427063`*^9}, {3.76730055828014*^9, 
+  3.767300558487679*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], AbsoluteThickness[
+      1.6], LineBox[{{0., 1.}, {2., 2.2}, {4., 2.9}, {6., 3.6}, {8., 
+       5.2}}]}}, {
+     {RGBColor[1, 0, 0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{0., 1.}}, {{2., 2.2}}, {{4., 2.9}}, {{
+       6., 3.6}}, {{8., 5.2}}}]}, {}}}, {}},
+  AspectRatio->1.3,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0.5275},
+  DisplayFunction->Identity,
+  Epilog->{{
+     RGBColor[0.4, 0.4, 0.9], 
+     LineBox[{{0, 1.02}, {9, 5.43}}]}, {{
+      RGBColor[0, 1, 0], 
+      LineBox[{{0, 0.98}, {9, 5.4350000000000005`}}]}}},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{},
+  PlotRange->{{-1, 9}, {0.5, 6}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.767300504826302*^9, {3.767300535453642*^9, 3.7673005595266943`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "3.  x = Revolutions per minute, y = Power of a diesel engine (hp)\n\n",
+ Cell[BoxData[GridBox[{
+    {"x", "400", "500", "600", "700", "750"},
+    {"y", "5800", "10300", "14200", "18800", "21000"}
+   }]], "Input",
+  CellChangeTimes->{{3.7672951942193003`*^9, 3.767295237977173*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.76729514331601*^9, 3.767295165355688*^9}, {
+  3.767295250513932*^9, 3.76729525777768*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rdat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"400", ",", "5800"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "10300"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"600", ",", "14200"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"700", ",", "18800"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"750", ",", "21000"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.767300867501936*^9, 3.767300918370319*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"400", ",", "5800"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"500", ",", "10300"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"600", ",", "14200"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"700", ",", "18800"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"750", ",", "21000"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767300920062005*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fit", "[", 
+  RowBox[{"rdat", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{3.767300981033255*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "11457.926829268283`"}], "+", 
+  RowBox[{"43.182926829268276`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.7673010607363863`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above equation in green matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.767307590747078*^9, 3.76730761389851*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rch", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{"rdat", ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Thickness", "[", "0.003", "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"390", ",", "800"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"5600", ",", "22000"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.8", ",", "0.7", ",", "0.1"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"390", ",", 
+             RowBox[{
+              RowBox[{"-", "11457.9"}], "+", 
+              RowBox[{"43.182", " ", "*", "390"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"800", ",", 
+             RowBox[{
+              RowBox[{"-", "11457.9"}], "+", 
+              RowBox[{"43.182", "*", "800"}]}]}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7673010892377653`*^9, 3.7673011361625557`*^9}, {
+  3.76730117420994*^9, 3.767301325459784*^9}, {3.7673013873376217`*^9, 
+  3.7673015765623627`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], Thickness[0.003], 
+      LineBox[{{400., 5800.}, {500., 10300.}, {600., 14200.}, {700., 
+       18800.}, {750., 21000.}}]}}, {
+     {RGBColor[1, 0, 0], AbsolutePointSize[6], Thickness[0.003], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{400., 5800.}}, {{500., 10300.}}, {{
+       600., 14200.}}, {{700., 18800.}}, {{750., 21000.}}}]}, {}}}, {}},
+  AspectRatio->1.3,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{392.05, 5682.},
+  DisplayFunction->Identity,
+  Epilog->{{
+     RGBColor[0.8, 0.7, 0.1], 
+     LineBox[{{390, 5383.08}, {800, 23087.699999999997`}}]}},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{},
+  PlotRange->{{390, 800}, {5600, 22000}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.767301397613427*^9, {3.767301485941205*^9, 3.767301526962985*^9}, {
+   3.767301569014283*^9, 3.7673015773893414`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "5.  x = Brinell hardness, y = Tensile strength (in 1000 psi) of steel with \
+0.45% C tempered for 1 hour.\n\n",
+ Cell[BoxData[GridBox[{
+    {"x", "200", "300", "400", "500"},
+    {"y", "110", "150", "190", "280"}
+   }]], "Input",
+  CellChangeTimes->{{3.767295369460176*^9, 3.7672954001391*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.767295300143874*^9, 3.767295349836974*^9}, {
+  3.76729541409138*^9, 3.767295415436393*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"brin", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"200", ",", "110"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"300", ",", "150"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"400", ",", "190"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "280"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.767301794401208*^9, 3.767301834009119*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"200", ",", "110"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"300", ",", "150"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"400", ",", "190"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"500", ",", "280"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767301835103435*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fit", "[", 
+  RowBox[{"brin", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.767301852801178*^9, 3.767301854823613*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "10.000000000000128`"}], "+", 
+  RowBox[{"0.5500000000000002`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.767301856225094*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bch", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{"brin", ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Thickness", "[", "0.003", "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"150", ",", "550"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"100", ",", "300"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.2", ",", "0.9", ",", "0.2"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"150", ",", 
+             RowBox[{
+              RowBox[{"-", "10.0"}], "+", 
+              RowBox[{"0.55", " ", "*", "150"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"550", ",", 
+             RowBox[{
+              RowBox[{"-", "10.0"}], "+", 
+              RowBox[{"0.55", "*", "550"}]}]}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767301873536808*^9, 3.7673020645604963`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], Thickness[0.003], 
+      LineBox[{{200., 110.}, {300., 150.}, {400., 190.}, {500., 280.}}]}}, {
+     {RGBColor[1, 0, 0], AbsolutePointSize[6], Thickness[0.003], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{200., 110.}}, {{300., 150.}}, {{400., 
+       190.}}, {{500., 280.}}}]}, {}}}, {}},
+  AspectRatio->1.3,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{152., 101.},
+  DisplayFunction->Identity,
+  Epilog->{{
+     RGBColor[0.2, 0.9, 0.2], 
+     LineBox[{{150, 72.5}, {550, 292.5}}]}},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{},
+  PlotRange->{{150, 550}, {100, 300}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.767301922479306*^9, {3.76730201907193*^9, 3.7673020653128977`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "7. Ohm\[CloseCurlyQuote]s law (section 2.9). x = Voltage (V), y = current \
+(A). Also find the resistance R (\[CapitalOmega]).\n\n",
+ Cell[BoxData[GridBox[{
+    {"x", "40", "40", "80", "80", "110", "110"},
+    {"y", "5.1", "4.8", "0.0", "10.3", "13.0", "12.7"}
+   }]], "Input",
+  CellChangeTimes->{{3.767295524213518*^9, 3.767295563173504*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.767295450242312*^9, 3.767295508231554*^9}, {
+  3.767295588117939*^9, 3.767295590750473*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"volt", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"40", ",", "5.1"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"40", ",", "4.8"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"80", ",", "10.3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"110", ",", "13.0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"110", ",", "12.7"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7673021545371532`*^9, 3.767302220010906*^9}, {
+  3.767302314225368*^9, 3.7673023217592897`*^9}, {3.7673040978341913`*^9, 
+  3.767304099816146*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"40", ",", "5.1`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"40", ",", "4.8`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"80", ",", "10.3`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"110", ",", "13.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"110", ",", "12.7`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767302220989147*^9, 3.76730232299446*^9, 
+  3.7673023673820467`*^9, 3.767304101544651*^9}]
+}, Open  ]],
+
+Cell["\<\
+First I drop the point that represents zero current. Afterwards the fitting \
+line of Mathematica (green) is almost the same as that of the text answer \
+(blue).\
+\>", "Text",
+ CellChangeTimes->{{3.767303493766613*^9, 3.7673035346042137`*^9}, {
+  3.767304261250128*^9, 3.767304326648015*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fit", "[", 
+  RowBox[{"volt", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.767302239107523*^9, 3.7673022411060047`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.5512195121951238`", "\[VeryThinSpace]", "+", 
+  RowBox[{"0.11353658536585368`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.767302242291415*^9, 3.767302326369375*^9, 
+  3.767302371606907*^9, 3.767304105616622*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"volt", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767302811711398*^9, 3.767302813941985*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"FittedModel", "[", 
+   TagBox[
+    PanelBox[
+     TagBox[
+      RowBox[{
+       RowBox[{"-", "0.5554054054053984`"}], "+", 
+       RowBox[{"0.10702702702702695`", " ", "x"}]}],
+      Short[#, 2]& ],
+     FrameMargins->5],
+    Editable -> False], "]"}],
+  InterpretTemplate[
+  FittedModel[{
+    "Linear", {-0.5554054054053984, 
+     0.10702702702702695`}, {{$CellContext`x}, {1, $CellContext`x}}, {0, 
+     0}}, {{1., 1., 1., 1., 1., 
+    1.}}, {{40, 5.1}, {40, 4.8}, {80, 0.}, {80, 10.3}, {110, 13.}, {
+     110, 12.7}}, {{1., 40.}, {1., 40.}, {1., 80.}, {1., 80.}, {1., 110.}, {
+    1., 110.}}, 
+    Function[Null, 
+     Internal`LocalizedBlock[{$CellContext`x}, #], {HoldAll}]]& ],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->True]], "Output",
+ CellChangeTimes->{3.767302815567602*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"vch", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{"volt", ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Thickness", "[", "0.003", "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"35", ",", "120"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", "15"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.2", ",", "0.9", ",", "0.2"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"40", ",", 
+              RowBox[{"0.5512", "\[VeryThinSpace]", "+", 
+               RowBox[{"0.1135", "*", "40"}]}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"120", ",", 
+              RowBox[{"0.5512", "\[VeryThinSpace]", "+", 
+               RowBox[{"0.1135", "*", "120"}]}]}], "}"}]}], "}"}], "]"}]}], 
+        "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"RGBColor", "[", 
+          RowBox[{"0.5", ",", "0.5", ",", "1"}], "]"}], ",", 
+         RowBox[{"Line", "[", 
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"{", 
+             RowBox[{"40", ",", 
+              RowBox[{"0.5932", "+", 
+               RowBox[{"0.1138", "*", "40"}]}]}], "}"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"120", ",", 
+              RowBox[{"0.5932", "+", 
+               RowBox[{"0.1138", "*", "120"}]}]}], "}"}]}], "}"}], "]"}]}], 
+        "}"}]}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7673024165655127`*^9, 3.767302497169531*^9}, {
+   3.767302534736567*^9, 3.767302695202619*^9}, {3.767303074047346*^9, 
+   3.7673031017801657`*^9}, 3.767303144066966*^9, {3.767304147850129*^9, 
+   3.767304168569046*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], Thickness[0.003], 
+      LineBox[{{40., 5.1}, {40., 4.8}, {80., 10.3}, {110., 13.}, {110., 
+       12.7}}]}}, {
+     {RGBColor[1, 0, 0], AbsolutePointSize[6], Thickness[0.003], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{40., 5.1}}, {{40., 4.8}}, {{80., 
+       10.3}}, {{110., 13.}}, {{110., 12.7}}}]}, {}}}, {}},
+  AspectRatio->1.3,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{35.425, 0},
+  DisplayFunction->Identity,
+  Epilog->{{
+     RGBColor[0.2, 0.9, 0.2], 
+     LineBox[{{40, 5.0912}, {120, 14.1712}}]}, {
+     RGBColor[0.5, 0.5, 1], 
+     LineBox[{{40, 5.145199999999999}, {120, 14.2492}}]}},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{},
+  PlotRange->{{35, 120}, {-1, 15}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.767302465728078*^9, 3.767302498137307*^9}, 
+   3.767302594647998*^9, 3.767302696242371*^9, 3.7673031034780903`*^9, 
+   3.7673031463067837`*^9, 3.767304170499638*^9}]
+}, Open  ]],
+
+Cell["\<\
+The resistance is mysterious. Sum of volts divided by sum of amps does not do \
+it, not quite. Instead, the resistance is equal to the reciprocal of the line \
+slope.\
+\>", "Text",
+ CellChangeTimes->{{3.7673044265893507`*^9, 3.767304508161291*^9}, {
+  3.767304892211671*^9, 3.767304892507554*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"vt", "=", 
+  RowBox[{"160", "+", "220"}]}]], "Input",
+ CellChangeTimes->{{3.7673031711621523`*^9, 3.767303185064623*^9}, {
+  3.767304399421558*^9, 3.7673043996869698`*^9}}],
+
+Cell[BoxData["380"], "Output",
+ CellChangeTimes->{3.767303186476019*^9, 3.7673044008951693`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"at", "=", 
+  RowBox[{"9.9", "+", "23.3", "+", "12.7"}]}]], "Input",
+ CellChangeTimes->{{3.767303210795052*^9, 3.7673032293510447`*^9}}],
+
+Cell[BoxData["45.900000000000006`"], "Output",
+ CellChangeTimes->{3.767303230474805*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"380", "/", "45.9"}]], "Input",
+ CellChangeTimes->{{3.767303239067594*^9, 3.767303243382697*^9}, {
+  3.767304407949265*^9, 3.767304409639522*^9}}],
+
+Cell[BoxData["8.278867102396514`"], "Output",
+ CellChangeTimes->{3.767303244653336*^9, 3.767304410390847*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"1", "/", "0.1137"}]], "Input",
+ CellChangeTimes->{{3.767303252210126*^9, 3.767303258007517*^9}, {
+  3.7673042288131104`*^9, 3.7673042336672373`*^9}}],
+
+Cell[BoxData["8.795074758135444`"], "Output",
+ CellChangeTimes->{
+  3.767303259324479*^9, {3.76730422994565*^9, 3.7673042345123177`*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "9. Thermal conductivity of water. x = temperature (deg-F), y = conductivity \
+(Btu/(hr \[Times] ft \[Times] deg-F). Also find y at room temperature 66 \
+deg-F.\n\n",
+ Cell[BoxData[GridBox[{
+    {"x", "32", "50", "100", "150", "212"},
+    {"y", "0.337", "0.345", "0.365", "0.380", "0.395"}
+   }]], "Input",
+  CellChangeTimes->{{3.7672957506261797`*^9, 3.767295757264155*^9}, {
+   3.767295897657263*^9, 3.767295934592339*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.767295621020502*^9, 3.7672957357035313`*^9}, {
+  3.767295941769582*^9, 3.767295942530922*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"32", ",", "0.337"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"50", ",", "0.345"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"100", ",", "0.365"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"150", ",", "0.380"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"212", ",", "0.395"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.767303968305625*^9, 3.767304038796011*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"32", ",", "0.337`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"50", ",", "0.345`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"100", ",", "0.365`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"150", ",", "0.38`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"212", ",", "0.395`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76730403962606*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Fit", "[", 
+  RowBox[{"wat", ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "x"}], "}"}], ",", "x"}], "]"}]], "Input",
+ CellChangeTimes->{{3.767304537648332*^9, 3.767304540161982*^9}}],
+
+Cell[BoxData[
+ RowBox[{"0.32923161683684726`", "\[VeryThinSpace]", "+", 
+  RowBox[{"0.0003232388158378021`", " ", "x"}]}]], "Output",
+ CellChangeTimes->{3.767304541270755*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"wch", "=", 
+  RowBox[{"ListLinePlot", "[", 
+   RowBox[{"wat", ",", 
+    RowBox[{"AspectRatio", "\[Rule]", "1.3"}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+    RowBox[{"PlotMarkers", "\[Rule]", "Automatic"}], ",", 
+    RowBox[{"PlotStyle", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"Red", ",", 
+       RowBox[{"Thickness", "[", "0.003", "]"}]}], "}"}]}], ",", 
+    RowBox[{"PlotRange", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"30", ",", "220"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0.325", ",", "0.4"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"RGBColor", "[", 
+         RowBox[{"0.7", ",", "0.2", ",", "0.7"}], "]"}], ",", 
+        RowBox[{"Line", "[", 
+         RowBox[{"{", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"30", ",", 
+             RowBox[{"0.329", "+", 
+              RowBox[{"0.000323", "*", "30"}]}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"220", ",", 
+             RowBox[{"0.329", "+", 
+              RowBox[{"0.000323", "*", "220"}]}]}], "}"}]}], "}"}], "]"}]}], 
+       "}"}], "}"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767304664724785*^9, 3.767304849261606*^9}, {
+  3.767304939258781*^9, 3.767304942498068*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{{}, {}, 
+     {RGBColor[1, 0, 0], PointSize[0.019444444444444445`], Thickness[0.003], 
+      LineBox[{{32., 0.337}, {50., 0.345}, {100., 0.365}, {150., 0.38}, {212.,
+        0.395}}]}}, {
+     {RGBColor[1, 0, 0], AbsolutePointSize[6], Thickness[0.003], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\<\"\[FilledCircle]\"\>",
+         StripOnInput->False,
+         FontSize->8.96], {0., 0.}], {{{32., 0.337}}, {{50., 0.345}}, {{100., 
+       0.365}}, {{150., 0.38}}, {{212., 0.395}}}]}, {}}}, {}},
+  AspectRatio->1.3,
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{30.95, 0.325375},
+  DisplayFunction->Identity,
+  Epilog->{{
+     RGBColor[0.7, 0.2, 0.7], 
+     LineBox[{{30, 0.33869}, {220, 0.40006}}]}},
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{},
+  PlotRange->{{30, 220}, {0.325, 0.4}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{0, 0}, {0, 0}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7673047439494*^9, {3.767304820818149*^9, 3.767304850586035*^9}, 
+   3.767304943701041*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.3292", "+", 
+  RowBox[{"0.000323", " ", "66"}]}]], "Input",
+ CellChangeTimes->{{3.7673081295696993`*^9, 3.767308224253127*^9}, 
+   3.7673082585958433`*^9}],
+
+Cell[BoxData["0.350518`"], "Output",
+ CellChangeTimes->{
+  3.767308131685504*^9, 3.767308166448266*^9, {3.7673082041040583`*^9, 
+   3.767308218840077*^9}, {3.7673082529930687`*^9, 3.767308280449242*^9}},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+I cannot find the right chop for the above expression to get the exact text \
+answer decimals, which show as 0.35035.\
+\>", "Text",
+ CellChangeTimes->{{3.767308315676339*^9, 3.76730840140661*^9}}],
+
+Cell[TextData[{
+ "12 - 15 Confidence intervals\nFind a 95% confidence interval for the \
+regression coefficient ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Kappa]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " , assuming (A2) and (A3) hold and using the sample."
+}], "Text",
+ CellChangeTimes->{{3.76729599518336*^9, 3.767296053220195*^9}}],
+
+Cell["13. In problem 3.", "Text",
+ CellChangeTimes->{{3.7672960585094547`*^9, 3.7672960701474*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "I gained some info on regression coefficients from ",
+ StyleBox["https : // mathematica.stackexchange.com/questions/19608/obtaining \
+- standardised - regression - coefficients. ",
+  FontSize->14,
+  FontSlant->"Italic"],
+ "The keyword is \[OpenCurlyQuote]standardised\[CloseCurlyQuote]. The text \
+answer does not care about standardized regression coefficients, which it \
+seems are based on units of standard deviation. Regular non-standardized ones \
+seem to simply be based on x length, and it is those I am after."
+}], "Text",
+ CellChangeTimes->{{3.7673064936235857`*^9, 3.767306520497595*^9}, {
+  3.767306551040193*^9, 3.7673066008629313`*^9}, {3.767345744402627*^9, 
+  3.76734587568218*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rdat", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"400", ",", "5800"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"500", ",", "10300"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"600", ",", "14200"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"700", ",", "18800"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"750", ",", "21000"}], "}"}]}], "}"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"400", ",", "5800"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"500", ",", "10300"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"600", ",", "14200"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"700", ",", "18800"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"750", ",", "21000"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767305346501997*^9}]
+}, Open  ]],
+
+Cell["Getting the model seems to go okay.", "Text",
+ CellChangeTimes->{{3.767306618063162*^9, 3.767306623998022*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"rdat", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767305371996189*^9, 3.76730537423466*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"FittedModel", "[", 
+   TagBox[
+    PanelBox[
+     TagBox[
+      RowBox[{
+       RowBox[{"-", "11457.926829268266`"}], "+", 
+       RowBox[{"43.18292682926825`", " ", "x"}]}],
+      Short[#, 2]& ],
+     FrameMargins->5],
+    Editable -> False], "]"}],
+  InterpretTemplate[
+  FittedModel[{
+    "Linear", {-11457.926829268266`, 
+     43.18292682926825}, {{$CellContext`x}, {1, $CellContext`x}}, {0, 0}}, {{
+    1., 1., 1., 1., 1.}}, {{400, 5800}, {500, 10300}, {600, 14200}, {700, 
+    18800}, {750, 21000}}, {{1., 400.}, {1., 500.}, {1., 600.}, {1., 700.}, {
+    1., 750.}}, 
+    Function[Null, 
+     Internal`LocalizedBlock[{$CellContext`x}, #], {HoldAll}]]& ],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->True]], "Output",
+ CellChangeTimes->{3.767305375937294*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "I try to use the method which the o.p. said he was using at the time of his \
+post, which he considered to be only an estimate. I should say that in the \
+docs for ",
+ StyleBox["LinearModelFit", "Input"],
+ " it says that the default confidence level is .95, the same as requested in \
+the problem description. (Raising the confidence level to .99 in the command \
+does not change the output table values.) The text answer for the regression \
+coefficient is 41.7 \[LessEqual] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Kappa]", "1"], TraditionalForm]]],
+ " \[LessEqual] 44.7. The estimate for x in the below table is right in the \
+middle of that interval. Adding and subtracting the Standard Error still \
+results in an interval shorter than the one in the text answer. This seems to \
+satisfy the current requirement."
+}], "Text",
+ CellChangeTimes->{{3.767306700658826*^9, 3.767307039831731*^9}, {
+  3.767307780364973*^9, 3.767307781997295*^9}, {3.767345916153466*^9, 
+  3.767345936725894*^9}, {3.767346209214065*^9, 3.767346217891127*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "[", 
+  RowBox[{"\"\<ParameterTable\>\"", ",", 
+   RowBox[{"ConfidenceLevel", "\[Rule]", ".95"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7673056425997343`*^9, 3.767305653608604*^9}, {
+  3.7673059368821898`*^9, 3.7673059416622677`*^9}, {3.7673059961725397`*^9, 
+  3.767305996884289*^9}}],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[GridBox[{
+     {"\<\"\"\>", "\<\"Estimate\"\>", "\<\"Standard Error\"\>", "\<\"t\
+\[Hyphen]Statistic\"\>", "\<\"P\[Hyphen]Value\"\>"},
+     {"1", 
+      RowBox[{"-", "11457.926829268266`"}], "379.6117376821733`", 
+      RowBox[{"-", "30.183278576231267`"}], "0.00007988367263873981`"},
+     {"x", "43.18292682926825`", "0.6287686300104874`", "68.67856436881716`", 
+      "6.802612776985968`*^-6"}
+    },
+    AutoDelete->False,
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+    GridBoxDividers->{
+     "ColumnsIndexed" -> {2 -> GrayLevel[0.7]}, 
+      "RowsIndexed" -> {2 -> GrayLevel[0.7]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{
+     "ColumnsIndexed" -> {2 -> 1}, "RowsIndexed" -> {2 -> 0.75}}],
+   "Grid"], "DialogStyle",
+  StripOnInput->False]], "Output",
+ CellChangeTimes->{
+  3.767305654764072*^9, {3.7673059439386997`*^9, 3.767305950383264*^9}, 
+   3.767306000024551*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"43.1829", "+", "0.628769"}]], "Input",
+ CellChangeTimes->{{3.76730611180552*^9, 3.767306126127882*^9}}],
+
+Cell[BoxData["43.811668999999995`"], "Output",
+ CellChangeTimes->{3.7673061272868834`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"43.1829", "-", "0.628769"}]], "Input",
+ CellChangeTimes->{{3.76730614778018*^9, 3.7673061591265173`*^9}}],
+
+Cell[BoxData["42.554131`"], "Output",
+ CellChangeTimes->{3.767306160677497*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "15. x = Humidity of air (%), y = Expansion of gelatin (%),\n\n",
+ Cell[BoxData[GridBox[{
+    {"x", "10", "20", "30", "40"},
+    {"y", "0.8", "1.6", "2.3", "2.8"}
+   }]], "Input",
+  CellChangeTimes->{{3.767296120006441*^9, 3.7672961479688683`*^9}}]
+}], "Text",
+ CellChangeTimes->{{3.76729607299681*^9, 3.767296100738454*^9}, {
+  3.7672961584896193`*^9, 3.7672961600348387`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "model", "]"}]], "Input",
+ CellChangeTimes->{{3.7673071679201593`*^9, 3.7673071713865232`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"air", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"10", ",", "0.8"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"20", ",", "1.6"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"30", ",", "2.3"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"40", ",", "2.8"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.767307090008357*^9, 3.767307119820386*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"10", ",", "0.8`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"20", ",", "1.6`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"30", ",", "2.3`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"40", ",", "2.8`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.767307122597351*^9, 3.7673071759692373`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "=", 
+  RowBox[{"LinearModelFit", "[", 
+   RowBox[{"air", ",", "x", ",", "x"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.767307141029092*^9, 3.767307142453068*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  RowBox[{"FittedModel", "[", 
+   TagBox[
+    PanelBox[
+     TagBox[
+      RowBox[{"0.2000000000000003`", "\[VeryThinSpace]", "+", 
+       RowBox[{"0.06699999999999999`", " ", "x"}]}],
+      Short[#, 2]& ],
+     FrameMargins->5],
+    Editable -> False], "]"}],
+  InterpretTemplate[
+  FittedModel[{
+    "Linear", {0.2000000000000003, 
+     0.06699999999999999}, {{$CellContext`x}, {1, $CellContext`x}}, {0, 
+     0}}, {{1., 1., 1., 1.}}, {{10, 0.8}, {20, 1.6}, {30, 2.3}, {40, 2.8}}, {{
+    1., 10.}, {1., 20.}, {1., 30.}, {1., 40.}}, 
+    Function[Null, 
+     Internal`LocalizedBlock[{$CellContext`x}, #], {HoldAll}]]& ],
+  Editable->False,
+  SelectWithContents->True,
+  Selectable->True]], "Output",
+ CellChangeTimes->{3.767307143762835*^9, 3.7673071786191263`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Again the displayed regression coefficient is in the center of the text \
+answer, which is 0.046 \[LessEqual] ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["\[Kappa]", "1"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " \[LessEqual] 0.088. Again adding and subtracting the Standard Error \
+results in a shorter interval than shown in the text answer."
+}], "Text",
+ CellChangeTimes->{{3.767307244928743*^9, 3.767307317028981*^9}, {
+  3.767307394186105*^9, 3.767307424889514*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"model", "[", 
+  RowBox[{"\"\<ParameterTable\>\"", ",", 
+   RowBox[{"ConfidenceLevel", "\[Rule]", ".95"}]}], "]"}]], "Input"],
+
+Cell[BoxData[
+ StyleBox[
+  TagBox[GridBox[{
+     {"\<\"\"\>", "\<\"Estimate\"\>", "\<\"Standard Error\"\>", "\<\"t\
+\[Hyphen]Statistic\"\>", "\<\"P\[Hyphen]Value\"\>"},
+     {"1", "0.2000000000000003`", "0.13133925536563698`", 
+      "1.5227739752537641`", "0.26725669455268775`"},
+     {"x", "0.06699999999999999`", "0.004795831523312721`", 
+      "13.970465741824002`", "0.005084591363775259`"}
+    },
+    AutoDelete->False,
+    GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Automatic}}},
+    GridBoxDividers->{
+     "ColumnsIndexed" -> {2 -> GrayLevel[0.7]}, 
+      "RowsIndexed" -> {2 -> GrayLevel[0.7]}},
+    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+    GridBoxSpacings->{
+     "ColumnsIndexed" -> {2 -> 1}, "RowsIndexed" -> {2 -> 0.75}}],
+   "Grid"], "DialogStyle",
+  StripOnInput->False]], "Output",
+ CellChangeTimes->{3.767307195902377*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.067", "+", "0.00479583"}]], "Input",
+ CellChangeTimes->{{3.7673073314810257`*^9, 3.76730734370028*^9}}],
+
+Cell[BoxData["0.07179583`"], "Output",
+ CellChangeTimes->{3.76730734501585*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"0.067", "-", "0.00479583"}]], "Input",
+ CellChangeTimes->{{3.767307349723465*^9, 3.767307365739616*^9}}],
+
+Cell[BoxData["0.06220417`"], "Output",
+ CellChangeTimes->{3.767307366887368*^9}]
+}, Open  ]],
+
+Cell["Again I will assume I found what I was looking for.", "Text",
+ CellChangeTimes->{{3.767346026281021*^9, 3.76734603806279*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 219, 5, 51, "Text",
+ Evaluatable->False],
+Cell[622, 20, 73, 1, 45, "Input"],
+Cell[698, 23, 221, 5, 86, "Text"],
+Cell[922, 30, 170, 2, 75, "Text"],
+Cell[CellGroupData[{
+Cell[1117, 36, 466, 14, 45, "Input"],
+Cell[1586, 52, 404, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2027, 70, 261, 6, 45, "Input"],
+Cell[2291, 78, 228, 4, 69, "Output"]
+}, Open  ]],
+Cell[2534, 85, 323, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[2882, 95, 1724, 48, 133, "Input"],
+Cell[4609, 145, 1318, 34, 632, "Output"]
+}, Open  ]],
+Cell[5942, 182, 460, 10, 162, "Text"],
+Cell[CellGroupData[{
+Cell[6427, 196, 479, 14, 45, "Input"],
+Cell[6909, 212, 419, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7365, 230, 183, 5, 45, "Input"],
+Cell[7551, 237, 209, 5, 69, "Output"]
+}, Open  ]],
+Cell[7775, 245, 140, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[7940, 250, 1500, 40, 162, "Input"],
+Cell[9443, 292, 1355, 33, 550, "Output"]
+}, Open  ]],
+Cell[10813, 328, 474, 11, 196, "Text"],
+Cell[CellGroupData[{
+Cell[11312, 343, 405, 12, 45, "Input"],
+Cell[11720, 357, 347, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12104, 373, 207, 5, 45, "Input"],
+Cell[12314, 380, 207, 5, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12558, 390, 1384, 38, 133, "Input"],
+Cell[13945, 430, 1225, 31, 597, "Output"]
+}, Open  ]],
+Cell[15185, 464, 525, 11, 196, "Text"],
+Cell[CellGroupData[{
+Cell[15735, 479, 574, 16, 45, "Input"],
+Cell[16312, 497, 484, 14, 45, "Output"]
+}, Open  ]],
+Cell[16811, 514, 302, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[17138, 524, 209, 5, 45, "Input"],
+Cell[17350, 531, 241, 4, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17628, 540, 197, 4, 45, "Input"],
+Cell[17828, 546, 838, 25, 64, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18703, 576, 2159, 57, 162, "Input"],
+Cell[20865, 635, 1435, 35, 574, "Output"]
+}, Open  ]],
+Cell[22315, 673, 307, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[22647, 683, 196, 4, 45, "Input"],
+Cell[22846, 689, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22979, 695, 159, 3, 45, "Input"],
+Cell[23141, 700, 88, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23266, 706, 169, 3, 45, "Input"],
+Cell[23438, 711, 144, 2, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23619, 718, 173, 3, 45, "Input"],
+Cell[23795, 723, 137, 2, 45, "Output"]
+}, Open  ]],
+Cell[23947, 728, 607, 13, 196, "Text"],
+Cell[CellGroupData[{
+Cell[24579, 745, 477, 14, 45, "Input"],
+Cell[25059, 761, 421, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25517, 779, 206, 5, 45, "Input"],
+Cell[25726, 786, 213, 4, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25976, 795, 1374, 37, 162, "Input"],
+Cell[27353, 834, 1300, 33, 592, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28690, 872, 181, 4, 45, "Input"],
+Cell[28874, 878, 238, 4, 69, "Output"]
+}, Open  ]],
+Cell[29127, 885, 206, 4, 51, "Text"],
+Cell[29336, 891, 360, 9, 87, "Text"],
+Cell[29699, 902, 135, 2, 75, "Text"],
+Cell[29837, 906, 716, 13, 155, "Text"],
+Cell[CellGroupData[{
+Cell[30578, 923, 413, 13, 45, "Input"],
+Cell[30994, 938, 419, 13, 45, "Output"]
+}, Open  ]],
+Cell[31428, 954, 117, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[31570, 959, 196, 4, 45, "Input"],
+Cell[31769, 965, 815, 24, 64, "Output"]
+}, Open  ]],
+Cell[32599, 992, 1065, 19, 225, "Text"],
+Cell[CellGroupData[{
+Cell[33689, 1015, 320, 6, 45, "Input"],
+Cell[34012, 1023, 998, 23, 92, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35047, 1051, 127, 2, 45, "Input"],
+Cell[35177, 1055, 90, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35304, 1061, 129, 2, 45, "Input"],
+Cell[35436, 1065, 79, 1, 45, "Output"]
+}, Open  ]],
+Cell[35530, 1069, 431, 10, 162, "Text"],
+Cell[35964, 1081, 132, 2, 45, "Input"],
+Cell[CellGroupData[{
+Cell[36121, 1087, 400, 12, 45, "Input"],
+Cell[36524, 1101, 371, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36932, 1117, 196, 4, 45, "Input"],
+Cell[37131, 1123, 789, 22, 64, "Output"]
+}, Open  ]],
+Cell[37935, 1148, 505, 11, 87, "Text"],
+Cell[CellGroupData[{
+Cell[38465, 1163, 148, 3, 45, "Input"],
+Cell[38616, 1168, 887, 20, 90, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39540, 1193, 129, 2, 45, "Input"],
+Cell[39672, 1197, 79, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[39788, 1203, 128, 2, 45, "Input"],
+Cell[39919, 1207, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[40014, 1211, 132, 1, 51, "Text"]
+}
+]
+*)
+
