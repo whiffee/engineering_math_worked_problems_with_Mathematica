@@ -1,0 +1,1150 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     35128,       1149]
+NotebookOptionsPosition[     31732,       1031]
+NotebookOutlinePosition[     32120,       1048]
+CellTagsIndexPosition[     32077,       1045]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769100926397911*^9, 3.769100949435727*^9}}],
+
+Cell[TextData[StyleBox["1 - 8 Fourier Cosine Transform",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.754592156432404*^9, 3.754592158823065*^9}, {
+  3.754592538456534*^9, 3.754592538704322*^9}, {3.7545925896466722`*^9, 
+  3.754592605420401*^9}}],
+
+Cell[TextData[{
+ "1. Find the cosine transform ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     SubscriptBox["f", "c"], "^"], "(", "w", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " of f(x)=",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"1", 
+          RowBox[{"0", "<", "x", "<", "1"}]},
+         {"0", 
+          RowBox[{"x", ">", "2"}]},
+         {
+          RowBox[{"-", "1"}], 
+          RowBox[{"1", "<", "x", "<", "2"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.7545926304670553`*^9, 3.7545927907866297`*^9}, {
+  3.75459282655515*^9, 3.7545928417518167`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Here the integer 1 is both a limit and a function description. Panels (1a) \
+and (1b) on p. 518 give a format. Cheating a look at the answer, I see that \
+(1a) is what\[CloseCurlyQuote]s wanted.\
+\>", "Text",
+ CellChangeTimes->{{3.7545937758865643`*^9, 3.754593789341136*^9}, {
+  3.7545939125862007`*^9, 3.7545939390557337`*^9}, {3.7545942934369717`*^9, 
+  3.754594365633292*^9}, {3.754594470583036*^9, 3.7545945017965593`*^9}, {
+  3.75459693912329*^9, 3.754596965255535*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fsubchat", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "0", "1"], 
+      RowBox[{
+       RowBox[{"Cos", "[", 
+        RowBox[{"w", " ", "x"}], "]"}], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}], "+", 
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], 
+     RowBox[{
+      SubsuperscriptBox["\[Integral]", "1", "2"], 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"Cos", "[", 
+         RowBox[{"w", " ", "x"}], "]"}]}], 
+       RowBox[{"\[DifferentialD]", "x"}]}]}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.754593966856588*^9, 3.7545940229249353`*^9}, {
+  3.75459406453158*^9, 3.754594123521469*^9}, {3.754594517398035*^9, 
+  3.754594545828774*^9}, {3.754595476723764*^9, 3.754595483611082*^9}, {
+  3.754595521033813*^9, 3.754595568617441*^9}, {3.754595819793272*^9, 
+  3.754595825649241*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox[
+   RowBox[{"2", " ", 
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      RowBox[{"Cos", "[", "w", "]"}]}], ")"}], " ", 
+    RowBox[{"Sin", "[", "w", "]"}]}], "w"]}]], "Output",
+ CellChangeTimes->{
+  3.754594127419524*^9, {3.754595545237606*^9, 3.754595570747307*^9}, 
+   3.754595827048396*^9, 3.7547495119970903`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"2", " ", 
+       SqrtBox[
+        FractionBox["2", "\[Pi]"]], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"Cos", "[", "w", "]"}]}], ")"}], " ", 
+       RowBox[{"Sin", "[", "w", "]"}]}], "w"]}], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7545962233466063`*^9, 3.754596240672861*^9}, 
+   3.7545964152049103`*^9, {3.75459876302603*^9, 3.7545987638180227`*^9}}],
+
+Cell[BoxData["1.02743489133362408946228730530356773201`16."], "Output",
+ CellChangeTimes->{3.754596241996188*^9, 3.754596417122425*^9, 
+  3.754598764967201*^9, 3.754749512090694*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], " ", 
+     FractionBox[
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", 
+         RowBox[{"Sin", "[", "w", "]"}]}], "-", 
+        RowBox[{"Sin", "[", 
+         RowBox[{"2", " ", "w"}], "]"}]}], ")"}], "w"]}], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7545962506840267`*^9, 3.754596318302108*^9}, {
+  3.754598768633905*^9, 3.7545987691137667`*^9}}],
+
+Cell[BoxData["1.02743489133362408946228730530356171702`16."], "Output",
+ CellChangeTimes->{3.754596319859372*^9, 3.754598769922769*^9, 
+  3.754749512169808*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The green cell above is the text answer for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     SubscriptBox["f", "c"], "^"], "(", "w", ")"}], TraditionalForm]]],
+ ", modified by trig identity sin 2x = 2 sin x cos x, as demonstrated."
+}], "Text",
+ CellChangeTimes->{{3.75459634431046*^9, 3.7545963923071957`*^9}, {
+  3.754597515190098*^9, 3.754597517280752*^9}}],
+
+Cell[TextData[{
+ "3. Find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     SubscriptBox["f", "c"], "^"], "(", "w", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " for f(x) = ",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {"x", 
+          RowBox[{"0", "<", "x", "<", "2"}]},
+         {"0", 
+          RowBox[{"x", ">", "2"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.754592890750184*^9, 3.7545930300300417`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["Again making use of panel (1a)", "Text",
+ CellChangeTimes->{{3.754596977310932*^9, 3.7545969880629272`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fsubchat3", "=", 
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "2"], 
+    RowBox[{"x", " ", 
+     RowBox[{"Cos", "[", 
+      RowBox[{"w", " ", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7545970849125853`*^9, 3.754597089293085*^9}, {
+  3.754597143908577*^9, 3.754597164968931*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "w", " ", 
+      RowBox[{"Cos", "[", "w", "]"}]}], "-", 
+     RowBox[{"Sin", "[", "w", "]"}]}], ")"}], " ", 
+   RowBox[{"Sin", "[", "w", "]"}]}], 
+  SuperscriptBox["w", "2"]]], "Output",
+ CellChangeTimes->{3.7545971755032167`*^9, 3.754749512289001*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"2", " ", 
+      SqrtBox[
+       FractionBox["2", "\[Pi]"]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"2", " ", "w", " ", 
+         RowBox[{"Cos", "[", "w", "]"}]}], "-", 
+        RowBox[{"Sin", "[", "w", "]"}]}], ")"}], " ", 
+      RowBox[{"Sin", "[", "w", "]"}]}], 
+     SuperscriptBox["w", "2"]], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.754597303677495*^9, 3.754597313723979*^9}, {
+  3.754598542387751*^9, 3.754598579048306*^9}, {3.754598656623548*^9, 
+  3.754598658253683*^9}, {3.754598726037958*^9, 3.754598736804274*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "0.9336952051225846487556696022434237322`16."}]], "Output",
+ CellChangeTimes->{
+  3.754597315192111*^9, {3.754598550382271*^9, 3.754598580331688*^9}, 
+   3.754598659064027*^9, 3.754598738559639*^9, 3.754749512311165*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], " ", 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"2", " ", "w"}], "]"}], "+", 
+         RowBox[{"2", "w", 
+          RowBox[{"(", 
+           RowBox[{"Sin", "[", 
+            RowBox[{"2", " ", "w"}], "]"}], ")"}]}], "-", "1"}], ")"}], 
+       SuperscriptBox["w", "2"]], ")"}]}], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.754597320175112*^9, 3.754597422552102*^9}, {
+  3.754598745618867*^9, 3.754598747154619*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "0.9336952051225846487556696022434237322`16."}]], "Output",
+ CellChangeTimes->{3.7545974970545273`*^9, 3.754598748656805*^9, 
+  3.7547495123507233`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Again ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    OverscriptBox[
+     SubscriptBox["f", "c"], "^"], "(", "w", ")"}], TraditionalForm]]],
+ " is a little tangled in a trig identity, it looks like possibly the same \
+one. The green cell is demonstrated to equal the text answer."
+}], "Text",
+ CellChangeTimes->{{3.754597538800775*^9, 3.754597569066684*^9}, {
+  3.754597874080286*^9, 3.754597904975082*^9}}],
+
+Cell[TextData[{
+ "5. Find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     OverscriptBox[
+      SubscriptBox["f", "c"], "^"], "(", "w", ")"}], " "}], TraditionalForm]],
+  
+  FormatType->"TraditionalForm"],
+ "for f(x)=",
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          SuperscriptBox["x", "2"], 
+          RowBox[{"0", "<", "x", "<", "1"}]},
+         {"0", 
+          RowBox[{"x", ">", "1"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.754593496207138*^9, 3.754593537550069*^9}, {
+  3.7545935937505827`*^9, 3.754593635332456*^9}, {3.754598182175115*^9, 
+  3.754598222036552*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{" ", 
+  RowBox[{"fsubchat5", " ", "=", " ", 
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], 
+    RowBox[{
+     SubsuperscriptBox["\[Integral]", "0", "1"], 
+     RowBox[{
+      SuperscriptBox["x", "2"], " ", 
+      RowBox[{"Cos", "[", 
+       RowBox[{"w", " ", "x"}], "]"}], 
+      RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.754598031753846*^9, 3.754598073777994*^9}, 
+   3.754598107787698*^9, {3.754598242522842*^9, 3.754598248475556*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "w", " ", 
+      RowBox[{"Cos", "[", "w", "]"}]}], "+", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", 
+        SuperscriptBox["w", "2"]}], ")"}], " ", 
+      RowBox[{"Sin", "[", "w", "]"}]}]}], ")"}]}], 
+  SuperscriptBox["w", "3"]]], "Output",
+ CellChangeTimes->{3.75459825542698*^9, 3.754749512575844*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["This time Mathematica agrees with the text on format.", "Text",
+ CellChangeTimes->{{3.754598428037097*^9, 3.754598436933056*^9}}],
+
+Cell[TextData[StyleBox["9 - 15 Fourier Sine Transform",
+ FontWeight->"Bold"]], "Text",
+ CellChangeTimes->{{3.75460120974335*^9, 3.7546012193338757`*^9}}],
+
+Cell[TextData[{
+ "9. Find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     SubscriptBox[
+      StyleBox["F",
+       FontFamily->"Snell Roundhand"], "s"], "(", 
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{"-", "ax"}]], ")"}], ",", " ", 
+    RowBox[{"a", ">", "0"}], ",", " ", 
+    RowBox[{"by", " ", 
+     RowBox[{"integration", "."}]}]}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " "
+}], "Text",
+ CellChangeTimes->{{3.754601337977475*^9, 3.7546013406575327`*^9}, {
+  3.7546014530695877`*^9, 3.7546015207408524`*^9}, {3.754601718444985*^9, 
+  3.75460171950102*^9}, {3.75460288281327*^9, 3.754602929855796*^9}, {
+  3.7546030553434258`*^9, 3.7546032667845383`*^9}, {3.75460450081059*^9, 
+  3.754604500810629*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ StyleBox[
+  RowBox[{
+  "The", " ", "template", " ", "for", " ", "the", " ", "Fourier", " ", "Sine",
+    " ", "Transform", " ", "is", " ", "shown", " ", "in", " ", "text", " ", 
+   "panel", " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "a"}], ")"}], " ", "on", " ", 
+   RowBox[{"p", ".", " ", "518."}]}], "Text"]], "Input",
+ CellChangeTimes->{{3.754605169569055*^9, 3.754605169577677*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fsubswha", "=", 
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "\[Infinity]"], 
+    RowBox[{
+     SuperscriptBox["\[ExponentialE]", 
+      RowBox[{
+       RowBox[{"-", "a"}], " ", "x"}]], " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"w", " ", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input",
+ CellChangeTimes->{
+  3.7546052043439217`*^9, {3.754605262957981*^9, 3.754605269811755*^9}, {
+   3.754605336812271*^9, 3.754605418174933*^9}}],
+
+Cell[BoxData[
+ RowBox[{"ConditionalExpression", "[", 
+  RowBox[{
+   FractionBox[
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], " ", "w"}], 
+    RowBox[{
+     SuperscriptBox["a", "2"], "+", 
+     SuperscriptBox["w", "2"]}]], ",", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"Im", "[", "w", "]"}], "]"}], "<", 
+    RowBox[{"Re", "[", "a", "]"}]}]}], "]"}]], "Output",
+ CellChangeTimes->{
+  3.754605286636581*^9, {3.754605343381884*^9, 3.75460535103259*^9}, 
+   3.754605396123272*^9, 3.754605429016556*^9, 3.754749521934506*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Mathematica took a fairly long think before coming up with this one, which \
+matches the text.\
+\>", "Text",
+ CellChangeTimes->{{3.7546054692544403`*^9, 3.7546055069881496`*^9}}],
+
+Cell[TextData[{
+ "11. Find ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      SubscriptBox["f", "s"], "(", "w", ")"}], " ", "for", " ", 
+     RowBox[{"f", "(", "x", ")"}]}], "="}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ Cell[BoxData[
+  FormBox[
+   TagBox[GridBox[{
+      {"\[Piecewise]", GridBox[{
+         {
+          SuperscriptBox["x", "2"], 
+          RowBox[{"0", "<", "x", "<", "1"}]},
+         {"0", 
+          RowBox[{"x", ">", "1"}]}
+        },
+        AllowedDimensions->{2, Automatic},
+        Editable->True,
+        GridBoxAlignment->{
+         "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {{Baseline}}, "RowsIndexed" -> {}},
+        GridBoxItemSize->{
+         "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}},
+           "RowsIndexed" -> {}},
+        GridBoxSpacings->{"Columns" -> {
+            Offset[0.27999999999999997`], {
+             Offset[0.84]}, 
+            Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, 
+          "Rows" -> {
+            Offset[0.2], {
+             Offset[0.4]}, 
+            Offset[0.2]}, "RowsIndexed" -> {}},
+        Selectable->True]}
+     },
+     GridBoxAlignment->{
+      "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+       "RowsIndexed" -> {}},
+     GridBoxItemSize->{
+      "Columns" -> {{Automatic}}, "ColumnsIndexed" -> {}, "Rows" -> {{1.}}, 
+       "RowsIndexed" -> {}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.35]}, 
+         Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}, "RowsIndexed" -> {}}],
+    "Piecewise",
+    DeleteWithContents->True,
+    Editable->False,
+    SelectWithContents->True,
+    Selectable->False], TraditionalForm]],
+  FormatType->"TraditionalForm"]
+}], "Text",
+ CellChangeTimes->{{3.754604259079256*^9, 3.754604350339416*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+The template for the Fourier Sine Transform is shown in text panel (2a) on p. \
+518.\
+\>", "Text",
+ CellChangeTimes->{{3.7546045883559113`*^9, 3.754604615474083*^9}, {
+  3.754604654576935*^9, 3.754604706495184*^9}, {3.754604760806847*^9, 
+  3.754604763493134*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fsubswhat", "=", 
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{
+    SubsuperscriptBox["\[Integral]", "0", "1"], 
+    RowBox[{
+     SuperscriptBox["x", "2"], " ", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"w", " ", "x"}], "]"}], 
+     RowBox[{"\[DifferentialD]", "x"}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7546047099927483`*^9, 3.754604731400193*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "2"}], "-", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "+", 
+        SuperscriptBox["w", "2"]}], ")"}], " ", 
+      RowBox[{"Cos", "[", "w", "]"}]}], "+", 
+     RowBox[{"2", " ", "w", " ", 
+      RowBox[{"Sin", "[", "w", "]"}]}]}], ")"}]}], 
+  SuperscriptBox["w", "3"]]], "Output",
+ CellChangeTimes->{3.7546047482666073`*^9, 3.754749522307538*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SqrtBox[
+       FractionBox["2", "\[Pi]"]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"-", "2"}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"-", "2"}], "+", 
+           SuperscriptBox["w", "2"]}], ")"}], " ", 
+         RowBox[{"Cos", "[", "w", "]"}]}], "+", 
+        RowBox[{"2", " ", "w", " ", 
+         RowBox[{"Sin", "[", "w", "]"}]}]}], ")"}]}], 
+     SuperscriptBox["w", "3"]], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.754604838156025*^9, 3.754604854714319*^9}}],
+
+Cell[BoxData["0.24629533279725560542252049145685006317`16."], "Output",
+ CellChangeTimes->{3.7546048561512012`*^9, 3.754749522330174*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SqrtBox[
+       FractionBox["2", "\[Pi]"]], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"2", "-", 
+           SuperscriptBox["w", "2"]}], ")"}], " ", 
+         RowBox[{"Cos", "[", "w", "]"}]}], "+", 
+        RowBox[{"2", " ", "w", " ", 
+         RowBox[{"Sin", "[", "w", "]"}]}], "-", "2"}], ")"}]}], 
+     SuperscriptBox["w", "3"]], "/.", 
+    RowBox[{"w", "\[Rule]", "2"}]}], ",", "16"}], "]"}]], "Input",
+ CellChangeTimes->{{3.754604897554739*^9, 3.754604927864098*^9}}],
+
+Cell[BoxData["0.24629533279725560542252049145685006317`16."], "Output",
+ CellChangeTimes->{3.754604935885906*^9, 3.754749522368313*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "It proves to be a case of simply plugging it in. Green cell above is \
+equivalent to text answer for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["f", "s"], "(", "w", ")"}], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", as demonstrated numerically."
+}], "Text",
+ CellChangeTimes->{{3.754605002645081*^9, 3.754605071770608*^9}}],
+
+Cell[TextData[{
+ "13. Find ",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["F",
+     FontFamily->"Snell Roundhand"], "s"], 
+   RowBox[{"(", 
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", "x"}]], ")"}]}]]],
+ " from (4a) and formula 3 of Table 1 in Sec. 11.10."
+}], "Text",
+ CellChangeTimes->{{3.75460437591413*^9, 3.754604425064952*^9}, {
+  3.754604493794486*^9, 3.754604493794519*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "As for the references, (4a) goes like this:",
+ Cell[BoxData[
+  RowBox[{
+   RowBox[{
+    SubscriptBox[
+     StyleBox["F",
+      FontFamily->"Snell Roundhand"], "c"], 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"f", "'"}], 
+      RowBox[{"(", "x", ")"}]}], "}"}]}], "=", 
+   RowBox[{
+    RowBox[{
+     SubscriptBox[
+      StyleBox[
+       RowBox[{"w", 
+        StyleBox["F",
+         FontFamily->"Snell Roundhand"]}]], "s"], 
+     RowBox[{"{", 
+      RowBox[{"f", 
+       RowBox[{"(", "x", ")"}]}], "}"}]}], "-", 
+    RowBox[{
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]], "f", 
+     RowBox[{"(", "0", ")"}]}]}]}]]],
+ " "
+}], "Text",
+ CellChangeTimes->{{3.754654551066601*^9, 3.754654663017158*^9}},
+ Background->RGBColor[0.9, 1, 1]],
+
+Cell[TextData[{
+ "and formula 3 of Table 1 goes like this: ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SuperscriptBox["\[ExponentialE]", 
+     RowBox[{"-", "ax"}]], "  ", 
+    RowBox[{"(", 
+     RowBox[{"a", ">", "0"}], ")"}], " ", "goes", " ", "with", " "}], 
+   TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ Cell[BoxData[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{"(", 
+    FractionBox["a", 
+     RowBox[{
+      SuperscriptBox["a", "2"], "+", 
+      SuperscriptBox["w", "2"]}]], ")"}]}]]],
+ "=",
+ Cell[BoxData[
+  RowBox[{
+   SubscriptBox[
+    StyleBox["F",
+     FontFamily->"Snell Roundhand"], "c"], 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"f", "'"}], 
+     RowBox[{"(", "x", ")"}]}], "}"}]}]]]
+}], "Text",
+ CellChangeTimes->{{3.754654692394837*^9, 3.754654796791841*^9}, {
+  3.7546562311104603`*^9, 3.754656245937273*^9}},
+ Background->RGBColor[0.9, 1, 1]],
+
+Cell["\<\
+First I need to find that right-hand term (while leaving the minus sign \
+alone):\
+\>", "Text",
+ CellChangeTimes->{{3.7546557725401573`*^9, 3.754655788993922*^9}, {
+  3.754656456033205*^9, 3.754656472054453*^9}, {3.754660387441224*^9, 
+  3.754660396712822*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rhterm", "=", 
+  RowBox[{
+   SuperscriptBox["\[ExponentialE]", 
+    RowBox[{"-", "0"}]], 
+   RowBox[{"(", 
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.754656474984208*^9, 3.754656521868133*^9}, 
+   3.754659872548731*^9}],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["2", "\[Pi]"]]], "Output",
+ CellChangeTimes->{3.7546565245478973`*^9, 3.754659874105689*^9, 
+  3.754659921719635*^9, 3.7547495224182177`*^9}]
+}, Open  ]],
+
+Cell["Then from Table 1 I should have:", "Text",
+ CellChangeTimes->{{3.754656554939374*^9, 3.754656566553548*^9}, {
+  3.754660245986246*^9, 3.7546602620719433`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fcfprimex", "=", 
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{"(", 
+    FractionBox["1", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["w", "2"]}]], ")"}]}]}]], "Input",
+ CellChangeTimes->{{3.7546570304757032`*^9, 3.7546570352312727`*^9}, {
+  3.7546570672132196`*^9, 3.754657135473673*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SqrtBox[
+   FractionBox["2", "\[Pi]"]], 
+  RowBox[{"1", "+", 
+   SuperscriptBox["w", "2"]}]]], "Output",
+ CellChangeTimes->{3.754657137665351*^9, 3.75465992539981*^9, 
+  3.7546600134514227`*^9, 3.754749522468754*^9}]
+}, Open  ]],
+
+Cell["\<\
+And rearranging 4a, taking advantage of the minus sign to make an additive :\
+\>", "Text",
+ CellChangeTimes->{{3.7546602825348167`*^9, 3.7546602827747183`*^9}, {
+  3.754660314221068*^9, 3.754660339555813*^9}, {3.7546604180717907`*^9, 
+  3.754660453237795*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"fsfx", "=", 
+  RowBox[{"Simplify", "[", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"fcfprimex", " ", "+", "rhterm"}], ")"}], "/", "w"}], 
+   "]"}]}]], "Input",
+ CellChangeTimes->{{3.754657178939966*^9, 3.7546572216763906`*^9}, {
+  3.754657255362667*^9, 3.754657294200334*^9}, {3.754657332934332*^9, 
+  3.754657333198189*^9}, {3.754657469088417*^9, 3.754657500382379*^9}, {
+  3.754657638637844*^9, 3.754657642189478*^9}, {3.754657692012417*^9, 
+  3.7546577115617867`*^9}, {3.754659686096677*^9, 3.754659687062406*^9}, {
+  3.754659734019972*^9, 3.7546597386917477`*^9}, {3.754659893084065*^9, 
+  3.754659893683584*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "+", 
+     SuperscriptBox["w", "2"]}], ")"}]}], 
+  RowBox[{"w", "+", 
+   SuperscriptBox["w", "3"]}]]], "Output",
+ CellChangeTimes->{{3.754657281098639*^9, 3.754657294915587*^9}, 
+   3.754657334597937*^9, {3.75465747075884*^9, 3.754657500931942*^9}, 
+   3.7546576432458277`*^9, {3.754657701250908*^9, 3.754657712704941*^9}, 
+   3.754659688920741*^9, 3.754659739829731*^9, 3.754659894935134*^9, 
+   3.754659949315077*^9, 3.754660052197172*^9, 3.754749522518759*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    SqrtBox[
+     FractionBox["2", "\[Pi]"]], " ", 
+    RowBox[{"(", 
+     RowBox[{"2", "+", 
+      SuperscriptBox["w", "2"]}], ")"}]}], 
+   RowBox[{"w", "+", 
+    SuperscriptBox["w", "3"]}]], "/.", 
+  RowBox[{"w", "\[Rule]", "2"}]}]], "Input",
+ CellChangeTimes->{{3.7546577497368813`*^9, 3.754657753895196*^9}, {
+   3.75465970015007*^9, 3.754659701501719*^9}, 3.754659752206354*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"3", " ", 
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]]}], "5"]], "Output",
+ CellChangeTimes->{3.754657756057002*^9, 3.7546597024074583`*^9, 
+  3.7546597544270163`*^9, 3.75465991514432*^9, 3.754659953107037*^9, 
+  3.754660056108096*^9, 3.754749522567296*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], 
+   RowBox[{"(", 
+    FractionBox["w", 
+     RowBox[{
+      SuperscriptBox["w", "2"], "+", "1"}]], ")"}]}], "/.", 
+  RowBox[{"w", "\[Rule]", "2"}]}]], "Input",
+ CellChangeTimes->{{3.75465777599935*^9, 3.754657797181035*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"2", " ", 
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]]}], "5"]], "Output",
+ CellChangeTimes->{3.7546578006842813`*^9, 3.75474952261876*^9},
+ Background->GrayLevel[0.85]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   FractionBox["1", "w"], 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      SqrtBox[
+       FractionBox["2", "\[Pi]"]], 
+      RowBox[{"(", 
+       FractionBox["1", 
+        RowBox[{
+         SuperscriptBox["w", "2"], "+", "1"}]], ")"}]}], "+", 
+     SqrtBox[
+      FractionBox["2", "\[Pi]"]]}], ")"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.754660651246422*^9, 3.754660695482478*^9}, {
+  3.7546607881839437`*^9, 3.754660815214529*^9}},
+ Background->RGBColor[0.94, 0.88, 0.94]],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]], " ", 
+   RowBox[{"(", 
+    RowBox[{"2", "+", 
+     SuperscriptBox["w", "2"]}], ")"}]}], 
+  RowBox[{"w", "+", 
+   SuperscriptBox["w", "3"]}]]], "Output",
+ CellChangeTimes->{3.754660816385871*^9, 3.754749522668335*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"%", "/.", 
+  RowBox[{"w", "\[Rule]", "2"}]}]], "Input",
+ CellChangeTimes->{{3.754660710852921*^9, 3.754660717463998*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"3", " ", 
+   SqrtBox[
+    FractionBox["2", "\[Pi]"]]}], "5"]], "Output",
+ CellChangeTimes->{3.754660719296544*^9, 3.754660820673275*^9, 
+  3.754749522718264*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+As straightforward as this problem seemed, there was a difficulty matching \
+answers with the text. In checking, first yellow and gray cells do not match. \
+But the text answer contains intermediate forms, yielding purple cell and \
+agreement with first yellow, and pointing to an error in text answer final \
+form.\
+\>", "Text",
+ CellChangeTimes->{{3.75466165690705*^9, 3.754661750854851*^9}, {
+  3.754661805164978*^9, 3.754661831012035*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 219, 5, 51, "Text",
+ Evaluatable->False],
+Cell[622, 20, 253, 4, 51, "Text"],
+Cell[878, 26, 2085, 61, 138, "Text"],
+Cell[2966, 89, 486, 8, 86, "Text"],
+Cell[CellGroupData[{
+Cell[3477, 101, 959, 27, 92, "Input"],
+Cell[4439, 130, 470, 14, 148, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4946, 149, 570, 16, 124, "Input"],
+Cell[5519, 167, 182, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5738, 174, 533, 16, 92, "Input"],
+Cell[6274, 192, 160, 2, 45, "Output"]
+}, Open  ]],
+Cell[6449, 197, 393, 10, 54, "Text"],
+Cell[6845, 209, 1927, 57, 104, "Text"],
+Cell[8775, 268, 114, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[8914, 273, 421, 12, 92, "Input"],
+Cell[9338, 287, 442, 13, 150, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9817, 305, 687, 18, 126, "Input"],
+Cell[10507, 325, 248, 4, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10792, 334, 666, 20, 92, "Input"],
+Cell[11461, 356, 180, 3, 45, "Output"]
+}, Open  ]],
+Cell[11656, 362, 422, 11, 89, "Text"],
+Cell[12081, 375, 2079, 62, 110, "Text"],
+Cell[CellGroupData[{
+Cell[14185, 441, 507, 14, 92, "Input"],
+Cell[14695, 457, 524, 17, 150, "Output"]
+}, Open  ]],
+Cell[15234, 477, 135, 1, 51, "Text"],
+Cell[15372, 480, 153, 2, 51, "Text"],
+Cell[15528, 484, 779, 22, 77, "Text"],
+Cell[16310, 508, 397, 9, 54, "Input"],
+Cell[CellGroupData[{
+Cell[16732, 521, 547, 16, 92, "Input"],
+Cell[17282, 539, 585, 17, 150, "Output"]
+}, Open  ]],
+Cell[17882, 559, 188, 4, 51, "Text"],
+Cell[18073, 565, 2006, 59, 110, "Text"],
+Cell[20082, 626, 274, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[20381, 636, 399, 12, 92, "Input"],
+Cell[20783, 650, 558, 18, 150, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21378, 673, 674, 21, 126, "Input"],
+Cell[22055, 696, 137, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22229, 702, 623, 19, 126, "Input"],
+Cell[22855, 723, 135, 1, 45, "Output"]
+}, Open  ]],
+Cell[23005, 727, 369, 10, 88, "Text"],
+Cell[23377, 739, 443, 14, 76, "Text"],
+Cell[23823, 755, 754, 29, 88, "Text"],
+Cell[24580, 786, 897, 33, 89, "Text"],
+Cell[25480, 821, 271, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[25776, 831, 289, 9, 100, "Input"],
+Cell[26068, 842, 179, 4, 92, "Output"]
+}, Open  ]],
+Cell[26262, 849, 165, 2, 51, "Text"],
+Cell[CellGroupData[{
+Cell[26452, 855, 337, 10, 92, "Input"],
+Cell[26792, 867, 246, 7, 126, "Output"]
+}, Open  ]],
+Cell[27053, 877, 270, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[27348, 886, 642, 13, 45, "Input"],
+Cell[27993, 901, 624, 15, 150, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28654, 921, 434, 13, 126, "Input"],
+Cell[29091, 936, 329, 8, 148, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29457, 949, 303, 10, 92, "Input"],
+Cell[29763, 961, 206, 6, 148, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30006, 972, 532, 17, 124, "Input"],
+Cell[30541, 991, 299, 10, 126, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30877, 1006, 145, 3, 45, "Input"],
+Cell[31025, 1011, 235, 7, 148, "Output"]
+}, Open  ]],
+Cell[31275, 1021, 453, 8, 120, "Text"]
+}
+]
+*)
+
