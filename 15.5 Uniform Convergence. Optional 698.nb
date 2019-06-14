@@ -1,0 +1,1725 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     52226,       1724]
+NotebookOptionsPosition[     47608,       1572]
+NotebookOutlinePosition[     47996,       1589]
+CellTagsIndexPosition[     47953,       1586]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{3.769274745490666*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+2 - 9 Power series
+Where does the power series converge uniformly? \
+\>", "Text",
+ CellChangeTimes->{{3.7596196570386744`*^9, 3.759619675757114*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3.", "  ", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"(", 
+      FractionBox["1", 
+       SuperscriptBox["3", "n"]], ")"}], "n"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", "\[ImaginaryI]"}], ")"}], 
+     RowBox[{"2", "n"}]]}]}]}]], "Text",
+ CellChangeTimes->{{3.759619680301333*^9, 3.759619811152858*^9}, 
+   3.759620546806487*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "By theorem 1, p. 699, a power series in powers of ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"z", "-", 
+    SubscriptBox["z", "0"]}], TraditionalForm]]],
+ " converges uniformly in the closed disk ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"|", 
+    RowBox[{"z", "-", 
+     SubscriptBox["z", "0"]}]}], TraditionalForm]]],
+ "| \[LessEqual] r, where  r < R and R is is the radius of convergence of the \
+series. In other words, look for the radius of convergence."
+}], "Text",
+ CellChangeTimes->{{3.7596208654574623`*^9, 3.759620987309209*^9}, {
+  3.759622971219002*^9, 3.7596229789282227`*^9}, {3.759677042034349*^9, 
+  3.759677053983985*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Series", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", 
+       FractionBox["1", 
+        SuperscriptBox["3", "n"]], ")"}], "n"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "+", "\[ImaginaryI]"}], ")"}], 
+      RowBox[{"2", "n"}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "\[ImaginaryI]", ",", "4"}], "}"}]}], "]"}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.759621029454845*^9, 3.759621082289995*^9}, 
+   3.7596211228973017`*^9, {3.759621206006689*^9, 3.759621215518656*^9}}],
+
+Cell[TextData[{
+ "The power series is in terms of Z=(z+\[ImaginaryI]",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox[")", "2"], TraditionalForm]]],
+ ", and has the form ",
+ Cell[BoxData[
+  RowBox[{
+   StyleBox[
+    UnderoverscriptBox[
+     StyleBox["\[Sum]",
+      FontSize->22], 
+     RowBox[{"n", "=", "0"}], "\[Infinity]"],
+    FontSize->20], 
+   SubscriptBox["a", "n"]}]]],
+ "Z",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " with coefficients ",
+ Cell[BoxData[
+  StyleBox[
+   FractionBox["1", 
+    SuperscriptBox["3", "n"]],
+   FontSize->20]],
+  CellChangeTimes->{{3.759621029454845*^9, 3.759621082289995*^9}, 
+    3.7596211228973017`*^9, {3.759621206006689*^9, 3.759621215518656*^9}}],
+ ". So"
+}], "Text",
+ CellChangeTimes->{{3.7596225948610163`*^9, 3.7596226969528913`*^9}, {
+  3.759622737584015*^9, 3.759622818221142*^9}, {3.7596231096550426`*^9, 
+  3.759623110932517*^9}, {3.759677161715229*^9, 3.759677213475745*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["a", "n"], "=", 
+  SuperscriptBox["3", 
+   RowBox[{"-", "n"}]]}]], "Input",
+ CellChangeTimes->{{3.7596228520797377`*^9, 3.759622870155839*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox["3", 
+  RowBox[{"-", "n"}]]], "Output",
+ CellChangeTimes->{3.759622871676518*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  SubscriptBox["a", 
+   RowBox[{"n", "+", "1"}]], "=", 
+  SuperscriptBox["3", 
+   RowBox[{"-", 
+    RowBox[{"(", 
+     RowBox[{"n", "+", "1"}], ")"}]}]]}]], "Input",
+ CellChangeTimes->{{3.75962287651232*^9, 3.759622905650917*^9}}],
+
+Cell[BoxData[
+ SuperscriptBox["3", 
+  RowBox[{
+   RowBox[{"-", "1"}], "-", "n"}]]], "Output",
+ CellChangeTimes->{3.759622907446828*^9}]
+}, Open  ]],
+
+Cell["and", "Text",
+ CellChangeTimes->{{3.759622913641975*^9, 3.7596229139622*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ FractionBox[
+  SubscriptBox["a", "n"], 
+  SubscriptBox["a", 
+   RowBox[{"n", "+", "1"}]]]], "Input",
+ CellChangeTimes->{{3.759622928371154*^9, 3.759622953121366*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{{3.7596229368619967`*^9, 3.759622954096698*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Since the power of the power term is 2n, the radius of convergence R is\
+\>", "Text",
+ CellChangeTimes->{{3.7596231242034073`*^9, 3.759623179666112*^9}, {
+  3.759623263719184*^9, 3.759623264223566*^9}, {3.759686522384049*^9, 
+  3.759686524151702*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["3", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.7596231840781717`*^9, 3.759623188322008*^9}}],
+
+Cell[BoxData[
+ SqrtBox["3"]], "Output",
+ CellChangeTimes->{3.7596231899040737`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The disk of uniform convergence is less than R, so a \[Delta] must be \
+allowed so that |z+\[ImaginaryI]|\[LessEqual] ",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["3"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "-\[Delta], with \[Delta]>0."
+}], "Text",
+ CellChangeTimes->{{3.7596232140485363`*^9, 3.759623278375063*^9}, {
+  3.7596233187417183`*^9, 3.759623382675932*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"5.", "  ", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "2"}], "\[Infinity]"], 
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"n", ",", "2"}], "]"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"4", "z"}], "+", 
+       RowBox[{"2", "\[ImaginaryI]"}]}], ")"}], "n"]}]}]}]], "Text",
+ CellChangeTimes->{{3.7596198210014353`*^9, 3.7596198292113733`*^9}, {
+   3.759619866008635*^9, 3.759619895030198*^9}, {3.759620507740942*^9, 
+   3.7596205079315567`*^9}, 3.759620558124997*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["The form of the series can be changed to", "Text",
+ CellChangeTimes->{{3.759677556061983*^9, 3.759677563757658*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"Binomial", "[", 
+     RowBox[{"n", ",", "2"}], "]"}], 
+    SuperscriptBox["4", "n"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[ImaginaryI]", "2"]}], ")"}], "n"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "2", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759677344410841*^9, 3.759677405069706*^9}, {
+  3.759677446966078*^9, 3.759677454347773*^9}, {3.759677484947701*^9, 
+  3.7596774907951202`*^9}, {3.759677568005925*^9, 3.759677579308938*^9}, {
+  3.759677614011587*^9, 3.75967761456339*^9}, {3.759678377823922*^9, 
+  3.759678384837551*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"16", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "2"]}], "+", 
+  RowBox[{"192", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "3"]}], "+", 
+  RowBox[{"1536", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "4"]}], "+", 
+  RowBox[{"10240", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "5"]}], "+", 
+  RowBox[{"61440", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "6"]}], "+", 
+  RowBox[{"344064", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "7"]}], "+", 
+  RowBox[{"1835008", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], 
+    "8"]}]}]], "Output",
+ CellChangeTimes->{3.759677491525051*^9, 3.759677582801811*^9, 
+  3.759677615308617*^9, 3.759678388277231*^9}]
+}, Open  ]],
+
+Cell["And to find the general sequence of coefficients,", "Text",
+ CellChangeTimes->{{3.759678606764084*^9, 3.759678617987007*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+    "16", ",", "192", ",", "1536", ",", "10240", ",", "61440", ",", "344064", 
+     ",", "1835008"}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759677658930325*^9, 3.7596776724561253`*^9}, {
+  3.759678404236842*^9, 3.7596784376751423`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["2", 
+   RowBox[{"1", "+", 
+    RowBox[{"2", " ", "n"}]}]], " ", "n", " ", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.759677673725195*^9, 3.759678440524393*^9}]
+}, Open  ]],
+
+Cell["\<\
+Reaching back to get the Cauchy-Hadamard criterion, I can find the raw radius,\
+\>", "Text",
+ CellChangeTimes->{{3.759677778674582*^9, 3.7596777951138067`*^9}, {
+  3.759678636953264*^9, 3.759678643337151*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["2", 
+       RowBox[{"1", "+", 
+        RowBox[{"2", " ", "n"}]}]], " ", "n", " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", "n"}], ")"}]}], 
+     RowBox[{
+      SuperscriptBox["2", 
+       RowBox[{"3", "+", 
+        RowBox[{"2", " ", "n"}]}]], " ", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{"2", "+", "n"}], ")"}]}]], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759677758215013*^9, 3.7596777680929117`*^9}, {
+   3.759677800361883*^9, 3.7596778107693243`*^9}, 3.759677878526449*^9, {
+   3.759677981434334*^9, 3.759678029598392*^9}, {3.759678454613928*^9, 
+   3.759678485225031*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "4"]], "Output",
+ CellChangeTimes->{3.759677812392933*^9, 3.759677880101191*^9, 
+  3.75967799245958*^9, 3.759678030786296*^9, 3.7596784864218197`*^9}]
+}, Open  ]],
+
+Cell["\<\
+And to convert the raw radius to the actual radius of convergence, I apply \
+the 1/n factor of the power term,\
+\>", "Text",
+ CellChangeTimes->{{3.759678649766824*^9, 3.759678696550599*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox["1", "4"], ")"}], 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759678513784709*^9, 3.759678531718421*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "4"]], "Output",
+ CellChangeTimes->{3.759678533648584*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "As the radius of convergence is R=",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", "4"],
+    FontSize->21], TraditionalForm]]],
+ ", I now need r such that r+\[Delta]=",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", "4"],
+    FontSize->21], TraditionalForm]]],
+ ", where \[Delta]>0 and Abs[z+",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{
+     FractionBox["\[ImaginaryI]", "2"], "]"}], "\[LessEqual]", "r"}], 
+   TraditionalForm]]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7596787051660957`*^9, 3.75967877377905*^9}, {
+  3.759678805730792*^9, 3.759678811670191*^9}, {3.759678852248426*^9, 
+  3.759678888629313*^9}, {3.759679012779455*^9, 3.7596790171395493`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"7.", "  ", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "!"}], 
+     SuperscriptBox["n", "2"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[ImaginaryI]", "2"]}], ")"}], "n"]}]}]}]], "Text",
+ CellChangeTimes->{{3.75961990004751*^9, 3.7596199629883137`*^9}, {
+   3.759620512443493*^9, 3.759620512611339*^9}, 3.759620567764674*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+I see that the Maclaurin series does not converge, but the Taylor series does,\
+\>", "Text",
+ CellChangeTimes->{{3.759686709950041*^9, 3.759686726149197*^9}, 
+   3.759688316386312*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", "!"}], 
+     SuperscriptBox["n", "2"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[ImaginaryI]", "2"]}], ")"}], "n"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7596866463974323`*^9, 3.759686691495298*^9}, {
+  3.759686851943996*^9, 3.759686853783279*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["\[ImaginaryI]", "2"], "+", "z", "+", 
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "2"]}], "+", 
+  RowBox[{
+   FractionBox["2", "3"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "3"]}], "+", 
+  RowBox[{
+   FractionBox["3", "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "4"]}], "+", 
+  RowBox[{
+   FractionBox["24", "5"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "5"]}], "+", 
+  RowBox[{"20", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "6"]}], "+", 
+  RowBox[{
+   FractionBox["720", "7"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], "7"]}], "+", 
+  RowBox[{"630", " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      FractionBox["\[ImaginaryI]", "2"], "+", "z"}], ")"}], 
+    "8"]}]}]], "Output",
+ CellChangeTimes->{{3.759686683548235*^9, 3.7596866928199453`*^9}, 
+   3.759686854883762*^9}]
+}, Open  ]],
+
+Cell["\<\
+The z and n parts of the series are already set up nicely. I can try to find \
+the coefficients,\
+\>", "Text",
+ CellChangeTimes->{{3.759686788195249*^9, 3.759686811569036*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["2", "3"], ",", 
+     FractionBox["3", "2"], ",", 
+     FractionBox["24", "5"], ",", "20", ",", 
+     FractionBox["720", "7"], ",", "630"}], "}"}], ",", "n"}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.759686818984687*^9, 3.75968690004453*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Pochhammer", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "n"}]}], "]"}], "n"]], "Output",
+ CellChangeTimes->{3.759686901837749*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.7596869064660397`*^9, 3.759686911109551*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Gamma", "[", "n", "]"}], "n"]], "Output",
+ CellChangeTimes->{3.759686912161344*^9}]
+}, Open  ]],
+
+Cell["\<\
+Using the Cauchy-Hadamard criterion, I can try to find the radius,\
+\>", "Text",
+ CellChangeTimes->{{3.759686945931259*^9, 3.759686964897167*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"Gamma", "[", "n", "]"}], "n"], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"n", "+", "1"}], 
+       RowBox[{"Gamma", "[", 
+        RowBox[{"n", "+", "1"}], "]"}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759686978331058*^9, 3.759687015798853*^9}}],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.759687017970039*^9}]
+}, Open  ]],
+
+Cell["\<\
+The radius of convergence is zero. The disk of uniform convergence must be \
+strictly less than the radius of convergence, which is impossible. Therefore \
+the series is uniformly convergent nowhere.\
+\>", "Text",
+ CellChangeTimes->{{3.759687861892356*^9, 3.7596879365830708`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"9.", "  ", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "n"], 
+     RowBox[{
+      SuperscriptBox["2", "n"], 
+      SuperscriptBox["n", "2"]}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"2", "\[ImaginaryI]"}]}], ")"}], "n"]}]}]}]], "Text",
+ CellChangeTimes->{{3.759619966381723*^9, 3.759620014020385*^9}, {
+   3.7596205189313717`*^9, 3.7596205190511703`*^9}, 3.759620579228356*^9, {
+   3.75968904896183*^9, 3.759689049448172*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+The Maclaurin series does not converge, but the Taylor series does,\
+\>", "Text",
+ CellChangeTimes->{{3.7596883300077753`*^9, 3.7596883473620377`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sum", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"-", "1"}], ")"}], "n"], 
+     RowBox[{
+      SuperscriptBox["2", "n"], 
+      SuperscriptBox["n", "2"]}]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"2", "\[ImaginaryI]"}]}], ")"}], "n"]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"n", ",", "1", ",", "10"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759688192198205*^9, 3.759688220800606*^9}, {
+  3.75968826503272*^9, 3.759688265206559*^9}, {3.759688646229928*^9, 
+  3.7596886468921137`*^9}, {3.759689057024702*^9, 3.7596890573440113`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", "\[ImaginaryI]"}], "-", "z"}], ")"}]}], "+", 
+  RowBox[{
+   FractionBox["1", "16"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]}], 
+  "-", 
+  RowBox[{
+   FractionBox["1", "72"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "3"]}], 
+  "+", 
+  RowBox[{
+   FractionBox["1", "256"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "4"]}], 
+  "-", 
+  RowBox[{
+   FractionBox["1", "800"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "5"]}], 
+  "+", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "6"], 
+   "2304"], "-", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "7"], 
+   "6272"], "+", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "8"], 
+   "16384"], "-", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "9"], 
+   "41472"], "+", 
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}], "10"], 
+   "102400"]}]], "Output",
+ CellChangeTimes->{
+  3.759688221935401*^9, 3.759688266066009*^9, {3.759688635741096*^9, 
+   3.759688648444216*^9}, 3.759689059343038*^9}]
+}, Open  ]],
+
+Cell["\<\
+The sign needs to be adjusted on the first term in order to match the others. \
+The z and n parts of the series seem neat and orderly. I can try to find the \
+coefficients,\
+\>", "Text",
+ CellChangeTimes->{{3.759688401839876*^9, 3.7596884333738613`*^9}, {
+  3.759689193049161*^9, 3.759689221743729*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", 
+     FractionBox["1", "16"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "72"]}], ",", 
+     FractionBox["1", "256"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "800"]}], ",", 
+     FractionBox["1", "2304"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "6272"]}], ",", 
+     FractionBox["1", "16384"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759688456798583*^9, 3.7596885492886753`*^9}, {
+   3.759688658123631*^9, 3.759688695617633*^9}, {3.759688740607791*^9, 
+   3.759688796254253*^9}, 3.759689071433091*^9, 3.7596891383084393`*^9}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"-", 
+     FractionBox["1", "2"]}], ")"}], "n"], 
+  SuperscriptBox["n", "2"]]], "Output",
+ CellChangeTimes->{
+  3.759688552333179*^9, 3.759688586441742*^9, 3.7596886407236137`*^9, {
+   3.759688681135222*^9, 3.759688697077734*^9}, {3.759688742249667*^9, 
+   3.759688798266569*^9}, 3.759689086450694*^9, 3.759689139777484*^9}]
+}, Open  ]],
+
+Cell["\<\
+Using the Cauchy - Hadamard criterion, I can try to find the radius,\
+\>", "Text",
+ CellChangeTimes->{{3.7596888506084633`*^9, 3.759688855580823*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", 
+         FractionBox["1", "2"]}], ")"}], "n"], 
+      SuperscriptBox["n", "2"]], 
+     RowBox[{"(", 
+      FractionBox[
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}], "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", 
+          FractionBox["1", "2"]}], ")"}], 
+        RowBox[{"n", "+", "1"}]]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759688886587471*^9, 3.759688907842124*^9}, {
+  3.759689158843432*^9, 3.7596891678747463`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.759688914377993*^9, 3.759689169620522*^9}]
+}, Open  ]],
+
+Cell["\<\
+And to convert the raw radius to the actual radius of convergence, I apply \
+the 1/n factor of the power term,\
+\>", "Text",
+ CellChangeTimes->{{3.75968949513033*^9, 3.7596894998375273`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["2", 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759689517346833*^9, 3.7596895183936157`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.759689519836241*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "As the radius of convergence is R=",
+ Cell[BoxData[
+  FormBox["2", TraditionalForm]]],
+ ", I now need r such that r+\[Delta]=2, where \[Delta]>0 and Abs[z-2 \
+\[ImaginaryI]",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"]", "\[LessEqual]", "r"}], TraditionalForm]]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7596895523472347`*^9, 3.759689592717869*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["\<\
+10 - 17 Uniform convergence
+Prove that the series converges uniformly in the indicated region.\
+\>", "Text",
+ CellChangeTimes->{{3.759620110912217*^9, 3.7596201401507273`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"11.", " ", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+    FractionBox[
+     SuperscriptBox["z", "n"], 
+     SuperscriptBox["n", "2"]]}]}], " ", ",", 
+  RowBox[{
+   RowBox[{"Abs", "[", "z", "]"}], "\[LessEqual]", "1"}]}]], "Text",
+ CellChangeTimes->{{3.7596201444723988`*^9, 3.7596202185885057`*^9}, 
+   3.759620589468108*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["z", "n"], 
+    SuperscriptBox["n", "2"]], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759698263819849*^9, 3.759698348003952*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "\[LessEqual]", "1"}]], "Output",
+ CellChangeTimes->{3.7596983488876867`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Mathematica indicates the region of convergence, which is exactly the \
+region I am interested in. (However, since I want to enforce r and not R, I \
+don\[CloseCurlyQuote]t think I can do it on the response by Mathematica.) The \
+Weierstrass M-test is very easy to apply in this case. For the domain of \
+interest, for any ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["z", "n"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " with z from that domain, "
+}], "Text",
+ CellChangeTimes->{{3.759698661371256*^9, 3.7596986928092537`*^9}, {
+  3.759698923699553*^9, 3.759699005551621*^9}, {3.7597009498065147`*^9, 
+  3.7597009845708427`*^9}, {3.7597048055361137`*^9, 3.759704806837407*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox["z", "n"], 
+   SuperscriptBox["n", "2"]], "\[LessEqual]", 
+  FractionBox["1", 
+   SuperscriptBox["n", "2"]], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"for", " ", "all", " ", "positive", " ", "n"}], "\[Element]", 
+    "\[DoubleStruckCapitalN]"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.759699030402053*^9, 3.759699035166794*^9}, {
+  3.759699066743093*^9, 3.759699170738504*^9}}],
+
+Cell[TextData[{
+ "And the series ",
+ Cell[BoxData[
+  StyleBox[
+   FractionBox["1", 
+    SuperscriptBox["n", "2"]],
+   FontSize->21]],
+  CellChangeTimes->{{3.759699030402053*^9, 3.759699035166794*^9}, {
+   3.759699066743093*^9, 3.759699170738504*^9}}],
+ "can be used as the Weierstrass comparison series. Example 4 on p. 682 \
+remarks that the series ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", 
+     SuperscriptBox["n", "2"]],
+    FontSize->21], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " converges. Therefore by the Weierstrass M-test, the problem series \
+converges uniformly in the indicated region."
+}], "Text",
+ CellChangeTimes->{{3.7596991985457163`*^9, 3.7596992212358418`*^9}, {
+  3.7597004038381166`*^9, 3.75970043248378*^9}, {3.759705212083518*^9, 
+  3.759705215168683*^9}, {3.759705458314816*^9, 3.759705476072646*^9}, {
+  3.759705519968956*^9, 3.759705536766827*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"13.", "  ", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"Sin", "[", 
+       RowBox[{"Abs", "[", "z", "]"}], "]"}], "n"], 
+     SuperscriptBox["n", "2"]]}]}], ",", " ", 
+  RowBox[{"all", " ", "z"}]}]], "Text",
+ CellChangeTimes->{{3.759620205975175*^9, 3.759620283434475*^9}, 
+   3.7596205973717957`*^9, 3.759699325312683*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+This problem is very similar to the last. The numerator of the function must \
+either equal 1 or be less than 1, for all z. In either case \
+\>", "Text",
+ CellChangeTimes->{{3.759700205115993*^9, 3.759700248121304*^9}, {
+  3.759700298151752*^9, 3.7597003183832273`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   SuperscriptBox[
+    RowBox[{"Sin", "[", 
+     RowBox[{"Abs", "[", "z", "]"}], "]"}], "n"], 
+   SuperscriptBox["n", "2"]], "\[LessEqual]", 
+  FractionBox["1", 
+   SuperscriptBox["n", "2"]], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{"for", " ", "all", " ", "positive", " ", "n"}], "\[Element]", 
+    "\[DoubleStruckCapitalN]"}], " ", "*)"}]}]], "Input",
+ CellChangeTimes->{3.759700348297421*^9}],
+
+Cell[TextData[{
+ "And again the series ",
+ Cell[BoxData[
+  StyleBox[
+   FractionBox["1", 
+    SuperscriptBox["n", "2"]],
+   FontSize->21]],
+  CellChangeTimes->{{3.759699030402053*^9, 3.759699035166794*^9}, {
+   3.759699066743093*^9, 3.759699170738504*^9}}],
+ "can be used as the Weierstrass comparison series. Example 4 on p. 682 \
+remarks that the series ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", 
+     SuperscriptBox["n", "2"]],
+    FontSize->21], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " converges. Therefore by the Weierstrass M - test, the series converges \
+uniformly in the indicated region."
+}], "Text",
+ CellChangeTimes->{{3.759700361950612*^9, 3.75970036591317*^9}, 
+   3.759700458610569*^9, {3.7597004948444853`*^9, 3.759700495753894*^9}, {
+   3.759705587238632*^9, 3.759705591774559*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"15.", "  ", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"n", "!"}], ")"}], "2"], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"2", " ", "n"}], ")"}], "!"}]], 
+     SuperscriptBox["z", "n"]}]}]}], " ", ",", " ", 
+  RowBox[{
+   RowBox[{"Abs", "[", "z", "]"}], "\[LessEqual]", "3"}]}]], "Text",
+ CellChangeTimes->{{3.759620288301203*^9, 3.759620398960608*^9}, 
+   3.759620612803293*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"n", "!"}], ")"}], "2"], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"2", " ", "n"}], ")"}], "!"}]], 
+    SuperscriptBox["z", "n"]}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{3.759700669063859*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "<", "4"}]], "Output",
+ CellChangeTimes->{3.759700670799024*^9}]
+}, Open  ]],
+
+Cell["\<\
+Mathematica tells me that the radius of convergence, R, is equal to 4. \
+Therefore, since the problem series is a power series, the radius of uniform \
+convergence, r, is anything smaller than R. As 3 is certainly less than 4, \
+the series converges uniformly in the indicated region.\
+\>", "Text",
+ CellChangeTimes->{{3.759700749467147*^9, 3.759700896445627*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"17.", "  ", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "1"}], "\[Infinity]"], 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox["\[Pi]", "n"], 
+      SuperscriptBox["n", "4"]], 
+     SuperscriptBox["z", 
+      RowBox[{"2", " ", "n"}]]}]}]}], " ", ",", " ", 
+  RowBox[{
+   RowBox[{"Abs", "[", "z", "]"}], "\[LessEqual]", "0.56"}]}]], "Text",
+ CellChangeTimes->{{3.759620404139656*^9, 3.7596204737726917`*^9}, 
+   3.7596206230510387`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ver", "=", 
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["\[Pi]", "n"], 
+    SuperscriptBox["n", "4"]], 
+   SuperscriptBox["z", 
+    RowBox[{"2", " ", "n"}]]}]}]], "Input",
+ CellChangeTimes->{{3.759701442527649*^9, 3.759701450232428*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["\[Pi]", "n"], " ", 
+   SuperscriptBox["z", 
+    RowBox[{"2", " ", "n"}]]}], 
+  SuperscriptBox["n", "4"]]], "Output",
+ CellChangeTimes->{3.7597014517382812`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ver1", "=", 
+   RowBox[{"ver", "/.", 
+    RowBox[{"z", "\[Rule]", "0.56"}]}]}], ";", " ", 
+  RowBox[{"ver2", "=", 
+   RowBox[{"ver", "/.", 
+    RowBox[{"z", "\[Rule]", "0.1"}]}]}], ";", " ", 
+  RowBox[{"ver3", "=", 
+   RowBox[{"ver", "/.", 
+    RowBox[{"z", "\[Rule]", "0.0"}]}]}], ";", " ", 
+  RowBox[{"ver4", "=", 
+   RowBox[{"ver", "/.", 
+    RowBox[{"z", "\[Rule]", 
+     RowBox[{"-", "0.1"}]}]}]}], ";", " ", 
+  RowBox[{"ver5", "=", 
+   RowBox[{"ver", "/.", 
+    RowBox[{"z", "\[Rule]", 
+     RowBox[{"-", "0.56"}]}]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.7597014542577868`*^9, 3.759701467867997*^9}, {
+  3.759702997437858*^9, 3.759703066491171*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"ver1", ",", "3"}], "]"}], ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"ver2", ",", "3"}], "]"}], ",", "ver3", ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"ver4", ",", "3"}], "]"}], ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{"ver5", ",", "3"}], "]"}], ",", 
+       RowBox[{"NumberForm", "[", 
+        RowBox[{
+         RowBox[{"N", "[", 
+          RowBox[{"1", "/", 
+           SuperscriptBox["n", "2"]}], "]"}], ",", "3"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "10"}], "}"}]}], "]"}], ",", 
+   RowBox[{"TableHeadings", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<\>\"", ",", "\"\<z\[Rule]0.56\>\"", ",", "\"\<z\[Rule]0.1\>\"", 
+        ",", "\"\<z\[Rule]0.0\>\"", ",", "\"\<z\[Rule]-0.1\>\"", ",", 
+        "\"\<z\[Rule]-0.56\>\"", ",", 
+        "\"\<N[1/\!\(\*SuperscriptBox[\(n\), \(2\)]\)]\>\""}], "}"}]}], 
+     "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759701777389336*^9, 3.7597018398326683`*^9}, {
+  3.759702114723537*^9, 3.759702120032138*^9}, {3.7597030807264347`*^9, 
+  3.7597031030022583`*^9}, {3.7597033174616327`*^9, 3.759703395780312*^9}, {
+  3.759703430665875*^9, 3.759703485110896*^9}, {3.759703697450097*^9, 
+  3.759703716528397*^9}, {3.759703759047831*^9, 3.759703761430408*^9}, {
+  3.7597043744611053`*^9, 3.759704383691234*^9}, {3.7597044256755457`*^9, 
+  3.759704425881804*^9}, {3.759704461212175*^9, 3.759704526694875*^9}}],
+
+Cell[BoxData[
+ TagBox[
+  TagBox[GridBox[{
+     {
+      StyleBox["\[Null]",
+       ShowStringCharacters->False], 
+      TagBox["\<\"\"\>",
+       HoldForm], 
+      TagBox["\<\"z\[Rule]0.56\"\>",
+       HoldForm], 
+      TagBox["\<\"z\[Rule]0.1\"\>",
+       HoldForm], 
+      TagBox["\<\"z\[Rule]0.0\"\>",
+       HoldForm], 
+      TagBox["\<\"z\[Rule]-0.1\"\>",
+       HoldForm], 
+      TagBox["\<\"z\[Rule]-0.56\"\>",
+       HoldForm], 
+      TagBox["\<\"N[1/\\!\\(\\*SuperscriptBox[\\(n\\), \\(2\\)]\\)]\"\>",
+       HoldForm]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "1", 
+      TagBox[
+       InterpretationBox["\<\"0.985\"\>",
+        0.9852034561657592,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0314\"\>",
+        0.031415926535897934`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox["\<\"0.0314\"\>",
+        0.031415926535897934`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.985\"\>",
+        0.9852034561657592,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"1.\"\>",
+        1.,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "2", 
+      TagBox[
+       InterpretationBox["\<\"0.0607\"\>",
+        0.06066411562755982,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0000617\"\>",
+        0.00006168502750680852,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox["\<\"0.0000617\"\>",
+        0.00006168502750680852,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0607\"\>",
+        0.06066411562755982,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.25\"\>",
+        0.25,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "3", 
+      TagBox[
+       InterpretationBox["\<\"0.0118\"\>",
+        0.011805727680298505`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"3.83\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-7\"\>"]}],
+        3.827935392629608*^-7,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"3.83\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-7\"\>"]}],
+        3.827935392629608*^-7,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0118\"\>",
+        0.011805727680298505`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.111\"\>",
+        0.1111111111111111,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "4", 
+      TagBox[
+       InterpretationBox["\<\"0.00368\"\>",
+        0.0036801349248739477`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"3.81\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-9\"\>"]}],
+        3.805042618515723*^-9,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"3.81\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-9\"\>"]}],
+        3.805042618515723*^-9,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.00368\"\>",
+        0.0036801349248739477`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0625\"\>",
+        0.0625,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "5", 
+      TagBox[
+       InterpretationBox["\<\"0.00149\"\>",
+        0.0014850792026694167`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"4.9\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-11\"\>"]}],
+        4.896314956564509*^-11,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"4.9\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-11\"\>"]}],
+        4.896314956564509*^-11,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.00149\"\>",
+        0.0014850792026694167`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.04\"\>",
+        0.04,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "6", 
+      TagBox[
+       InterpretationBox["\<\"0.000706\"\>",
+        0.000705586980685667,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"7.42\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-13\"\>"]}],
+        7.418126493636612*^-13,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"7.42\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-13\"\>"]}],
+        7.418126493636612*^-13,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.000706\"\>",
+        0.000705586980685667,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0278\"\>",
+        0.027777777777777776`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "7", 
+      TagBox[
+       InterpretationBox["\<\"0.000375\"\>",
+        0.00037522289240658833`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"1.26\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-14\"\>"]}],
+        1.2579313735013718`*^-14,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"1.26\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-14\"\>"]}],
+        1.2579313735013718`*^-14,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.000375\"\>",
+        0.00037522289240658833`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0204\"\>",
+        0.02040816326530612,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "8", 
+      TagBox[
+       InterpretationBox["\<\"0.000217\"\>",
+        0.00021669428904443164`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"2.32\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-16\"\>"]}],
+        2.3165358925953583`*^-16,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"2.32\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-16\"\>"]}],
+        2.3165358925953583`*^-16,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.000217\"\>",
+        0.00021669428904443164`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0156\"\>",
+        0.015625,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "9", 
+      TagBox[
+       InterpretationBox["\<\"0.000133\"\>",
+        0.0001332794839798244,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"4.54\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-18\"\>"]}],
+        4.543377432319198*^-18,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"4.54\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-18\"\>"]}],
+        4.543377432319198*^-18,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.000133\"\>",
+        0.0001332794839798244,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0123\"\>",
+        0.012345679012345678`,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]},
+     {
+      TagBox[
+       StyleBox["\<\"\[Null]\"\>",
+        ShowStringCharacters->False],
+       StyleForm[#, ShowStringCharacters -> False]& ], "10", 
+      TagBox[
+       InterpretationBox["\<\"0.0000862\"\>",
+        0.00008615079055473555,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"9.36\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-20\"\>"]}],
+        9.364804747608321*^-20,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], "0.`", 
+      TagBox[
+       InterpretationBox[
+        RowBox[{"\<\"9.36\"\>", "\[Times]", 
+         SuperscriptBox["10", "\<\"-20\"\>"]}],
+        9.364804747608321*^-20,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.0000862\"\>",
+        0.00008615079055473555,
+        AutoDelete->True],
+       NumberForm[#, 3]& ], 
+      TagBox[
+       InterpretationBox["\<\"0.01\"\>",
+        0.01,
+        AutoDelete->True],
+       NumberForm[#, 3]& ]}
+    },
+    GridBoxAlignment->{
+     "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+      "RowsIndexed" -> {}},
+    GridBoxDividers->{
+     "Columns" -> {False, True, {False}, False}, "ColumnsIndexed" -> {}, 
+      "Rows" -> {False, True, {False}, False}, "RowsIndexed" -> {}},
+    GridBoxSpacings->{"Columns" -> {
+        Offset[0.27999999999999997`], {
+         Offset[2.0999999999999996`]}, 
+        Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+        Offset[0.2], {
+         Offset[0.4]}, 
+        Offset[0.2]}, "RowsIndexed" -> {}}],
+   {OutputFormsDump`HeadedRows, OutputFormsDump`HeadedColumns}],
+  Function[BoxForm`e$, 
+   TableForm[
+   BoxForm`e$, 
+    TableHeadings -> {{}, {
+      "", "z\[Rule]0.56", "z\[Rule]0.1", "z\[Rule]0.0", "z\[Rule]-0.1", 
+       "z\[Rule]-0.56", 
+       "N[1/\!\(\*SuperscriptBox[\(n\), \(2\)]\)]"}}]]]], "Output",
+ CellChangeTimes->{
+  3.759701841048708*^9, 3.759702121191258*^9, 3.759703104122217*^9, {
+   3.7597033291565447`*^9, 3.7597033971789713`*^9}, 3.7597034867218523`*^9, 
+   3.7597037627932873`*^9, 3.759704385139976*^9, 3.759704427082183*^9, {
+   3.7597044655373774`*^9, 3.759704527623783*^9}}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The familiar series ",
+ Cell[BoxData[
+  StyleBox[
+   FractionBox["1", 
+    SuperscriptBox["n", "2"]],
+   FontSize->21]],
+  CellChangeTimes->{{3.759699030402053*^9, 3.759699035166794*^9}, {
+   3.759699066743093*^9, 3.759699170738504*^9}}],
+ "can be used as the Weierstrass comparison series. Example 4 on p. 682 \
+remarks that the series ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", 
+     SuperscriptBox["n", "2"]],
+    FontSize->21], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " converges. Using this series, the Weierstrass M - test demonstrates \
+convincingly that the series "
+}], "Text",
+ CellChangeTimes->{{3.759701957552095*^9, 3.759702030506847*^9}, 
+   3.759702175232829*^9, 3.759702261950222*^9, {3.759704601197352*^9, 
+   3.759704601628066*^9}, {3.7597056046140747`*^9, 3.759705607222189*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["\[Pi]", "n"], 
+    SuperscriptBox["n", "4"]], 
+   SuperscriptBox["z", 
+    RowBox[{"2", " ", "n"}]]}], "<", 
+  FractionBox["1", 
+   SuperscriptBox["n", "2"]]}]], "Input",
+ CellChangeTimes->{{3.759702198559002*^9, 3.759702210373137*^9}}],
+
+Cell[TextData[{
+ "by use of a sequence of successive values, with difference gap opening on \
+increasing n, and that it therefore converges uniformly in the indicated \
+region. (Note: I wanted to use ",
+ StyleBox["Solve", "Input"],
+ " or ",
+ StyleBox["Reduce", "Input"],
+ " to make a better case, but neither was able to come through with something \
+useful.)"
+}], "Text",
+ CellChangeTimes->{
+  3.759702178944685*^9, {3.759702217692987*^9, 3.759702221764686*^9}, {
+   3.759702522341976*^9, 3.759702576218238*^9}, {3.759702698400939*^9, 
+   3.759702748924696*^9}, {3.759702889091185*^9, 3.7597028925524693`*^9}, {
+   3.7597029265832157`*^9, 3.759702928671411*^9}, {3.759703233071533*^9, 
+   3.759703265637005*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 174, 4, 51, "Text"],
+Cell[577, 19, 73, 1, 45, "Input"],
+Cell[653, 22, 159, 4, 86, "Text"],
+Cell[815, 28, 507, 16, 116, "Text"],
+Cell[1325, 46, 73, 1, 45, "Input"],
+Cell[1401, 49, 653, 17, 88, "Text"],
+Cell[2057, 68, 563, 17, 76, "Input"],
+Cell[2623, 87, 989, 32, 60, "Text"],
+Cell[CellGroupData[{
+Cell[3637, 123, 182, 5, 47, "Input"],
+Cell[3822, 130, 111, 3, 47, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3970, 138, 254, 8, 49, "Input"],
+Cell[4227, 148, 135, 4, 49, "Output"]
+}, Open  ]],
+Cell[4377, 155, 83, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[4485, 160, 181, 5, 75, "Input"],
+Cell[4669, 167, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[4780, 171, 261, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[5066, 180, 141, 3, 49, "Input"],
+Cell[5210, 185, 83, 2, 54, "Output"]
+}, Open  ]],
+Cell[5308, 190, 434, 11, 77, "Text"],
+Cell[5745, 203, 591, 16, 115, "Text"],
+Cell[6339, 221, 73, 1, 45, "Input"],
+Cell[6415, 224, 122, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[6562, 229, 677, 17, 75, "Input"],
+Cell[7242, 248, 1193, 39, 144, "Output"]
+}, Open  ]],
+Cell[8450, 290, 131, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[8606, 295, 350, 8, 45, "Input"],
+Cell[8959, 305, 244, 7, 49, "Output"]
+}, Open  ]],
+Cell[9218, 315, 219, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[9462, 323, 824, 23, 86, "Input"],
+Cell[10289, 348, 182, 3, 75, "Output"]
+}, Open  ]],
+Cell[10486, 354, 200, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[10711, 362, 184, 5, 77, "Input"],
+Cell[10898, 369, 90, 2, 75, "Output"]
+}, Open  ]],
+Cell[11003, 374, 752, 25, 92, "Text"],
+Cell[11758, 401, 524, 15, 115, "Text"],
+Cell[12285, 418, 73, 1, 45, "Input"],
+Cell[12361, 421, 194, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[12580, 429, 462, 14, 77, "Input"],
+Cell[13045, 445, 1320, 45, 78, "Output"]
+}, Open  ]],
+Cell[14380, 493, 186, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[14591, 501, 398, 11, 76, "Input"],
+Cell[14992, 514, 197, 6, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15226, 525, 133, 2, 45, "Input"],
+Cell[15362, 529, 122, 3, 74, "Output"]
+}, Open  ]],
+Cell[15499, 535, 156, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[15680, 542, 443, 13, 79, "Input"],
+Cell[16126, 557, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[16211, 561, 329, 6, 110, "Text"],
+Cell[16543, 569, 679, 20, 115, "Text"],
+Cell[17225, 591, 73, 1, 45, "Input"],
+Cell[17301, 594, 161, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[17487, 601, 662, 19, 79, "Input"],
+Cell[18152, 622, 1986, 76, 145, "Output"]
+}, Open  ]],
+Cell[20153, 701, 313, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[20491, 711, 715, 19, 76, "Input"],
+Cell[21209, 732, 399, 10, 90, "Output"]
+}, Open  ]],
+Cell[21623, 745, 160, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[21808, 752, 729, 23, 105, "Input"],
+Cell[22540, 777, 92, 1, 45, "Output"]
+}, Open  ]],
+Cell[22647, 781, 201, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[22873, 789, 141, 3, 49, "Input"],
+Cell[23017, 794, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[23102, 798, 400, 12, 76, "Text"],
+Cell[23505, 812, 186, 4, 86, "Text"],
+Cell[23694, 818, 447, 13, 115, "Text"],
+Cell[24144, 833, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[24242, 838, 230, 6, 79, "Input"],
+Cell[24475, 846, 173, 4, 69, "Output"]
+}, Open  ]],
+Cell[24663, 853, 711, 14, 121, "Text"],
+Cell[25377, 869, 453, 12, 79, "Input"],
+Cell[25833, 883, 911, 24, 104, "Text"],
+Cell[26747, 909, 497, 14, 115, "Text"],
+Cell[27247, 925, 73, 1, 45, "Input"],
+Cell[27323, 928, 280, 5, 86, "Text"],
+Cell[27606, 935, 445, 13, 79, "Input"],
+Cell[28054, 950, 836, 23, 116, "Text"],
+Cell[28893, 975, 602, 19, 116, "Text"],
+Cell[29498, 996, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[29596, 1001, 353, 12, 83, "Input"],
+Cell[29952, 1015, 122, 3, 45, "Output"]
+}, Open  ]],
+Cell[30089, 1021, 374, 6, 120, "Text"],
+Cell[30466, 1029, 537, 16, 115, "Text"],
+Cell[31006, 1047, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[31104, 1052, 263, 8, 79, "Input"],
+Cell[31370, 1062, 218, 7, 81, "Output"]
+}, Open  ]],
+Cell[31603, 1072, 695, 20, 75, "Input"],
+Cell[CellGroupData[{
+Cell[32323, 1096, 1699, 39, 164, "Input"],
+Cell[34025, 1137, 11688, 378, 372, "Output"]
+}, Open  ]],
+Cell[45728, 1518, 850, 23, 116, "Text"],
+Cell[46581, 1543, 307, 10, 79, "Input"],
+Cell[46891, 1555, 713, 15, 120, "Text"]
+}
+]
+*)
+

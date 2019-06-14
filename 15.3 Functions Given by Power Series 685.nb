@@ -1,0 +1,889 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     25996,        888]
+NotebookOptionsPosition[     22114,        756]
+NotebookOutlinePosition[     22502,        773]
+CellTagsIndexPosition[     22459,        770]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{
+  3.7692740855571203`*^9, {3.7692741254093037`*^9, 3.769274133711359*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+5 - 15 Radius of Convergence by Differentiation or Integration
+Find the radius of convergence in two ways: (a) directly by the \
+Cauchy-Hadamard formula in Sec. 15.2, and (b) from a series of simpler terms \
+by using Theorem 3, p. 687, or Theorem 4, p. 688.\
+\>", "Text",
+ CellChangeTimes->{{3.7591930820562*^9, 3.759193161509611*^9}, {
+  3.7592315671240673`*^9, 3.759231578281118*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5.", "  ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"n", 
+       RowBox[{"(", 
+        RowBox[{"n", "-", "1"}], ")"}]}], 
+      SuperscriptBox["2", "n"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", 
+        RowBox[{"2", " ", "\[ImaginaryI]"}]}], ")"}], "n"]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.7591931734052134`*^9, 3.7591932180926237`*^9}, {
+   3.759193303090692*^9, 3.7591933183865013`*^9}, {3.759193475639224*^9, 
+   3.759193478278756*^9}, 3.7591938642373466`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["The center of the series is 2 \[ImaginaryI].", "Text",
+ CellChangeTimes->{{3.75919405354749*^9, 3.759194070113657*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"n", 
+       RowBox[{"(", 
+        RowBox[{"n", "-", "1"}], ")"}]}], 
+      SuperscriptBox["2", "n"]], 
+     RowBox[{"(", 
+      FractionBox[
+       SuperscriptBox["2", 
+        RowBox[{"n", "+", "1"}]], 
+       RowBox[{"n", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}]}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.75919408902494*^9, 3.759194168702083*^9}, {
+  3.759231276631637*^9, 3.759231291079777*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.759194101978608*^9, 3.759194172844586*^9, 
+  3.759194917408399*^9, 3.759231293194963*^9}]
+}, Open  ]],
+
+Cell["The power of the power term is 1, so the answer should be", "Text",
+ CellChangeTimes->{{3.759229517356724*^9, 3.759229591257532*^9}, {
+  3.759229799049552*^9, 3.759229801328636*^9}, {3.759231308429047*^9, 
+  3.759231310771717*^9}, {3.759453431472352*^9, 3.7594534342778463`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", "2", ")"}], 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759229595962727*^9, 3.759229604217061*^9}, {
+  3.7592319984819393`*^9, 3.759231998856616*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.759229611492477*^9, 3.759232000107134*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "The above green agrees with the text answer. This is the half of the \
+problem worked with Cauchy-Hadamard. The other way, which is developed by the \
+s.m., is the series method. However, using Mathematica, it is only a matter \
+of invoking the command ",
+ StyleBox["SumConvergence", "Input"],
+ ", which in this case works well with the original expression,"
+}], "Text",
+ CellChangeTimes->{{3.759229628776178*^9, 3.759229633127825*^9}, {
+  3.759229806768462*^9, 3.759229859014821*^9}, {3.759229890389434*^9, 
+  3.7592299254280787`*^9}, {3.75923004537761*^9, 3.759230067174012*^9}, {
+  3.7592313408106728`*^9, 3.7592314406787577`*^9}, {3.7592318950134563`*^9, 
+  3.7592319335073347`*^9}, {3.759233403501317*^9, 3.7592334094347973`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"n", 
+      RowBox[{"(", 
+       RowBox[{"n", "-", "1"}], ")"}]}], 
+     SuperscriptBox["2", "n"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"2", " ", "\[ImaginaryI]"}]}], ")"}], "n"]}], ",", "n"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759233307616103*^9, 3.7592333165249033`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], "]"}], "<", 
+  "2"}]], "Output",
+ CellChangeTimes->{3.759233318059504*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"7.", "  ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox["n", 
+      SuperscriptBox["3", "n"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "+", 
+        RowBox[{"2", " ", "\[ImaginaryI]"}]}], ")"}], 
+      RowBox[{"2", " ", "n"}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.759193225285236*^9, 3.759193299602974*^9}, 
+   3.759193874740549*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+The center of the series is -2 \[ImaginaryI]. In part (a) I will look at a \
+Cauchy-Hadamard solution,\
+\>", "Text",
+ CellChangeTimes->{{3.759233557112468*^9, 3.759233568855151*^9}, {
+  3.75923371800371*^9, 3.7592337429872093`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox["n", 
+      SuperscriptBox["3", "n"]], 
+     RowBox[{"(", 
+      FractionBox[
+       SuperscriptBox["3", 
+        RowBox[{"n", "+", "1"}]], 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7592335954578943`*^9, 3.7592336174145823`*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.7592336234449253`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The power of the power term is 2, which implies the radius of convergence is,\
+\
+\>", "Text",
+ CellChangeTimes->{{3.759233649605339*^9, 3.759233676140744*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", "3", ")"}], 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759233685936782*^9, 3.759233692308466*^9}}],
+
+Cell[BoxData[
+ SqrtBox["3"]], "Output",
+ CellChangeTimes->{3.759233693743428*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "For part (b) I will look at differentiation of series terms, or in this \
+case, the ",
+ StyleBox["SumConvergence", "Input"],
+ " command,"
+}], "Text",
+ CellChangeTimes->{{3.759233769284042*^9, 3.759233809809781*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox["n", 
+     SuperscriptBox["3", "n"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       RowBox[{"2", " ", "\[ImaginaryI]"}]}], ")"}], 
+     RowBox[{"2", " ", "n"}]]}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.759233828108512*^9, {3.759233884620266*^9, 3.759233904415929*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox[
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     RowBox[{"2", " ", "\[ImaginaryI]"}], "+", "z"}], "]"}], "2"], "<", 
+  "3"}]], "Output",
+ CellChangeTimes->{
+  3.759233831843802*^9, {3.759233894327533*^9, 3.759233906429326*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Due to Mathematica's indolence, the square root symbol has to be applied by \
+hand. Since the lhs is positive in sign, the resulting square root will be \
+also.\
+\>", "Text",
+ CellChangeTimes->{{3.759233928879092*^9, 3.759233997997856*^9}}],
+
+Cell[BoxData[
+ RowBox[{"9.", "  ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", 
+       SuperscriptBox["2", "n"]}], 
+      RowBox[{"n", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "2"}], ")"}]}]], 
+     SuperscriptBox["z", 
+      RowBox[{"2", "n"}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.7591933679312487`*^9, 3.759193450689067*^9}, {
+   3.759193481223969*^9, 3.7591934843424683`*^9}, 3.7591938911556177`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["The center of the series is 0. For part (a),", "Text",
+ CellChangeTimes->{{3.7592342966573057`*^9, 3.7592343164955063`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"-", 
+       SuperscriptBox["2", "n"]}], 
+      RowBox[{"n", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "2"}], ")"}]}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"n", "+", "3"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "2"}], ")"}]}], 
+       RowBox[{"-", 
+        SuperscriptBox["2", 
+         RowBox[{"n", "+", "1"}]]}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759234383962088*^9, 3.7592344260112333`*^9}, {
+  3.759234505853249*^9, 3.7592345077072*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", "2"]], "Output",
+ CellChangeTimes->{3.759234433432131*^9}]
+}, Open  ]],
+
+Cell["\<\
+The power of the power term being 2 n, the resulting radius of convergence is\
+\
+\>", "Text",
+ CellChangeTimes->{{3.7592344555587463`*^9, 3.759234486594974*^9}, {
+  3.759234520154133*^9, 3.759234523650013*^9}, {3.759234568883024*^9, 
+  3.7592345806888523`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox["1", "2"], ")"}], 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759234597306823*^9, 3.759234613984272*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  SqrtBox["2"]]], "Output",
+ CellChangeTimes->{3.7592346407593412`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "As for part (b), the ",
+ StyleBox["SumConvergence", "Input"],
+ " command again,"
+}], "Text",
+ CellChangeTimes->{{3.759250739546443*^9, 3.759250766015263*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{"-", 
+      SuperscriptBox["2", "n"]}], 
+     RowBox[{"n", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}], 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "2"}], ")"}]}]], 
+    SuperscriptBox["z", 
+     RowBox[{"2", "n"}]]}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759250778522373*^9, 3.759250786774987*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "<", 
+  FractionBox["1", 
+   SqrtBox["2"]]}]], "Output",
+ CellChangeTimes->{3.759250788802187*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"11.", " ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["3", "n"], "n", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}]}], 
+      SuperscriptBox["7", "n"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "+", "2"}], ")"}], 
+      RowBox[{"2", " ", "n"}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.7591934905195103`*^9, 3.759193561916148*^9}, 
+   3.7591939027873697`*^9, 3.75923461540117*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["The center of the series is -2. For part (a),", "Text",
+ CellChangeTimes->{{3.7592508621419497`*^9, 3.7592508914526243`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["3", "n"], "n", 
+       RowBox[{"(", 
+        RowBox[{"n", "+", "1"}], ")"}]}], 
+      SuperscriptBox["7", "n"]], 
+     RowBox[{"(", 
+      FractionBox[
+       SuperscriptBox["7", 
+        RowBox[{"n", "+", "1"}]], 
+       RowBox[{
+        SuperscriptBox["3", 
+         RowBox[{"n", "+", "1"}]], 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "2"}], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}]}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759250900062426*^9, 3.759250937924034*^9}}],
+
+Cell[BoxData[
+ FractionBox["7", "3"]], "Output",
+ CellChangeTimes->{3.7592509469765873`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The power of the power term being 2 n, the resulting radius of convergence is\
+\
+\>", "Text",
+ CellChangeTimes->{{3.759250962192099*^9, 3.759250969700967*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox["7", "3"], ")"}], 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759250987954693*^9, 3.7592509951624107`*^9}}],
+
+Cell[BoxData[
+ SqrtBox[
+  FractionBox["7", "3"]]], "Output",
+ CellChangeTimes->{3.75925099679776*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["As for part (b), the SumConvergence command again,", "Text",
+ CellChangeTimes->{{3.759251030174609*^9, 3.7592510341167393`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["3", "n"], "n", 
+      RowBox[{"(", 
+       RowBox[{"n", "+", "1"}], ")"}]}], 
+     SuperscriptBox["7", "n"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", "2"}], ")"}], 
+     RowBox[{"2", " ", "n"}]]}], ",", " ", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759251052578356*^9, 3.759251062313048*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"3", " ", 
+   SuperscriptBox[
+    RowBox[{"Abs", "[", 
+     RowBox[{"2", "+", "z"}], "]"}], "2"]}], "<", "7"}]], "Output",
+ CellChangeTimes->{3.759251065049007*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["Or, to spell it all out,", "Text",
+ CellChangeTimes->{{3.759254714276452*^9, 3.759254743482099*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"3", " ", 
+    SuperscriptBox[
+     RowBox[{"Abs", "[", 
+      RowBox[{"2", "+", "z"}], "]"}], "2"]}], "<", 
+   RowBox[{"7", "\[DoubleLongRightArrow]", " ", 
+    SuperscriptBox[
+     RowBox[{"Abs", "[", 
+      RowBox[{"2", "+", "z"}], "]"}], "2"]}], "<", 
+   RowBox[{
+    FractionBox["7", "3"], " ", "\[DoubleLongRightArrow]", " ", 
+    RowBox[{"Abs", "[", 
+     RowBox[{"2", "+", "z"}], "]"}]}], "<", " ", 
+   SqrtBox[
+    FractionBox["7", "3"]]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759254591275226*^9, 3.759254701101295*^9}}],
+
+Cell[BoxData[
+ RowBox[{"13.", " ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      RowBox[{"(", GridBox[{
+         {
+          RowBox[{"n", "+", "k"}]},
+         {"k"}
+        }], ")"}], 
+      RowBox[{"-", "1"}]], 
+     SuperscriptBox["z", 
+      RowBox[{" ", 
+       RowBox[{"n", "+", "k"}]}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.7591935744634457`*^9, 3.7591937112320757`*^9}, 
+   3.7591939138112593`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{3.759252589585731*^9, 3.759252860252241*^9}],
+
+Cell["The center of the series is 0. For part (a),", "Text",
+ CellChangeTimes->{{3.7592512256668053`*^9, 3.7592512377095613`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox[
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"Binomial", "[", 
+        RowBox[{
+         RowBox[{"n", "+", "k"}], ",", "k"}], "]"}], ")"}], 
+      RowBox[{"-", "1"}]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"Binomial", "[", 
+        RowBox[{
+         RowBox[{"n", "+", "1", "+", "k"}], ",", "k"}], "]"}], ")"}], 
+      RowBox[{"-", "1"}]]], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}], ",", 
+   RowBox[{"Assumptions", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"k", "\[Element]", "Integers"}], ",", 
+      RowBox[{"k", "<", "100"}]}], "}"}]}]}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.759251284232149*^9, {3.759251323877406*^9, 3.759251342491403*^9}, {
+   3.7592525778342876`*^9, 3.759252652830473*^9}, {3.759253237539753*^9, 
+   3.759253284321846*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.7592513593863573`*^9, 3.759252850714723*^9, 
+  3.7592531245369797`*^9, 3.759253301719569*^9}]
+}, Open  ]],
+
+Cell["\<\
+In the above cell some assumption has to be made about k, or else Mathematica \
+will go into a trance and not come back.\
+\>", "Text",
+ CellChangeTimes->{{3.759253342184716*^9, 3.759253359102862*^9}, {
+  3.75942847267129*^9, 3.759428477484242*^9}}],
+
+Cell["\<\
+The power of the power term is n+k. As I did before I will ignore anything \
+that does not modify the n particle. This would result in \
+\>", "Text",
+ CellChangeTimes->{{3.75925343750941*^9, 3.759253481034696*^9}, {
+  3.7592535276893177`*^9, 3.7592535305932693`*^9}, {3.759253734403294*^9, 
+  3.759253774967951*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", "1", ")"}], 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759253782786358*^9, 3.759253789511557*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759253791820313*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["For part (b),", "Text",
+ CellChangeTimes->{{3.759253809145933*^9, 3.7592538282536*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"(", 
+     SuperscriptBox[
+      RowBox[{"Binomial", "[", 
+       RowBox[{
+        RowBox[{"n", "+", "k"}], ",", "k"}], "]"}], 
+      RowBox[{"-", "1"}]], ")"}], 
+    SuperscriptBox["z", 
+     RowBox[{" ", 
+      RowBox[{"n", "+", "k"}]}]]}], ",", " ", "n"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.759253842250258*^9, {3.7592538766935577`*^9, 3.7592539809519777`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "<", "1"}]], "Output",
+ CellChangeTimes->{3.759253982125513*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+What was interesting about this is how quickly Mathematica came back with \
+this answer, without demanding a description of k.\
+\>", "Text",
+ CellChangeTimes->{{3.759254008670599*^9, 3.759254080499859*^9}}],
+
+Cell[BoxData[
+ RowBox[{"15.", " ", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["4", "n"], "n", 
+       RowBox[{"(", 
+        RowBox[{"n", "-", "1"}], ")"}]}], 
+      SuperscriptBox["3", "n"]], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], 
+      RowBox[{" ", "n"}]]}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "2", ",", "\[Infinity]"}], "}"}]}], "]"}]}]], "Text",
+ CellChangeTimes->{{3.759193735176896*^9, 3.759193790421199*^9}, 
+   3.7591939232501793`*^9, 3.7592525169856997`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.75925376937881*^9, 3.759253770984241*^9}, {
+  3.7592541170381193`*^9, 3.759254137033461*^9}}],
+
+Cell["The center of the series is \[ImaginaryI]. For part (a), ", "Text",
+ CellChangeTimes->{{3.7592541479529*^9, 3.75925420818239*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       SuperscriptBox["4", "n"], "n", 
+       RowBox[{"(", 
+        RowBox[{"n", "-", "1"}], ")"}]}], 
+      SuperscriptBox["3", "n"]], 
+     RowBox[{"(", 
+      FractionBox[
+       SuperscriptBox["3", 
+        RowBox[{"n", "+", "1"}]], 
+       RowBox[{
+        SuperscriptBox["4", 
+         RowBox[{"n", "+", "1"}]], "n", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}]}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759254243480624*^9, 3.759254284131668*^9}}],
+
+Cell[BoxData[
+ FractionBox["3", "4"]], "Output",
+ CellChangeTimes->{3.7592542868981113`*^9}]
+}, Open  ]],
+
+Cell["The power of the power term is n.", "Text",
+ CellChangeTimes->{{3.759254306549266*^9, 3.759254310530531*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox[
+  RowBox[{"(", 
+   FractionBox["3", "4"], ")"}], 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759254320382593*^9, 3.759254332777706*^9}}],
+
+Cell[BoxData[
+ FractionBox["3", "4"]], "Output",
+ CellChangeTimes->{3.759254333942618*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["For part (b),", "Text",
+ CellChangeTimes->{{3.759254351064878*^9, 3.7592543551768637`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SumConvergence", "[", 
+  RowBox[{
+   RowBox[{
+    FractionBox[
+     RowBox[{
+      SuperscriptBox["4", "n"], "n", 
+      RowBox[{"(", 
+       RowBox[{"n", "-", "1"}], ")"}]}], 
+     SuperscriptBox["3", "n"]], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], 
+     RowBox[{" ", "n"}]]}], ",", " ", "n"}], "]"}]], "Input",
+ CellChangeTimes->{3.75925439675456*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"4", " ", 
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], "]"}]}], "<", 
+  "3"}]], "Output",
+ CellChangeTimes->{3.759254399637479*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+As before, some gathering is necessary to match the text answer.\
+\>", "Text",
+ CellChangeTimes->{{3.759254438710758*^9, 3.759254457932826*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 227, 5, 51, "Text"],
+Cell[630, 20, 73, 1, 45, "Input"],
+Cell[706, 23, 396, 7, 120, "Text"],
+Cell[1105, 32, 681, 19, 93, "Text"],
+Cell[1789, 53, 73, 1, 45, "Input"],
+Cell[1865, 56, 125, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[2015, 61, 608, 19, 86, "Input"],
+Cell[2626, 82, 139, 2, 45, "Output"]
+}, Open  ]],
+Cell[2780, 87, 285, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[3090, 94, 213, 5, 49, "Input"],
+Cell[3306, 101, 130, 2, 69, "Output"]
+}, Open  ]],
+Cell[3451, 106, 753, 12, 120, "Text"],
+Cell[CellGroupData[{
+Cell[4229, 122, 425, 14, 75, "Input"],
+Cell[4657, 138, 245, 8, 69, "Output"]
+}, Open  ]],
+Cell[4917, 149, 525, 16, 91, "Text"],
+Cell[5445, 167, 73, 1, 45, "Input"],
+Cell[5521, 170, 242, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[5788, 179, 460, 14, 86, "Input"],
+Cell[6251, 195, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[6338, 199, 169, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[6532, 207, 162, 4, 49, "Input"],
+Cell[6697, 213, 119, 3, 78, "Output"]
+}, Open  ]],
+Cell[6831, 219, 233, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[7089, 229, 395, 12, 72, "Input"],
+Cell[7487, 243, 300, 9, 73, "Output"]
+}, Open  ]],
+Cell[7802, 255, 250, 5, 86, "Text"],
+Cell[8055, 262, 640, 19, 100, "Text"],
+Cell[8698, 283, 73, 1, 45, "Input"],
+Cell[8774, 286, 130, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[8929, 291, 842, 27, 81, "Input"],
+Cell[9774, 320, 90, 2, 75, "Output"]
+}, Open  ]],
+Cell[9879, 325, 271, 6, 51, "Text"],
+Cell[CellGroupData[{
+Cell[10175, 335, 184, 5, 77, "Input"],
+Cell[10362, 342, 142, 4, 110, "Output"]
+}, Open  ]],
+Cell[10519, 349, 176, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[10720, 358, 430, 14, 81, "Input"],
+Cell[11153, 374, 194, 6, 110, "Output"]
+}, Open  ]],
+Cell[11362, 383, 622, 19, 96, "Text"],
+Cell[11987, 404, 73, 1, 45, "Input"],
+Cell[12063, 407, 131, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[12219, 412, 718, 23, 86, "Input"],
+Cell[12940, 437, 92, 2, 75, "Output"]
+}, Open  ]],
+Cell[13047, 442, 169, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[13241, 450, 186, 5, 77, "Input"],
+Cell[13430, 457, 139, 4, 116, "Output"]
+}, Open  ]],
+Cell[13584, 464, 134, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[13743, 469, 444, 14, 78, "Input"],
+Cell[14190, 485, 236, 7, 73, "Output"]
+}, Open  ]],
+Cell[14441, 495, 106, 1, 51, "Text"],
+Cell[14550, 498, 578, 17, 92, "Input"],
+Cell[15131, 517, 561, 19, 103, "Text"],
+Cell[15695, 538, 137, 2, 45, "Input"],
+Cell[15835, 542, 130, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[15990, 547, 901, 26, 86, "Input"],
+Cell[16894, 575, 143, 2, 45, "Output"]
+}, Open  ]],
+Cell[17052, 580, 258, 5, 86, "Text"],
+Cell[17313, 587, 326, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[17664, 597, 162, 4, 49, "Input"],
+Cell[17829, 603, 108, 2, 69, "Output"]
+}, Open  ]],
+Cell[17952, 608, 93, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[18070, 613, 453, 14, 55, "Input"],
+Cell[18526, 629, 160, 4, 69, "Output"]
+}, Open  ]],
+Cell[18701, 636, 216, 4, 86, "Text"],
+Cell[18920, 642, 630, 19, 96, "Text"],
+Cell[19553, 663, 189, 3, 45, "Input"],
+Cell[19745, 668, 136, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[19906, 673, 659, 21, 86, "Input"],
+Cell[20568, 696, 92, 2, 75, "Output"]
+}, Open  ]],
+Cell[20675, 701, 115, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[20815, 706, 184, 5, 77, "Input"],
+Cell[21002, 713, 128, 3, 99, "Output"]
+}, Open  ]],
+Cell[21145, 719, 97, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[21267, 724, 426, 14, 78, "Input"],
+Cell[21696, 740, 245, 8, 69, "Output"]
+}, Open  ]],
+Cell[21956, 751, 154, 3, 51, "Text"]
+}
+]
+*)
+
