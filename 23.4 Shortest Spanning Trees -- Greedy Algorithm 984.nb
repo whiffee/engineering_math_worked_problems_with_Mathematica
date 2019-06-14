@@ -1,0 +1,4030 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[    146396,       4029]
+NotebookOptionsPosition[    142224,       3890]
+NotebookOutlinePosition[    142612,       3907]
+CellTagsIndexPosition[    142569,       3904]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.7693512695366993`*^9}],
+
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{{3.7693512712376947`*^9, 3.7693512746184464`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+A few problems refer to example 1, p. 985, where a spanning tree for the \
+following graph is discussed.\
+\>", "Text",
+ CellChangeTimes->{{3.765456491576537*^9, 3.7654565446612186`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"example1graph", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"6", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "1"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "4"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"VertexCoordinates", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3.5", ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"-", "3"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "3"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "2", ",", "11", ",", "6", ",", "9", ",", "1", ",", "4", ",", "7", ",", 
+       "8"}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<\!\(\*
+StyleBox[\"s\",
+FontSlant->\"Italic\"]\)\>\"", ",", "Medium"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "0.2"}]}], "}"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<6\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2.9", ",", 
+             RowBox[{"-", "2.4"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<1\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.8"}], ",", 
+             RowBox[{"-", "2.5"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<4\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.8"}], ",", 
+             RowBox[{"-", "0.5"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<8\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1.3"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<9\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "2.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<7\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.7", ",", 
+             RowBox[{"-", "0.6"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0.2"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<11\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2.9", ",", 
+             RowBox[{"-", "0.6"}]}], "}"}]}], "]"}]}], "}"}]}], "}"}]}], ",", 
+    
+    RowBox[{"ImageSize", "\[Rule]", "200"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765456558509289*^9, 3.765456581869411*^9}, {
+  3.7654566617557907`*^9, 3.765456829035977*^9}, {3.7654568803620443`*^9, 
+  3.76545731780154*^9}, {3.765457348920542*^9, 3.765457421917457*^9}, {
+  3.7654574534685717`*^9, 3.765457547976698*^9}, {3.765457608879525*^9, 
+  3.7654576154542*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 5, 6, 3}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {6, 2}, {6, 
+       3}}}, {EdgeWeight -> {2, 11, 6, 9, 1, 4, 7, 8}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {2.9, -2.4}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {-0.8, -2.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {-0.8, -0.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {1, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["9", Medium], {1, -2.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {0.7, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {1, 0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["11", Medium], {2.9, -0.6}]}}, ImagePadding -> 10, ImageSize -> 
+       200, VertexCoordinates -> {{0, 0}, {2, 0}, {3.5, -1.5}, {2, -3}, {
+         0, -3}, {-1.5, -1.5}}, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {2., 0.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., 0.}, {3.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., 0.}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.5, -1.5}, {2., -3.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.5, -1.5}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., -3.}, {0., -3.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., -3.}, {-1.5, -1.5}}, 0.043048128342245986`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 0.}, 0.043048128342245986`], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.043048128342245986`, 0.043048128342245986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2., 0.}, 0.043048128342245986`], 
+         InsetBox["2", 
+          Offset[{2, 2}, {2.043048128342246, 0.043048128342245986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.5, -1.5}, 0.043048128342245986`], 
+         InsetBox["4", 
+          Offset[{2, 2}, {3.543048128342246, -1.456951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2., -3.}, 0.043048128342245986`],
+          InsetBox["5", 
+          Offset[{2, 2}, {2.043048128342246, -2.956951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., -3.}, 0.043048128342245986`],
+          InsetBox["6", 
+          Offset[{2, 2}, {0.043048128342245986`, -2.956951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-1.5, -1.5}, 0.043048128342245986`], 
+         InsetBox["3", 
+          Offset[{2, 2}, {-1.456951871657754, -1.456951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -2.4}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -2.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -0.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"9\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -2.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, 0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"11\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -0.6}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{
+  3.765456565634448*^9, {3.7654568058229*^9, 3.765456829690111*^9}, 
+   3.765456899182434*^9, {3.7654569318541117`*^9, 3.7654570102169647`*^9}, {
+   3.765457042683681*^9, 3.765457164634211*^9}, {3.765457195573145*^9, 
+   3.765457248911854*^9}, {3.76545728715112*^9, 3.765457321354011*^9}, {
+   3.765457358193617*^9, 3.765457382548345*^9}, {3.765457455319483*^9, 
+   3.7654574643241167`*^9}, 3.7654575530647573`*^9, {3.7654576108386507`*^9, 
+   3.765457616278311*^9}, 3.7654643686995792`*^9, 3.76547150729944*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "example1graph", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"example1graph", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.765464340846858*^9, 3.765464361060542*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 5, 6, 3}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {6, 2}, {6, 
+       3}}}, {EdgeWeight -> {2, 11, 6, 9, 1, 4, 7, 8}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {2.9, -2.4}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {-0.8, -2.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {-0.8, -0.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {1, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["9", Medium], {1, -2.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {0.7, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {1, 0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["11", Medium], {2.9, -0.6}]}}, GraphHighlight -> {1, 6, 5, 
+         UndirectedEdge[1, 3], 
+         UndirectedEdge[1, 2], 2, 
+         UndirectedEdge[6, 3], 
+         UndirectedEdge[4, 3], 
+         UndirectedEdge[4, 5], 3, 4}, GraphHighlightStyle -> {"Thick"}, 
+       ImagePadding -> 10, ImageSize -> 200, 
+       VertexCoordinates -> {{0, 0}, {2, 0}, {3.5, -1.5}, {2, -3}, {
+         0, -3}, {-1.5, -1.5}}, VertexLabels -> {"Name"}}]], Typeset`boxes, 
+    Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$2", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$3", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$4", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$5", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 0.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{2., 0.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{3.5, -1.5}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{2., -3.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., -3.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["6", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-1.5, -1.5}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$6"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$6", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$6"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{18.4, 293.3716530801447}, {-106.58765308014466`, 
+       75.45907097045523}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -2.4}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -2.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -0.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"9\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -2.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, 0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"11\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -0.6}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{{3.765464364296604*^9, 3.765464372450942*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "example1graph", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765464410236343*^9, 3.7654644152669277`*^9}}],
+
+Cell[BoxData["21.`"], "Output",
+ CellChangeTimes->{3.765464417211043*^9}]
+}, Open  ]],
+
+Cell["\<\
+1 - 6 Kruskal\[CloseCurlyQuote]s greedy algorithm
+Find a shortest spanning tree by Kruskal\[CloseCurlyQuote]s algorithm. Sketch \
+it.\
+\>", "Text",
+ CellChangeTimes->{{3.765405033106079*^9, 3.765405069352126*^9}}],
+
+Cell["1. Problem represented by a diagram.", "Text",
+ CellChangeTimes->{{3.765406212527298*^9, 3.765406217050907*^9}, {
+  3.769350515206953*^9, 3.7693505177079782`*^9}, {3.769454246037448*^9, 
+  3.76945426685707*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g5", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "3"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"VertexCoordinates", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1.5", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1.5", ",", "2"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2.4", ",", "1"}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "8", ",", "3", ",", "1", ",", "7", ",", "5", ",", "2", ",", "2", ",", 
+       "4"}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<\!\(\*
+StyleBox[\"s\",
+FontSlant->\"Italic\"]\)\>\"", ",", "Medium"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "0.15"}]}], "}"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<8\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.12"}], ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
+       
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<1\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1.6", ",", "1"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<4\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.7", ",", 
+             RowBox[{"-", "0.15"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.8", ",", "2.12"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<3\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.4", ",", "1.7"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<7\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "1.6"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.4", ",", "0.3"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<5\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", "0.35"}], "}"}]}], "]"}]}], "}"}]}], "}"}]}], 
+    ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7654051698960457`*^9, 3.765405280010209*^9}, {
+  3.765405315161256*^9, 3.765405334864398*^9}, {3.7654053773111343`*^9, 
+  3.7654054141593246`*^9}, {3.765405448542582*^9, 3.7654055098669863`*^9}, {
+  3.76540554734767*^9, 3.765405591504292*^9}, {3.7654056241038017`*^9, 
+  3.765405795609831*^9}, {3.7654058588903713`*^9, 3.7654059401486397`*^9}, {
+  3.765406003955401*^9, 3.765406156549667*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {3, 5}, {2, 4}, {1, 4}, {1, 
+       3}}}, {EdgeWeight -> {8, 3, 1, 7, 5, 2, 2, 4}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {-0.12, 1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {1.6, 1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {0.7, -0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.8, 2.12}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {0.4, 1.7}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {2, 1.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.4, 0.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {2, 0.35}]}}, ImagePadding -> 10, ImageSize -> 
+       200, VertexCoordinates -> {{0, 0}, {0, 2}, {1.5, 0}, {1.5, 2}, {
+         2.4, 1}}, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {0., 2.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {1.5, 0.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {1.5, 2.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 2.}, {1.5, 0.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 2.}, {1.5, 2.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.5, 0.}, {1.5, 2.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.5, 0.}, {2.4, 1.}}, 0.025776397515527932`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.5, 2.}, {2.4, 1.}}, 0.025776397515527932`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 0.}, 0.025776397515527932`], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.025776397515527932`, 0.025776397515527932`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 2.}, 0.025776397515527932`], 
+         InsetBox["2", 
+          Offset[{2, 2}, {0.025776397515527932`, 2.025776397515528}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.5, 0.}, 0.025776397515527932`],
+          InsetBox["3", 
+          Offset[{2, 2}, {1.5257763975155278`, 0.025776397515527932`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.5, 2.}, 0.025776397515527932`],
+          InsetBox["4", 
+          Offset[{2, 2}, {1.5257763975155278`, 2.025776397515528}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2.4, 1.}, 0.025776397515527932`],
+          InsetBox["5", 
+          Offset[{2, 2}, {2.425776397515528, 1.0257763975155278`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.12, 1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1.6, 1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.8, 2.12}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.4, 1.7}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, 1.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.4, 0.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, 0.35}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{
+  3.765405128426464*^9, 3.7654052819276237`*^9, {3.7654053165262823`*^9, 
+   3.7654053357650547`*^9}, 3.7654053816353197`*^9, 3.7654055183514214`*^9, {
+   3.765405549571869*^9, 3.765405592288251*^9}, 3.7654056258972397`*^9, {
+   3.76540566485359*^9, 3.765405683623291*^9}, {3.7654057221276817`*^9, 
+   3.765405734614029*^9}, {3.76540576936827*^9, 3.765405796222845*^9}, {
+   3.765405890272049*^9, 3.7654059409457912`*^9}, {3.7654060106725683`*^9, 
+   3.7654060654070597`*^9}, {3.76540610447679*^9, 3.765406157359983*^9}, 
+   3.7654644630814466`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "g5", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"g5", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.765464467122415*^9, 3.765464479144499*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {3, 5}, {2, 4}, {1, 4}, {1, 
+       3}}}, {EdgeWeight -> {8, 3, 1, 7, 5, 2, 2, 4}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {-0.12, 1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {1.6, 1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {0.7, -0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.8, 2.12}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {0.4, 1.7}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {2, 1.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.4, 0.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {2, 0.35}]}}, GraphHighlight -> {1, 
+         UndirectedEdge[3, 5], 5, 
+         UndirectedEdge[2, 4], 
+         UndirectedEdge[1, 4], 2, 
+         UndirectedEdge[3, 4], 4, 3}, GraphHighlightStyle -> {"Thick"}, 
+       ImagePadding -> 10, ImageSize -> 200, 
+       VertexCoordinates -> {{0, 0}, {0, 2}, {1.5, 0}, {1.5, 2}, {2.4, 1}}, 
+       VertexLabels -> {"Name"}}]], Typeset`boxes, Typeset`boxes$s2d = 
+    GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$2", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$3", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$3", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$5", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$4", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 0.}, 0.025776397515527932`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 2.}, 0.025776397515527932`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{1.5, 0.}, 0.025776397515527932`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{1.5, 2.}, 0.025776397515527932`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{2.4, 1.}, 0.025776397515527932`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{18.4, 293.2159886380933}, {-136.43198863809292`, 
+       105.09243678743357`}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.12, 1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1.6, 1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.8, 2.12}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.4, 1.7}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, 1.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.4, 0.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, 0.35}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{3.765464481328298*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "g5", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765464511760777*^9, 3.765464515207411*^9}}],
+
+Cell[BoxData["10.`"], "Output",
+ CellChangeTimes->{3.765464516708761*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The highlighted graph and green cell above match the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.765464594746334*^9, 3.76546462165145*^9}}],
+
+Cell["3.  Problem represented by a diagram.", "Text",
+ CellChangeTimes->{{3.7654063169637613`*^9, 3.765406320887348*^9}, {
+  3.769350532603441*^9, 3.7693505350593033`*^9}, {3.769454273755946*^9, 
+  3.769454293337722*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g6", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"5", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "6"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"VertexCoordinates", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", 
+         RowBox[{"-", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "3"}], ",", 
+         RowBox[{"-", "2"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "8", ",", "7", ",", "5", ",", "3", ",", "4", ",", "6", ",", "1", ",", 
+       "2"}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<\!\(\*
+StyleBox[\"s\",
+FontSlant->\"Italic\"]\)\>\"", ",", "Medium"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0.15"}], "}"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<4\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "3.1"}], ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<3\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2.6"}], ",", 
+             RowBox[{"-", "0.3"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "2.6"}], ",", 
+             RowBox[{"-", "1.3"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<5\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1.6"}], ",", 
+             RowBox[{"-", "0.6"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<1\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.4"}], ",", 
+             RowBox[{"-", "0.1"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<7\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.35"}], ",", 
+             RowBox[{"-", "1.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<6\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.4"}], ",", 
+             RowBox[{"-", "0.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<8\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.14", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765406360760584*^9, 3.765406361230867*^9}, {
+  3.765406396904285*^9, 3.765406479987805*^9}, {3.7654065137241*^9, 
+  3.7654066367583447`*^9}, {3.765406749294675*^9, 3.765406751605085*^9}, {
+  3.7654068403386297`*^9, 3.765406843258172*^9}, {3.7654069439977207`*^9, 
+  3.765406972707663*^9}, {3.765407079465088*^9, 3.765407138925373*^9}, {
+  3.765407194845314*^9, 3.7654076784915743`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 4, 2, 5, 3, 6}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {1, 4}, {1, 6}, {3, 
+       6}}}, {EdgeWeight -> {8, 7, 5, 3, 4, 6, 1, 2}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, 0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {-3.1, -1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {-2.6, -0.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {-2.6, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {-1.6, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {-0.4, -0.1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {-0.35, -1.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {-0.4, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {0.14, -1}]}}, ImagePadding -> 10, ImageSize -> 
+       200, VertexCoordinates -> {{0, 0}, {0, -2}, {-1.5, 0}, {-1.5, -2}, {-3,
+          0}, {-3, -2}}, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {0., -2.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {-1.5, -2.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {-3., -2.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., -2.}, {-1.5, 0.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-1.5, 0.}, {-1.5, -2.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-1.5, 0.}, {-3., -2.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-1.5, -2.}, {-3., 0.}}, 0.030239520958083826`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-3., 0.}, {-3., -2.}}, 0.030239520958083826`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 0.}, 0.030239520958083826`], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.030239520958083826`, 0.030239520958083826`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., -2.}, 0.030239520958083826`],
+          InsetBox["4", 
+          Offset[{2, 2}, {0.030239520958083826`, -1.969760479041916}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-1.5, 0.}, 0.030239520958083826`], 
+         InsetBox["2", 
+          Offset[{2, 2}, {-1.469760479041916, 0.030239520958083826`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-1.5, -2.}, 0.030239520958083826`], 
+         InsetBox["5", 
+          Offset[{2, 2}, {-1.469760479041916, -1.969760479041916}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-3., 0.}, 0.030239520958083826`],
+          InsetBox["3", 
+          Offset[{2, 2}, {-2.9697604790419163`, 0.030239520958083826`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-3., -2.}, 0.030239520958083826`], 
+         InsetBox["6", 
+          Offset[{2, 2}, {-2.9697604790419163`, -1.969760479041916}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, 0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-3.1, -1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-2.6, -0.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-2.6, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1.6, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.4, -0.1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.35, -1.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.4, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.14, -1}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{
+  3.765406362654277*^9, 3.7654066437620153`*^9, 3.765406772399335*^9, 
+   3.765406854429489*^9, {3.765406954647087*^9, 3.765406973791986*^9}, {
+   3.765407199921809*^9, 3.765407223423101*^9}, {3.765407261396185*^9, 
+   3.765407417349162*^9}, {3.765407449836833*^9, 3.765407493623775*^9}, {
+   3.765407526627708*^9, 3.765407545751708*^9}, {3.765407581942842*^9, 
+   3.7654076792519073`*^9}, 3.765470704992237*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "g6", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"g6", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.765470742183112*^9, 3.765470746756688*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 4, 2, 5, 3, 6}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {1, 4}, {1, 6}, {3, 
+       6}}}, {EdgeWeight -> {8, 7, 5, 3, 4, 6, 1, 2}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, 0.15}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {-3.1, -1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {-2.6, -0.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {-2.6, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {-1.6, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["1", Medium], {-0.4, -0.1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {-0.35, -1.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {-0.4, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {0.14, -1}]}}, GraphHighlight -> {
+         UndirectedEdge[5, 3], 1, 
+         UndirectedEdge[2, 6], 6, 5, 
+         UndirectedEdge[4, 2], 
+         UndirectedEdge[3, 6], 
+         UndirectedEdge[1, 6], 2, 3, 4}, GraphHighlightStyle -> {"Thick"}, 
+       ImagePadding -> 10, ImageSize -> 200, 
+       VertexCoordinates -> {{0, 0}, {0, -2}, {-1.5, 0}, {-1.5, -2}, {-3, 
+         0}, {-3, -2}}, VertexLabels -> {"Name"}}]], Typeset`boxes, 
+    Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$2", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], 
+          DynamicLocation["VertexID$3", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$3", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], 
+          DynamicLocation["VertexID$5", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$5", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 0.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., -2.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-1.5, 0.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-1.5, -2.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-3., 0.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-3., -2.}, 0.030239520958083826`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$6"], 
+         InsetBox[
+          FormBox["6", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$6", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$6"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{18.40000000000002, 
+       293.2640951751728}, {-115.48009517517282`, 83.69137624730969}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, 0.15}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-3.1, -1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-2.6, -0.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-2.6, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1.6, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.4, -0.1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.35, -1.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.4, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.14, -1}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{3.7654707482430077`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "g6", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765470851846114*^9, 3.765470855784834*^9}}],
+
+Cell[BoxData["17.`"], "Output",
+ CellChangeTimes->{3.765470858023736*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The highlighted graph and the green cell above match the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.7654709351901407`*^9, 3.76547095741251*^9}}],
+
+Cell["5.  Problem represented by a diagram.", "Text",
+ CellChangeTimes->{{3.765408066049964*^9, 3.76540806998204*^9}, {
+  3.769350547194909*^9, 3.769350549946898*^9}, {3.769454300572712*^9, 
+  3.769454310233201*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g7", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "4"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"VertexCoordinates", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "2"}], ",", 
+         RowBox[{"-", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "4"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"1.6", ",", 
+         RowBox[{"-", "2"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"4", ",", 
+         RowBox[{"-", "2"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "5", ",", "2", ",", "6", ",", "7", ",", "8", ",", "4", ",", "20", ",", 
+       "3", ",", "2"}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<\!\(\*
+StyleBox[\"s\",
+FontSlant->\"Italic\"]\)\>\"", ",", "Medium"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", "0.25"}], "}"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<5\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "0.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<20\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "1"}], ",", 
+             RowBox[{"-", "3.35"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<8\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.7"}], ",", 
+             RowBox[{"-", "1.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<3\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", 
+             RowBox[{"-", "3.25"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<7\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2", ",", 
+             RowBox[{"-", "0.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.6", ",", 
+             RowBox[{"-", "3"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.2"}], ",", 
+             RowBox[{"-", "0.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<6\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.5", ",", 
+             RowBox[{"-", "1"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<4\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2.5", ",", 
+             RowBox[{"-", "1.8"}]}], "}"}]}], "]"}]}], "}"}]}], "}"}]}], ",", 
+    
+    RowBox[{"ImageSize", "\[Rule]", "250"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765408183964835*^9, 3.7654081844830227`*^9}, {
+  3.765408282979247*^9, 3.765409112053282*^9}, {3.7654091434047947`*^9, 
+  3.765409202234585*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 3, 5}, {
+      Null, {{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 4}, {4, 5}, {2, 3}, {3, 5}, {
+       4, 3}}}, {EdgeWeight -> {5, 2, 6, 7, 8, 4, 20, 3, 2}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, 0.25}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {-1, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["20", Medium], {-1, -3.35}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {-0.7, -1.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {2, -3.25}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {2, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.6, -3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {-0.2, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {0.5, -1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {2.5, -1.8}]}}, ImagePadding -> 10, ImageSize -> 
+       250, VertexCoordinates -> {{0, 0}, {-2, -2}, {0, -4}, {1.6, -2}, {
+         4, -2}}, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {-2., -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {0., -4.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {1.6, -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {4., -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-2., -2.}, {0., -4.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-2., -2.}, {1.6, -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., -4.}, {1.6, -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., -4.}, {4., -2.}}, 0.04847715736040609]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.6, -2.}, {4., -2.}}, 0.04847715736040609]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 0.}, 0.04847715736040609], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.04847715736040609, 0.04847715736040609}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{-2., -2.}, 0.04847715736040609], 
+         InsetBox["2", 
+          Offset[{2, 2}, {-1.9515228426395939`, -1.9515228426395939`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., -4.}, 0.04847715736040609], 
+         InsetBox["4", 
+          Offset[{2, 2}, {0.04847715736040609, -3.951522842639594}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{1.6, -2.}, 0.04847715736040609], 
+         InsetBox["3", 
+          Offset[{2, 2}, {1.6484771573604062`, -1.9515228426395939`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{4., -2.}, 0.04847715736040609], 
+         InsetBox["5", 
+          Offset[{2, 2}, {4.048477157360406, -1.9515228426395939`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, 0.25}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"20\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1, -3.35}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.7, -1.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, -3.25}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.6, -3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.2, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.5, -1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.5, -1.8}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->250]], "Output",
+ CellChangeTimes->{
+  3.765408185321396*^9, {3.765408456169344*^9, 3.765408567385255*^9}, 
+   3.765408671460823*^9, {3.7654087127262487`*^9, 3.765408782099759*^9}, {
+   3.7654088142315407`*^9, 3.7654090170735064`*^9}, {3.765409080964789*^9, 
+   3.765409112769683*^9}, 3.765409145011512*^9, {3.765409192081835*^9, 
+   3.765409221683338*^9}, 3.765471005011426*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "g7", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"g7", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.765471028642972*^9, 3.765471034457703*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 3, 5}, {
+      Null, {{1, 2}, {1, 3}, {1, 4}, {1, 5}, {2, 4}, {4, 5}, {2, 3}, {3, 5}, {
+       4, 3}}}, {EdgeWeight -> {5, 2, 6, 7, 8, 4, 20, 3, 2}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, 0.25}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["5", Medium], {-1, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["20", Medium], {-1, -3.35}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["8", Medium], {-0.7, -1.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["3", Medium], {2, -3.25}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["7", Medium], {2, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {0.6, -3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["2", Medium], {-0.2, -0.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["6", Medium], {0.5, -1}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["4", Medium], {2.5, -1.8}]}}, GraphHighlight -> {1, 5, 
+         UndirectedEdge[1, 4], 
+         UndirectedEdge[1, 2], 2, 
+         UndirectedEdge[4, 5], 
+         UndirectedEdge[4, 3], 3, 4}, GraphHighlightStyle -> {"Thick"}, 
+       ImagePadding -> 10, ImageSize -> 250, 
+       VertexCoordinates -> {{0, 0}, {-2, -2}, {0, -4}, {1.6, -2}, {4, -2}}, 
+       VertexLabels -> {"Name"}}]], Typeset`boxes, Typeset`boxes$s2d = 
+    GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$2", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$3", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$3", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$5", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$4", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 0.}, 0.04847715736040609], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-2., -2.}, 0.04847715736040609], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., -4.}, 0.04847715736040609], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{1.6, -2.}, 0.04847715736040609], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{4., -2.}, 0.04847715736040609], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{19.900000000000002`, 
+       366.7429126420684}, {-139.0189126420682, 108.1795907085172}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, 0.25}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"5\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"20\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-1, -3.35}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"8\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.7, -1.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"3\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, -3.25}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.6, -3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"2\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.2, -0.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.5, -1}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"4\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.5, -1.8}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->250]], "Output",
+ CellChangeTimes->{3.765471038379517*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "g7", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765471058665022*^9, 3.7654710592727327`*^9}}],
+
+Cell[BoxData["12.`"], "Output",
+ CellChangeTimes->{3.765471060994874*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The highlighted graph and the green cell above match the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{3.76547113224067*^9}],
+
+Cell["\<\
+8.  To get a minimum spanning tree, instead of adding shortest edges, one \
+could think of deleting longest edges. For what graphs would this be \
+feasible? Describe an algorithm for this.\
+\>", "Text",
+ CellChangeTimes->{{3.765455072350499*^9, 3.765455119402464*^9}},
+ FontSlant->"Italic"],
+
+Cell["\<\
+9.  Apply the method suggested in problem 8 to the graph in example 1. Do you \
+get the same tree?\
+\>", "Text",
+ CellChangeTimes->{{3.765454958004633*^9, 3.765454988255353*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["I\[CloseCurlyQuote]m only a button pusher right now.", "Text",
+ CellChangeTimes->{{3.7654711468551283`*^9, 3.765471152805004*^9}}],
+
+Cell["\<\
+10.  Design an algorithm for obtaining longest spanning trees.\
+\>", "Text",
+ CellChangeTimes->{{3.765454992169475*^9, 3.765455011030354*^9}},
+ FontSlant->"Italic"],
+
+Cell["\<\
+11. Apply the algorithm in problem 10 to the graph in example 1. Compare with \
+the result in example 1.\
+\>", "Text",
+ CellChangeTimes->{{3.765455014207272*^9, 3.7654550438612747`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+The documentation led me to think the following would work. It does not seem \
+to work. It gives edges which are in disagreement with the text answer, and \
+the total is 29, not 38, as the text maintains.\
+\>", "Text",
+ CellChangeTimes->{{3.7654729668920603`*^9, 3.7654730477440233`*^9}, 
+   3.76547320417039*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"g9", "=", 
+  RowBox[{"FindSpanningTree", "[", 
+   RowBox[{"example1graph", ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"-", "1"}]}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "150"}], ",", 
+    RowBox[{"EdgeStyle", "\[Rule]", "Green"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765471530369133*^9, 3.765471536102977*^9}, {
+   3.7654715678419952`*^9, 3.765471588237814*^9}, {3.7654716224700203`*^9, 
+   3.7654716385011883`*^9}, {3.765471700642898*^9, 3.765471712810581*^9}, {
+   3.765471937385627*^9, 3.765471952080557*^9}, 3.7654723905557413`*^9}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 5, 6, 3}, {Null, 
+       SparseArray[
+       Automatic, {6, 6}, 0, {
+        1, {{0, 1, 3, 5, 6, 7, 10}, {{6}, {3}, {6}, {2}, {4}, {3}, {6}, {1}, {
+          2}, {5}}}, Pattern}]}, {EdgeStyle -> {
+         RGBColor[0, 1, 0]}, ImageSize -> 150, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {RGBColor[0, 1, 0], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8687444855261388, 0.}, {1.3031167282892082`, 
+          0.8687444855261388}}, 0.02044525157230459]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6515583641446041, 1.7374889710522776`}, {0., 
+          0.8687444855261388}}, 0.02044525157230459]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.6515583641446041, 1.7374889710522776`}, {
+          1.3031167282892082`, 0.8687444855261388}}, 0.02044525157230459]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.8687444855261388}, {0., 0.}}, 0.02044525157230459]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{1.7374889710522776`, 0.}, {1.3031167282892082`, 
+          0.8687444855261388}}, 0.02044525157230459]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0.8687444855261388, 0.}, 0.02044525157230459], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.8891897370984434, 0.02044525157230459}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.6515583641446041, 1.7374889710522776`}, 
+          0.02044525157230459], 
+         InsetBox["2", 
+          Offset[{2, 2}, {0.6720036157169087, 1.7579342226245822`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0., 0.8687444855261388}, 0.02044525157230459], 
+         InsetBox["4", 
+          Offset[{2, 2}, {0.02044525157230459, 0.8891897370984434}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., 0.}, 0.02044525157230459], 
+         InsetBox["5", 
+          Offset[{2, 2}, {0.02044525157230459, 0.02044525157230459}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.7374889710522776`, 0.}, 0.02044525157230459], 
+         InsetBox["6", 
+          Offset[{2, 2}, {1.7579342226245822`, 0.02044525157230459}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.3031167282892082`, 0.8687444855261388}, 
+          0.02044525157230459], 
+         InsetBox["3", 
+          Offset[{2, 2}, {1.3235619798615128`, 0.8891897370984434}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->150]], "Output",
+ CellChangeTimes->{3.765472391709222*^9}]
+}, Open  ]],
+
+Cell["\<\
+Below I rename the graph and reverse the sign on all the edge weights by hand.\
+\>", "Text",
+ CellChangeTimes->{{3.76547306587271*^9, 3.7654730886945333`*^9}, {
+  3.7654733071050453`*^9, 3.765473309838428*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ex2", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"6", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "1"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "4"}]}], "}"}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"VertexCoordinates", "->", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"0", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", "0"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"3.5", ",", 
+         RowBox[{"-", "1.5"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"2", ",", 
+         RowBox[{"-", "3"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"0", ",", 
+         RowBox[{"-", "3"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1.5"}], ",", 
+         RowBox[{"-", "1.5"}]}], "}"}]}], "}"}]}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "11"}], ",", 
+       RowBox[{"-", "6"}], ",", 
+       RowBox[{"-", "9"}], ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "4"}], ",", 
+       RowBox[{"-", "7"}], ",", 
+       RowBox[{"-", "8"}]}], "}"}]}], ",", 
+    RowBox[{"Epilog", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"Text", "[", 
+         RowBox[{
+          RowBox[{"Style", "[", 
+           RowBox[{"\"\<\!\(\*
+StyleBox[\"s\",
+FontSlant->\"Italic\"]\)\>\"", ",", "Medium"}], "]"}], ",", 
+          RowBox[{"{", 
+           RowBox[{"0", ",", 
+            RowBox[{"-", "0.2"}]}], "}"}]}], "]"}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-6\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2.9", ",", 
+             RowBox[{"-", "2.4"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-1\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.8"}], ",", 
+             RowBox[{"-", "2.5"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-4\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"-", "0.8"}], ",", 
+             RowBox[{"-", "0.5"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-8\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "1.3"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-9\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", 
+             RowBox[{"-", "2.8"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-7\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"0.7", ",", 
+             RowBox[{"-", "0.6"}]}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-2\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"1", ",", "0.2"}], "}"}]}], "]"}]}], "}"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"Red", ",", 
+         RowBox[{"Text", "[", 
+          RowBox[{
+           RowBox[{"Style", "[", 
+            RowBox[{"\"\<-11\>\"", ",", "Medium"}], "]"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"2.9", ",", 
+             RowBox[{"-", "0.6"}]}], "}"}]}], "]"}]}], "}"}]}], "}"}]}], ",", 
+    
+    RowBox[{"ImageSize", "\[Rule]", "200"}], ",", 
+    RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765472809177772*^9, 3.765472820393409*^9}, {
+  3.765472874947419*^9, 3.765472877511791*^9}, {3.765473236748609*^9, 
+  3.765473246938223*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 5, 6, 3}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {6, 2}, {6, 
+       3}}}, {EdgeWeight -> {-2, -11, -6, -9, -1, -4, -7, -8}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-6", Medium], {2.9, -2.4}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-1", Medium], {-0.8, -2.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-4", Medium], {-0.8, -0.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-8", Medium], {1, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-9", Medium], {1, -2.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-7", Medium], {0.7, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-2", Medium], {1, 0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-11", Medium], {2.9, -0.6}]}}, ImagePadding -> 10, 
+       ImageSize -> 200, 
+       VertexCoordinates -> {{0, 0}, {2, 0}, {3.5, -1.5}, {2, -3}, {
+         0, -3}, {-1.5, -1.5}}, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {2., 0.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., 0.}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., 0.}, {3.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., 0.}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.5, -1.5}, {2., -3.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.5, -1.5}, {-1.5, -1.5}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{2., -3.}, {0., -3.}}, 0.043048128342245986`]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0., -3.}, {-1.5, -1.5}}, 0.043048128342245986`]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {DiskBox[{0., 0.}, 0.043048128342245986`], 
+         InsetBox["1", 
+          Offset[{2, 2}, {0.043048128342245986`, 0.043048128342245986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2., 0.}, 0.043048128342245986`], 
+         InsetBox["2", 
+          Offset[{2, 2}, {2.043048128342246, 0.043048128342245986`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.5, -1.5}, 0.043048128342245986`], 
+         InsetBox["4", 
+          Offset[{2, 2}, {3.543048128342246, -1.456951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{2., -3.}, 0.043048128342245986`],
+          InsetBox["5", 
+          Offset[{2, 2}, {2.043048128342246, -2.956951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {DiskBox[{0., -3.}, 0.043048128342245986`],
+          InsetBox["6", 
+          Offset[{2, 2}, {0.043048128342245986`, -2.956951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-1.5, -1.5}, 0.043048128342245986`], 
+         InsetBox["3", 
+          Offset[{2, 2}, {-1.456951871657754, -1.456951871657754}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -2.4}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -2.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -0.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-9\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -2.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, 0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-11\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -0.6}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{3.765472826775104*^9, 3.76547287839563*^9, 
+  3.765473248258814*^9}]
+}, Open  ]],
+
+Cell["\<\
+Then I run FindSpanningTree, and see that the correct edges are picked.\
+\>", "Text",
+ CellChangeTimes->{{3.7654731017659817`*^9, 3.7654731273408203`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "ex2", "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"ex2", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}]}], 
+  "]"}]}], "Input",
+ CellChangeTimes->{{3.765472855663011*^9, 3.765472861736652*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 4, 5, 6, 3}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {6, 2}, {6, 
+       3}}}, {EdgeWeight -> {-2, -11, -6, -9, -1, -4, -7, -8}, Epilog -> {{
+          Text[
+           Style[
+           "\!\(\*\nStyleBox[\"s\",\nFontSlant->\"Italic\"]\)", Medium], {
+           0, -0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-6", Medium], {2.9, -2.4}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-1", Medium], {-0.8, -2.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-4", Medium], {-0.8, -0.5}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-8", Medium], {1, -1.3}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-9", Medium], {1, -2.8}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-7", Medium], {0.7, -0.6}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-2", Medium], {1, 0.2}]}, {
+          RGBColor[1, 0, 0], 
+          Text[
+           Style["-11", Medium], {2.9, -0.6}]}}, GraphHighlight -> {1, 6, 5, 
+         UndirectedEdge[2, 4], 
+         UndirectedEdge[1, 3], 
+         UndirectedEdge[5, 6], 2, 
+         UndirectedEdge[4, 3], 
+         UndirectedEdge[4, 5], 3, 4}, GraphHighlightStyle -> {"Thick"}, 
+       ImagePadding -> 10, ImageSize -> 200, 
+       VertexCoordinates -> {{0, 0}, {2, 0}, {3.5, -1.5}, {2, -3}, {
+         0, -3}, {-1.5, -1.5}}, VertexLabels -> {"Name"}}]], Typeset`boxes, 
+    Typeset`boxes$s2d = GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$2", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], 
+          DynamicLocation["VertexID$3", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$4", Automatic, Center], 
+          DynamicLocation["VertexID$5", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$5", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., 0.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{2., 0.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{3.5, -1.5}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{2., -3.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{0., -3.}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["6", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{-1.5, -1.5}, 0.043048128342245986`], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$6"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$6", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$6"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{18.4, 293.3716530801447}, {-106.58765308014449`, 
+       75.45907097045523}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  Epilog->{{
+     InsetBox[
+      FormBox[
+       StyleBox[
+       "\"\\!\\(\\*\\nStyleBox[\\\"s\\\",\\nFontSlant->\\\"Italic\\\"]\\)\"", 
+        Medium, StripOnInput -> False], TraditionalForm], {0, -0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-6\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -2.4}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-1\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -2.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-4\"", Medium, StripOnInput -> False], 
+       TraditionalForm], {-0.8, -0.5}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-8\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -1.3}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-9\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, -2.8}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-7\"", Medium, StripOnInput -> False], TraditionalForm], {
+      0.7, -0.6}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-2\"", Medium, StripOnInput -> False], TraditionalForm], {
+      1, 0.2}]}, {
+     RGBColor[1, 0, 0], 
+     InsetBox[
+      FormBox[
+       StyleBox["\"-11\"", Medium, StripOnInput -> False], TraditionalForm], {
+      2.9, -0.6}]}},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{{3.765472863638562*^9, 3.765472884244927*^9}, 
+   3.7654732658576736`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "ex2", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765472918782421*^9, 3.7654729205743217`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "38.`"}]], "Output",
+ CellChangeTimes->{3.765472921784556*^9, 3.7654732748251677`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+And, except for an expected sign reversal, the correct integer sum is \
+returned.\
+\>", "Text",
+ CellChangeTimes->{{3.7654731565400476`*^9, 3.765473177307413*^9}, {
+  3.7654732805769672`*^9, 3.7654732813275633`*^9}}],
+
+Cell["\<\
+13.  Air cargo. Find a shortest spanning tree in the complete graph of all \
+possible 15 connections between the six cities given (distances by airplane, \
+in miles, rounded). Can you think of a practical application of the result?\
+\>", "Text",
+ CellChangeTimes->{{3.7654552383275642`*^9, 3.765455300780045*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\>\"", ",", "\"\<\!\(\*SubscriptBox[\(Dallas\), \(2\)]\)\>\"", 
+       ",", "\"\<\!\(\*SubscriptBox[\(Denver\), \(3\)]\)\>\"", ",", 
+       "\"\<Los \!\(\*SubscriptBox[\(Angeles\), \(4\)]\)\>\"", ",", 
+       "\"\<New \!\(\*SubscriptBox[\(York\), \(5\)]\)\>\"", ",", 
+       "\"\<Washington,D.\!\(\*SubscriptBox[\(C\), \(6\)]\)\>\""}], "}"}], 
+     ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<\!\(\*SubscriptBox[\(Chicago\), \(1\)]\)\>\"", ",", "800", ",", 
+       "900", ",", "1800", ",", "700", ",", "650"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Dallas\>\"", ",", "\"\<\>\"", ",", "650", ",", "1300", ",", "1350",
+        ",", "1200"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Denver\>\"", ",", "\"\<\>\"", ",", "\"\<\>\"", ",", "850", ",", 
+       "1650", ",", "1500"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<Los Angeles\>\"", ",", "\"\<\>\"", ",", "\"\<\>\"", ",", 
+       "\"\<\>\"", ",", "2500", ",", "2350"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "\"\<New York\>\"", ",", "\"\<\>\"", ",", "\"\<\>\"", ",", "\"\<\>\"", 
+       ",", "\"\<\>\"", ",", "200"}], "}"}]}], "}"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765455477008494*^9, 3.765455523195944*^9}, {
+  3.7654559192476063`*^9, 3.765456029376978*^9}, {3.765456061096437*^9, 
+  3.765456274119877*^9}, {3.765473946900341*^9, 3.7654739740783463`*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {"\<\"\"\>", "\<\"\\!\\(\\*SubscriptBox[\\(Dallas\\), \\(2\\)]\\)\"\>", "\
+\<\"\\!\\(\\*SubscriptBox[\\(Denver\\), \\(3\\)]\\)\"\>", "\<\"Los \
+\\!\\(\\*SubscriptBox[\\(Angeles\\), \\(4\\)]\\)\"\>", "\<\"New \
+\\!\\(\\*SubscriptBox[\\(York\\), \\(5\\)]\\)\"\>", \
+"\<\"Washington,D.\\!\\(\\*SubscriptBox[\\(C\\), \\(6\\)]\\)\"\>"},
+    {"\<\"\\!\\(\\*SubscriptBox[\\(Chicago\\), \\(1\\)]\\)\"\>", "800", "900",
+      "1800", "700", "650"},
+    {"\<\"Dallas\"\>", "\<\"\"\>", "650", "1300", "1350", "1200"},
+    {"\<\"Denver\"\>", "\<\"\"\>", "\<\"\"\>", "850", "1650", "1500"},
+    {"\<\"Los Angeles\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "2500", 
+     "2350"},
+    {"\<\"New York\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "\<\"\"\>", "200"}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.765455524174465*^9, 3.765455936209639*^9, 
+  3.765455969761567*^9, 3.76545601962494*^9, 3.765456094803425*^9, 
+  3.765456166737767*^9, 3.7654562084147253`*^9, 3.765456245059149*^9, 
+  3.765456275777231*^9, 3.765473975085644*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cg", "=", 
+  RowBox[{"Graph", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"1", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"2", "\[UndirectedEdge]", "3"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"5", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"6", "\[UndirectedEdge]", "1"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "4"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "5"}], ",", 
+      RowBox[{"3", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "6"}], ",", 
+      RowBox[{"4", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"5", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"6", "\[UndirectedEdge]", "2"}], ",", 
+      RowBox[{"1", "\[UndirectedEdge]", "3"}]}], "}"}], ",", 
+    RowBox[{"EdgeWeight", "\[Rule]", 
+     RowBox[{"{", 
+      RowBox[{
+      "800", ",", "650", ",", "850", ",", "2500", ",", "200", ",", "650", ",",
+        "1800", ",", "700", ",", "1650", ",", "1500", ",", "2350", ",", 
+       "1300", ",", "1350", ",", "1200", ",", "900"}], "}"}]}], ",", 
+    RowBox[{"GraphLayout", "\[Rule]", "\"\<CircularEmbedding\>\""}], ",", 
+    RowBox[{"VertexLabels", "\[Rule]", "\"\<Name\>\""}], ",", 
+    RowBox[{"ImageSize", "\[Rule]", "200"}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.765473798688978*^9, 3.765473915688696*^9}, {
+  3.765474004085638*^9, 3.76547404016434*^9}, {3.76547410375382*^9, 
+  3.765474256012272*^9}, {3.7654744624146748`*^9, 3.765474512234983*^9}, {
+  3.76547455774566*^9, 3.765474557873197*^9}, {3.765474597103963*^9, 
+  3.765474633438614*^9}, {3.7654746786691017`*^9, 3.765474685116664*^9}, {
+  3.765475016716445*^9, 3.7654751325009823`*^9}, {3.765475183163087*^9, 
+  3.7654752543766203`*^9}, {3.7654755276493683`*^9, 3.7654755303591537`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {1, 4}, {1, 5}, {
+       3, 5}, {3, 6}, {4, 6}, {4, 2}, {5, 2}, {6, 2}, {1, 3}}}, {
+      EdgeWeight -> {800, 650, 850, 2500, 200, 650, 1800, 700, 1650, 1500, 
+        2350, 1300, 1350, 1200, 900}, GraphLayout -> "CircularEmbedding", 
+       ImageSize -> 200, VertexLabels -> {"Name"}}]]}, 
+    TagBox[GraphicsGroupBox[{
+       {Hue[0.6, 0.7, 0.5], Opacity[0.7], 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844389, 
+          0.5000000000000008}, {-0.8660254037844384, -0.4999999999999994}}, 
+          0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844389, 0.5000000000000008}, {
+          3.8285686989269494`*^-16, -1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844389, 0.5000000000000008}, {
+          0.8660254037844389, -0.5000000000000012}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844389, 0.5000000000000008}, {
+          0.8660254037844386, 0.4999999999999993}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844389, 0.5000000000000008}, {
+          1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844384, -0.4999999999999994}, {
+          3.8285686989269494`*^-16, -1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844384, -0.4999999999999994}, {
+          0.8660254037844389, -0.5000000000000012}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844384, -0.4999999999999994}, {
+          0.8660254037844386, 0.4999999999999993}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{-0.8660254037844384, -0.4999999999999994}, {
+          1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.8285686989269494`*^-16, -1.}, {
+          0.8660254037844389, -0.5000000000000012}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.8285686989269494`*^-16, -1.}, {0.8660254037844386, 
+          0.4999999999999993}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{3.8285686989269494`*^-16, -1.}, {1.8369701987210297`*^-16,
+           1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8660254037844389, -0.5000000000000012}, {
+          0.8660254037844386, 0.4999999999999993}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8660254037844389, -0.5000000000000012}, {
+          1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}, 
+        {Arrowheads[0.], 
+         ArrowBox[{{0.8660254037844386, 0.4999999999999993}, {
+          1.8369701987210297`*^-16, 1.}}, 0.02261146496815286]}}, 
+       {Hue[0.6, 0.2, 0.8], EdgeForm[{GrayLevel[0], Opacity[
+        0.7]}], {
+         DiskBox[{-0.8660254037844389, 0.5000000000000008}, 
+          0.02261146496815286], 
+         InsetBox["1", 
+          Offset[{2, 2}, {-0.843413938816286, 0.5226114649681537}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{-0.8660254037844384, -0.4999999999999994}, 
+          0.02261146496815286], 
+         InsetBox["2", 
+          Offset[{2, 2}, {-0.8434139388162856, -0.47738853503184653`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{3.8285686989269494`*^-16, -1.}, 0.02261146496815286], 
+         InsetBox["3", 
+          Offset[{2, 2}, {0.022611464968153243`, -0.9773885350318472}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+          0.02261146496815286], 
+         InsetBox["4", 
+          Offset[{2, 2}, {0.8886368687525918, -0.47738853503184836`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{0.8660254037844386, 0.4999999999999993}, 
+          0.02261146496815286], 
+         InsetBox["5", 
+          Offset[{2, 2}, {0.8886368687525914, 0.5226114649681521}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}, {
+         DiskBox[{1.8369701987210297`*^-16, 1.}, 0.02261146496815286], 
+         InsetBox["6", 
+          Offset[{2, 2}, {0.022611464968153045`, 1.0226114649681528`}], 
+          ImageScaled[{0, 0}],
+          BaseStyle->"Graphics"]}}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->200]], "Output",
+ CellChangeTimes->{
+  3.765474221120154*^9, 3.765474258900364*^9, 3.765474466094705*^9, {
+   3.765474503585421*^9, 3.765474513680279*^9}, 3.765474558606679*^9, {
+   3.76547462471651*^9, 3.765474635127599*^9}, 3.76547468612519*^9, 
+   3.7654752563456497`*^9, 3.765475612159382*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"FindSpanningTree", "[", "cg", "]"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"HighlightGraph", "[", 
+  RowBox[{"cg", ",", "%", ",", 
+   RowBox[{"GraphHighlightStyle", "\[Rule]", "\"\<Thick\>\""}], ",", 
+   RowBox[{"ImagePadding", "\[Rule]", "10"}]}], "]"}]}], "Input",
+ CellChangeTimes->{{3.765475286424674*^9, 3.765475293239051*^9}, {
+  3.765475334879713*^9, 3.765475335478445*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[
+  NamespaceBox["NetworkGraphics",
+   DynamicModuleBox[{Typeset`graph = HoldComplete[
+     Graph[{1, 2, 3, 4, 5, 6}, {
+      Null, {{1, 2}, {2, 3}, {3, 4}, {4, 5}, {5, 6}, {6, 1}, {1, 4}, {1, 5}, {
+       3, 5}, {3, 6}, {4, 6}, {4, 2}, {5, 2}, {6, 2}, {1, 3}}}, {
+      EdgeWeight -> {800, 650, 850, 2500, 200, 650, 1800, 700, 1650, 1500, 
+        2350, 1300, 1350, 1200, 900}, GraphHighlight -> {
+         UndirectedEdge[2, 3], 1, 6, 5, 
+         UndirectedEdge[5, 6], 
+         UndirectedEdge[1, 2], 
+         UndirectedEdge[1, 6], 2, 
+         UndirectedEdge[3, 4], 4, 3}, GraphHighlightStyle -> {"Thick"}, 
+       GraphLayout -> "CircularEmbedding", ImagePadding -> 10, ImageSize -> 
+       200, VertexLabels -> {"Name"}}]], Typeset`boxes, Typeset`boxes$s2d = 
+    GraphicsGroupBox[{{
+       Directive[
+        Opacity[0.7], 
+        Hue[0.6, 0.7, 0.5]], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$2", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$3", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$1", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$1", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$2", Automatic, Center], 
+          DynamicLocation["VertexID$3", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$4", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$2", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$3", Automatic, Center], 
+          DynamicLocation["VertexID$4", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False], 
+       LineBox[{
+         DynamicLocation["VertexID$3", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$3", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$4", Automatic, Center], 
+         DynamicLocation["VertexID$5", Automatic, Center]}], 
+       LineBox[{
+         DynamicLocation["VertexID$4", Automatic, Center], 
+         DynamicLocation["VertexID$6", Automatic, Center]}], 
+       StyleBox[
+        LineBox[{
+          DynamicLocation["VertexID$5", Automatic, Center], 
+          DynamicLocation["VertexID$6", Automatic, Center]}], 
+        Directive[
+         Thickness[Large], 
+         Hue[1, 1, 0.7], 
+         Opacity[1]], StripOnInput -> False]}, {
+       Directive[
+        Hue[0.6, 0.2, 0.8], 
+        EdgeForm[
+         Directive[
+          GrayLevel[0], 
+          Opacity[0.7]]]], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           
+           DiskBox[{-0.8660254037844389, 0.5000000000000008}, 
+            0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$1"], 
+         InsetBox[
+          FormBox["1", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$1", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$1"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           
+           DiskBox[{-0.8660254037844384, -0.4999999999999994}, 
+            0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$2"], 
+         InsetBox[
+          FormBox["2", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$2", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$2"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{3.8285686989269494`*^-16, -1.}, 0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$3"], 
+         InsetBox[
+          FormBox["3", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$3", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$3"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           
+           DiskBox[{0.8660254037844389, -0.5000000000000012}, 
+            0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$4"], 
+         InsetBox[
+          FormBox["4", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$4", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$4"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           
+           DiskBox[{0.8660254037844386, 0.4999999999999993}, 
+            0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$5"], 
+         InsetBox[
+          FormBox["5", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$5", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$5"], 
+       TagBox[{
+         TagBox[
+          StyleBox[
+           DiskBox[{1.8369701987210297`*^-16, 1.}, 0.02261146496815286], 
+           Directive[
+            RGBColor[0.85, 0.5, 0.5], 
+            EdgeForm[{
+              Thickness[Large], 
+              Hue[1, 1, 0.7], 
+              Opacity[1]}]], StripOnInput -> False], "DynamicName", BoxID -> 
+          "VertexID$6"], 
+         InsetBox[
+          FormBox["6", TraditionalForm], 
+          Offset[{2, 2}, 
+           DynamicLocation["VertexID$6", Automatic, {Right, Top}]], 
+          ImageScaled[{0, 0}], BaseStyle -> "Graphics"]}, "DynamicName", 
+        BoxID -> "VertexLabelID$6"]}}], $CellContext`flag}, 
+    TagBox[
+     DynamicBox[GraphComputation`NetworkGraphicsBox[
+      3, Typeset`graph, Typeset`boxes, $CellContext`flag], {
+      CachedValue :> Typeset`boxes, SingleEvaluation -> True, 
+       SynchronousUpdating -> False, TrackedSymbols :> {$CellContext`flag}},
+      ImageSizeCache->{{18.400000000000002`, 
+       293.04834353082515`}, {-177.26434353082522`, 145.46207177505448`}}],
+     MouseAppearanceTag["NetworkGraphics"]],
+    AllowKernelInitialization->False,
+    UnsavedVariables:>{$CellContext`flag}]],
+  DefaultBaseStyle->{
+   "NetworkGraphics", FrontEnd`GraphicsHighlightColor -> Hue[0.8, 1., 0.6]},
+  FormatType->TraditionalForm,
+  FrameTicks->None,
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImagePadding->10,
+  ImageSize->200]], "Output",
+ CellChangeTimes->{3.765475295479912*^9, 3.765475337036468*^9, 
+  3.765475616871426*^9}]
+}, Open  ]],
+
+Cell["\<\
+The spanning tree presented above agrees with the text answer, i.e. \
+5-6-1-2-3-4 would make the shortest continuous sequence of flights. The text \
+answer does not report the distance, which is 3600, as shown below.\
+\>", "Text",
+ CellChangeTimes->{{3.765475676818561*^9, 3.765475765934379*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"size", "[", "g_", "]"}], ":=", 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"edges", "=", 
+      RowBox[{"EdgeList", "[", 
+       RowBox[{"FindSpanningTree", "[", 
+        RowBox[{"{", 
+         RowBox[{"g", ",", "1"}], "}"}], "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Total", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"PropertyValue", "[", 
+        RowBox[{
+         RowBox[{"{", 
+          RowBox[{"g", ",", "#"}], "}"}], ",", "EdgeWeight"}], "]"}], "&"}], "/@",
+       "edges"}], "]"}]}], "]"}]}], "\[IndentingNewLine]", 
+ RowBox[{"N", "[", 
+  RowBox[{"size", "[", "cg", "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.7654753867731323`*^9, 3.765475388403668*^9}}],
+
+Cell[BoxData["3600.`"], "Output",
+ CellChangeTimes->{3.765475389461627*^9}]
+}, Open  ]],
+
+Cell["\<\
+From the data given, it happens that the shortest distance is not always a \
+straight line. An airline scheduler might want to look at the following grid, \
+to see if it might shorten the overall trip.\
+\>", "Text",
+ CellChangeTimes->{{3.765479762341172*^9, 3.7654798273459377`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Grid", "[", 
+  RowBox[{
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"FindShortestPath", "[", 
+      RowBox[{"cg", ",", "m", ",", "n", ",", 
+       RowBox[{"Method", "\[Rule]", "\"\<Dijkstra\>\""}]}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"m", ",", "1", ",", "6"}], "}"}]}], "]"}], ",", 
+   RowBox[{"Frame", "\[Rule]", "All"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.765475946073592*^9, 3.765475954615933*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"{", "1", "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "1"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", "1"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "1"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2"}], "}"}], 
+     RowBox[{"{", "2", "}"}], 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "2"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "2"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "2"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3"}], "}"}], 
+     RowBox[{"{", "3", "}"}], 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1", ",", "3"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "3"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"1", ",", "3", ",", "4"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "4"}], "}"}], 
+     RowBox[{"{", "4", "}"}], 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1", ",", "3", ",", "4"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "4"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"1", ",", "5"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "5"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1", ",", "5"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", "1", ",", "5"}], "}"}], 
+     RowBox[{"{", "5", "}"}], 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "5"}], "}"}]},
+    {
+     RowBox[{"{", 
+      RowBox[{"1", ",", "6"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "6"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "6"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "6"}], "}"}], 
+     RowBox[{"{", 
+      RowBox[{"5", ",", "6"}], "}"}], 
+     RowBox[{"{", "6", "}"}]}
+   },
+   AutoDelete->False,
+   GridBoxFrame->{"Columns" -> {{True}}, "Rows" -> {{True}}},
+   GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
+  "Grid"]], "Output",
+ CellChangeTimes->{3.7654759560108023`*^9, 3.7654760770437717`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Or something like the following could also be considered, which essentially \
+creates a new graph for each new situation.\
+\>", "Text",
+ CellChangeTimes->{{3.7654798358338327`*^9, 3.7654798825120497`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"c1", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Chicago\>\"", ",", "\"\<Illinois\>\"", ",", 
+        "\"\<UnitedStates\>\""}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c2", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Dallas\>\"", ",", "\"\<Texas\>\"", ",", "\"\<UnitedStates\>\""}], 
+       "}"}]}], "]"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c3", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Denver\>\"", ",", "\"\<Colorado\>\"", ",", 
+        "\"\<UnitedStates\>\""}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c4", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<LosAngeles\>\"", ",", "\"\<California\>\"", ",", 
+        "\"\<UnitedStates\>\""}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c5", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<NewYork\>\"", ",", "\"\<NewYork\>\"", ",", 
+        "\"\<UnitedStates\>\""}], "}"}]}], "]"}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"c6", "=", 
+   RowBox[{"GeoPosition", "[", 
+    RowBox[{"Entity", "[", 
+     RowBox[{"\"\<City\>\"", ",", 
+      RowBox[{"{", 
+       RowBox[{
+       "\"\<Washington\>\"", ",", "\"\<DistrictOfColumbia\>\"", ",", 
+        "\"\<UnitedStates\>\""}], "}"}]}], "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.765479277784542*^9, 3.765479547670289*^9}}],
+
+Cell["An example itinerary.", "Text",
+ CellChangeTimes->{{3.769350657864049*^9, 3.769350670350645*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindShortestTour", "[", 
+  RowBox[{"{", 
+   RowBox[{"c1", ",", "c2", ",", "c3"}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.76547959651756*^9, 3.7654796094670687`*^9}, {
+  3.765479679201106*^9, 3.765479683135092*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TemplateBox[{"3.813898471926747`*^6","\"m\"","meters","\"Meters\""},
+    "Quantity"], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "2", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.765479684134223*^9, 3.7654796983679943`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+14 - 20 General properties of trees
+Prove the following. Hint. Use problem 14 in proving 15 and 18; use problems \
+16 and 18 in proving 20.\
+\>", "Text",
+ CellChangeTimes->{{3.765455309611685*^9, 3.7654553512502203`*^9}}],
+
+Cell["\<\
+15.  If in a graph any two vertices are connected by a unique path, the graph \
+is a tree.\
+\>", "Text",
+ CellChangeTimes->{{3.765455393505707*^9, 3.7654554135683737`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+19.  If two vertices in a tree are joined by a new edge, a cycle is formed.\
+\>", "Text",
+ CellChangeTimes->{{3.765455419759572*^9, 3.765455437838969*^9}},
+ Background->RGBColor[1, 0.9, 0.8]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 91, 2, 45, "Input",
+ Evaluatable->False],
+Cell[494, 17, 202, 4, 51, "Text"],
+Cell[699, 23, 73, 1, 45, "Input"],
+Cell[775, 26, 196, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[996, 34, 4860, 133, 365, "Input"],
+Cell[5859, 169, 5828, 146, 220, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11724, 320, 346, 8, 75, "Input"],
+Cell[12073, 330, 9713, 268, 220, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21823, 603, 744, 21, 104, "Input"],
+Cell[22570, 626, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[22658, 630, 223, 5, 86, "Text"],
+Cell[22884, 637, 253, 4, 75, "Text"],
+Cell[CellGroupData[{
+Cell[23162, 645, 4566, 121, 307, "Input"],
+Cell[27731, 768, 5590, 141, 279, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33358, 914, 324, 8, 75, "Input"],
+Cell[33685, 924, 8851, 245, 279, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42573, 1174, 731, 21, 104, "Input"],
+Cell[43307, 1197, 111, 2, 69, "Output"]
+}, Open  ]],
+Cell[43433, 1202, 161, 3, 51, "Text"],
+Cell[43597, 1207, 257, 4, 75, "Text"],
+Cell[CellGroupData[{
+Cell[43879, 1215, 5137, 140, 365, "Input"],
+Cell[49019, 1357, 5764, 146, 237, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[54820, 1508, 324, 8, 75, "Input"],
+Cell[55147, 1518, 9724, 268, 237, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[64908, 1791, 731, 21, 104, "Input"],
+Cell[65642, 1814, 111, 2, 69, "Output"]
+}, Open  ]],
+Cell[65768, 1819, 167, 3, 51, "Text"],
+Cell[65938, 1824, 252, 4, 75, "Text"],
+Cell[CellGroupData[{
+Cell[66215, 1832, 5075, 141, 394, "Input"],
+Cell[71293, 1975, 5732, 148, 288, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[77062, 2128, 324, 8, 75, "Input"],
+Cell[77389, 2138, 9266, 256, 288, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[86692, 2399, 733, 21, 104, "Input"],
+Cell[87428, 2422, 111, 2, 69, "Output"]
+}, Open  ]],
+Cell[87554, 2427, 141, 3, 51, "Text"],
+Cell[87698, 2432, 300, 6, 86, "Text"],
+Cell[88001, 2440, 224, 5, 75, "Text"],
+Cell[88228, 2447, 136, 1, 51, "Text"],
+Cell[88367, 2450, 174, 4, 51, "Text"],
+Cell[88544, 2456, 232, 5, 75, "Text"],
+Cell[88779, 2463, 323, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[89127, 2473, 649, 12, 75, "Input"],
+Cell[89779, 2487, 3038, 67, 256, "Output"]
+}, Open  ]],
+Cell[92832, 2557, 220, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[93077, 2565, 4880, 137, 365, "Input"],
+Cell[97960, 2704, 5415, 141, 220, "Output"]
+}, Open  ]],
+Cell[103390, 2848, 203, 4, 75, "Text"],
+Cell[CellGroupData[{
+Cell[103618, 2856, 323, 7, 75, "Input"],
+Cell[103944, 2865, 9765, 269, 220, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[113746, 3139, 734, 21, 104, "Input"],
+Cell[114483, 3162, 152, 3, 69, "Output"]
+}, Open  ]],
+Cell[114650, 3168, 226, 5, 51, "Text"],
+Cell[114879, 3175, 359, 6, 110, "Text"],
+Cell[CellGroupData[{
+Cell[115263, 3185, 1563, 36, 133, "Input"],
+Cell[116829, 3223, 1218, 22, 218, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[118084, 3250, 1912, 36, 162, "Input"],
+Cell[119999, 3288, 5165, 107, 838, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[125201, 3400, 422, 9, 168, "Input"],
+Cell[125626, 3411, 8721, 225, 811, "Output"]
+}, Open  ]],
+Cell[134362, 3639, 306, 5, 193, "Text"],
+Cell[CellGroupData[{
+Cell[134693, 3648, 733, 21, 234, "Input"],
+Cell[135429, 3671, 75, 1, 100, "Output"]
+}, Open  ]],
+Cell[135519, 3675, 293, 5, 193, "Text"],
+Cell[CellGroupData[{
+Cell[135837, 3684, 524, 13, 168, "Input"],
+Cell[136364, 3699, 2328, 79, 486, "Output"]
+}, Open  ]],
+Cell[138707, 3781, 215, 4, 193, "Text"],
+Cell[138925, 3787, 1950, 59, 429, "Input"],
+Cell[140878, 3848, 103, 1, 114, "Text"],
+Cell[CellGroupData[{
+Cell[141006, 3853, 245, 5, 100, "Input"],
+Cell[141254, 3860, 295, 7, 144, "Output"]
+}, Open  ]],
+Cell[141564, 3870, 231, 5, 193, "Text"],
+Cell[141798, 3877, 218, 5, 168, "Text"],
+Cell[142019, 3884, 201, 4, 252, "Text"]
+}
+]
+*)
+
