@@ -1,0 +1,1886 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     56932,       1885]
+NotebookOptionsPosition[     50373,       1668]
+NotebookOutlinePosition[     50761,       1685]
+CellTagsIndexPosition[     50718,       1682]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769343890057687*^9, 3.76934391818674*^9}}],
+
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.7693438916914186`*^9}],
+
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.769343893186171*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1 - 5 Doolittle\[CloseCurlyQuote]s method
+Show the factorization and solve by Doolittle\[CloseCurlyQuote]s method.\
+\>", "Text",
+ CellChangeTimes->{{3.764005584278679*^9, 3.764005615900168*^9}}],
+
+Cell[TextData[{
+ "Okay, first there seems to be disagreement about decomposing. ",
+ StyleBox["First Version:",
+  FontWeight->"Bold"],
+ " I am looking at the matrix in example 1 on p. 853, the matrix being \
+m={{3,5,2},{0,8,2},{6,2,8}}. For the Doolittle decomposed matrix upper, the \
+text comes up with m={{3,5,2},{0,8,2},{0,0,6}} as the upper diagonal matrix, \
+and m={{1,0,0},{0,1,0},{2,-1,1}} as the lower diagonal matrix. Using \
+Mathematica LUDecomposition results in m={{3,5,2},{0,8,2},{2,-1,6}}. This \
+answer is coded into a composite upper and lower diagonal matrix. When \
+properly decoded, the lower is the same as the text lower, and so the pairs \
+are equal. Thus Doolittle Text is equal to Mathematica LUD, which is what I \
+wanted to know. On-line discussion and timing tests show LUD is very fast. I \
+think I will make it my default, anyway for the present. There are at least 3 \
+Mathematica modules discussed at ",
+ StyleBox["https://mathematica.stackexchange.com/questions/78700/how-to-speed-\
+up-auxilary-doolittledecomposite-function",
+  FontSize->14,
+  FontSlant->"Italic"],
+ " and they all agree with LUDecomposition. ",
+ StyleBox["Second Version:",
+  FontWeight->"Bold"],
+ " There is an on-line matrix decomposer at ",
+ StyleBox["https://www.easycalculation.com/matrix/lu-decomposition-matrix.php",
+  FontSize->14,
+  FontSlant->"Italic"],
+ ", and it returns m={{6,2,8},{0,8,2},{0,0,-3}} for upper. This version of \
+the decomposure is also the one returned at the site ",
+ StyleBox["https://keisan.casio.com/exec/system/15076953047019",
+  FontSize->14,
+  FontSlant->"Italic"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.764015022552034*^9, 3.7640150498697968`*^9}, {
+   3.7640150919017963`*^9, 3.764015243679126*^9}, {3.76401528543141*^9, 
+   3.7640153532843122`*^9}, {3.764015413802294*^9, 3.764015432632741*^9}, {
+   3.764016528131524*^9, 3.7640165408737698`*^9}, 3.7640165799892883`*^9, 
+   3.7640166234160357`*^9, {3.764016682289254*^9, 3.764016683918131*^9}, {
+   3.764016745412169*^9, 3.764016750122348*^9}, {3.764016817985817*^9, 
+   3.764016820927985*^9}, {3.7640192670607367`*^9, 3.764019531331699*^9}, {
+   3.764019595177602*^9, 3.764019622480918*^9}, {3.7640196763330717`*^9, 
+   3.7640197067569113`*^9}, {3.764022317741126*^9, 3.764022349730871*^9}}],
+
+Cell["\<\
+So can I reconstruct the original by dotting the lower with upper? Second \
+version above, first\
+\>", "Text",
+ CellChangeTimes->{{3.764017567268813*^9, 3.76401760185975*^9}, {
+  3.7640202547494297`*^9, 3.764020264049358*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "5", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "8", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "2", ",", "8"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"6", ",", "2", ",", "8"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "8", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{".5", ",", ".5", ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",\
+
+ CellChangeTimes->{{3.764017392329515*^9, 3.764017410827795*^9}, {
+  3.764017456250553*^9, 3.764017499375548*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", ".", "u"}]], "Input",
+ CellChangeTimes->{{3.764017512868581*^9, 3.764017537886033*^9}, {
+  3.7640190907221613`*^9, 3.7640191001283493`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"6.`", ",", "2.`", ",", "8.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "8.`", ",", "2.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "5.`", ",", "2.`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.764017515329397*^9, 3.7640175388879223`*^9}, 
+   3.764019048196933*^9, {3.764019094651277*^9, 3.764019100814706*^9}}]
+}, Open  ]],
+
+Cell["\<\
+This is sort of like the original, except with upper and lower rows switched. \
+I don\[CloseCurlyQuote]t know if it is right or wrong, but both the last two \
+sites got the same thing, and, one being Casio, I tend to give them some \
+credit. Next, First version, LUDecomposition by Mathematica and the SEMma \
+question\
+\>", "Text",
+ CellChangeTimes->{{3.7640176337945023`*^9, 3.7640176553058977`*^9}, {
+  3.7640191093998213`*^9, 3.764019214204454*^9}, {3.7640202834244337`*^9, 
+  3.7640202868488693`*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "5", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "8", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "6"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764017683162355*^9, 3.7640177016322803`*^9}, {
+  3.7640177710632963`*^9, 3.7640177757334213`*^9}, {3.764018161961686*^9, 
+  3.764018194342795*^9}, {3.7640182641404877`*^9, 3.764018264604239*^9}, {
+  3.764018667160335*^9, 3.764018685741948*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", ".", "u"}]], "Input",
+ CellChangeTimes->{{3.764017780928317*^9, 3.7640177825652018`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "5", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "8", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "2", ",", "8"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.764017784078685*^9, 3.7640181994681473`*^9, {3.7640182688983517`*^9, 
+   3.764018276107126*^9}, 3.764018696555298*^9}]
+}, Open  ]],
+
+Cell["\<\
+That looks good, restoring the original matrix exactly. With that out of the \
+way, I can go on to the actual problems for this problem section.\
+\>", "Text",
+ CellChangeTimes->{{3.764018757051322*^9, 3.764018763499267*^9}, {
+  3.764019745634365*^9, 3.7640197572983027`*^9}, {3.7640236114161863`*^9, 
+  3.764023628469173*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"1.", "  ", "4", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "2"]}]}], "\[Equal]", "14"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"14", " ", 
+     SubscriptBox["x", "2"]}]}], "\[Equal]", "36"}]}]], "Text",
+ CellChangeTimes->{{3.764005620964456*^9, 3.7640056657943993`*^9}, 
+   3.764008532672572*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"m", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"4", ",", "5"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"12", ",", "14"}], "}"}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"n", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", "14", "}"}], ",", 
+    RowBox[{"{", "36", "}"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.764009091999373*^9, 3.76400910922925*^9}, {
+  3.7640101699862843`*^9, 3.7640102011519136`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "14"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7640101904152822`*^9, 3.7640102023797483`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "14", "}"}], ",", 
+   RowBox[{"{", "36", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.7640101904152822`*^9, 3.764010202386055*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LUDecomposition", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764010525809251*^9, 3.764010532333767*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.7640105339838257`*^9}]
+}, Open  ]],
+
+Cell["\<\
+After decoding, this would be u={{4,5},{0,-1}}, l={{1,0},{3,1}}\
+\>", "Text",
+ CellChangeTimes->{{3.7640198101055813`*^9, 3.764019829303767*^9}, {
+  3.764019893717497*^9, 3.764019939764073*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "1"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764019966727964*^9, 3.764019986714589*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", ".", "u"}]], "Input",
+ CellChangeTimes->{{3.764019991407461*^9, 3.764019992338478*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "14"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764019994314567*^9}]
+}, Open  ]],
+
+Cell["Successfully reconstituted.", "Text",
+ CellChangeTimes->{{3.764020010193633*^9, 3.764020016529653*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764010275624692*^9, 3.764010281693067*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"-", "4"}], "}"}], ",", 
+   RowBox[{"{", "6", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764010282616678*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Both factorization and multiplication agree with the text answer.\
+\>", "Text",
+ CellChangeTimes->{{3.76402014780624*^9, 3.764020197971024*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"3.", "  ", "5", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    SubscriptBox["x", "3"]}], "\[Equal]", "6.8"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"9", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "17.6"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"13", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"15", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "38.4"}]}]], "Text",
+ CellChangeTimes->{{3.764005669289529*^9, 3.764005783766283*^9}, {
+   3.764005831679142*^9, 3.764005831828599*^9}, 3.764008542884338*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "Since this subsection of problems was supposed to utilize Doolittle and not \
+LUD, I will insert a Doolittle module and credit it to 2012rcampion as \
+responder to the question on SEMma, ",
+ StyleBox["https://mathematica.stackexchange.com/questions/78700/how-to-speed-\
+up-auxilary-doolittledecomposite-function. ",
+  FontSize->14,
+  FontSlant->"Italic"],
+ "It seems to have the same functionality as LUD, except that it does not \
+include pivoting and condition information."
+}], "Text",
+ CellChangeTimes->{{3.764020534345221*^9, 3.764020622336557*^9}, {
+   3.764020676380784*^9, 3.764020685811348*^9}, {3.764020879548265*^9, 
+   3.764020913586795*^9}, {3.764020988562016*^9, 3.764021004423938*^9}, 
+   3.7640213759335213`*^9, {3.764032662745277*^9, 3.764032665334374*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"doolittleDecomposite2", "[", 
+   RowBox[{"mat_", "?", "MatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"temp", "=", 
+       RowBox[{"ConstantArray", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"Dimensions", "@", "mat"}]}], "]"}]}], ",", 
+      RowBox[{"row", "=", 
+       RowBox[{"Length", "@", "mat"}]}]}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"Do", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"temp", "[", 
+            RowBox[{"[", 
+             RowBox[{"k", ",", "j"}], "]"}], "]"}], "=", 
+           RowBox[{
+            RowBox[{"mat", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", ",", "j"}], "]"}], "]"}], "-", 
+            RowBox[{
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{"k", ",", " ", 
+                RowBox[{";;", 
+                 RowBox[{"k", "-", "1"}]}]}], "]"}], "]"}], ".", 
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{";;", 
+                 RowBox[{"k", "-", "1"}]}], ",", "j"}], "]"}], "]"}]}]}]}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "k", ",", "row"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"temp", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "k"}], "]"}], "]"}], "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"mat", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "k"}], "]"}], "]"}], "-", 
+              RowBox[{
+               RowBox[{"temp", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", 
+                  RowBox[{";;", 
+                   RowBox[{"k", "-", "1"}]}]}], "]"}], "]"}], ".", 
+               RowBox[{"temp", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{";;", 
+                   RowBox[{"k", "-", "1"}]}], ",", "k"}], "]"}], "]"}]}]}], 
+             ")"}], "/", 
+            RowBox[{"temp", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", ",", "k"}], "]"}], "]"}]}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"k", "+", "1"}], ",", "row"}], "}"}]}], "]"}], ";"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "row"}], "}"}]}], "]"}], ";", "\[IndentingNewLine]",
+      "temp"}]}], "]"}]}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "4", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "9", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"10", ",", "13", ",", "15"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "6.8", "}"}], ",", 
+     RowBox[{"{", "17.6", "}"}], ",", 
+     RowBox[{"{", "38.4", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764020750538644*^9, 3.764020851173567*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"doolittleDecomposite2", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{3.764020937187697*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764021443820373*^9}]
+}, Open  ]],
+
+Cell["Decoding, I make it out as", "Text",
+ CellChangeTimes->{{3.7640210236391582`*^9, 3.764021028159196*^9}, {
+  3.764021640132325*^9, 3.7640216457133293`*^9}, {3.7693437314984913`*^9, 
+  3.769343735183359*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "4", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "3"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"l", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1", ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "5", ",", "1"}], "}"}]}], "}"}]}]}], "Input",
+ CellChangeTimes->{{3.764021116077441*^9, 3.764021195569232*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", ".", "u"}]], "Input",
+ CellChangeTimes->{{3.764021198893338*^9, 3.764021199729137*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "4", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "9", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"10", ",", "13", ",", "15"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640212012607183`*^9}]
+}, Open  ]],
+
+Cell["Success in reconstituting.", "Text",
+ CellChangeTimes->{{3.7640212233599253`*^9, 3.764021238759882*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0.3999999999999939`", "}"}], ",", 
+   RowBox[{"{", "0.8000000000000083`", "}"}], ",", 
+   RowBox[{"{", "1.5999999999999968`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640212593930817`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Both factorization and multiplication agree with the text answer.\
+\>", "Text",
+ CellChangeTimes->{3.7640213609503803`*^9}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"5.", "  ", "3", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"9", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "4.6"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"18", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"48", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"39", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "27.2"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"9", " ", 
+     SubscriptBox["x", "1"]}], "-", 
+    RowBox[{"27", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"42", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "9.0"}]}]], "Text",
+ CellChangeTimes->{{3.76400583457337*^9, 3.7640059140422583`*^9}, 
+   3.764008552612076*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "9", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"18", ",", "48", ",", "39"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"9", ",", 
+       RowBox[{"-", "27"}], ",", "42"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "4.6", "}"}], ",", 
+     RowBox[{"{", "27.2", "}"}], ",", 
+     RowBox[{"{", "9.0", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764021743935615*^9, 3.764021807908045*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"doolittleDecomposite2", "[", "m", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "9", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", 
+     RowBox[{"-", "6"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "9", ",", 
+     RowBox[{"-", "3"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640218318877296`*^9}]
+}, Open  ]],
+
+Cell["Decoding, what I see is", "Text",
+ CellChangeTimes->{{3.764021850381075*^9, 3.764021859689866*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"u", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "9", ",", "6"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "6"}], ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       RowBox[{"-", "3"}]}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"l", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "9", ",", "1"}], "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764021978781419*^9, 3.764022029804059*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"l", ".", "u"}]], "Input",
+ CellChangeTimes->{{3.764022037399725*^9, 3.7640220390116863`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "9", ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"18", ",", "48", ",", "39"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", 
+     RowBox[{"-", "27"}], ",", "42"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764022040398573*^9}]
+}, Open  ]],
+
+Cell["Success in reconstituting.", "Text",
+ CellChangeTimes->{3.7640220611576977`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"-", "0.06666666666668108`"}], "}"}], ",", 
+   RowBox[{"{", "0.26666666666666855`", "}"}], ",", 
+   RowBox[{"{", "0.4000000000000043`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764022081902424*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "1"}], "/", "15"}], ",", 
+    RowBox[{"4", "/", "15"}]}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764022133061797*^9, 3.764022159823546*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"-", "0.06666666666666667`"}], ",", "0.26666666666666666`"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.764022136179475*^9, 3.764022160898*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Both factorization and multiplication agree with the text answer.\
+\>", "Text",
+ CellChangeTimes->{3.764022256902722*^9}],
+
+Cell["\<\
+7 - 12 Cholesky\[CloseCurlyQuote]s method
+Show the factorization and solve.\
+\>", "Text",
+ CellChangeTimes->{{3.764005971969884*^9, 3.764005993886859*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"7.", "  ", "9", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "17.4"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"6", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"13", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"11", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "23.6"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"11", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"26", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "30.8"}]}]], "Text",
+ CellChangeTimes->{{3.764005998256442*^9, 3.7640060764280987`*^9}, 
+   3.764008561451943*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+Mathematica has a function for Cholesky decomposition, but it returns only \
+the upper diagonal matrix. Let\[CloseCurlyQuote]s see what effect that may \
+have.\
+\>", "Text",
+ CellChangeTimes->{{3.764022606141409*^9, 3.764022655494138*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"9", ",", "6", ",", "12"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"6", ",", "13", ",", "11"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "11", ",", "26"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "17.4", "}"}], ",", 
+     RowBox[{"{", "23.6", "}"}], ",", 
+     RowBox[{"{", "30.8", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764022692206468*^9, 3.764022745954479*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cd", "=", 
+  RowBox[{"CholeskyDecomposition", "[", "m", "]"}]}]], "Input",
+ CellChangeTimes->{{3.764023107593917*^9, 3.764023115048127*^9}, {
+  3.764023432125764*^9, 3.764023432732368*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.764023117238016*^9, {3.76402343345929*^9, 3.764023455648971*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The returned expression from CD being the upper diag matrix, I need to use \
+the ConjugateTranspose to check it\
+\>", "Text",
+ CellChangeTimes->{{3.764023137389536*^9, 3.7640232164592943`*^9}, {
+  3.7640327185501003`*^9, 3.764032718972419*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", "=", 
+  RowBox[{"ConjugateTranspose", "[", "%", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7640233996630087`*^9, 3.764023413245207*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "1", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.76402322560655*^9, {3.764023401803954*^9, 3.764023414040704*^9}, 
+   3.764023458489134*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", ".", "cd"}]], "Input",
+ CellChangeTimes->{{3.764023422280444*^9, 3.764023437035841*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "6", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", "13", ",", "11"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "11", ",", "26"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.764023438423401*^9, 3.7640234620644417`*^9}}]
+}, Open  ]],
+
+Cell["\<\
+It looks good. And it\[CloseCurlyQuote]s interesting, I \
+don\[CloseCurlyQuote]t think I ever \[OpenCurlyQuote]percentaged\
+\[CloseCurlyQuote] up through a text cell before.\
+\>", "Text",
+ CellChangeTimes->{{3.764023239995308*^9, 3.7640232818011923`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0.5999999999999994`", "}"}], ",", 
+   RowBox[{"{", "1.2000000000000002`", "}"}], ",", 
+   RowBox[{"{", "0.4000000000000002`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76402332208358*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"9.", "  ", "0.01", " ", 
+     SubscriptBox["x", "1"]}], "+", "0", "+", 
+    RowBox[{"0.03", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "0.14"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{"0", "+", 
+    RowBox[{"0.16", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"0.08", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "0.16"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"0.03", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"0.08", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"0.14", " ", 
+     SubscriptBox["x", "3"]}]}], "\[Equal]", "0.54"}]}]], "Text",
+ CellChangeTimes->{{3.764006133933352*^9, 3.764006226791113*^9}, 
+   3.764008571451088*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"0.01", ",", "0", ",", "0.03"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0.16", ",", "0.08"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.03", ",", "0.08", ",", "0.14"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0.14", "}"}], ",", 
+     RowBox[{"{", "0.16", "}"}], ",", 
+     RowBox[{"{", "0.54", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764023703092798*^9, 3.764023777008712*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cd", "=", 
+  RowBox[{"CholeskyDecomposition", "[", "m", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", "0.`", ",", "0.3`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.4`", ",", "0.2`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`", ",", "0.10000000000000006`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.764023792209032*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The returned expression from CD being the upper diag mat, I need to use the \
+ConjugateTranspose to check it\
+\>", "Text",
+ CellChangeTimes->{3.7640238145220346`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", "=", 
+  RowBox[{"ConjugateTranspose", "[", "%", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.4`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.3`", ",", "0.2`", ",", "0.10000000000000006`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.76402382665971*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", ".", "cd"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.010000000000000002`", ",", "0.`", ",", "0.03`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.16000000000000003`", ",", "0.08000000000000002`"}],
+     "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.03`", ",", "0.08000000000000002`", ",", "0.14`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.764023839299004*^9}]
+}, Open  ]],
+
+Cell["The reconstitution was successful.", "Text",
+ CellChangeTimes->{{3.764023868894533*^9, 3.7640238767812033`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "2.0000000000000155`", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "0.9999999999999976`"}], "}"}], ",", 
+   RowBox[{"{", "3.999999999999995`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764023888604604*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+Green above agrees with text. As for the multiplication, the text answer is \
+{{2.},{-11.},{4.}}. I don\[CloseCurlyQuote]t see how that can be reconciled \
+with the other matrix attributes, so I assume it is a typo. (I also got \
+verification from WolframAlpha for the yellow answer.)\
+\>", "Text",
+ CellChangeTimes->{{3.7640240266799793`*^9, 3.7640241299569902`*^9}, {
+  3.764024741434493*^9, 3.764024784335455*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"11.", "  ", 
+     SubscriptBox["x", "1"]}], "-", 
+    SubscriptBox["x", "2"], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "3"]}], "+", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "4"]}]}], "\[Equal]", "15"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "2"]}], "-", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "3"]}], "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "4"]}]}], "\[Equal]", 
+   RowBox[{"-", "35"}]}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "1"]}], "-", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"19", " ", 
+     SubscriptBox["x", "3"]}], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "4"]}]}], "\[Equal]", "94"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "1"]}], "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "3"]}], "+", 
+    RowBox[{"21", " ", 
+     SubscriptBox["x", "4"]}]}], "\[Equal]", "1", " "}]}]], "Text",
+ CellChangeTimes->{{3.764006233464394*^9, 3.764006366522629*^9}, {
+   3.764008140375127*^9, 3.764008168790461*^9}, 3.764008580898972*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "5", ",", 
+       RowBox[{"-", "5"}], ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"-", "5"}], ",", "19", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "2"}], ",", "3", ",", "21"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "15", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "35"}], "}"}], ",", 
+     RowBox[{"{", "94", "}"}], ",", 
+     RowBox[{"{", "1", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764024851718828*^9, 3.764024954177307*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"cd", "=", 
+  RowBox[{"CholeskyDecomposition", "[", "m", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "3", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764024985374024*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["Here I need to use the ConjugateTranspose to check it", "Text",
+ CellChangeTimes->{{3.764025006458603*^9, 3.76402501947127*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", "=", 
+  RowBox[{"ConjugateTranspose", "[", "%", "]"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "2", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", 
+     RowBox[{"-", "1"}], ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", 
+     RowBox[{"-", "1"}], ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764025037197763*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ct", ".", "cd"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "5", ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", 
+     RowBox[{"-", "5"}], ",", "19", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "2"}], ",", "3", ",", "21"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.76402505689095*^9}]
+}, Open  ]],
+
+Cell["The reconstitution was successful.", "Text",
+ CellChangeTimes->{3.764025078056262*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "2", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "3"}], "}"}], ",", 
+   RowBox[{"{", "4", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764025094064872*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The last problem demonstrated that a 4x4 matrix problem is no more \
+time-consuming than 3x3.\
+\>", "Text",
+ CellChangeTimes->{{3.76402519875463*^9, 3.764025221072833*^9}, {
+  3.764032770989378*^9, 3.764032783298263*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"13.", "  ", 
+   StyleBox[
+    RowBox[{"Definiteness", ".", " ", "Let"}],
+    FontFamily->"Charter"], 
+   StyleBox[" ",
+    FontFamily->"Charter"], 
+   StyleBox["A",
+    FontFamily->"Charter"]}], 
+  StyleBox[",",
+   FontFamily->"Charter"], 
+  RowBox[{
+   StyleBox[
+    RowBox[{
+    "B", " ", "be", " ", "n", "\[Times]", "n", " ", "and", " ", "positive", 
+     " ", 
+     RowBox[{"definite", ".", " ", "Are"}]}],
+    FontFamily->"Charter"], 
+   StyleBox[" ",
+    FontFamily->"Charter"], "-", "A"}], ",", 
+  SuperscriptBox["A", "T"], ",", 
+  RowBox[{"A", "+", "B"}], ",", 
+  RowBox[{"A", "-", 
+   RowBox[{"B", " ", 
+    StyleBox["positive",
+     FontFamily->"Charter"], 
+    StyleBox[" ",
+     FontFamily->"Charter"], 
+    StyleBox[
+     RowBox[{"definite", "?"}],
+     FontFamily->"Charter"]}]}]}]], "Text",
+ CellChangeTimes->{{3.764008194232492*^9, 3.764008218316513*^9}, {
+  3.7640082507505703`*^9, 3.764008296475277*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "I would say no, yes, yes, no. The rationale comes from looking at the \
+pivots. The site ",
+ StyleBox["https://www.gaussianwaves.com/2013/04/tests-for-positive-\
+definiteness-of-a-matrix/",
+  FontSize->14,
+  FontSlant->"Italic"],
+ " gives some easy-to-use info to test matrices for positive-definiteness. I \
+am assuming the information is correct. Note that first of all, the matrix in \
+question has to be symmetric. Why did I give the answers I gave? Hey, I just \
+checked, and all answers are right! Okay, nr 1., multiplying by -1 \
+immediately negates all positive pivots, ruling out the possibility of \
+positive-definiteness. Nr 2., With transpose-ization, entries in the matrix \
+may be multiplied by fractions, but the sign will stay the same, thus if A is \
+positive-definite, then so should ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["A", "T"], TraditionalForm]]],
+ " be also. Third and fourth are yes and no because A+B preserves all the \
+positive signs in both, whereas A-B could ruin positive definiteness for A if \
+any pivot entries in B are larger than the site they will be subtracted from \
+in A."
+}], "Text",
+ CellChangeTimes->{{3.764026364867752*^9, 3.764026760734887*^9}, {
+  3.764032829177127*^9, 3.764032907783702*^9}}],
+
+Cell["\<\
+15 - 19 Inverse
+Find the inverse by the Gauss-Jordan method, showing the details.\
+\>", "Text",
+ CellChangeTimes->{{3.764008394281443*^9, 3.764008424917519*^9}}],
+
+Cell["15.  In problem 1.", "Text",
+ CellChangeTimes->{{3.764008428111768*^9, 3.764008441556972*^9}, 
+   3.7640084807010517`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["From problem 1", "Text",
+ CellChangeTimes->{{3.7640309366603928`*^9, 3.7640309397229147`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"5", " ", 
+     SubscriptBox["x", "2"]}]}], "\[Equal]", "14"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"12", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"14", " ", 
+     SubscriptBox["x", "2"]}]}], "\[Equal]", "36"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"12", " ", 
+    SubscriptBox["x", "1"]}], "+", 
+   RowBox[{"14", " ", 
+    SubscriptBox["x", "2"]}]}], "\[Equal]", "36"}]], "Output",
+ CellChangeTimes->{3.764031071695857*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"12", ",", "14"}], "}"}]}], "}"}]}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{3.764032185062675*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"12", ",", "14"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640323846521378`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764031485262023*^9, 3.764031488954101*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["7", "2"]}], ",", 
+     FractionBox["5", "4"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764031490027298*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The green cell above matches the answer in the text. Obviously not done by \
+Gauss-Jordan, but the inverse just the same.\
+\>", "Text",
+ CellChangeTimes->{{3.7640324173907824`*^9, 3.764032459188216*^9}}],
+
+Cell["17.  In Team Project 6 (c).", "Text",
+ CellChangeTimes->{{3.764008443599204*^9, 3.7640084626442137`*^9}, 
+   3.764008494956317*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["From 6(c), use Doolittle\[CloseCurlyQuote]s to factorize ", "Text",
+ CellChangeTimes->{{3.764031636629654*^9, 3.764031671731184*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "4"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", "25", ",", "4"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "4", ",", "24"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "17.4", "}"}], ",", 
+     RowBox[{"{", "23.6", "}"}], ",", 
+     RowBox[{"{", "30.8", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764031700236232*^9, 3.764031730561324*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"doolittleDecomposite2", "[", 
+   RowBox[{"mat_", "?", "MatrixQ"}], "]"}], ":=", 
+  RowBox[{"Module", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"temp", "=", 
+       RowBox[{"ConstantArray", "[", 
+        RowBox[{"0", ",", 
+         RowBox[{"Dimensions", "@", "mat"}]}], "]"}]}], ",", 
+      RowBox[{"row", "=", 
+       RowBox[{"Length", "@", "mat"}]}]}], "}"}], ",", 
+    RowBox[{
+     RowBox[{"Do", "[", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"temp", "[", 
+            RowBox[{"[", 
+             RowBox[{"k", ",", "j"}], "]"}], "]"}], "=", 
+           RowBox[{
+            RowBox[{"mat", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", ",", "j"}], "]"}], "]"}], "-", 
+            RowBox[{
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{"k", ",", " ", 
+                RowBox[{";;", 
+                 RowBox[{"k", "-", "1"}]}]}], "]"}], "]"}], ".", 
+             RowBox[{"temp", "[", 
+              RowBox[{"[", 
+               RowBox[{
+                RowBox[{";;", 
+                 RowBox[{"k", "-", "1"}]}], ",", "j"}], "]"}], "]"}]}]}]}], 
+          ",", 
+          RowBox[{"{", 
+           RowBox[{"j", ",", "k", ",", "row"}], "}"}]}], "]"}], ";", 
+        "\[IndentingNewLine]", 
+        RowBox[{"Do", "[", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"temp", "[", 
+            RowBox[{"[", 
+             RowBox[{"i", ",", "k"}], "]"}], "]"}], "=", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"mat", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "k"}], "]"}], "]"}], "-", 
+              RowBox[{
+               RowBox[{"temp", "[", 
+                RowBox[{"[", 
+                 RowBox[{"i", ",", " ", 
+                  RowBox[{";;", 
+                   RowBox[{"k", "-", "1"}]}]}], "]"}], "]"}], ".", 
+               RowBox[{"temp", "[", 
+                RowBox[{"[", 
+                 RowBox[{
+                  RowBox[{";;", 
+                   RowBox[{"k", "-", "1"}]}], ",", "k"}], "]"}], "]"}]}]}], 
+             ")"}], "/", 
+            RowBox[{"temp", "[", 
+             RowBox[{"[", 
+              RowBox[{"k", ",", "k"}], "]"}], "]"}]}]}], ",", 
+          RowBox[{"{", 
+           RowBox[{"i", ",", 
+            RowBox[{"k", "+", "1"}], ",", "row"}], "}"}]}], "]"}], ";"}], ",", 
+       RowBox[{"{", 
+        RowBox[{"k", ",", "row"}], "}"}]}], "]"}], ";", "\[IndentingNewLine]",
+      "temp"}]}], "]"}]}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"doolittleDecomposite2", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.76403179580118*^9, 3.7640317961837997`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "4"}], ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", "9", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     FractionBox["4", "3"], ",", "4"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764031797339404*^9, 3.764031862920032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LUDecomposition", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764031932143343*^9, 3.764031936205018*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "4"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "4"}], ",", "9", ",", "12"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       FractionBox["4", "3"], ",", "4"}], "}"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.764031937279052*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764031974183279*^9, 3.7640319773159523`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["146", "9"], ",", 
+     FractionBox["26", "9"], ",", 
+     RowBox[{"-", 
+      FractionBox["11", "6"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["26", "9"], ",", 
+     FractionBox["5", "9"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["11", "6"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}], ",", 
+     FractionBox["1", "4"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640319781411867`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"PossibleZeroQ", "[", 
+  RowBox[{
+   FractionBox["146", "9"], "-", 
+   FractionBox["584", "36"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.764032009422494*^9, 3.764032034976871*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.7640320361233263`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The expression in green is equivalent to the answer in the text, after an \
+alternate denominator pattern is identified by the PZQ.\
+\>", "Text",
+ CellChangeTimes->{{3.764032470707678*^9, 3.764032525106176*^9}, {
+  3.764032951279509*^9, 3.764032956412706*^9}}],
+
+Cell["19.  In problem 12.", "Text",
+ CellChangeTimes->{{3.764008464982435*^9, 3.7640084754036694`*^9}, 
+   3.764008507803731*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"4", ",", "2", ",", "4", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "2", ",", "3", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"4", ",", "3", ",", "6", ",", "3"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "2", ",", "3", ",", "9"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "20", "}"}], ",", 
+     RowBox[{"{", "36", "}"}], ",", 
+     RowBox[{"{", "60", "}"}], ",", 
+     RowBox[{"{", "122", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764032202549815*^9, 3.7640322696018877`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764032274214533*^9, 3.764032277227146*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["21", "16"], ",", 
+     RowBox[{"-", 
+      FractionBox["3", "8"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["7", "8"]}], ",", 
+     FractionBox["3", "8"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["3", "8"]}], ",", 
+     FractionBox["9", "4"], ",", 
+     RowBox[{"-", 
+      FractionBox["3", "4"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "4"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["7", "8"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["3", "4"]}], ",", 
+     FractionBox["5", "4"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "4"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["3", "8"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "4"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "4"]}], ",", 
+     FractionBox["1", "4"]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7640322786445227`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The expression in the green cell above matches the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.764032538697818*^9, 3.7640325539294147`*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 218, 5, 51, "Text",
+ Evaluatable->False],
+Cell[621, 20, 91, 2, 45, "Input",
+ Evaluatable->False],
+Cell[715, 24, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[807, 28, 73, 1, 45, "Input"],
+Cell[883, 31, 204, 4, 86, "Text"],
+Cell[1090, 37, 2284, 41, 465, "Text"],
+Cell[3377, 80, 236, 5, 51, "Text"],
+Cell[3616, 87, 1094, 35, 104, "Input"],
+Cell[CellGroupData[{
+Cell[4735, 126, 168, 3, 45, "Input"],
+Cell[4906, 131, 418, 10, 45, "Output"]
+}, Open  ]],
+Cell[5339, 144, 516, 9, 120, "Text"],
+Cell[5858, 155, 926, 26, 75, "Input"],
+Cell[CellGroupData[{
+Cell[6809, 185, 117, 2, 45, "Input"],
+Cell[6929, 189, 403, 11, 45, "Output"]
+}, Open  ]],
+Cell[7347, 203, 336, 6, 86, "Text"],
+Cell[7686, 211, 512, 16, 70, "Text"],
+Cell[CellGroupData[{
+Cell[8223, 231, 469, 14, 75, "Input"],
+Cell[8695, 247, 243, 7, 45, "Output"],
+Cell[8941, 256, 191, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9169, 266, 134, 2, 45, "Input"],
+Cell[9306, 270, 354, 12, 45, "Output"]
+}, Open  ]],
+Cell[9675, 285, 204, 4, 51, "Text"],
+Cell[9882, 291, 574, 19, 99, "Input"],
+Cell[CellGroupData[{
+Cell[10481, 314, 115, 2, 45, "Input"],
+Cell[10599, 318, 215, 7, 45, "Output"]
+}, Open  ]],
+Cell[10829, 328, 109, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[10963, 333, 153, 3, 45, "Input"],
+Cell[11119, 338, 221, 7, 69, "Output"]
+}, Open  ]],
+Cell[11355, 348, 154, 3, 51, "Text"],
+Cell[11512, 353, 892, 27, 70, "Text"],
+Cell[12407, 382, 792, 14, 155, "Text"],
+Cell[13202, 398, 2601, 75, 191, "Input"],
+Cell[15806, 475, 603, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[16434, 498, 116, 2, 45, "Input"],
+Cell[16553, 502, 302, 9, 45, "Output"]
+}, Open  ]],
+Cell[16870, 514, 212, 3, 51, "Text"],
+Cell[17085, 519, 714, 22, 99, "Input"],
+Cell[CellGroupData[{
+Cell[17824, 545, 115, 2, 45, "Input"],
+Cell[17942, 549, 308, 9, 45, "Output"]
+}, Open  ]],
+Cell[18265, 561, 110, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[18400, 566, 87, 2, 45, "Input"],
+Cell[18490, 570, 291, 7, 69, "Output"]
+}, Open  ]],
+Cell[18796, 580, 133, 3, 51, "Text"],
+Cell[18932, 585, 866, 28, 70, "Text"],
+Cell[19801, 615, 626, 20, 75, "Input"],
+Cell[CellGroupData[{
+Cell[20452, 639, 74, 1, 45, "Input"],
+Cell[20529, 642, 346, 11, 45, "Output"]
+}, Open  ]],
+Cell[20890, 656, 105, 1, 51, "Text"],
+Cell[20998, 659, 783, 24, 99, "Input"],
+Cell[CellGroupData[{
+Cell[21806, 687, 117, 2, 45, "Input"],
+Cell[21926, 691, 328, 10, 45, "Output"]
+}, Open  ]],
+Cell[22269, 704, 86, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[22380, 709, 87, 2, 45, "Input"],
+Cell[22470, 713, 311, 8, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22818, 726, 240, 7, 45, "Input"],
+Cell[23061, 735, 196, 5, 45, "Output"]
+}, Open  ]],
+Cell[23272, 743, 131, 3, 51, "Text"],
+Cell[23406, 748, 165, 4, 86, "Text"],
+Cell[23574, 754, 877, 28, 70, "Text"],
+Cell[24454, 784, 249, 5, 86, "Text"],
+Cell[24706, 791, 606, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[25337, 814, 213, 4, 45, "Input"],
+Cell[25553, 820, 388, 11, 69, "Output"]
+}, Open  ]],
+Cell[25956, 834, 254, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[26235, 843, 163, 3, 45, "Input"],
+Cell[26401, 848, 414, 12, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26852, 865, 117, 2, 45, "Input"],
+Cell[26972, 869, 334, 9, 45, "Output"]
+}, Open  ]],
+Cell[27321, 881, 265, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[27611, 890, 87, 2, 45, "Input"],
+Cell[27701, 894, 288, 7, 69, "Output"]
+}, Open  ]],
+Cell[28004, 904, 790, 24, 70, "Text"],
+Cell[28797, 930, 621, 19, 75, "Input"],
+Cell[CellGroupData[{
+Cell[29443, 953, 98, 2, 45, "Input"],
+Cell[29544, 957, 382, 11, 69, "Output"]
+}, Open  ]],
+Cell[29941, 971, 176, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[30142, 979, 95, 2, 45, "Input"],
+Cell[30240, 983, 381, 11, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30658, 999, 51, 1, 45, "Input"],
+Cell[30712, 1002, 403, 11, 45, "Output"]
+}, Open  ]],
+Cell[31130, 1016, 118, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[31273, 1021, 87, 2, 45, "Input"],
+Cell[31363, 1025, 305, 8, 69, "Output"]
+}, Open  ]],
+Cell[31683, 1036, 427, 7, 120, "Text"],
+Cell[32113, 1045, 1369, 44, 101, "Text"],
+Cell[33485, 1091, 905, 29, 75, "Input"],
+Cell[CellGroupData[{
+Cell[34415, 1124, 98, 2, 45, "Input"],
+Cell[34516, 1128, 512, 15, 69, "Output"]
+}, Open  ]],
+Cell[35043, 1146, 134, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[35202, 1151, 95, 2, 45, "Input"],
+Cell[35300, 1155, 512, 15, 69, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35849, 1175, 51, 1, 45, "Input"],
+Cell[35903, 1178, 538, 17, 45, "Output"]
+}, Open  ]],
+Cell[36456, 1198, 92, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[36573, 1203, 87, 2, 45, "Input"],
+Cell[36663, 1207, 309, 10, 69, "Output"]
+}, Open  ]],
+Cell[36987, 1220, 231, 5, 51, "Text"],
+Cell[37221, 1227, 993, 34, 73, "Text"],
+Cell[38217, 1263, 1266, 24, 328, "Text"],
+Cell[39486, 1289, 171, 4, 86, "Text"],
+Cell[39660, 1295, 164, 3, 75, "Text"],
+Cell[39827, 1300, 100, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[39952, 1305, 371, 13, 45, "Input"],
+Cell[40326, 1320, 221, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[40584, 1332, 287, 10, 75, "Input"],
+Cell[40874, 1344, 217, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[41128, 1356, 126, 2, 45, "Input"],
+Cell[41257, 1360, 342, 12, 98, "Output"]
+}, Open  ]],
+Cell[41614, 1375, 213, 4, 86, "Text"],
+Cell[41830, 1381, 173, 3, 75, "Text"],
+Cell[42006, 1386, 139, 1, 51, "Text"],
+Cell[42148, 1389, 648, 21, 75, "Input"],
+Cell[42799, 1412, 2601, 75, 191, "Input"],
+Cell[CellGroupData[{
+Cell[45425, 1491, 141, 2, 45, "Input"],
+Cell[45569, 1495, 391, 12, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45997, 1512, 134, 2, 45, "Input"],
+Cell[46134, 1516, 505, 16, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[46676, 1537, 128, 2, 45, "Input"],
+Cell[46807, 1541, 652, 23, 100, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[47496, 1569, 204, 5, 76, "Input"],
+Cell[47703, 1576, 75, 1, 45, "Output"]
+}, Open  ]],
+Cell[47793, 1580, 270, 5, 86, "Text"],
+Cell[48066, 1587, 165, 3, 75, "Text"],
+Cell[48234, 1592, 747, 22, 75, "Input"],
+Cell[CellGroupData[{
+Cell[49006, 1618, 126, 2, 45, "Input"],
+Cell[49135, 1622, 1057, 38, 100, "Output"]
+}, Open  ]],
+Cell[50207, 1663, 162, 3, 51, "Text"]
+}
+]
+*)
+

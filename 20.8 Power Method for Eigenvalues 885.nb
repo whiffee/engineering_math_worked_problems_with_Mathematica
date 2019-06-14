@@ -1,0 +1,564 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     19474,        563]
+NotebookOptionsPosition[     17426,        490]
+NotebookOutlinePosition[     17814,        507]
+CellTagsIndexPosition[     17771,        504]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.76934634180486*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "This section is mostly not attempted. The problems seem too simplistic to \
+challenge Mathematica. I feel that if difficult eigenvalue problems were to \
+come up, the most efficient approach would likely be entirely different than \
+anything referred to here. By the way, there is a recently discovered (Oct \
+\[OpenCurlyQuote]18) bug in the Eigenvalues function , discussed at ",
+ StyleBox["https://mathematica.stackexchange.com/questions/186224/wrong-\
+eigenvalues-from-a-sparse-matrix-eigenvalues-are-nonreal",
+  FontSize->14,
+  FontSlant->"Italic"],
+ ".  It looks like the Arnoldi method may be at fault, and it might be a good \
+idea to avoid it for now.\n\nIf it is necessary to numerically fish for \
+eigenvalues, the QRDecomposition method, treated in section 20.9, is one to \
+consider."
+}], "Text",
+ CellChangeTimes->{{3.764271209729985*^9, 3.764271285286274*^9}, {
+  3.764325355177347*^9, 3.7643255407978477`*^9}, {3.764325601700472*^9, 
+  3.764325637979048*^9}, {3.764325726338024*^9, 3.764325745591123*^9}}],
+
+Cell[TextData[{
+ "1 - 4 Power method without scaling\nApply the power method without scaling \
+(3 steps), using ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = {1,1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["}", "T"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " or {1, 1, 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["}", "T"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " . Give Rayleigh quotients and error bounds."
+}], "Text",
+ CellChangeTimes->{{3.764263058298571*^9, 3.764263141742567*^9}}],
+
+Cell[TextData[{
+ "1.  ",
+ Cell[BoxData[
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"9", "4"},
+     {"4", "3"}
+    }], "\[NoBreak]", ")"}]], "Text",
+  CellChangeTimes->{{3.764263162685629*^9, 3.764263170093279*^9}, 
+    3.764263829887046*^9},
+  Background->RGBColor[1, 0.9, 0.8]]
+}], "Text",
+ CellChangeTimes->{{3.76426318898042*^9, 3.7642631891726313`*^9}, {
+  3.764263895436225*^9, 3.764263897509997*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m1", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"9", "4"},
+     {"4", "3"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.7642643675735826`*^9, 3.764264369269018*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764264371032445*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m1", "]"}]], "Input",
+ CellChangeTimes->{{3.764264376662319*^9, 3.76426438011467*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"11", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.7642643815634403`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Just to blow out the cobwebs, let me try a couple of fairly large ones.\
+\>", "Text",
+ CellChangeTimes->{{3.769346059343277*^9, 3.769346111764234*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m30", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"RandomSample", "[", 
+      RowBox[{
+       RowBox[{"Range", "[", "40", "]"}], ",", "30"}], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "30"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.764267084987556*^9, 3.7642671336258297`*^9}, {
+  3.764267180102762*^9, 3.7642671969417877`*^9}, {3.764267617391293*^9, 
+  3.764267621140893*^9}, {3.764267672460771*^9, 3.764267688938299*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m30p", "=", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"m30", "[", 
+       RowBox[{"[", "n", "]"}], "]"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"m30", "[", 
+        RowBox[{"[", "n", "]"}], "]"}]]}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "1", ",", "30"}], "}"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.764267492901009*^9, 3.764267626444931*^9}, {
+  3.764267693226494*^9, 3.764267704505793*^9}}],
+
+Cell["\<\
+Mathematica has no difficulty in finding eigenvalues of relatively sizeable \
+matrices. Reviewing the suggested techniques in the documentation would serve \
+better, probably, than trying out the limited approaches described in this \
+section.\
+\>", "Text",
+ CellChangeTimes->{{3.764271300639195*^9, 3.764271404009569*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Timing", "[", 
+  RowBox[{"N", "[", 
+   RowBox[{"Eigenvalues", "[", "m30p", "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.76426713833328*^9, 3.764267162246954*^9}, {
+   3.764267204845784*^9, 3.764267205045371*^9}, 3.764267631108893*^9, {
+   3.764267709747208*^9, 3.764267710011579*^9}, {3.764268755018209*^9, 
+   3.764268757424403*^9}, {3.76426880729564*^9, 3.764268816622843*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0.301897`", ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"123.43009623718872`", "\[VeryThinSpace]", "+", 
+      RowBox[{"38.81282149856853`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"123.43009623718872`", "\[VeryThinSpace]", "-", 
+      RowBox[{"38.81282149856853`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "77.36669604836241`"}], "+", 
+      RowBox[{"93.20678851564313`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "77.36669604836241`"}], "-", 
+      RowBox[{"93.20678851564313`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"15.513851800325218`", "\[VeryThinSpace]", "+", 
+      RowBox[{"118.6378574176843`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"15.513851800325218`", "\[VeryThinSpace]", "-", 
+      RowBox[{"118.6378574176843`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"-", "107.45570381553294`"}], ",", 
+     RowBox[{"73.53525538959464`", "\[VeryThinSpace]", "+", 
+      RowBox[{"73.47564140085264`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"73.53525538959464`", "\[VeryThinSpace]", "-", 
+      RowBox[{"73.47564140085264`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "82.81797702052974`"}], "+", 
+      RowBox[{"49.61661700023359`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "82.81797702052974`"}], "-", 
+      RowBox[{"49.61661700023359`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "45.960550177337524`"}], "+", 
+      RowBox[{"82.87986356461847`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "45.960550177337524`"}], "-", 
+      RowBox[{"82.87986356461847`", " ", "\[ImaginaryI]"}]}], ",", 
+     "94.54012903102105`", ",", 
+     RowBox[{"43.3048247275581`", "\[VeryThinSpace]", "+", 
+      RowBox[{"78.36499525631821`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"43.3048247275581`", "\[VeryThinSpace]", "-", 
+      RowBox[{"78.36499525631821`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "72.11732531885187`"}], "+", 
+      RowBox[{"21.27223727071505`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "72.11732531885187`"}], "-", 
+      RowBox[{"21.27223727071505`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"66.52774760571717`", "\[VeryThinSpace]", "+", 
+      RowBox[{"30.02957852134694`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"66.52774760571717`", "\[VeryThinSpace]", "-", 
+      RowBox[{"30.02957852134694`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "13.11930100283845`"}], "+", 
+      RowBox[{"68.39119514590776`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "13.11930100283845`"}], "-", 
+      RowBox[{"68.39119514590776`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "46.106129266291305`"}], "+", 
+      RowBox[{"26.121151743550676`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "46.106129266291305`"}], "-", 
+      RowBox[{"26.121151743550676`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"25.243523781340162`", "\[VeryThinSpace]", "+", 
+      RowBox[{"39.91653879692961`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"25.243523781340162`", "\[VeryThinSpace]", "-", 
+      RowBox[{"39.91653879692961`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"36.33358410052342`", "\[VeryThinSpace]", "+", 
+      RowBox[{"16.044025551056148`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"36.33358410052342`", "\[VeryThinSpace]", "-", 
+      RowBox[{"16.044025551056148`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "12.94311741578017`"}], "+", 
+      RowBox[{"7.805005067812993`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{
+      RowBox[{"-", "12.94311741578017`"}], "-", 
+      RowBox[{"7.805005067812993`", " ", "\[ImaginaryI]"}]}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{{3.764267150158111*^9, 3.7642671629408607`*^9}, 
+   3.764267206319889*^9, 3.7642676330640993`*^9, 3.76426771165856*^9, 
+   3.764268758724989*^9, 3.7642688178734818`*^9}]
+}, Open  ]],
+
+Cell["The eigenvalues of a random symmetric matrix:", "Text",
+ CellChangeTimes->{3.764269405737568*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{"RandomReal", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{"{", 
+      RowBox[{"100", ",", "100"}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"r", "=", 
+   RowBox[{
+    RowBox[{"Transpose", "[", "r", "]"}], ".", "r"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"vals", "=", " ", 
+   RowBox[{"Timing", "[", 
+    RowBox[{"Eigenvalues", "[", "r", "]"}], "]"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764269487637444*^9, 3.76426950750878*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"ListPlot", "[", "vals", "]"}]], "Input"],
+
+Cell[BoxData[
+ GraphicsBox[{{}, {{}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], PointSize[0.009166666666666668], 
+     AbsoluteThickness[1.6], PointBox[CompressedData["
+1:eJw1yw881Hccx/GjE8v/IRIhKlrK+RPn373vkL/5c3fuzh6zadns4fGYakmT
+qXtEKIYHM5OmujzSVo8JSRojDyzFJTUPk/4ZN2Y15M+Z8dj2uM/9Ho/v4/d4
+ft/fl92HB/gfaTIYjMT/zv9/1TfNOf3+KG9D9yXQBUbm2YdmezlkHaR+4ryp
+W9+fbIRm1LplyX3JpugaGe2T+/qQLXAnxO9V9RM22Qr+lxJ+OHdYbVvozd59
+q0nhSd6MgUCjMQ2Z2g4QzRjZ/iVReyvEL2artH7xIDuiJ19bnpen9nZ05W2q
+NNRTewcy/E7adGa7k3eiYnDYZrHDjewCu+xsxb4cVzILY5P9hw9tUdsVbx40
+zhvIWGQ3/Fl+/9YjS7Xd8dvP6b5drS5kDxQPhtye9t5F3o2rC611hhM7yZ64
+W5IvS7BW2wvJrt6xEqUzmY19E2xZ2cQOsjd8glxSWsu3k33A8lhn1GSlti9s
+Vzqyz8ucyH4obFU8fnDakewPj6Ldmd7L28gcNLYtc6M5agNLS1F94vytKkuB
+hx9zIkW3ttDORd3wB5HLnznQzsXwqPMxQbI97Txw+22VrTyylAc3g7/N03I3
+0x6AglRjaUulHe0BsJcpU1cnbWkPBCtpoSI1kCwNxIvQnOmz7uo9CGVno84J
+Z2xoD0Ldgtjboc+a9j0Yivg9/SGPLN2DMiYzWlm+kfZgJA1k3yjMsqQ9GFNc
+mT3TiMwIgVs4Y9CJZ0F7CIqM+m+yPMxpD0WxW0MJs3Q97aEYOef31DHOjPYw
+fCN/x3jLsintYTB5Y1YRfsaE9nCUutyztNB9m/ZwsOcVoWUvjWmPQEVWBsur
+kiyNQG+BMlgZb0j7XiT+WnBiKI4s3Qsz5tKznc76tEdCY/XI+SOdurRHYqVl
+YXxb4jrao6Brck9xuk2H9ijkFH2+4rCsTXs0RHprH5vKtVRGNDSujK+KbzDp
+fTSSrvcUZlxeo3J7NNbOaOjoBJMZMRjO/XRXyrea1MeAZZB2MyxEg/oY1FyL
+5XwRwaA+BsmWtSzT+hWOqudDHpBZYhCzrDL4iBccvaaQKFWW8lFfZXZ10XFR
+5XY+LmhGfFkjm6deAPOAtpTiuVnqBRAKNxi3/DhDvQDW/6x5VneK3C5ArWPz
+66kLr6kXImt/kAfLkwwh4prnczszJqkXginSPDhmpaBeiNav9vNj/Meoj4XU
+bl1Bjf5z6mPBLU/wir/+lPpY3A6qKK2rHqI+FrVlc04T2oPUi5DXXX4it2GA
+ehHCZ4VpfPN+6kVoPMA9tvFiD/Ui/KE42N2R2kW9GNV75i4z+jqpFyN05uSr
+qeN3qBejdzLrqEtnE/ViVNm/+7wwoo56CdY/+v5i6JXvqJeggZN+f7ztPPUS
+/PSSnSl/72vqJahUPFk8U3+c+jiwBVpnFJPxnH8BwiO7tw==
+      "]]}, {}}, {}},
+  AspectRatio->NCache[GoldenRatio^(-1), 0.6180339887498948],
+  Axes->{True, True},
+  AxesLabel->{None, None},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  Frame->{{False, False}, {False, False}},
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLines->{None, None},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  Method->{},
+  PlotRange->{{0., 100.}, {0, 43.13369121632141}},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.02], 
+     Scaled[0.02]}, {
+     Scaled[0.02], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{3.7642694749070177`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"3.", "  ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "1"},
+     {
+      RowBox[{"-", "1"}], "3", "2"},
+     {"1", "2", "3"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.7642660736214857`*^9, 3.7642661220491056`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m1", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", 
+      RowBox[{"-", "1"}], "1"},
+     {
+      RowBox[{"-", "1"}], "3", "2"},
+     {"1", "2", "3"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.764266160203156*^9, 3.764266162465726*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "3", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2", ",", "3"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7642661635785513`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m1", "]"}]], "Input",
+ CellChangeTimes->{{3.764266146619214*^9, 3.764266167855682*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "3", ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.7642661686358843`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "5 - 8 Power method with scaling\nApply the power method (3 steps) with \
+scaling, using ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", 
+    RowBox[{"0", " "}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = {1, 1, 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["}", "T"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " or {1, 1, 1, 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["}", "T"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " , as applicable. Give Raleigh quotients and error bounds."
+}], "Text",
+ CellChangeTimes->{{3.764263218196896*^9, 3.764263298400776*^9}, {
+  3.7642633511844997`*^9, 3.7642633621422853`*^9}}],
+
+Cell["5.  The matrix in problem 3.", "Text",
+ CellChangeTimes->{{3.7642633665420313`*^9, 3.764263375301989*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"7.", "  ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"5", "1", "0", "0"},
+     {"1", "3", "1", "0"},
+     {"0", "1", "3", "1"},
+     {"0", "0", "1", "5"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.7642633805670958`*^9, 3.764263417692212*^9}, 
+   3.764263846262052*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m1", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"5", "1", "0", "0"},
+     {"1", "3", "1", "0"},
+     {"0", "1", "3", "1"},
+     {"0", "0", "1", "5"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.7642711670847807`*^9, 3.7642711752615347`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "3", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "3", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "5"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764271176956703*^9, 3.769346215241479*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Eigenvalues", "[", "m1", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764271180520273*^9, 3.764271189411216*^9}, {
+  3.769346219296074*^9, 3.769346223216125*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "5.618033988749895`", ",", "5.302775637731995`", ",", "3.381966011250105`", 
+   ",", "1.6972243622680054`"}], "}"}]], "Output",
+ CellChangeTimes->{3.764271190389099*^9, 3.76934622382321*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above match the text answer to 4S.", "Text",
+ CellChangeTimes->{{3.76934628032561*^9, 3.769346291141365*^9}}],
+
+Cell["\<\
+9.  Prove that if x is an eigenvector, the \[Delta] = 0 in (2). Give two \
+examples.\
+\>", "Text",
+ CellChangeTimes->{{3.764263602710269*^9, 3.764263636468479*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "11. Spectral shift, smallest eigenvalue. In problem 3, set B = A - 3 \
+\[ImaginaryI]  (as perhaps suggested by the diagonal entries) and see whether \
+you may get a sequence of q\[CloseCurlyQuote]s converging to an eigenvalue of \
+A that is smallest (not largest) in absolute value. Use ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " = {1, 1, 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["}", "T"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Do 8 steps. Verify that A has the spectrum {0, 3, 5}."
+}], "Text",
+ CellChangeTimes->{{3.76426364002894*^9, 3.7642638157818623`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 88, 2, 45, "Input",
+ Evaluatable->False],
+Cell[491, 17, 73, 1, 45, "Input"],
+Cell[567, 20, 1038, 17, 293, "Text"],
+Cell[1608, 39, 591, 19, 122, "Text"],
+Cell[2202, 60, 444, 13, 100, "Text"],
+Cell[CellGroupData[{
+Cell[2671, 77, 215, 6, 74, "Input"],
+Cell[2889, 85, 213, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3139, 97, 130, 2, 45, "Input"],
+Cell[3272, 101, 118, 3, 45, "Output"]
+}, Open  ]],
+Cell[3405, 107, 161, 3, 51, "Text"],
+Cell[3569, 112, 513, 12, 45, "Input"],
+Cell[4085, 126, 534, 16, 54, "Input"],
+Cell[4622, 144, 333, 6, 120, "Text"],
+Cell[CellGroupData[{
+Cell[4980, 154, 411, 7, 45, "Input"],
+Cell[5394, 163, 4036, 80, 220, "Output"]
+}, Open  ]],
+Cell[9445, 246, 103, 1, 51, "Text"],
+Cell[9551, 249, 540, 17, 104, "Input"],
+Cell[CellGroupData[{
+Cell[10116, 270, 64, 1, 45, "Input"],
+Cell[10183, 273, 2328, 49, 364, "Output"]
+}, Open  ]],
+Cell[12526, 325, 329, 10, 130, "Text"],
+Cell[12858, 337, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[12956, 342, 289, 9, 102, "Input"],
+Cell[13248, 353, 346, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13631, 369, 131, 2, 45, "Input"],
+Cell[13765, 373, 127, 3, 45, "Output"]
+}, Open  ]],
+Cell[13907, 379, 679, 21, 122, "Text"],
+Cell[14589, 402, 148, 2, 75, "Text"],
+Cell[14740, 406, 351, 10, 162, "Text"],
+Cell[CellGroupData[{
+Cell[15116, 420, 291, 8, 132, "Input"],
+Cell[15410, 430, 433, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15880, 446, 208, 4, 45, "Input"],
+Cell[16091, 452, 270, 6, 69, "Output"]
+}, Open  ]],
+Cell[16376, 461, 119, 1, 51, "Text"],
+Cell[16498, 464, 210, 5, 75, "Text"],
+Cell[16711, 471, 711, 17, 146, "Text"]
+}
+]
+*)
+

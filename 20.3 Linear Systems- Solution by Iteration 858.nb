@@ -1,0 +1,916 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     29102,        915]
+NotebookOptionsPosition[     26364,        824]
+NotebookOutlinePosition[     26752,        841]
+CellTagsIndexPosition[     26709,        838]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.769344130784533*^9, 3.7693441351122513`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "4 - 10 Gauss-Seidel iteration\nDo 5 steps, starting from ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]]],
+ "=[1 1 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["]", "T"], TraditionalForm]]],
+ " and using 6S in the computation. Hint. Make sure that you solve each \
+equation for the variable that has the largest coefficient."
+}], "Text",
+ CellChangeTimes->{{3.764067247579315*^9, 3.764067355390514*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"5.", "  ", "10", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    SubscriptBox["x", "2"], "+", 
+    SubscriptBox["x", "3"]}], "=", "6"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    SubscriptBox["x", "3"]}], "=", "6"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    SubscriptBox["x", "2"], "+", 
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "6"}]}]], "Text",
+ CellChangeTimes->{{3.764067358840927*^9, 3.764067455739204*^9}, {
+   3.764067491707322*^9, 3.764067493073867*^9}, 3.764068102926115*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+For less deceitful acquisition of matrix iteration, focusing on actual \
+Gauss-Seidel operations, see problem 11.\
+\>", "Text",
+ CellChangeTimes->{{3.7640930963278627`*^9, 3.764093157836879*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "10"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764072480780499*^9, 3.764072489154121*^9}, {
+  3.764072535374256*^9, 3.7640725805274067`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7640725859674263`*^9, 3.7640725940069*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    FractionBox["1", "2"], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["1", "2"], "}"}], ",", 
+   RowBox[{"{", 
+    FractionBox["1", "2"], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764072595318194*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"7.", "  ", "5", " ", 
+     SubscriptBox["x", "1"]}], "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "2"]}], "+", "0"}], "=", "18"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", "2"}], " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"10", " ", 
+     SubscriptBox["x", "2"]}], "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "3"]}]}], "=", 
+   RowBox[{"-", "60"}]}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{"0", "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"15", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "128"}]}]], "Text",
+ CellChangeTimes->{{3.764067496594491*^9, 3.7640675769349194`*^9}, 
+   3.7640681179497747`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", 
+       RowBox[{"-", "2"}], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", "10", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", 
+       RowBox[{"-", "2"}], ",", "15"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "18", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "60"}], "}"}], ",", 
+     RowBox[{"{", "128", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764072634727162*^9, 3.7640726759964523`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "2", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "4"}], "}"}], ",", 
+   RowBox[{"{", "8", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764072689974382*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"9.", "  ", "5", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    SubscriptBox["x", "2"], "+", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "19"}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    SubscriptBox["x", "1"], "+", 
+    RowBox[{"4", " ", 
+     SubscriptBox["x", "2"]}], "-", 
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "3"]}]}], "=", 
+   RowBox[{"-", "2"}]}], " ", ";", " ", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"2", " ", 
+     SubscriptBox["x", "1"]}], "+", 
+    RowBox[{"3", " ", 
+     SubscriptBox["x", "2"]}], "+", 
+    RowBox[{"8", " ", 
+     SubscriptBox["x", "3"]}]}], "=", "39"}]}]], "Text",
+ CellChangeTimes->{{3.7640675812236347`*^9, 3.76406766255608*^9}, 
+   3.764068128973461*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "4", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3", ",", "8"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "19", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "2"}], "}"}], ",", 
+     RowBox[{"{", "39", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.7640727282597303`*^9, 3.76407276307365*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LinearSolve", "[", 
+  RowBox[{"m", ",", "n"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "2", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "4", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.764072771714466*^9, {3.764072923962181*^9, 3.764072937211707*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+11. Apply the Gauss-Seidel iteration (3 steps) to the system in problem 5, \
+starting from (a) 0,0,0 (b) 10,10,10. Compare and comment.\
+\>", "Text",
+ CellChangeTimes->{{3.7640677752744713`*^9, 3.764067776551992*^9}, {
+  3.764067817424199*^9, 3.764067880372587*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "While searching for code dealing with Gauss-Seidel I ran into a recent (Oct \
+",
+ Cell[BoxData[
+  FormBox["'", TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "18) question on SEMma that talks about different larger scaled matrix \
+factorization schemes for Mathematica, which I found interesting. It\
+\[CloseCurlyQuote]s at"
+}], "Text",
+ CellChangeTimes->{{3.764077149239676*^9, 3.7640772371604147`*^9}, {
+  3.764089774728365*^9, 3.764089799222122*^9}, {3.7640934879703503`*^9, 
+  3.764093493562479*^9}}],
+
+Cell[TextData[{
+ StyleBox["https://mathematica.stackexchange.com/questions/173616/a-geometric-\
+multigrid-solver-for-mathematica/173617, ",
+  FontSize->14,
+  FontSlant->"Italic"],
+ "authored by Henrik Schumacher. "
+}], "Text",
+ CellChangeTimes->{
+  3.764075003254002*^9, {3.764093648302896*^9, 3.764093668245708*^9}, {
+   3.764093713703619*^9, 3.76409374118651*^9}}],
+
+Cell[TextData[{
+ "The following Gauss-Seidel code I found at ",
+ StyleBox["https://www.youtube.com/watch?v=n1n3pfRbBvE, ",
+  FontSize->14,
+  FontSlant->"Italic"],
+ "the video by miles hill. It\[CloseCurlyQuote]s based on the equation"
+}], "Text",
+ CellChangeTimes->{
+  3.76407611846585*^9, {3.764080719486402*^9, 3.764080757420142*^9}, {
+   3.7640935135724707`*^9, 3.764093515177575*^9}, {3.764093564946692*^9, 
+   3.764093595574938*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   SuperscriptBox[
+    SubscriptBox["x", "i"], 
+    RowBox[{"(", 
+     RowBox[{"k", "+", "1"}], ")"}]], "=", 
+   RowBox[{
+    SuperscriptBox[
+     StyleBox["L",
+      FontFamily->"ESSTIXFourteen"], 
+     RowBox[{"-", "1"}]], 
+    RowBox[{"(", 
+     RowBox[{
+      OverscriptBox["b", ">"], "-", 
+      RowBox[{
+       StyleBox["U",
+        FontFamily->"ESSTIXFourteen"], ".", 
+       SuperscriptBox[
+        OverscriptBox["x", ">"], 
+        RowBox[{"(", "k", ")"}]]}]}], ")"}]}]}], ",", " ", 
+  StyleBox[
+   RowBox[{
+    RowBox[{"the", " ", "standard", " ", "Gauss"}], "-", 
+    RowBox[{"Seidel", " ", "iteration", " ", 
+     RowBox[{"equation", "."}]}]}],
+   FontFamily->"Charter"]}]], "Text",
+ CellChangeTimes->{{3.764080761998888*^9, 3.764080788483202*^9}, {
+  3.764081086859908*^9, 3.764081154303095*^9}, {3.764088300566482*^9, 
+  3.764088379211265*^9}, {3.764088419141077*^9, 3.764088432745618*^9}, {
+  3.764088602110042*^9, 3.764088619956658*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GaussSeidelMat", "[", 
+   RowBox[{
+    RowBox[{"a_", "?", "MatrixQ"}], ",", " ", 
+    RowBox[{"b_", "?", "MatrixQ"}], ",", 
+    RowBox[{"x0_", "?", "MatrixQ"}], ",", "error_Real", ",", 
+    "steps_Integer"}], "]"}], ":=", 
+  RowBox[{"Block", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"l", ",", "u", ",", "x", ",", "abs"}], "}"}], ",", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"x", "[", "0", "]"}], "=", "x0"}], ";", 
+     RowBox[{"l", "=", 
+      RowBox[{"a", " ", 
+       RowBox[{"SparseArray", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"i_", ",", "j_"}], "}"}], "/;", 
+           RowBox[{"j", "\[LessEqual]", "i"}]}], "\[Rule]", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"3", ",", "3"}], "}"}]}], "]"}]}]}], ";", 
+     RowBox[{"u", "=", 
+      RowBox[{"a", " ", 
+       RowBox[{"SparseArray", "[", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{"i_", ",", "j_"}], "}"}], "/;", 
+           RowBox[{"j", ">", "i"}]}], "\[Rule]", "1"}], ",", 
+         RowBox[{"{", 
+          RowBox[{"3", ",", "3"}], "}"}]}], "]"}]}]}], ";", 
+     RowBox[{
+      RowBox[{"Reap", "[", 
+       RowBox[{"Do", "[", " ", 
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"x", "[", "i", "]"}], "=", 
+           RowBox[{
+            RowBox[{"Inverse", "[", "l", "]"}], ".", 
+            RowBox[{"(", 
+             RowBox[{"b", "-", 
+              RowBox[{"u", ".", 
+               RowBox[{"x", "[", 
+                RowBox[{"i", "-", "1"}], "]"}]}]}], ")"}]}]}], ";", 
+          RowBox[{"abs", "=", 
+           RowBox[{
+            RowBox[{"Norm", "[", 
+             RowBox[{
+              RowBox[{"x", "[", "i", "]"}], "-", 
+              RowBox[{"x", "[", 
+               RowBox[{"i", "-", "1"}], "]"}]}], "]"}], "/", 
+            RowBox[{"Norm", "[", 
+             RowBox[{"x", "[", "i", "]"}], "]"}]}]}], ";", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"abs", "<", "error"}], ",", 
+            RowBox[{
+             RowBox[{"Sow", "@", 
+              RowBox[{"x", "[", "i", "]"}]}], ";", 
+             RowBox[{"Break", "[", "]"}]}]}], "]"}], ";", 
+          RowBox[{"If", "[", 
+           RowBox[{
+            RowBox[{"i", "\[Equal]", "steps"}], ",", 
+            RowBox[{"Sow", "@", 
+             RowBox[{"x", "[", "steps", "]"}]}]}], "]"}]}], ",", 
+         RowBox[{"{", 
+          RowBox[{"i", ",", "steps"}], "}"}]}], "]"}], "]"}], "[", 
+      RowBox[{"[", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", "1"}], "]"}], "]"}]}]}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7640761278887043`*^9, 3.7640765189601097`*^9}, {
+   3.764076604959778*^9, 3.7640767077707872`*^9}, {3.76407674562574*^9, 
+   3.764076755313303*^9}, 3.764076894118676*^9, {3.764079156177462*^9, 
+   3.764079156971192*^9}}],
+
+Cell["\<\
+Matrix aa is the matrix of coefficients, bb is the rhs sol\[CloseCurlyQuote]n \
+set, pp is an initial guess (set to zero by the problem and also by \
+convention). The first run is with the test data in the video. The video \
+adjusted the tolerance variable greatly downward during its demonstration, \
+but somehow the relatively high 0.5 doesn\[CloseCurlyQuote]t affect the \
+matrices in the present problem.\
+\>", "Text",
+ CellChangeTimes->{{3.764089397009282*^9, 3.764089454790373*^9}, {
+  3.764089890204067*^9, 3.764089919537921*^9}, {3.764090081232113*^9, 
+  3.764090213825966*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"aa", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "2", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", 
+       RowBox[{"-", "6"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "5"}], "}"}]}], "}"}]}], ";", " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{"sample", " ", "data", " ", "from", " ", "video"}], " ", "*)"}], 
+  "\[IndentingNewLine]", 
+  RowBox[{"bb", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "27", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "61.5"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "21.5"}], "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"pp", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"args", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"N", "@", "aa"}], ",", 
+     RowBox[{"N", "@", "bb"}], ",", 
+     RowBox[{"N", "@", "pp"}], ",", "0.05", ",", "50"}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.76407735299166*^9, 3.764077526870761*^9}, {
+  3.764088918238494*^9, 3.7640889237408037`*^9}, {3.764093326202326*^9, 
+  3.764093336447637*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GaussSeidelMat", " ", "@@", " ", "args"}]], "Input",
+ CellChangeTimes->{{3.764079167068103*^9, 3.764079177832369*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0.5236866666666664`", "}"}], ",", 
+   RowBox[{"{", "8.01000111111111`", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "6.0067375555555556`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764079179296609*^9, 3.764079726260188*^9}]
+}, Open  ]],
+
+Cell["\<\
+The data from problem 5 is inserted, which is part (a) of the current problem.\
+\>", "Text",
+ CellChangeTimes->{{3.764089507941187*^9, 3.76408953254029*^9}, {
+  3.764089946193025*^9, 3.764089967096672*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "10"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}], ",", 
+     RowBox[{"{", "0", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"arg3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"N", "@", "a2"}], ",", 
+     RowBox[{"N", "@", "b2"}], ",", 
+     RowBox[{"N", "@", "p2"}], ",", "0.05", ",", "3"}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.764088788105969*^9, 3.76408881428747*^9}, {
+  3.764088888224416*^9, 3.764088931692425*^9}, {3.764089478622514*^9, 
+  3.764089487669753*^9}, {3.764089612938703*^9, 3.764089620162396*^9}, {
+  3.764089667351606*^9, 3.7640896705852547`*^9}}],
+
+Cell["\<\
+The results, I think, meet the text answer within 5S standards. \
+\>", "Text",
+ CellChangeTimes->{
+  3.764089364770453*^9, {3.764089538377473*^9, 3.7640895726272707`*^9}, 
+   3.7640897078569613`*^9, {3.7640899798402367`*^9, 3.764089996578397*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GaussSeidelMat", " ", "@@", " ", "arg2"}]], "Input",
+ CellChangeTimes->{{3.764088947885532*^9, 3.764088948036021*^9}, {
+  3.76408903898129*^9, 3.7640890628411703`*^9}, {3.7640892242291803`*^9, 
+  3.764089229588726*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0.4998246`", "}"}], ",", 
+   RowBox[{"{", "0.50000814`", "}"}], ",", 
+   RowBox[{"{", "0.5000167260000001`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.764088965347385*^9, {3.764089048046541*^9, 3.764089063982403*^9}, 
+   3.764089231644807*^9, 3.7640894832734013`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Now for part (b). Again, the results are within 5S of the text.\
+\>", "Text",
+ CellChangeTimes->{3.764093824794425*^9}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "10"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "10", "}"}], ",", 
+     RowBox[{"{", "10", "}"}], ",", 
+     RowBox[{"{", "10", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"arg3", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"N", "@", "a2"}], ",", 
+     RowBox[{"N", "@", "b2"}], ",", 
+     RowBox[{"N", "@", "p2"}], ",", "0.05", ",", "3"}], "}"}]}], 
+  ";"}]}], "Input",
+ CellChangeTimes->{{3.76408959991623*^9, 3.76408960003484*^9}, {
+  3.764089674601129*^9, 3.7640896785288877`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GaussSeidelMat", " ", "@@", " ", "arg3"}]], "Input",
+ CellChangeTimes->{{3.7640896412270813`*^9, 3.764089641409525*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "0.5033326`", "}"}], ",", 
+   RowBox[{"{", "0.4998453400000001`", "}"}], ",", 
+   RowBox[{"{", "0.4996822060000001`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764089643845799*^9, 3.764089682281159*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "14 - 17 Jacobi iteration\nDo 5 steps, starting from ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["x", "0"], TraditionalForm]]],
+ "=[1 1 1]. Compare with the Gauss-Seidel iteration. Which of the two seems \
+to converge faster?"
+}], "Text",
+ CellChangeTimes->{{3.764067888149954*^9, 3.764067966481509*^9}, {
+  3.7640912008086777`*^9, 3.764091205453973*^9}}],
+
+Cell["15. The system in problem 9.", "Text",
+ CellChangeTimes->{{3.7640679703954363`*^9, 3.7640679868248672`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "I got the Jacobi iteration code from ",
+ StyleBox["https://community.wolfram.com/groups/-/m/t/831921",
+  FontSize->14,
+  FontSlant->"Italic"],
+ ". And I haven\[CloseCurlyQuote]t analyzed it to make sure it is genuinely \
+Jacobi algorithmic. But it seems to work. It has the slightly primitive \
+quality of necessitating the setting of the variable k, in the ",
+ StyleBox["While", "Input"],
+ " loop, to fit each circumstance."
+}], "Text",
+ CellChangeTimes->{{3.764091441992124*^9, 3.76409147379943*^9}, {
+  3.764091508285108*^9, 3.764091570835458*^9}, {3.764091642628254*^9, 
+  3.76409172669484*^9}, {3.7640922391680517`*^9, 3.764092242848123*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"jac", "[", 
+    RowBox[{"A_", ",", "b_", ",", "xstart_"}], "]"}], ":=", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"n", ",", "k", ",", "i", ",", "j", ",", "xneu", ",", "xalt"}], 
+      "}"}], ",", 
+     RowBox[{
+      RowBox[{"n", "=", 
+       RowBox[{"Length", "[", "b", "]"}]}], ";", "\[IndentingNewLine]", 
+      RowBox[{"xalt", "=", "xstart"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"k", "=", "0"}], ";", "\[IndentingNewLine]", 
+      RowBox[{"While", "[", 
+       RowBox[{
+        RowBox[{"k", "<", "9"}], ",", 
+        RowBox[{
+         RowBox[{"xneu", "=", "b"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"For", "[", 
+          RowBox[{
+           RowBox[{"i", "=", "1"}], ",", 
+           RowBox[{"i", "\[LessEqual]", "n"}], ",", 
+           RowBox[{"i", "++"}], ",", 
+           RowBox[{
+            RowBox[{"For", "[", 
+             RowBox[{
+              RowBox[{"j", "=", "1"}], ",", 
+              RowBox[{"j", "\[LessEqual]", "n"}], ",", 
+              RowBox[{"j", "++"}], ",", 
+              RowBox[{"If", "[", 
+               RowBox[{
+                RowBox[{"i", "\[NotEqual]", "j"}], ",", 
+                RowBox[{
+                 RowBox[{"xneu", "[", 
+                  RowBox[{"[", "i", "]"}], "]"}], "=", 
+                 RowBox[{
+                  RowBox[{"xneu", "[", 
+                   RowBox[{"[", "i", "]"}], "]"}], "-", 
+                  RowBox[{
+                   RowBox[{"A", "[", 
+                    RowBox[{"[", 
+                    RowBox[{"i", ",", "j"}], "]"}], "]"}], "*", 
+                   RowBox[{"xalt", "[", 
+                    RowBox[{"[", "j", "]"}], "]"}]}]}]}]}], "]"}]}], "]"}], 
+            ";", "\[IndentingNewLine]", 
+            RowBox[{
+             RowBox[{"xneu", "[", 
+              RowBox[{"[", "i", "]"}], "]"}], "=", 
+             RowBox[{
+              RowBox[{"xneu", "[", 
+               RowBox[{"[", "i", "]"}], "]"}], "/", 
+              RowBox[{"A", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "i"}], "]"}], "]"}]}]}]}]}], "]"}], ";", 
+         "\[IndentingNewLine]", 
+         RowBox[{"xalt", "=", "xneu"}], ";", "\[IndentingNewLine]", 
+         RowBox[{"k", "++"}]}]}], "]"}], ";", "\[IndentingNewLine]", 
+      "xalt"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.764091747839238*^9, 3.764091748382929*^9}, {
+  3.764092000985615*^9, 3.764092017751116*^9}, {3.76409204917452*^9, 
+  3.764092059342111*^9}}],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"a2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"5", ",", "1", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "4", ",", 
+       RowBox[{"-", "2"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", "3", ",", "8"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"b2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "19", "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"-", "2"}], "}"}], ",", 
+     RowBox[{"{", "39", "}"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "1", "}"}], ",", 
+     RowBox[{"{", "1", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.764091796110363*^9, 3.764091804468624*^9}, {
+  3.764091843294465*^9, 3.764091898565012*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"jac", "[", 
+   RowBox[{"a2", ",", "b2", ",", "p2"}], "]"}], "]"}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1.9999746630859374`", "}"}], ",", 
+   RowBox[{"{", "1.000028729248047`", "}"}], ",", 
+   RowBox[{"{", "3.999991082763672`", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.764091949176238*^9, {3.764092005931212*^9, 3.764092022091178*^9}, {
+   3.764092053621901*^9, 3.764092068444669*^9}}]
+}, Open  ]],
+
+Cell["\<\
+The text answer shows {{1.99934},{1.00043},{3.99684}} after five steps, \
+whereas the above takes eight steps to get to (about) the same place. Anyway, \
+GS seems to converge faster to me.\
+\>", "Text",
+ CellChangeTimes->{{3.764092128899157*^9, 3.764092218264987*^9}, {
+  3.764092256970105*^9, 3.764092259271409*^9}}],
+
+Cell["\<\
+18 - 20 Norms
+Compute the norms (9),(10),(11) for the following (square) matrices. Comment \
+on the reasons for greater or smaller differences among the three numbers.\
+\>", "Text",
+ CellChangeTimes->{{3.76406801352278*^9, 3.764068074797818*^9}}],
+
+Cell["19. The matrix in problem 5.", "Text",
+ CellChangeTimes->{{3.7640680777838507`*^9, 3.7640680919252872`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"m", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"10", ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "10", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1", ",", "10"}], "}"}]}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"n", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}], ",", 
+     RowBox[{"{", "6", "}"}]}], "}"}]}], ";"}]}], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Norm", "[", "m", "]"}]], "Input",
+ CellChangeTimes->{{3.764092656551557*^9, 3.764092658741075*^9}}],
+
+Cell[BoxData["12"], "Output",
+ CellChangeTimes->{3.764092660054584*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The text reports three numbers, associated with three phases of intermediate \
+calculation; Mathematica has only one result, which matches the text\
+\[CloseCurlyQuote]s final two.\
+\>", "Text",
+ CellChangeTimes->{{3.7640928687826233`*^9, 3.764092892356872*^9}, {
+  3.764092990011361*^9, 3.764093023841057*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 221, 5, 51, "Text",
+ Evaluatable->False],
+Cell[624, 20, 73, 1, 45, "Input"],
+Cell[700, 23, 450, 12, 122, "Text"],
+Cell[1153, 37, 732, 22, 70, "Text"],
+Cell[1888, 61, 205, 4, 51, "Text"],
+Cell[2096, 67, 645, 20, 75, "Input"],
+Cell[CellGroupData[{
+Cell[2766, 91, 153, 3, 45, "Input"],
+Cell[2922, 96, 304, 10, 99, "Output"]
+}, Open  ]],
+Cell[3241, 109, 789, 26, 70, "Text"],
+Cell[4033, 137, 713, 24, 75, "Input"],
+Cell[CellGroupData[{
+Cell[4771, 165, 87, 2, 45, "Input"],
+Cell[4861, 169, 255, 8, 69, "Output"]
+}, Open  ]],
+Cell[5131, 180, 809, 27, 70, "Text"],
+Cell[5943, 209, 73, 1, 45, "Input"],
+Cell[6019, 212, 639, 21, 75, "Input"],
+Cell[CellGroupData[{
+Cell[6683, 237, 87, 2, 45, "Input"],
+Cell[6773, 241, 284, 8, 69, "Output"]
+}, Open  ]],
+Cell[7072, 252, 312, 6, 110, "Text"],
+Cell[7387, 260, 529, 12, 87, "Text"],
+Cell[7919, 274, 366, 9, 86, "Text"],
+Cell[8288, 285, 438, 10, 86, "Text"],
+Cell[8729, 297, 988, 30, 74, "Text"],
+Cell[9720, 329, 73, 1, 45, "Input"],
+Cell[9796, 332, 2934, 81, 278, "Input"],
+Cell[12733, 415, 596, 10, 155, "Text"],
+Cell[13332, 427, 1349, 42, 133, "Input"],
+Cell[CellGroupData[{
+Cell[14706, 473, 142, 2, 45, "Input"],
+Cell[14851, 477, 291, 7, 45, "Output"]
+}, Open  ]],
+Cell[15157, 487, 216, 4, 51, "Text"],
+Cell[15376, 493, 1233, 37, 133, "Input"],
+Cell[16612, 532, 257, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[16894, 541, 243, 4, 45, "Input"],
+Cell[17140, 547, 371, 9, 69, "Output"]
+}, Open  ]],
+Cell[17526, 559, 129, 3, 51, "Text"],
+Cell[17658, 564, 1091, 35, 133, "Input"],
+Cell[CellGroupData[{
+Cell[18774, 603, 144, 2, 45, "Input"],
+Cell[18921, 607, 302, 7, 69, "Output"]
+}, Open  ]],
+Cell[19238, 617, 373, 9, 122, "Text"],
+Cell[19614, 628, 150, 2, 75, "Text"],
+Cell[19767, 632, 665, 13, 120, "Text"],
+Cell[20435, 647, 73, 1, 45, "Input"],
+Cell[20511, 650, 2498, 62, 307, "Input"],
+Cell[23012, 714, 895, 29, 104, "Input"],
+Cell[CellGroupData[{
+Cell[23932, 747, 121, 3, 45, "Input"],
+Cell[24056, 752, 348, 8, 45, "Output"]
+}, Open  ]],
+Cell[24419, 763, 327, 6, 86, "Text"],
+Cell[24749, 771, 256, 5, 120, "Text"],
+Cell[25008, 778, 150, 2, 75, "Text"],
+Cell[25161, 782, 73, 1, 45, "Input"],
+Cell[25237, 785, 528, 18, 75, "Input"],
+Cell[CellGroupData[{
+Cell[25790, 807, 123, 2, 45, "Input"],
+Cell[25916, 811, 109, 2, 69, "Output"]
+}, Open  ]],
+Cell[26040, 816, 320, 6, 86, "Text"]
+}
+]
+*)
+

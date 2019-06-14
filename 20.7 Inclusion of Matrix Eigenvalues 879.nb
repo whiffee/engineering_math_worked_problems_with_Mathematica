@@ -1,0 +1,1307 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     40906,       1306]
+NotebookOptionsPosition[     35385,       1118]
+NotebookOutlinePosition[     35774,       1135]
+CellTagsIndexPosition[     35731,       1132]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ CellChangeTimes->{{3.769345953131709*^9, 3.769345957275126*^9}, 
+   3.769350935489346*^9}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1 - 6 Gerschgorin disks
+Find and sketch disks or intervals that contain the eigenvalues. If you have \
+a CAS, find the spectrum and compare.\
+\>", "Text",
+ CellChangeTimes->{{3.7641870581095448`*^9, 3.7641870991630096`*^9}}],
+
+Cell[TextData[{
+ "I found a couple of Gerschgorin disk makers on-line. The one I decided \
+worked best for me was at ",
+ StyleBox["http://distrustsimplicity.net/articles/gerschgorin-disks/",
+  FontSize->14,
+  FontSlant->"Italic"],
+ ". It is a Show command made up of a plot and a graphic. In the original \
+version the ListPlot is called first, but since the ListPlot doesn\
+\[CloseCurlyQuote]t use all the space needed for the graphic, yet has the \
+primacy of being called first, a truncated window is the result. By switching \
+it around so that the graphic is called first, I get to see everything."
+}], "Text",
+ CellChangeTimes->{{3.764195268414713*^9, 3.7641953240128527`*^9}, {
+  3.764245837713147*^9, 3.7642458846548233`*^9}, {3.7642459740210876`*^9, 
+  3.764246095612235*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"GerschgorinPlot", "[", "A_", "]"}], ":=", 
+  RowBox[{"(*", 
+   RowBox[{
+   "Store", " ", "the", " ", "number", " ", "of", " ", "rows", " ", "in", " ",
+     "A"}], "*)"}], 
+  RowBox[{"With", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"n", "=", 
+      RowBox[{
+       RowBox[{"Dimensions", "[", "A", "]"}], "[", 
+       RowBox[{"[", "1", "]"}], "]"}]}], "}"}], ",", 
+    RowBox[{"Show", "[", 
+     RowBox[{"(*", 
+      RowBox[{
+      "Create", " ", "a", " ", "translucent", " ", "gray", " ", "disk", " ", 
+       "for", " ", "each", " ", "row"}], "*)"}], 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Graphics", "[", 
+          RowBox[{
+           RowBox[{"{", 
+            RowBox[{
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"EdgeForm", "[", "Thin", "]"}], ",", 
+               RowBox[{"GrayLevel", "[", 
+                RowBox[{"0.1", ",", "0.1"}], "]"}], ",", 
+               RowBox[{"Disk", "[", 
+                RowBox[{
+                 RowBox[{"{", 
+                  RowBox[{
+                   RowBox[{"Re", "[", "#1", "]"}], ",", 
+                   RowBox[{"Im", "[", "#1", "]"}]}], "}"}], ",", "#2"}], 
+                "]"}]}], "}"}], ",", 
+             RowBox[{"{", "}"}]}], "}"}], ",", 
+           RowBox[{"{", 
+            RowBox[{"Axes", "\[Rule]", "True"}], "}"}]}], "]"}], "}"}], "&"}],
+        "@@@", 
+       RowBox[{"Thread", "[", 
+        RowBox[{"{", 
+         RowBox[{"(*", 
+          RowBox[{"Disk", " ", "centers"}], "*)"}], 
+         RowBox[{
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{"A", "[", 
+             RowBox[{"[", 
+              RowBox[{"i", ",", "i"}], "]"}], "]"}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}], ",", 
+          RowBox[{"(*", 
+           RowBox[{"Disk", " ", "radii"}], "*)"}], 
+          RowBox[{"Table", "[", 
+           RowBox[{
+            RowBox[{
+             RowBox[{"Total", "[", 
+              RowBox[{
+               RowBox[{"Abs", "[", 
+                RowBox[{"A", "[", 
+                 RowBox[{"[", "i", "]"}], "]"}], "]"}], ",", "i"}], "]"}], 
+             "-", 
+             RowBox[{"Abs", "[", 
+              RowBox[{"A", "[", 
+               RowBox[{"[", 
+                RowBox[{"i", ",", "i"}], "]"}], "]"}], "]"}]}], ",", 
+            RowBox[{"{", 
+             RowBox[{"i", ",", "1", ",", "n"}], "}"}]}], "]"}]}], "}"}], 
+        "]"}]}], ",", "\[IndentingNewLine]", 
+      RowBox[{"(*", 
+       RowBox[{
+       "Plot", " ", "the", " ", "eigenvalues", " ", "as", " ", "points"}], 
+       "*)"}], "\[IndentingNewLine]", 
+      RowBox[{"ListPlot", "[", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{"{", 
+           RowBox[{
+            RowBox[{"Re", "[", "#", "]"}], ",", 
+            RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], "/@", 
+         RowBox[{"Eigenvalues", "[", "A", "]"}]}], ",", 
+        RowBox[{"AxesOrigin", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"0", ",", "0"}], "}"}]}], ",", 
+        RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+        RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+        RowBox[{"PlotStyle", "\[Rule]", 
+         RowBox[{"{", 
+          RowBox[{"Black", ",", 
+           RowBox[{"PointSize", "[", "Medium", "]"}]}], "}"}]}]}], "]"}]}], 
+     "\[IndentingNewLine]", "]"}]}], "]"}]}]], "Input",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmViYGAQAWIQvYo3mGEB9xtH3m4I7cDNdQBEv8uTPgyil764fQxE
+q/H2nALRKa1Ml0C0n9kiML2JJ7djIZCe9X17N4je4fC8H0Tf+t4+AUQ3lVya
+BaIV2tfOBtEFdxbMB9GvDiguANFOp1VXgehFr9+uAdEPNrpsAtF7NY5uBtFz
+Xip/AtG//mwC0zdMjAQWAemQeH5BMK1zfB2I3lOcsB1Em787chZEq7w3ugii
++U7OvAaiVSd73wbRqyYaPQHRUb1Fz0B0UIfDaxD9bcvstyA6oX7KZxB9cJXp
+TxAt9M5dfDGQXjb9mBSITrzcrAeiv2k/NAbRAGlTokw=
+  "]],
+
+Cell[BoxData[
+ RowBox[{"1.", "  ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"5", "2", "4"},
+     {
+      RowBox[{"-", "2"}], "0", "2"},
+     {"2", "4", "7"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.764187137258189*^9, 3.7641871519852247`*^9}, {
+   3.764187183367977*^9, 3.7641872039511003`*^9}, 3.764187818398306*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m1", "=", GridBox[{
+    {"5", "2", "4"},
+    {
+     RowBox[{"-", "2"}], "0", "2"},
+    {"2", "4", "7"}
+   }]}]], "Input",
+ CellChangeTimes->{{3.764191268346204*^9, 3.764191276789155*^9}, {
+  3.7641915615057907`*^9, 3.7641915719842157`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764191278598909*^9, 3.7641915730808563`*^9, 
+  3.764193386465288*^9, 3.764199581559205*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GerschgorinPlot", "[", "m1", "]"}]], "Input",
+ CellChangeTimes->{{3.764191287166677*^9, 3.764191296050618*^9}, {
+  3.764191576984436*^9, 3.7641915782801247`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{
+    {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+     DiskBox[{5, 0}, 6]}, {}}, {
+    {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+     DiskBox[{0, 0}, 4]}, {}}, {
+    {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+     DiskBox[{7, 0}, 6]}, {}}, {{}, {{}, 
+     {GrayLevel[0], PointSize[Medium], AbsoluteThickness[1.6], 
+      PointBox[{{9., 0.}, {4., 0.}, {-1., 0.}}]}, {}}, {}}},
+  Axes->True]], "Output",
+ CellChangeTimes->{
+  3.764191296718038*^9, 3.764191579280858*^9, 3.764192803914439*^9, {
+   3.764192837008423*^9, 3.76419286141112*^9}, 3.764192924072*^9, 
+   3.764194467387488*^9, 3.764194572383499*^9, 3.764194655068101*^9, 
+   3.764194725594405*^9, 3.764195469269065*^9, 3.764196803594391*^9, {
+   3.7641969812788143`*^9, 3.764197007114517*^9}, {3.764197052027179*^9, 
+   3.764197091067492*^9}, 3.764197161873493*^9, {3.764197221326262*^9, 
+   3.764197234916554*^9}, {3.764197286156722*^9, 3.764197326745345*^9}, 
+   3.7641977665182657`*^9, 3.7641977970034237`*^9, 3.764199584021853*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m1", "]"}]], "Input",
+ CellChangeTimes->{{3.764193466855974*^9, 3.764193471034959*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"9", ",", "4", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7641934718438263`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The text answer gives the circle centers {5,0,7}, the circle respective radii \
+{6,4,6}, and the Spectrum {-1,4,9}. However, if the spectrum list is also to \
+match eigenvalues with the circles they most apparently internalize, the \
+spectrum order would be {4,-1,9}.\
+\>", "Text",
+ CellChangeTimes->{{3.764194935777626*^9, 3.7641950162301073`*^9}, {
+  3.764195055340725*^9, 3.764195124162496*^9}, {3.7641951579133387`*^9, 
+  3.7641951823045177`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"3.", "  ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0.4", 
+      RowBox[{"-", "0.1"}]},
+     {
+      RowBox[{"-", "0.4"}], "0", "0.3"},
+     {"0.1", 
+      RowBox[{"-", "0.3"}], "0"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.764187209575761*^9, 3.7641872595734053`*^9}, 
+   3.764187830124796*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m2", "=", GridBox[{
+    {"0", "0.4", 
+     RowBox[{"-", "0.1"}]},
+    {
+     RowBox[{"-", "0.4"}], "0", "0.3"},
+    {"0.1", 
+     RowBox[{"-", "0.3"}], "0"}
+   }]}]], "Input",
+ CellChangeTimes->{{3.764191583508792*^9, 3.764191589418951*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0.4`", ",", 
+     RowBox[{"-", "0.1`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.4`"}], ",", "0", ",", "0.3`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", 
+     RowBox[{"-", "0.3`"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764191591833169*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"GerschgorinPlot", "[", "m2", "]"}]], "Input",
+ CellChangeTimes->{{3.764191602735054*^9, 3.764191602942906*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{
+   {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+    DiskBox[{0, 0}, 0.5]}, 
+   {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+    DiskBox[{0, 0}, 0.7]}, 
+   {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+    DiskBox[{0, 0}, 0.4]}, {{}, {{}, 
+     {GrayLevel[0], PointSize[Medium], AbsoluteThickness[1.6], 
+      PointBox[{{0., 0.5099019513592788}, {
+       0., -0.5099019513592788}, {-5.378073070438572*^-18, 0.}}]}, {}}, {}}},
+  Axes->True]], "Output",
+ CellChangeTimes->{{3.7641916039865522`*^9, 3.7641916275162354`*^9}, 
+   3.764195664592607*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m2", "]"}]], "Input",
+ CellChangeTimes->{{3.764195793941728*^9, 3.764195794100273*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"0.`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.5099019513592788`", " ", "\[ImaginaryI]"}]}], ",", 
+   RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+    RowBox[{"0.5099019513592788`", " ", "\[ImaginaryI]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", "5.378073070438572`*^-18"}], "+", 
+    RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764195794929224*^9}]
+}, Open  ]],
+
+Cell["\<\
+The text answers gives circle centers as 0, with radii {0.5,0.7,0.4}\
+\>", "Text",
+ CellChangeTimes->{{3.7641959502960157`*^9, 3.764195984534041*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["\<\
+The text identifies eigenvalues as belonging to a continuous line on the \
+imaginary axis, from -0.7\[ImaginaryI] to 0.7\[ImaginaryI], apparently as an \
+attribute of a skew-symmetric matrix. I do admit that the graphic above looks \
+strange, in that the central disk doesn\[CloseCurlyQuote]t seem to have much \
+purpose.\
+\>", "Text",
+ CellChangeTimes->{{3.764195998967691*^9, 3.764196078522962*^9}, {
+  3.7642417230715933`*^9, 3.76424172657448*^9}, {3.764246305738834*^9, 
+  3.764246337472691*^9}, {3.7693458388175917`*^9, 3.769345839822567*^9}},
+ Background->RGBColor[1, 1, 0.85]],
+
+Cell[BoxData[
+ RowBox[{"5.", "  ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"2", "\[ImaginaryI]", 
+      RowBox[{"1", "+", "\[ImaginaryI]"}]},
+     {
+      RowBox[{"-", "\[ImaginaryI]"}], "3", "0"},
+     {
+      RowBox[{"1", "-", "\[ImaginaryI]"}], "0", "8"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.764187264422371*^9, 3.764187302619905*^9}, 
+   3.764187844756257*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m3", "=", GridBox[{
+    {"2", "\[ImaginaryI]", 
+     RowBox[{"1", "+", "\[ImaginaryI]"}]},
+    {
+     RowBox[{"-", "\[ImaginaryI]"}], "3", "0"},
+    {
+     RowBox[{"1", "-", "\[ImaginaryI]"}], "0", "8"}
+   }]}]], "Input",
+ CellChangeTimes->{{3.764191635344923*^9, 3.764191645545169*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "\[ImaginaryI]", ",", 
+     RowBox[{"1", "+", "\[ImaginaryI]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], ",", "3", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"1", "-", "\[ImaginaryI]"}], ",", "0", ",", "8"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.764191648325757*^9, 3.764198270517208*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", "\[ImaginaryI]", "]"}]], "Input",
+ CellChangeTimes->{{3.764198590671256*^9, 3.7641985971871777`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.764198598365755*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", 
+  RowBox[{"1", "+", "\[ImaginaryI]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764198625269804*^9, 3.764198632010263*^9}}],
+
+Cell[BoxData[
+ SqrtBox["2"]], "Output",
+ CellChangeTimes->{3.764198633208201*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Abs", "[", 
+  RowBox[{"1", "-", "\[ImaginaryI]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764198645725395*^9, 3.7641986517373753`*^9}}],
+
+Cell[BoxData[
+ SqrtBox["2"]], "Output",
+ CellChangeTimes->{3.7641986525258102`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"data", "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"3", "+", 
+       SqrtBox["2"]}], ",", "0"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"8", "+", 
+       SqrtBox["2"]}], ",", "0"}], "}"}]}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.76419644684468*^9, 3.764196504932438*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"3", "+", 
+      SqrtBox["2"]}], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"8", "+", 
+      SqrtBox["2"]}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7641965065405903`*^9, 3.7641982736381083`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p1", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{"data", ",", " ", 
+     RowBox[{"PlotStyle", "\[Rule]", "Orange"}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.764196508560964*^9, 3.764196540325232*^9}, {
+  3.7641965736758623`*^9, 3.764196587498316*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"p2", "=", 
+   RowBox[{"GerschgorinPlot", "[", "m3", "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.764191661750771*^9, 3.76419166199701*^9}, {
+  3.7641965478850317`*^9, 3.76419655383657*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"p2", ",", "p1"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7641965562869473`*^9, 3.7641965609403563`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{
+     {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+      DiskBox[{2, 0}, NCache[1 + 2^Rational[1, 2], 2.414213562373095]]}, {}}, {
+     {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+      DiskBox[{3, 0}]}, {}}, {
+     {GrayLevel[0.1], Opacity[0.1], EdgeForm[Thickness[Tiny]], 
+      DiskBox[{8, 0}, NCache[
+       2^Rational[1, 2], 1.4142135623730951`]]}, {}}, {{}, {{}, 
+      {GrayLevel[0], PointSize[Medium], AbsoluteThickness[1.6], 
+       PointBox[{{8.325835251821093, 0.}, {3.5110839313656754`, 0.}, {
+        1.1630808168132305`, 0.}}]}, {}}, {}}}, {{}, {{}, 
+     {RGBColor[1, 0.5, 0], PointSize[0.012833333333333334`], 
+      AbsoluteThickness[1.6], 
+      PointBox[{{4.414213562373095, 0.}, {9.414213562373096, 0.}}]}, {}}, {}}},
+  Axes->True]], "Output",
+ CellChangeTimes->{{3.76419656193686*^9, 3.764196591566863*^9}, 
+   3.764198280707321*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Eigenvalues", "[", "m3", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7641982421227694`*^9, 3.76419825031012*^9}, {
+  3.7641982906770372`*^9, 3.764198293818869*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "8.325835251821093`", ",", "3.5110839313656754`", ",", 
+   "1.1630808168132305`"}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.7641982510797043`*^9, {3.764198284316492*^9, 3.764198294388335*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[TextData[{
+ "Centers at {2,3,8}, radii of {1+",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ",1,",
+ Cell[BoxData[
+  FormBox[
+   SqrtBox["2"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "}"
+}], "Text",
+ CellChangeTimes->{{3.764198737332697*^9, 3.764198799794882*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[TextData[{
+ "7.  Similarity. In problem 2, find ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    SuperscriptBox["T", 
+     RowBox[{"-", "T"}]],
+    FontWeight->"Bold"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ StyleBox["AT",
+  FontWeight->"Bold"],
+ " such that the radius of the Gerschgorin circle with center 5 is reduced by \
+a factor 1/100."
+}], "Text",
+ CellChangeTimes->{{3.7641873892926483`*^9, 3.764187437351446*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[TextData[{
+ "This problem follows example 2, p. 881 closely. The radius is currently 2\
+\[Times]1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["0", 
+    RowBox[{"-", "2"}]], TraditionalForm]]],
+ " . The problem has targeted the first row for reduction by 1/100, meaning \
+that final desired radius is 0.02*0.01=0.0002."
+}], "Text",
+ CellChangeTimes->{{3.764199634897038*^9, 3.764199680166644*^9}, {
+  3.76424744230158*^9, 3.7642475655009727`*^9}, {3.764248145034478*^9, 
+  3.7642481712322083`*^9}, {3.7642482190061617`*^9, 3.764248233909697*^9}, {
+  3.7642498091355467`*^9, 3.7642498121731663`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"biga", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"5", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]], 
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]]},
+     {
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]], "8", 
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]]},
+     {
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]], 
+      SuperscriptBox["10", 
+       RowBox[{"-", "2"}]], "9"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.764199475345621*^9, 3.764199533627014*^9}, {
+  3.764248285692816*^9, 3.764248288195438*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     FractionBox["1", "100"], ",", 
+     FractionBox["1", "100"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "100"], ",", "8", ",", 
+     FractionBox["1", "100"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "100"], ",", 
+     FractionBox["1", "100"], ",", "9"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764199538180087*^9, 3.7641996103963423`*^9, 
+  3.764248289894218*^9}]
+}, Open  ]],
+
+Cell["\<\
+For this problem I don\[CloseCurlyQuote]t need the eigenvalues, but I called \
+for them, and they don\[CloseCurlyQuote]t take up a lot of space.\
+\>", "Text",
+ CellChangeTimes->{{3.764249038215671*^9, 3.76424906235098*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Eigenvalues", "[", "biga", "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764248300831541*^9, 3.7642483031557293`*^9}, {
+  3.764248434181583*^9, 3.764248452507546*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+  "9.000125489726646`", ",", "7.999932676420566`", ",", 
+   "4.999941833852788`"}], "}"}]], "Output",
+ CellChangeTimes->{{3.764248444108375*^9, 3.764248453133781*^9}}]
+}, Open  ]],
+
+Cell["\<\
+Just to get a feel for the double dot setup, I\[CloseCurlyQuote]ll try an \
+identity matrix multiplication.\
+\>", "Text",
+ CellChangeTimes->{{3.7642490748306093`*^9, 3.764249116660614*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bigt", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"1", "0", "0"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.764248469664131*^9, 3.764248529207955*^9}, {
+  3.764248733255637*^9, 3.764248744661954*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764248530753083*^9, 3.764248745948276*^9}]
+}, Open  ]],
+
+Cell["\<\
+The double dot multiplication leaves the original matrix unchanged, which is \
+reassuring.\
+\>", "Text",
+ CellChangeTimes->{{3.764249132012944*^9, 3.764249166722321*^9}, {
+  3.7642496010958*^9, 3.76424960478233*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Inverse", "[", "bigt", "]"}], ".", "biga", ".", "bigt"}]], "Input",\
+
+ CellChangeTimes->{{3.7642485371955*^9, 3.764248575389802*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     FractionBox["1", "100"], ",", 
+     FractionBox["1", "100"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "100"], ",", "8", ",", 
+     FractionBox["1", "100"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "100"], ",", 
+     FractionBox["1", "100"], ",", "9"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.764248557006976*^9, 3.7642485764422073`*^9}, 
+   3.764248749106872*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "In example 2 the diagonal member of the ",
+ StyleBox["T",
+  FontWeight->"Bold"],
+ " matrix associated with the targeted radius in ",
+ StyleBox["A",
+  FontWeight->"Bold"],
+ " was increased by 5 decimals, which reduced the targeted radius by 5 \
+decimals. I want to reduce by 2 decimals, so I will adjust the diagonal like \
+so, since the 5-centered circle I want to affect is on the top row."
+}], "Text",
+ CellChangeTimes->{{3.764249372017909*^9, 3.764249522658193*^9}, 
+   3.764249861498448*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bigt2", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"100", "0", "0"},
+     {"0", "1", "0"},
+     {"0", "0", "1"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.764248783653414*^9, 3.764248793260182*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"100", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.764248788711075*^9, 3.764248794563541*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The top radius is reduced.", "Text",
+ CellChangeTimes->{{3.7642497308257017`*^9, 3.7642497352323723`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Inverse", "[", "bigt2", "]"}], ".", "biga", ".", 
+  "bigt2"}]], "Input",
+ CellChangeTimes->{{3.764248812700205*^9, 3.7642488153079987`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     FractionBox["1", "10000"], ",", 
+     FractionBox["1", "10000"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "8", ",", 
+     FractionBox["1", "100"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     FractionBox["1", "100"], ",", "9"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764248816542121*^9}]
+}, Open  ]],
+
+Cell["And looked at decimalwise.", "Text",
+ CellChangeTimes->{{3.764249746167695*^9, 3.764249757207314*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{
+   FractionBox["1", "10000"], "+", 
+   FractionBox["1", "10000"]}], "]"}]], "Input",
+ CellChangeTimes->{{3.76424892623582*^9, 3.764248941108642*^9}}],
+
+Cell[BoxData["0.0002`"], "Output",
+ CellChangeTimes->{3.7642489419875937`*^9}]
+}, Open  ]],
+
+Cell["The matrix bigt2 does what is asked.", "Text",
+ CellChangeTimes->{{3.7642489570759563`*^9, 3.7642489824586887`*^9}}],
+
+Cell[TextData[{
+ "9.  If a symmetric n\[Times]n matrix A = ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"[", 
+    SubscriptBox["a", "jk"], "]"}], TraditionalForm]]],
+ " has been diagonalized except for small off-diagonal entries of size ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", 
+    RowBox[{"-", "5"}]], TraditionalForm]]],
+ " , what can you say about the eigenvalues?"
+}], "Text",
+ CellChangeTimes->{{3.7641874885025454`*^9, 3.7641875767787313`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "This problem is a revisitation of example 1 on p. 880. If the matrix ",
+ StyleBox["A",
+  FontWeight->"Bold"],
+ " were diagonal, the entries on the diagonal would be the eigenvalues. Since \
+it is not diagonal, the Gorschgorin circles are error bounds to the locations \
+of the eigenvalues, which lie on the x-axis if I am in \
+\[DoubleStruckCapitalR]. If the off-diagonal values are of order 1",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["0", 
+    RowBox[{"-", "5"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ " it means that the Gorshgorin radii are of order 2 \[Times] ",
+ Cell[BoxData[
+  FormBox[
+   SuperscriptBox["10", 
+    RowBox[{"-", "5"}]], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ", and the error bounds around the eigenvalues can be duly calculated. \
+However, this is so even if the matrix is not symmetrical. I think I am \
+missing something here."
+}], "Text",
+ CellChangeTimes->{{3.764251105064453*^9, 3.764251135526155*^9}, {
+   3.764251179934143*^9, 3.764251293352599*^9}, {3.7642514571642227`*^9, 
+   3.764251483371686*^9}, 3.7642515318719807`*^9, {3.7642516015494537`*^9, 
+   3.764251767599902*^9}}],
+
+Cell["\<\
+11.  Spectral radius \[Rho](A).
+Using theorem 1, show that \[Rho](A) cannot be greater than the row sum norm \
+of A.\
+\>", "Text",
+ CellChangeTimes->{{3.7641875834409313`*^9, 3.764187643648306*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[TextData[{
+ "Suppose I have a 3 \[Times] 3 matrix ",
+ StyleBox["A",
+  FontWeight->"Bold"],
+ " and that {a, b, c} is a row of ",
+ StyleBox["A",
+  FontWeight->"Bold"],
+ ", the row which contains the center of the Gorschgorin disk that contains \
+the largest eigenvalue of ",
+ StyleBox["A",
+  FontWeight->"Bold"],
+ ". So that"
+}], "Text",
+ CellChangeTimes->{{3.764252401096726*^9, 3.764252505092819*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aye", "=", 
+  RowBox[{"{", 
+   RowBox[{"a", ",", "b", ",", "c"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.764251940585582*^9, 3.76425195325688*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"a", ",", "b", ",", "c"}], "}"}]], "Output",
+ CellChangeTimes->{3.764251955245019*^9}]
+}, Open  ]],
+
+Cell["and", "Text",
+ CellChangeTimes->{{3.76425250944882*^9, 3.764252513660318*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"bn", "=", 
+  RowBox[{"Norm", "[", 
+   RowBox[{"aye", ",", "1"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.764251957963159*^9, 3.764251962616503*^9}, {
+  3.764252524940632*^9, 3.764252526220126*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "a", "]"}], "+", 
+  RowBox[{"Abs", "[", "b", "]"}], "+", 
+  RowBox[{"Abs", "[", "c", "]"}]}]], "Output",
+ CellChangeTimes->{3.7642519635061007`*^9, 3.764252526881608*^9}]
+}, Open  ]],
+
+Cell["\<\
+If the element of aye which is the disk center happens to be at the origin, \
+and the eigenvalue in that disk, (which is the max eigenvalue), happens to \
+lie on the circumference of the disk, then the spectral radius is equal to \
+bn; otherwise, the spectral radius is less than bn, because then the \
+eigenvalue will be less than the disk radius. Also the spectral radius is \
+less than bn if the disk center is not at the origin, because then bn will be \
+even larger. (This loose argument, which could be generalized to n \[Times] n \
+matrices, does not depend on theorem 1 as far as I know.)\
+\>", "Text",
+ CellChangeTimes->{{3.764252565222804*^9, 3.7642525919775743`*^9}, {
+  3.764252725268611*^9, 3.764252904638328*^9}, {3.764252970627739*^9, 
+  3.764252971163864*^9}, {3.764253004586458*^9, 3.764253025042039*^9}, {
+  3.7642530784985456`*^9, 3.7642531065749607`*^9}, {3.76425324307663*^9, 
+  3.764253272537094*^9}, {3.764253371166398*^9, 3.76425337296552*^9}, {
+  3.7642534160619164`*^9, 3.764253417115279*^9}}],
+
+Cell["\<\
+12 - 16 Spectral radius
+Use (4) to obtain an upper bound for the spectral radius:\
+\>", "Text",
+ CellChangeTimes->{{3.764187739029854*^9, 3.764187766339941*^9}}],
+
+Cell["\<\
+13. In problem 1.
+15. In problem 2.\
+\>", "Text",
+ CellChangeTimes->{{3.764187769197489*^9, 3.76418779227509*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["13. Numbered line (4) on p. 882 contains Schur\[CloseCurlyQuote]s \
+inequality.", "Text",
+ CellChangeTimes->{{3.764253668235527*^9, 3.764253669234254*^9}, {
+  3.764254039413906*^9, 3.764254148200612*^9}, {3.764262075478889*^9, 
+  3.76426209143685*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m1", "=", GridBox[{
+    {"5", "2", "4"},
+    {
+     RowBox[{"-", "2"}], "0", "2"},
+    {"2", "4", "7"}
+   }]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", "2", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "4", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7642536749727087`*^9, 3.764261086246705*^9, 
+  3.76426215709727*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"flb", "=", 
+  RowBox[{"Flatten", "[", "m1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.7642552987576*^9, 3.7642553027589827`*^9}, {
+  3.764260915889503*^9, 3.764260918600132*^9}, {3.764261092963531*^9, 
+  3.764261095233508*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"5", ",", "2", ",", "4", ",", 
+   RowBox[{"-", "2"}], ",", "0", ",", "2", ",", "2", ",", "4", ",", "7"}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.7642553033642893`*^9, 3.764260919795747*^9, 
+  3.764260958221423*^9, 3.7642610963122473`*^9, 3.764262159715076*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"Abs", "[", 
+      RowBox[{"flb", "[", 
+       RowBox[{"[", "n", "]"}], "]"}], "]"}], "2"], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "9"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.764260905871725*^9, 3.764260907909823*^9}, {
+  3.7642609651517344`*^9, 3.7642610509473763`*^9}, {3.7642611975515347`*^9, 
+  3.7642611981738873`*^9}}],
+
+Cell[BoxData["122.`"], "Output",
+ CellChangeTimes->{{3.764260984361291*^9, 3.764261051428109*^9}, 
+   3.764261103880999*^9, 3.764261199457814*^9, 3.764262162365859*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.764262135593508*^9, 3.764262141043232*^9}}],
+
+Cell[BoxData["11.045361017187261`"], "Output",
+ CellChangeTimes->{{3.7642621421243067`*^9, 3.764262165342942*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The logical check to this is", "Text",
+ CellChangeTimes->{{3.7642621791846027`*^9, 3.7642621906411133`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m1", "]"}]], "Input",
+ CellChangeTimes->{{3.764262196726225*^9, 3.764262200274293*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"9", ",", "4", ",", 
+   RowBox[{"-", "1"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7642622011311817`*^9}]
+}, Open  ]],
+
+Cell["15. Schur\[CloseCurlyQuote]s again.", "Text",
+ CellChangeTimes->{{3.764261252131419*^9, 3.764261254915449*^9}, {
+  3.7642623955791817`*^9, 3.764262398057498*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"m2", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "0.4", 
+      RowBox[{"-", "0.1"}]},
+     {
+      RowBox[{"-", "0.4"}], "0", "0.3"},
+     {"0.1", 
+      RowBox[{"-", "0.3"}], "0"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.764261594769511*^9, 3.7642616481333227`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0.4`", ",", 
+     RowBox[{"-", "0.1`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.4`"}], ",", "0", ",", "0.3`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", 
+     RowBox[{"-", "0.3`"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.764261288096933*^9, 3.764261652479986*^9, 
+  3.7642622258691053`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"flab", "=", 
+  RowBox[{"Flatten", "[", "m2", "]"}]}]], "Input",
+ CellChangeTimes->{{3.764261297826439*^9, 3.7642613052338448`*^9}, {
+  3.764261657013204*^9, 3.7642616588048697`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"0", ",", "0.4`", ",", 
+   RowBox[{"-", "0.1`"}], ",", 
+   RowBox[{"-", "0.4`"}], ",", "0", ",", "0.3`", ",", "0.1`", ",", 
+   RowBox[{"-", "0.3`"}], ",", "0"}], "}"}]], "Output",
+ CellChangeTimes->{3.764261305770794*^9, 3.764261660716292*^9, 
+  3.764262228487034*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"N", "[", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    SuperscriptBox[
+     RowBox[{"Abs", "[", 
+      RowBox[{"flab", "[", 
+       RowBox[{"[", "n", "]"}], "]"}], "]"}], "2"], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "1", ",", "9"}], "}"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{3.764261320922779*^9}],
+
+Cell[BoxData["0.52`"], "Output",
+ CellChangeTimes->{3.764261322488976*^9, 3.7642616636755877`*^9, 
+  3.764262231310872*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Sqrt", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.764262234720693*^9, 3.76426223857705*^9}}],
+
+Cell[BoxData["0.7211102550927979`"], "Output",
+ CellChangeTimes->{3.764262239481455*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["and", "Text",
+ CellChangeTimes->{{3.764262251013661*^9, 3.764262254502886*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Eigenvalues", "[", "m2", "]"}]], "Input",
+ CellChangeTimes->{{3.7642622577805862`*^9, 3.764262286318019*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"0.`", "\[VeryThinSpace]", "+", 
+    RowBox[{"0.5099019513592788`", " ", "\[ImaginaryI]"}]}], ",", 
+   RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+    RowBox[{"0.5099019513592788`", " ", "\[ImaginaryI]"}]}], ",", 
+   RowBox[{
+    RowBox[{"-", "5.378073070438572`*^-18"}], "+", 
+    RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.76426226535671*^9, 3.7642622752116117`*^9}, 
+   3.7642623267355127`*^9}]
+}, Open  ]],
+
+Cell["\<\
+which although effective, is not as clear-cut as I would like.\
+\>", "Text",
+ CellChangeTimes->{{3.764262332061088*^9, 3.764262362715022*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{11, Automatic}, {Automatic, 1}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 224, 5, 51, "Text"],
+Cell[627, 20, 73, 1, 45, "Input"],
+Cell[703, 23, 234, 5, 86, "Text"],
+Cell[940, 30, 785, 14, 189, "Text"],
+Cell[1728, 46, 3838, 103, 336, "Input"],
+Cell[5569, 151, 379, 10, 130, "Text"],
+Cell[CellGroupData[{
+Cell[5973, 165, 264, 8, 102, "Input"],
+Cell[6240, 175, 394, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6671, 191, 186, 3, 45, "Input"],
+Cell[6860, 196, 1068, 19, 409, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7965, 220, 131, 2, 45, "Input"],
+Cell[8099, 224, 146, 4, 45, "Output"]
+}, Open  ]],
+Cell[8260, 231, 499, 9, 144, "Text"],
+Cell[8762, 242, 387, 12, 130, "Text"],
+Cell[CellGroupData[{
+Cell[9174, 258, 265, 9, 102, "Input"],
+Cell[9442, 269, 383, 12, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9862, 286, 135, 2, 45, "Input"],
+Cell[10000, 290, 616, 13, 561, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10653, 308, 131, 2, 45, "Input"],
+Cell[10787, 312, 432, 10, 54, "Output"]
+}, Open  ]],
+Cell[11234, 325, 198, 4, 75, "Text"],
+Cell[11435, 331, 593, 10, 144, "Text"],
+Cell[12031, 343, 431, 12, 130, "Text"],
+Cell[CellGroupData[{
+Cell[12487, 359, 311, 9, 102, "Input"],
+Cell[12801, 370, 448, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13286, 388, 136, 2, 45, "Input"],
+Cell[13425, 392, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13532, 398, 157, 3, 45, "Input"],
+Cell[13692, 403, 81, 2, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13810, 410, 159, 3, 45, "Input"],
+Cell[13972, 415, 83, 2, 54, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14092, 422, 354, 12, 63, "Input"],
+Cell[14449, 436, 323, 11, 63, "Output"]
+}, Open  ]],
+Cell[14787, 450, 299, 7, 45, "Input"],
+Cell[15089, 459, 227, 5, 45, "Input"],
+Cell[CellGroupData[{
+Cell[15341, 468, 152, 3, 45, "Input"],
+Cell[15496, 473, 913, 17, 299, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[16446, 495, 211, 4, 45, "Input"],
+Cell[16660, 501, 274, 7, 69, "Output"]
+}, Open  ]],
+Cell[16949, 511, 373, 14, 77, "Text"],
+Cell[17325, 527, 475, 15, 111, "Text"],
+Cell[17803, 544, 73, 1, 45, "Input"],
+Cell[17879, 547, 605, 13, 87, "Text"],
+Cell[CellGroupData[{
+Cell[18509, 564, 608, 20, 114, "Input"],
+Cell[19120, 586, 507, 16, 76, "Output"]
+}, Open  ]],
+Cell[19642, 605, 233, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[19900, 613, 212, 4, 45, "Input"],
+Cell[20115, 619, 207, 5, 45, "Output"]
+}, Open  ]],
+Cell[20337, 627, 199, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[20561, 635, 296, 8, 102, "Input"],
+Cell[20860, 645, 324, 9, 45, "Output"]
+}, Open  ]],
+Cell[21199, 657, 226, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[21450, 666, 168, 4, 45, "Input"],
+Cell[21621, 672, 510, 16, 76, "Output"]
+}, Open  ]],
+Cell[22146, 691, 513, 12, 120, "Text"],
+Cell[CellGroupData[{
+Cell[22684, 707, 250, 7, 102, "Input"],
+Cell[22937, 716, 366, 10, 69, "Output"]
+}, Open  ]],
+Cell[23318, 729, 112, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[23455, 734, 175, 4, 45, "Input"],
+Cell[23633, 740, 410, 13, 76, "Output"]
+}, Open  ]],
+Cell[24058, 756, 108, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[24191, 761, 194, 5, 76, "Input"],
+Cell[24388, 768, 78, 1, 45, "Output"]
+}, Open  ]],
+Cell[24481, 772, 122, 1, 51, "Text"],
+Cell[24606, 775, 494, 14, 115, "Text"],
+Cell[25103, 791, 1164, 26, 191, "Text"],
+Cell[26270, 819, 244, 6, 110, "Text"],
+Cell[26517, 827, 406, 13, 86, "Text"],
+Cell[CellGroupData[{
+Cell[26948, 844, 173, 4, 45, "Input"],
+Cell[27124, 850, 125, 3, 45, "Output"]
+}, Open  ]],
+Cell[27264, 856, 84, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[27373, 861, 222, 5, 45, "Input"],
+Cell[27598, 868, 216, 5, 45, "Output"]
+}, Open  ]],
+Cell[27829, 876, 1029, 15, 189, "Text"],
+Cell[28861, 893, 171, 4, 86, "Text"],
+Cell[29035, 899, 160, 5, 110, "Text"],
+Cell[29198, 906, 258, 4, 51, "Text"],
+Cell[29459, 912, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[29557, 917, 145, 6, 102, "Input"],
+Cell[29705, 925, 371, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30113, 941, 250, 5, 45, "Input"],
+Cell[30366, 948, 302, 6, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30705, 959, 462, 12, 54, "Input"],
+Cell[31170, 973, 168, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31375, 980, 123, 2, 45, "Input"],
+Cell[31501, 984, 152, 2, 69, "Output"]
+}, Open  ]],
+Cell[31668, 989, 114, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[31807, 994, 131, 2, 45, "Input"],
+Cell[31941, 998, 146, 4, 45, "Output"]
+}, Open  ]],
+Cell[32102, 1005, 168, 2, 51, "Text"],
+Cell[32273, 1009, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[32371, 1014, 325, 10, 102, "Input"],
+Cell[32699, 1026, 432, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33168, 1044, 206, 4, 45, "Input"],
+Cell[33377, 1050, 307, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[33721, 1062, 333, 10, 54, "Input"],
+Cell[34057, 1074, 123, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34217, 1081, 122, 2, 45, "Input"],
+Cell[34342, 1085, 126, 2, 69, "Output"]
+}, Open  ]],
+Cell[34483, 1090, 85, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[34593, 1095, 133, 2, 45, "Input"],
+Cell[34729, 1099, 485, 11, 54, "Output"]
+}, Open  ]],
+Cell[35229, 1113, 152, 3, 51, "Text"]
+}
+]
+*)
+
