@@ -1,0 +1,1467 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     39985,       1466]
+NotebookOptionsPosition[     33369,       1234]
+NotebookOutlinePosition[     33757,       1251]
+CellTagsIndexPosition[     33714,       1248]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.768832168089747*^9}],
+
+Cell["\<\
+1 - 16 Eigenvalues, eigenvectors
+Find the eigenvalues. Find the corresponding eigenvectors. Use the given \
+\[Lambda] or factor in problems 11 and 15.\
+\>", "Text",
+ CellChangeTimes->{{3.768828918239122*^9, 3.7688289358372993`*^9}, {
+  3.7688312409698887`*^9, 3.768831269983437*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"3.0", "0"},
+     {"0", 
+      RowBox[{"-", "0.6"}]}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.768828941869081*^9, 3.768828968950194*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6756795819860287`*^9, 3.675679583463328*^9}, 
+   3.7688288469102783`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"3.0", "0"},
+     {"0", 
+      RowBox[{"-", "0.6"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675679588764175*^9, 3.6756796182367773`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "0.6`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675679619471311*^9, 3.768829193624013*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       SubscriptBox["\[Lambda]", "1"], ",", 
+       SubscriptBox["\[Lambda]", "2"]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"v1", ",", "v2"}], "}"}]}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.675679663404554*^9, 3.675679677634653*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3.`", ",", 
+     RowBox[{"-", "0.6`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1.`"}], ",", "0.`"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0.`", ",", 
+       RowBox[{"-", "1.`"}]}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675679681148798*^9, 3.768829196926749*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Above: The eigenvalues match the text. The eigenvectors do not. If my \
+checking process is accurate, Mathematica's eigenvectors fare better than the \
+text\[CloseCurlyQuote]s.\
+\>", "Text",
+ CellChangeTimes->{{3.675679719434142*^9, 3.675679731032503*^9}, {
+  3.675679891261878*^9, 3.675679906506425*^9}, {3.7688293235289507`*^9, 
+  3.768829355813657*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aA", ".", "v1"}], "\[Equal]", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "1"], " ", "v1"}]}]], "Input",
+ CellChangeTimes->{{3.675679796682004*^9, 3.6756798265252743`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675679828882564*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aA", ".", "v2"}], "\[Equal]", 
+  RowBox[{
+   SubscriptBox["\[Lambda]", "2"], " ", "v2"}]}]], "Input",
+ CellChangeTimes->{{3.675679840894397*^9, 3.675679851164431*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675679852301387*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aA", ".", "v1"}], "\[Equal]", 
+  RowBox[{"3", " ", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.768829156450491*^9, 3.768829167224473*^9}, {
+  3.76882920294381*^9, 3.768829204846183*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.768829170006809*^9, 3.768829205946192*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"aA", ".", "v2"}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"-", "0.6"}], " ", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}]}]}]], "Input",
+ CellChangeTimes->{{3.768829232350235*^9, 3.7688292588194227`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.768829242414754*^9, 3.7688292605399933`*^9}}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"3.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"5", 
+      RowBox[{"-", "2"}]},
+     {"9", 
+      RowBox[{"-", "6"}]}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.7688294260695972`*^9, 3.7688294272255583`*^9}, {
+  3.768829516775979*^9, 3.768829524119774*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675687626042759*^9, 3.675687628071837*^9}, 
+   3.768828851476925*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"5", 
+      RowBox[{"-", "2"}]},
+     {"9", 
+      RowBox[{"-", "6"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.67568763141057*^9, 3.67568765377361*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"5", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", 
+     RowBox[{"-", "6"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.67568765482585*^9, 3.675687781843871*^9, 
+  3.675687922361519*^9, 3.675688009493122*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6756876647788353`*^9, 3.675687690332118*^9}, {
+   3.6756878121455317`*^9, 3.67568781615971*^9}, {3.675687846694869*^9, 
+   3.67568785384625*^9}, 3.675687886152732*^9, {3.675687967226479*^9, 
+   3.675687968787681*^9}, {3.675688035785681*^9, 3.6756880590548077`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", "9"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675688060562142*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["Above: Both eigenvalues and eigenvectors match the text.", "Text",
+ CellChangeTimes->{{3.6756880876856823`*^9, 3.675688101908931*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.67568811270788*^9, 3.675688175203866*^9}, 
+   3.675688216411017*^9}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.6756881584209538`*^9, 3.675688176547637*^9}, 
+   3.675688217807376*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675688233993815*^9, 3.6756882439600973`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675688245284231*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"5.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"0", "3"},
+     {
+      RowBox[{"-", "3"}], "0"}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.7688295795886383`*^9, 3.7688296000186367`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675688318170497*^9, 3.675688320046978*^9}, 
+   3.7688288584685507`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"0", "3"},
+     {
+      RowBox[{"-", "3"}], "0"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675688339631814*^9, 3.6756883619719048`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756883624799223`*^9, 3.768829842710472*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.6756883700161457`*^9, 3.675688380357923*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"3", " ", "\[ImaginaryI]"}], ",", 
+     RowBox[{
+      RowBox[{"-", "3"}], " ", "\[ImaginaryI]"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"\[ImaginaryI]", ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",\
+
+ CellChangeTimes->{3.675688383930529*^9, 3.768829845294795*^9},
+ Background->RGBColor[0.87, 0.94, 1]]
+}, Open  ]],
+
+Cell["\<\
+Above: The eigenvalues match the text, but the eigenvector entries are \
+flipped. Mathematica's eigenvectors show better than the text\
+\[CloseCurlyQuote]s when tested.\
+\>", "Text",
+ CellChangeTimes->{{3.6756884897743807`*^9, 3.6756885246857643`*^9}, {
+  3.675688582501436*^9, 3.675688587507482*^9}, {3.768829918422844*^9, 
+  3.7688299867379837`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{
+  3.6756885530111933`*^9, {3.76882983340882*^9, 3.768829849396636*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675688560374071*^9, 3.675688566476458*^9}, {
+  3.675688740328185*^9, 3.675688740590217*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675688568062044*^9, 3.768829852156973*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e4", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", 
+       RowBox[{"-", "\[ImaginaryI]"}]}], "}"}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.768829716371057*^9, 3.7688297165691633`*^9}, {
+  3.7688298086042433`*^9, 3.7688298206435843`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.768829822941925*^9, 3.768829855046067*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e5", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "\[ImaginaryI]"}], "}"}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.768829871522175*^9, 3.7688298926873493`*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.768829894653075*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"7.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"0", "1"},
+     {"0", "0"}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.76883009099308*^9, 3.768830101550408*^9}, 
+   3.768830441620727*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675688622167882*^9, 3.675688623883567*^9}, 
+   3.768828863196353*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"0", "1"},
+     {"0", "0"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675688630000381*^9, 3.675688649817342*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675688650498801*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675688667437953*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Above: the eigenvalues match the text. The text does not mention the null \
+eigenvector, leaving me to suppose it means to have the first one used twice. \
+ However, the null vector is seen to succeed in testing below.\
+\>", "Text",
+ CellChangeTimes->{{3.6756887087203197`*^9, 3.675688723118453*^9}, {
+  3.768830227997779*^9, 3.76883033147093*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675688737222887*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675688746751301*^9, 3.675688755229244*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675688756256289*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"9.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"0.8", 
+      RowBox[{"-", "0.6"}]},
+     {"0.6", "0.8"}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.7688303789992523`*^9, 3.768830393255082*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.6756887647063217`*^9, 3.675688766918441*^9}, 
+   3.768828869027915*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"0.8", 
+      RowBox[{"-", "0.6"}]},
+     {"0.6", "0.8"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675688772194489*^9, 3.67568880227596*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.8`", ",", 
+     RowBox[{"-", "0.6`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.6`", ",", "0.8`"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756888030379677`*^9, 3.7688305461521463`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.675688810120384*^9, 3.675688823027295*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0.8`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.6000000000000001`", " ", "\[ImaginaryI]"}]}], ",", 
+     RowBox[{"0.8`", "\[VeryThinSpace]", "-", 
+      RowBox[{"0.6000000000000001`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+        RowBox[{"0.7071067811865475`", " ", "\[ImaginaryI]"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", "0.7071067811865476`"}], "+", 
+        RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"0.`", "\[VeryThinSpace]", "+", 
+        RowBox[{"0.7071067811865475`", " ", "\[ImaginaryI]"}]}], ",", 
+       RowBox[{
+        RowBox[{"-", "0.7071067811865476`"}], "+", 
+        RowBox[{"0.`", " ", "\[ImaginaryI]"}]}]}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.675688826213997*^9, 3.768830549136862*^9},
+ Background->RGBColor[0.87, 0.94, 1]]
+}, Open  ]],
+
+Cell["\<\
+Above: The eigenvalues match the text, but the eigenvectors do not.\
+\>", "Text",
+ CellChangeTimes->{{3.675689328402273*^9, 3.6756893734476433`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675689393680449*^9, 3.675689409102594*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{{3.675689399787912*^9, 3.6756894121769857`*^9}, 
+   3.768830552406746*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675689416462308*^9, 3.675689422158071*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675689423309634*^9, 3.768830554852627*^9, 
+  3.768830754606495*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "\[ImaginaryI]"}], "}"}], "}"}], 
+  "\[ConjugateTranspose]"}]], "Input",
+ CellChangeTimes->{{3.768830603189784*^9, 3.7688306112251883`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "\[ImaginaryI]"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.768830612579812*^9}]
+}, Open  ]],
+
+Cell["\<\
+The text\[CloseCurlyQuote]s eigenvector will not play with double curlies, so \
+I took out one set.\
+\>", "Text",
+ CellChangeTimes->{{3.768830874228797*^9, 3.7688308979783897`*^9}, {
+  3.768831041572351*^9, 3.7688310429389467`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e4", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"{", 
+     RowBox[{"1", ",", 
+      RowBox[{"-", "\[ImaginaryI]"}]}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7688305107037783`*^9, 3.768830533996889*^9}, {
+   3.768830585571836*^9, 3.768830593722178*^9}, 3.768830633939218*^9, {
+   3.768830686070705*^9, 3.768830692125245*^9}, 3.768830749739887*^9}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{{3.768830537754369*^9, 3.768830558006371*^9}, 
+   3.768830596244986*^9, 3.768830637210741*^9, {3.7688306940902643`*^9, 
+   3.76883070490797*^9}, 3.7688307505277977`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "\[ImaginaryI]"}]}], "}"}], "}"}], 
+  "\[ConjugateTranspose]"}]], "Input",
+ CellChangeTimes->{3.768830794297234*^9}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", "\[ImaginaryI]", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.768830795770842*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e5", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "\[ImaginaryI]"}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.768830772794435*^9, 3.768830772992969*^9}, {
+  3.76883083024006*^9, 3.768830855486065*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.768830822351637*^9, 3.768830856489023*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: Mathematica's eigenvectors look better when tested than those of the \
+text.\
+\>", "Text",
+ CellChangeTimes->{{3.7688309196970997`*^9, 3.768830948271741*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"11.", "  ", 
+   RowBox[{"(", GridBox[{
+      {"6", "2", 
+       RowBox[{"-", "2"}]},
+      {"2", "5", "0"},
+      {
+       RowBox[{"-", "2"}], "0", "7"}
+     }], ")"}]}], ",", " ", 
+  RowBox[{"\[Lambda]", "=", "3"}]}]], "Text",
+ CellChangeTimes->{{3.76883097950753*^9, 3.768830998304461*^9}, {
+  3.768831068057577*^9, 3.768831072737307*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+For Mathematica computing three eigenvectors with eigenvalues is just as easy \
+as doing one, so I ignore the \[Lambda] provided.\
+\>", "Text",
+ CellChangeTimes->{{3.7688313005176563`*^9, 3.76883134263559*^9}, {
+  3.768832058160953*^9, 3.768832061542025*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.67568945912924*^9, 3.675689460869843*^9}, 
+   3.76882887571558*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"6", "2", 
+      RowBox[{"-", "2"}]},
+     {"2", "5", "0"},
+     {
+      RowBox[{"-", "2"}], "0", "7"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675689466146566*^9, 3.675689497987238*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"6", ",", "2", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "5", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.67568949904377*^9, 3.7688311541866283`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.67568950326301*^9, 3.675689514901601*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "6", ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "2"}], ",", 
+       RowBox[{"-", "1"}], ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "2", ",", "2"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "2"}], ",", "1"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675689516996868*^9, 3.768831157980938*^9},
+ Background->RGBColor[0.87, 0.94, 1]]
+}, Open  ]],
+
+Cell["\<\
+Above: The eigenvalues match the text, but one eigenvector does not.\
+\>", "Text",
+ CellChangeTimes->{{3.675689328402273*^9, 3.6756893734476433`*^9}, {
+  3.768831464022431*^9, 3.7688314738126163`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675689573527934*^9, 3.768831161205927*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e4", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675689580121736*^9, 3.675689588027923*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6756895897957687`*^9, 3.768831163989175*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e5", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "3", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "3", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "3", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.768831134959804*^9, 3.768831147517797*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.768831166921068*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "1", ",", 
+     RowBox[{"-", "2"}]}], "}"}], "}"}], "\[ConjugateTranspose]"}]], "Input",
+ CellChangeTimes->{{3.7688314833618526`*^9, 3.768831514946801*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", "2", "}"}], ",", 
+   RowBox[{"{", "1", "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"-", "2"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.768831516210264*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e9", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"{", 
+     RowBox[{"2", ",", "1", ",", 
+      RowBox[{"-", "2"}]}], "}"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.76883154222641*^9, 3.768831563936276*^9}}],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{3.768831565835887*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: Mathematica's eigenvectors check out, but the one disagreeable one in \
+the text answer does not check.\
+\>", "Text",
+ CellChangeTimes->{{3.768831588198763*^9, 3.768831625572796*^9}}],
+
+Cell[BoxData[
+ RowBox[{"13.", "  ", 
+  RowBox[{"(", GridBox[{
+     {"13", "5", "2"},
+     {"2", "7", 
+      RowBox[{"-", "8"}]},
+     {"5", "4", "7"}
+    }], ")"}]}]], "Text",
+ CellChangeTimes->{{3.768831708756008*^9, 3.768831724482711*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675689638945635*^9, 3.675689683429956*^9}, 
+   3.768828882322699*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {"13", "5", "2"},
+     {"2", "7", 
+      RowBox[{"-", "8"}]},
+     {"5", "4", "7"}
+    }], ")"}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"13", ",", "5", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "7", ",", 
+     RowBox[{"-", "8"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "4", ",", "7"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675689690485165*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "9", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"2", ",", 
+       RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675689709677464*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The eigenvalues and eigenvectors match the text.", "Text",
+ CellChangeTimes->{{3.6756897644989443`*^9, 3.675689773857275*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6756900545931892`*^9, 3.675690056295532*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675690059632977*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6756900671847143`*^9, 3.6756900730785627`*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675690074273202*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"15.", "  ", 
+   RowBox[{"(", GridBox[{
+      {
+       RowBox[{"-", "1"}], "0", "12", "0"},
+      {"0", 
+       RowBox[{"-", "1"}], "0", "12"},
+      {"0", "0", 
+       RowBox[{"-", "1"}], 
+       RowBox[{"-", "4"}]},
+      {"0", "0", 
+       RowBox[{"-", "4"}], 
+       RowBox[{"-", "1"}]}
+     }], ")"}]}], ",", " ", 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"\[Lambda]", "+", "1"}], ")"}], "2"]}]], "Text",
+ CellChangeTimes->{{3.76883176054526*^9, 3.7688317962598543`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675690080080839*^9, 3.675690081528009*^9}, 
+   3.7688288881388083`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"aA", "=", 
+  RowBox[{"(", GridBox[{
+     {
+      RowBox[{"-", "1"}], "0", "12", "0"},
+     {"0", 
+      RowBox[{"-", "1"}], "0", "12"},
+     {"0", "0", 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "4"}]},
+     {"0", "0", 
+      RowBox[{"-", "4"}], 
+      RowBox[{"-", "1"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6756900864904222`*^9, 3.6756901258209476`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "12", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "12"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675690127559331*^9, 3.768831812696116*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"vals", ",", "vecs"}], "}"}], "=", 
+   RowBox[{"Eigensystem", "[", "aA", "]"}]}]}]], "Input"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5"}], ",", "3", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "3"}], ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", "1"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", 
+       RowBox[{"-", "3"}], ",", "1", ",", 
+       RowBox[{"-", "1"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.6756901420642*^9, 3.7688318166787786`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Above: The eigenvalues and eigenvectors match the text answer.\
+\>", "Text",
+ CellChangeTimes->{{3.6756901922517443`*^9, 3.6756902074021177`*^9}, {
+  3.768832006010285*^9, 3.768832017896261*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "1", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "1", "]"}], "]"}]}]}]}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.675690218428898*^9, 3.768831823226925*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "2", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "2", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.675690223018982*^9, 3.675690228665474*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.6756902297957363`*^9, 3.768831826808868*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e4", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "3", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "3", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "3", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.7688318506107616`*^9, 3.768831860776553*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.768831862054286*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e5", "=", 
+  RowBox[{
+   RowBox[{"aA", ".", 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "4", "]"}], "]"}]}], "\[Equal]", 
+   RowBox[{
+    RowBox[{"vals", "[", 
+     RowBox[{"[", "4", "]"}], "]"}], 
+    RowBox[{"vecs", "[", 
+     RowBox[{"[", "4", "]"}], "]"}]}]}]}]], "Input",
+ CellChangeTimes->{{3.768831869233631*^9, 3.768831882111436*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.7688318832206373`*^9}]
+}, Open  ]]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[492, 17, 293, 6, 86, "Text"],
+Cell[788, 25, 247, 8, 100, "Text"],
+Cell[1038, 35, 169, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[1232, 42, 213, 7, 74, "Input"],
+Cell[1448, 51, 261, 8, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[1746, 64, 406, 12, 45, "Input"],
+Cell[2155, 78, 459, 15, 69, "Output"]
+}, Open  ]],
+Cell[2629, 96, 366, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[3020, 107, 204, 5, 45, "Input"],
+Cell[3227, 114, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3337, 120, 202, 5, 45, "Input"],
+Cell[3542, 127, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3652, 133, 267, 7, 45, "Input"],
+Cell[3922, 142, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4055, 148, 242, 7, 45, "Input"],
+Cell[4300, 157, 100, 1, 45, "Output"]
+}, Open  ]],
+Cell[4415, 161, 318, 10, 100, "Text"],
+Cell[4736, 173, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[4926, 180, 227, 8, 74, "Input"],
+Cell[5156, 190, 323, 10, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5516, 205, 456, 9, 45, "Input"],
+Cell[5975, 216, 378, 13, 69, "Output"]
+}, Open  ]],
+Cell[6368, 232, 140, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[6533, 237, 392, 12, 45, "Input"],
+Cell[6928, 251, 125, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7090, 258, 369, 11, 45, "Input"],
+Cell[7462, 271, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[7550, 275, 247, 8, 100, "Text"],
+Cell[7800, 285, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[7992, 292, 209, 7, 74, "Input"],
+Cell[8204, 301, 258, 8, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8499, 314, 236, 6, 45, "Input"],
+Cell[8738, 322, 526, 17, 69, "Output"]
+}, Open  ]],
+Cell[9279, 342, 362, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[9666, 353, 301, 10, 45, "Input"],
+Cell[9970, 365, 123, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10130, 372, 416, 12, 45, "Input"],
+Cell[10549, 386, 95, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10681, 392, 476, 14, 45, "Input"],
+Cell[11160, 408, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11293, 414, 400, 12, 45, "Input"],
+Cell[11696, 428, 74, 1, 45, "Output"]
+}, Open  ]],
+Cell[11785, 432, 246, 8, 100, "Text"],
+Cell[12034, 442, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[12224, 449, 185, 6, 74, "Input"],
+Cell[12412, 457, 213, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12662, 469, 168, 5, 45, "Input"],
+Cell[12833, 476, 357, 12, 69, "Output"]
+}, Open  ]],
+Cell[13205, 491, 358, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[13588, 501, 301, 10, 45, "Input"],
+Cell[13892, 513, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14002, 519, 367, 11, 45, "Input"],
+Cell[14372, 532, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[14460, 536, 253, 8, 100, "Text"],
+Cell[14716, 546, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[14908, 553, 214, 7, 74, "Input"],
+Cell[15125, 562, 272, 8, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15434, 575, 234, 6, 45, "Input"],
+Cell[15671, 583, 1038, 27, 99, "Output"]
+}, Open  ]],
+Cell[16724, 613, 159, 3, 51, "Text"],
+Cell[CellGroupData[{
+Cell[16908, 620, 367, 11, 45, "Input"],
+Cell[17278, 633, 125, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17440, 640, 367, 11, 45, "Input"],
+Cell[17810, 653, 120, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[17967, 660, 219, 6, 45, "Input"],
+Cell[18189, 668, 195, 6, 45, "Output"]
+}, Open  ]],
+Cell[18399, 677, 242, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[18666, 686, 539, 14, 45, "Input"],
+Cell[19208, 702, 221, 3, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19466, 710, 214, 7, 45, "Input"],
+Cell[19683, 719, 175, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[19895, 729, 419, 12, 45, "Input"],
+Cell[20317, 743, 96, 1, 45, "Output"]
+}, Open  ]],
+Cell[20428, 747, 175, 4, 51, "Text"],
+Cell[20606, 753, 412, 13, 130, "Text"],
+Cell[21021, 768, 269, 5, 86, "Text"],
+Cell[21293, 775, 163, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[21481, 782, 261, 9, 102, "Input"],
+Cell[21745, 793, 367, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22149, 809, 233, 6, 45, "Input"],
+Cell[22385, 817, 551, 17, 69, "Output"]
+}, Open  ]],
+Cell[22951, 837, 211, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[23187, 845, 301, 10, 45, "Input"],
+Cell[23491, 857, 95, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[23623, 863, 367, 11, 45, "Input"],
+Cell[23993, 876, 97, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24127, 882, 367, 11, 45, "Input"],
+Cell[24497, 895, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24607, 901, 235, 6, 45, "Input"],
+Cell[24845, 909, 217, 7, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25099, 921, 390, 12, 45, "Input"],
+Cell[25492, 935, 74, 1, 45, "Output"]
+}, Open  ]],
+Cell[25581, 939, 200, 4, 51, "Text"],
+Cell[25784, 945, 277, 9, 130, "Text"],
+Cell[26064, 956, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[26254, 963, 174, 7, 102, "Input"],
+Cell[26431, 972, 324, 10, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[26792, 987, 168, 5, 45, "Input"],
+Cell[26963, 994, 483, 15, 69, "Output"]
+}, Open  ]],
+Cell[27461, 1012, 132, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[27618, 1017, 369, 11, 45, "Input"],
+Cell[27990, 1030, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28100, 1036, 371, 11, 45, "Input"],
+Cell[28474, 1049, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[28562, 1053, 552, 19, 162, "Text"],
+Cell[29117, 1074, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[29309, 1081, 397, 14, 132, "Input"],
+Cell[29709, 1097, 561, 17, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[30307, 1119, 168, 5, 45, "Input"],
+Cell[30478, 1126, 763, 24, 69, "Output"]
+}, Open  ]],
+Cell[31256, 1153, 205, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[31486, 1161, 301, 10, 45, "Input"],
+Cell[31790, 1173, 95, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31922, 1179, 367, 11, 45, "Input"],
+Cell[32292, 1192, 97, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32426, 1198, 369, 11, 45, "Input"],
+Cell[32798, 1211, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[32908, 1217, 367, 11, 45, "Input"],
+Cell[33278, 1230, 75, 1, 45, "Output"]
+}, Open  ]]
+}
+]
+*)
+
