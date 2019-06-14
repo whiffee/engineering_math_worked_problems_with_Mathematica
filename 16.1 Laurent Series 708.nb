@@ -1,0 +1,4836 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[    168075,       4835]
+NotebookOptionsPosition[    153630,       4361]
+NotebookOutlinePosition[    154018,       4378]
+CellTagsIndexPosition[    153975,       4375]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.769275122252442*^9}],
+
+Cell["\<\
+Note: In this problem set, expressions in green cells match corresponding \
+expressions in the text answers.\
+\>", "Text",
+ Evaluatable->False,
+ CellChangeTimes->{{3.7692751233284273`*^9, 3.769275145251885*^9}}],
+
+Cell[TextData[{
+ "The following site: ",
+ StyleBox["https://courses.washington.edu/ph227814/228/nb/Laurent.nb.pdf",
+  FontSize->15,
+  FontSlant->"Italic"],
+ " has info on Laurent series which looks pretty good. None of it was used in \
+this section. Problems in this section do not deal per se with annular \
+domains. Still, I\[CloseCurlyQuote]m sure they are useful for what they are."
+}], "Text",
+ CellChangeTimes->{{3.7597108555889378`*^9, 3.759710855602249*^9}, {
+  3.759774416582255*^9, 3.759774418566481*^9}, {3.7598760193961906`*^9, 
+  3.75987613040694*^9}, {3.7598786800314617`*^9, 3.7598787095021677`*^9}, {
+  3.7599470394329147`*^9, 3.7599470434217777`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+1 - 8 Laurent series near a singularity at 0
+Expand the function in a Laurent series that converges for 0<|z|<R and \
+determine the precise region of convergence. \
+\>", "Text",
+ CellChangeTimes->{{3.759706119845487*^9, 3.75970617450663*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.", "  ", 
+  FractionBox[
+   RowBox[{"Cos", "[", "z", "]"}], 
+   SuperscriptBox["z", "4"]]}]], "Text",
+ CellChangeTimes->{{3.759706177882937*^9, 3.759706195289996*^9}, 
+   3.759706290914011*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ff", "[", "z", "]"}], "=", 
+  FractionBox[
+   RowBox[{"Cos", "[", "z", "]"}], 
+   SuperscriptBox["z", "4"]]}]], "Input",
+ CellChangeTimes->{{3.7597109589351683`*^9, 3.7597109730385513`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Cos", "[", "z", "]"}], 
+  SuperscriptBox["z", "4"]]], "Output",
+ CellChangeTimes->{3.759710975098569*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The series is created around 0, and according to the problem description, \
+should be convergent around a certain z value and extending to the \
+characteristic radius of the series. The Maclaurin series is created without \
+difficulty, but it is understandable why the problem description specifically \
+avoids assigning 0 to z. For this particular problem, purporting to deal with \
+Laurent series, there seem to be no specific directions relative to the \
+series creation by ",
+ StyleBox["Mathematica",
+  FontSlant->"Italic"],
+ ". I suspect this is not a standard presentation of a Laurent series problem."
+}], "Text",
+ CellChangeTimes->{{3.759715124522026*^9, 3.75971522120534*^9}, {
+  3.7597152930215797`*^9, 3.759715298818844*^9}, {3.759749361645862*^9, 
+  3.759749501000388*^9}, {3.759749538358343*^9, 3.759749567497151*^9}, {
+  3.759750194754053*^9, 3.7597502028338118`*^9}, {3.759750324469427*^9, 
+  3.75975035331336*^9}, {3.759750460675418*^9, 3.759750468451199*^9}, {
+  3.759750607101956*^9, 3.759750637713923*^9}, {3.759751709547593*^9, 
+  3.7597517253550262`*^9}, {3.759947083362891*^9, 3.7599471257999773`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"ff", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759711013204413*^9, 3.759711026258086*^9}, {
+  3.759711644744049*^9, 3.7597116451024027`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["1", 
+    SuperscriptBox["z", "4"]], "-", 
+   FractionBox["1", 
+    RowBox[{"2", " ", 
+     SuperscriptBox["z", "2"]}]], "+", 
+   FractionBox["1", "24"], "-", 
+   FractionBox[
+    SuperscriptBox["z", "2"], "720"], "+", 
+   FractionBox[
+    SuperscriptBox["z", "4"], "40320"], "-", 
+   FractionBox[
+    SuperscriptBox["z", "6"], "3628800"], "+", 
+   FractionBox[
+    SuperscriptBox["z", "8"], "479001600"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "z", "]"}], "9"],
+    SeriesData[$CellContext`z, 0, {}, -4, 9, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 0, {1, 0, 
+    Rational[-1, 2], 0, 
+    Rational[1, 24], 0, 
+    Rational[-1, 720], 0, 
+    Rational[1, 40320], 0, 
+    Rational[-1, 3628800], 0, 
+    Rational[1, 479001600]}, -4, 9, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.759711027121949*^9, 3.759711645724*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The green cell above matches the answer in the text. I can go on to identify \
+the radius of convergence, with a sequence of coefficients that looks very \
+weird at first,\
+\>", "Text",
+ CellChangeTimes->{{3.759749592011003*^9, 3.759749667286922*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", 
+     FractionBox["1", "24"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "720"]}], ",", 
+     FractionBox["1", "40320"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3628800"]}], ",", 
+     FractionBox["1", "479001600"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.759711689246675*^9, {3.7597117697382402`*^9, 3.7597118607517977`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"-", "1"}], ")"}], 
+    RowBox[{"1", "+", "n"}]], " ", 
+   SuperscriptBox["4", 
+    RowBox[{"1", "-", "n"}]]}], 
+  RowBox[{
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}], " ", 
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}]}]]], "Output",
+ CellChangeTimes->{3.759711865701981*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.759711876571599*^9, 3.7597118811923027`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"-", "1"}], ")"}], 
+   RowBox[{"1", "+", "n"}]], 
+  RowBox[{"Gamma", "[", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"2", " ", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.759711882804381*^9}]
+}, Open  ]],
+
+Cell["\<\
+The function for generating the sequence coefficients turns out to look \
+pretty vanilla. The unusual character stemmed from the series exponents \
+starting below zero and increasing through zero. Using Cauchy-Hadamard \
+criterion,\
+\>", "Text",
+ CellChangeTimes->{{3.7597496830278473`*^9, 3.759749791280266*^9}, {
+  3.759750243535286*^9, 3.7597502509509497`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], 
+       RowBox[{"1", "+", "n"}]], 
+      RowBox[{"Gamma", "[", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"2", " ", "n"}]}], "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"2", 
+          RowBox[{"(", " ", 
+           RowBox[{"n", "+", "1"}], ")"}]}]}], "]"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"2", "+", "n"}]]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597119169771433`*^9, 3.759711955996347*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759711957807323*^9}]
+}, Open  ]],
+
+Cell["\<\
+This is dissimilar to previous problems, for there is no n factor, hence no \
+power term as used previously. I still feel a need to associate the exponent \
+influence with a term number, so\
+\>", "Text",
+ CellChangeTimes->{{3.7597498449496193`*^9, 3.759749930920395*^9}, {
+   3.759750797483429*^9, 3.759750905034912*^9}, {3.7597509388009863`*^9, 
+   3.759750963192041*^9}, 3.759751348518149*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "2"}], ",", "0", ",", "2", ",", "4", ",", "6", ",", "8"}], 
+    "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.75971208798597*^9, 3.759712099392208*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "3"}], "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.759712101826195*^9}]
+}, Open  ]],
+
+Cell["\<\
+The above cell suggests that the effective exponent for the series is 2n. So \
+to nail down the radius, I am going to do the following (though I don\
+\[CloseCurlyQuote]t have evidence that it is correct in this situation)\
+\>", "Text",
+ CellChangeTimes->{{3.7597499400159283`*^9, 3.7597499786619473`*^9}, {
+  3.759751651719413*^9, 3.759751692988323*^9}, {3.7598762219873037`*^9, 
+  3.7598762502582703`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["\[Infinity]", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759749985691684*^9, 3.759749992053041*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.7597499943854847`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The radius in the above cell must be influenced by the avoidance of 0 imposed \
+by the problem description. Therefore I will express the radius of \
+convergence as 0<|z|<\[Infinity], in agreement with the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.759750033450652*^9, 3.7597500621053143`*^9}, {
+  3.759750110742351*^9, 3.759750151580323*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[TextData[{
+ "As explained in example 1 on p. 712, the \[OpenCurlyDoubleQuote]annulus\
+\[CloseCurlyDoubleQuote] of convergence for the Laurent series is the whole \
+complex plane without the origin, and the principal part of the series at 0 \
+is ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    RowBox[{
+     FractionBox["1", 
+      SuperscriptBox["z", "4"]], " ", "-", 
+     FractionBox["1", 
+      RowBox[{"2", " ", 
+       SuperscriptBox["z", "2"]}]]}],
+    FontSize->21], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.75977890066156*^9, 3.759778965497319*^9}, {
+  3.759779005777062*^9, 3.759779028910568*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3.", "  ", 
+  FractionBox[
+   RowBox[{"Exp", "[", 
+    SuperscriptBox["z", "2"], "]"}], 
+   SuperscriptBox["z", "3"]]}]], "Text",
+ CellChangeTimes->{{3.7597062019141073`*^9, 3.759706223504924*^9}, 
+   3.759706305161607*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fg", "[", "z_", "]"}], "=", 
+  FractionBox[
+   RowBox[{"Exp", "[", 
+    SuperscriptBox["z", "2"], "]"}], 
+   SuperscriptBox["z", "3"]]}]], "Input",
+ CellChangeTimes->{{3.759774452269075*^9, 3.759774464604252*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["\[ExponentialE]", 
+   SuperscriptBox["z", "2"]], 
+  SuperscriptBox["z", "3"]]], "Output",
+ CellChangeTimes->{3.7597744659088783`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fg", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "0", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759774489793408*^9, 3.7597744904157887`*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["1", 
+    SuperscriptBox["z", "3"]], "+", 
+   FractionBox["1", "z"], "+", 
+   FractionBox["z", "2"], "+", 
+   FractionBox[
+    SuperscriptBox["z", "3"], "6"], "+", 
+   FractionBox[
+    SuperscriptBox["z", "5"], "24"], "+", 
+   FractionBox[
+    SuperscriptBox["z", "7"], "120"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "z", "]"}], "9"],
+    SeriesData[$CellContext`z, 0, {}, -3, 9, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 0, {1, 0, 1, 0, 
+    Rational[1, 2], 0, 
+    Rational[1, 6], 0, 
+    Rational[1, 24], 0, 
+    Rational[1, 120]}, -3, 9, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{3.759774492038209*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "6"], ",", 
+     FractionBox["1", "24"], ",", 
+     FractionBox["1", "120"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759774546662402*^9, 3.7597745814193907`*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"Pochhammer", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.7597745898127537`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.759774594840891*^9, 3.75977460012359*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"Gamma", "[", "n", "]"}]]], "Output",
+ CellChangeTimes->{3.759774600868506*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"Gamma", "[", "n", "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{"(", " ", 
+         RowBox[{"n", "+", "1"}], ")"}], "]"}], "1"], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759774628628077*^9, 3.759774644120327*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759774647219941*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "1"}], ",", "1", ",", "3", ",", "5", ",", "7"}], "}"}], ",",
+    "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759774717158073*^9, 3.759774729323633*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "5"}], "+", 
+  RowBox[{"2", " ", "n"}]}]], "Output",
+ CellChangeTimes->{3.7597747312744703`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["\[Infinity]", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.7597747397496634`*^9, 3.75977474773868*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.7597747492244587`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The radius in the above cell must be influenced by the avoidance of 0 imposed \
+by the problem description. Therefore I will express the radius of \
+convergence as 0<|z|<\[Infinity], in agreement with the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{3.759779126420623*^9},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[TextData[{
+ "As explained in example 1 on p. 712, the principal part of the series is ",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{
+    FractionBox["1", 
+     SuperscriptBox["z", "3"]], "+", 
+    FractionBox["1", "z"]}],
+   FontSize->21]],
+  CellChangeTimes->{3.759774492038209*^9},
+  Background->RGBColor[0.88, 1, 0.88]],
+ "."
+}], "Text",
+ CellChangeTimes->{{3.7597792078616133`*^9, 3.7597792703871813`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5.", "  ", 
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "2"], "-", 
+    SuperscriptBox["z", "3"]}]]}]], "Text",
+ CellChangeTimes->{{3.7597062273856297`*^9, 3.7597062414803953`*^9}, 
+   3.759706315728888*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell["\<\
+The solution to this problem depends on examples 3 and 4 on p. 713. Example 3 \
+explains that\
+\>", "Text",
+ CellChangeTimes->{{3.759779349472721*^9, 3.759779384645771*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"1", "-", "z"}]], "=", 
+     RowBox[{
+      RowBox[{
+       UnderoverscriptBox["\[Sum]", 
+        RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+       RowBox[{
+        SuperscriptBox["z", "n"], "  ", 
+        StyleBox["is",
+         FontFamily->"Charter"], 
+        StyleBox[" ",
+         FontFamily->"Charter"], 
+        StyleBox["a",
+         FontFamily->"Charter"], 
+        StyleBox[" ",
+         FontFamily->"Charter"], 
+        StyleBox["valid",
+         FontFamily->"Charter"], 
+        StyleBox[" ",
+         FontFamily->"Charter"], 
+        StyleBox["statement",
+         FontFamily->"Charter"], 
+        StyleBox[" ",
+         FontFamily->"Charter"], 
+        StyleBox["if",
+         FontFamily->"Charter"]}]}], 
+      StyleBox[" ",
+       FontFamily->"Charter"], "|", "z", "|", 
+      RowBox[{"<", 
+       RowBox[{"1", " ", 
+        StyleBox["and",
+         FontFamily->"Charter"]}]}]}]}], "\[IndentingNewLine]", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"1", "-", "z"}]], "=", 
+     RowBox[{
+      RowBox[{"-", 
+       FractionBox["1", 
+        RowBox[{"z", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           SuperscriptBox["z", 
+            RowBox[{"-", "1"}]]}], ")"}]}]]}], "=", 
+      RowBox[{
+       RowBox[{
+        UnderoverscriptBox[
+         RowBox[{"-", "\[Sum]"}], 
+         RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+        FractionBox["1", 
+         SuperscriptBox["z", 
+          RowBox[{"n", "+", "1"}]]]}], "=", 
+       RowBox[{
+        RowBox[{
+         RowBox[{
+          RowBox[{
+           RowBox[{"-", 
+            FractionBox["1", "z"]}], "-", 
+           FractionBox["1", 
+            SuperscriptBox["z", "2"]], "-"}], "..."}], "  ", 
+         StyleBox["is",
+          FontFamily->"Charter"], 
+         StyleBox[" ",
+          FontFamily->"Charter"], 
+         StyleBox["a",
+          FontFamily->"Charter"], 
+         StyleBox[" ",
+          FontFamily->"Charter"], 
+         StyleBox["valid",
+          FontFamily->"Charter"], 
+         StyleBox[" ",
+          FontFamily->"Charter"], 
+         StyleBox["statement",
+          FontFamily->"Charter"], 
+         StyleBox[" ",
+          FontFamily->"Charter"], 
+         StyleBox["if",
+          FontFamily->"Charter"]}], " ", "|", "z"}]}]}]}]}], "|>"}], "1", 
+  " "}]], "Text",
+ CellChangeTimes->{{3.759779448369047*^9, 3.759779659050046*^9}, 
+   3.7597947714865294`*^9, {3.75979480284729*^9, 3.759794813971838*^9}}],
+
+Cell[TextData[{
+ "Example 4 deals with Laurent expansions in different concentric annuli and \
+solves ",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["1", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["z", "3"], "-", 
+       SuperscriptBox["z", "4"]}], ")"}]],
+    FontSize->21], TraditionalForm]]],
+ " by piggy backing on example 3. In analogous fashion,"
+}], "Text",
+ CellChangeTimes->{{3.759779778786751*^9, 3.759779864550943*^9}, {
+  3.7597814967121973`*^9, 3.759781508262453*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "2"], "-", 
+    SuperscriptBox["z", "3"]}]], "==", 
+  RowBox[{
+   UnderoverscriptBox["\[Sum]", 
+    RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+   SuperscriptBox["z", 
+    RowBox[{"n", "-", "2"}]]}], "==", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    RowBox[{"Sequence", "[", 
+     SuperscriptBox["z", 
+      RowBox[{"n", "-", "2"}]], "]"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "4"}], "}"}]}], "]"}], " ", 
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"for", " ", "0"}], " ", "<"}], " ", "|", "z", "|", " ", 
+    RowBox[{"<", " ", 
+     RowBox[{"1", "   ", "Series", "#1"}]}]}], "*)"}]}]], "Input",
+ CellChangeTimes->{{3.759779919640396*^9, 3.7597800071553507`*^9}, {
+   3.759780295565319*^9, 3.759780325812807*^9}, 3.759780779512199*^9, {
+   3.759780875019142*^9, 3.75978088119464*^9}, {3.759780952023273*^9, 
+   3.75978097879039*^9}, {3.759781801527239*^9, 3.7597818073894978`*^9}, {
+   3.7597820903652477`*^9, 3.759782094317236*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "2"], "-", 
+    SuperscriptBox["z", "3"]}]], "\[Equal]", 
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", "z"}], ")"}], " ", 
+    SuperscriptBox["z", "2"]}]], "\[Equal]", 
+  RowBox[{"1", "+", 
+   FractionBox["1", 
+    SuperscriptBox["z", "2"]], "+", 
+   FractionBox["1", "z"], "+", "z", "+", 
+   SuperscriptBox["z", "2"], " "}]}]], "Input",
+ CellChangeTimes->{{3.75978094704804*^9, 3.75978094705543*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["and", "Text",
+ CellChangeTimes->{{3.759780993830594*^9, 3.75978099406968*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "2"], "-", 
+    SuperscriptBox["z", "3"]}]], "\[Equal]", 
+  RowBox[{"-", 
+   RowBox[{
+    UnderoverscriptBox["\[Sum]", 
+     RowBox[{"n", "=", "0"}], "\[Infinity]"], 
+    FractionBox["1", 
+     SuperscriptBox["z", 
+      RowBox[{"n", "+", "3"}]]]}]}], "\[Equal]", 
+  RowBox[{"-", 
+   RowBox[{"Sum", "[", 
+    RowBox[{
+     RowBox[{"Sequence", "[", 
+      SuperscriptBox["z", 
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "3"}], ")"}]}]], "]"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"n", ",", "0", ",", "4"}], "}"}]}], "]"}], " ", 
+   RowBox[{"(*", " ", 
+    RowBox[{"for", " ", "|", "z", "|", " ", 
+     RowBox[{">", " ", 
+      RowBox[{"1", "  ", "Series", "#2"}]}]}], " ", "*)"}]}]}]], "Input",
+ CellChangeTimes->{{3.759781036845868*^9, 3.7597811180422363`*^9}, {
+   3.7597811878001413`*^9, 3.7597811883518877`*^9}, 3.759781314590314*^9, {
+   3.75978209860506*^9, 3.75978210170919*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "2"], "-", 
+    SuperscriptBox["z", "3"]}]], "\[Equal]", 
+  RowBox[{"-", 
+   FractionBox["1", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "z"}], ")"}], " ", 
+     SuperscriptBox["z", "2"]}]]}], "\[Equal]", 
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     SuperscriptBox["z", "7"]]}], "-", 
+   FractionBox["1", 
+    SuperscriptBox["z", "6"]], "-", 
+   FractionBox["1", 
+    SuperscriptBox["z", "5"]], "-", 
+   FractionBox["1", 
+    SuperscriptBox["z", "4"]], "-", 
+   FractionBox["1", 
+    SuperscriptBox["z", "3"]]}]}]], "Output",
+ CellChangeTimes->{3.759781122460421*^9, 3.759781316294936*^9},
+ Background->RGBColor[1, 1, 0.85]]
+}, Open  ]],
+
+Cell["\<\
+Note although the text answer only covers the green cell above, the  yellow \
+cell is also perfectly analogous to example 4 in the case where |z|>1.\
+\>", "Text",
+ CellChangeTimes->{{3.759781353578665*^9, 3.7597814213930063`*^9}}],
+
+Cell["\<\
+In order to determine the inner radius of convergence, I suppose I will have \
+to solve Series#1 using C-H.\
+\>", "Text",
+ CellChangeTimes->{{3.759782049687688*^9, 3.759782074717475*^9}, {
+  3.759782107620611*^9, 3.759782133683975*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", "n"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759782211530752*^9, 3.7597822190735903`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759782220231627*^9}]
+}, Open  ]],
+
+Cell["The radius of convergence can be easily seen to be 1. ", "Text",
+ CellChangeTimes->{{3.7597822603405437`*^9, 3.759782277335732*^9}, 
+   3.759782360165235*^9}],
+
+Cell[" What about Series#2 using C-H?", "Text",
+ CellChangeTimes->{{3.759786732341704*^9, 3.759786762145233*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597867852580748`*^9, 3.7597867962482023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.759786799490369*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox[
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "1"}]], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759786832775374*^9, 3.759786853184206*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759786854562516*^9}]
+}, Open  ]],
+
+Cell["\<\
+The radius of convergence cannot extend past 1.  0 < |z| < 1 is what it has \
+to be equal to.\
+\>", "Text",
+ CellChangeTimes->{{3.759786932019767*^9, 3.759786977850646*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["\<\
+This explains why the text answer does not include the yellow cell above.\
+\>", "Text",
+ CellChangeTimes->{{3.759787017001375*^9, 3.759787032320771*^9}}],
+
+Cell[BoxData[
+ RowBox[{"7.", "  ", 
+  SuperscriptBox["z", "3"], 
+  RowBox[{"Cosh", "[", 
+   FractionBox["1", "z"], "]"}]}]], "Text",
+ CellChangeTimes->{{3.759706245625247*^9, 3.759706263983852*^9}, 
+   3.759706324744734*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fj", "[", "z_", "]"}], "=", 
+  RowBox[{
+   SuperscriptBox["z", "3"], 
+   RowBox[{"Cosh", "[", 
+    FractionBox["1", "z"], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.759787258101285*^9, 3.7597872766963043`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  SuperscriptBox["z", "3"], " ", 
+  RowBox[{"Cosh", "[", 
+   FractionBox["1", "z"], "]"}]}]], "Output",
+ CellChangeTimes->{3.7597872776514397`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fj", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "\[Infinity]", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759787305543497*^9, 3.759787326807413*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SuperscriptBox["z", "3"], "+", 
+   FractionBox["z", "2"], "+", 
+   FractionBox["1", 
+    RowBox[{"24", " ", "z"}]], "+", 
+   FractionBox["1", 
+    RowBox[{"720", " ", 
+     SuperscriptBox["z", "3"]}]], "+", 
+   FractionBox["1", 
+    RowBox[{"40320", " ", 
+     SuperscriptBox["z", "5"]}]], "+", 
+   FractionBox["1", 
+    RowBox[{"3628800", " ", 
+     SuperscriptBox["z", "7"]}]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      FractionBox["1", "z"], "]"}], "9"],
+    SeriesData[$CellContext`z, 
+     DirectedInfinity[1], {}, -3, 9, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 
+   DirectedInfinity[1], {1, 0, 
+    Rational[1, 2], 0, 
+    Rational[1, 24], 0, 
+    Rational[1, 720], 0, 
+    Rational[1, 40320], 0, 
+    Rational[1, 3628800]}, -3, 9, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.75978730690641*^9, 3.759787327963872*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The above green cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.7597873710055523`*^9, 3.759787383147938*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "24"], ",", 
+     FractionBox["1", "720"], ",", 
+     FractionBox["1", "40320"], ",", 
+     FractionBox["1", "3628800"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.759787432419516*^9, {3.759787933082855*^9, 3.759787980008709*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["4", 
+   RowBox[{"1", "-", "n"}]], 
+  RowBox[{
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}], " ", 
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}]}]]], "Output",
+ CellChangeTimes->{3.759787982681508*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.759787985828806*^9, 3.7597879904656982`*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"Gamma", "[", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"2", " ", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.759787991192957*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"Gamma", "[", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"2", " ", "n"}]}], "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"2", " ", 
+          RowBox[{"(", 
+           RowBox[{"n", "+", "1"}], ")"}]}]}], "]"}], "1"], ")"}]}], "]"}], 
+   ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597880655758944`*^9, 3.7597880962116213`*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759788097696693*^9}]
+}, Open  ]],
+
+Cell["Then focusing on the z exponents,", "Text",
+ CellChangeTimes->{{3.7597881285467567`*^9, 3.759788139465212*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{"-", "5"}], ",", 
+     RowBox[{"-", "7"}]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759788157768733*^9, 3.759788172479759*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5", "-", 
+  RowBox[{"2", " ", "n"}]}]], "Output",
+ CellChangeTimes->{3.759788175811286*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["\[Infinity]", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.7597881977095413`*^9, 3.759788204302403*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.7597882057968397`*^9}]
+}, Open  ]],
+
+Cell["\<\
+As in problem 1 and for the same reason, I will express the radius of \
+convergence as 0<|z|<\[Infinity], in agreement with the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.759788249182925*^9, 3.759788268627407*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[TextData[{
+ "9 - 16 Laurent series near a singularity at ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "0"], TraditionalForm]]],
+ "\nFind the Laurent series that converges for ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    RowBox[{"0", "<"}], " ", "|", 
+    RowBox[{"z", "-", 
+     SubscriptBox["z", "0"]}], "|", 
+    RowBox[{"<", "R"}]}], TraditionalForm]]],
+ " and determine the precise region of convergence."
+}], "Text",
+ CellChangeTimes->{{3.7597063657737226`*^9, 3.759706449098056*^9}, {
+  3.759788295576213*^9, 3.7597882955762463`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"9.", "  ", 
+   FractionBox[
+    SuperscriptBox["\[ExponentialE]", "z"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "2"]]}], " ", ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "1"}]}]], "Text",
+ CellChangeTimes->{{3.759706453027101*^9, 3.7597064864009657`*^9}, 
+   3.759706666454093*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fk", "[", "z_", "]"}], "=", 
+  FractionBox[
+   SuperscriptBox["\[ExponentialE]", "z"], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"z", "-", "1"}], ")"}], "2"]]}]], "Input",
+ CellChangeTimes->{{3.759788347148025*^9, 3.759788358530396*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["\[ExponentialE]", "z"], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.759788419785215*^9, 3.7597885321493073`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fk", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", "1", ",", "4"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597884513972683`*^9, 3.7597884703225527`*^9}, {
+  3.759788536201171*^9, 3.759788547679027*^9}, {3.759788665570533*^9, 
+  3.759788683272843*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["\[ExponentialE]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "2"]], "+", 
+   FractionBox["\[ExponentialE]", 
+    RowBox[{"z", "-", "1"}]], "+", 
+   FractionBox["\[ExponentialE]", "2"], "+", 
+   RowBox[{
+    FractionBox["1", "6"], " ", "\[ExponentialE]", " ", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "1"}], ")"}]}], "+", 
+   RowBox[{
+    FractionBox["1", "24"], " ", "\[ExponentialE]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "2"]}], "+", 
+   RowBox[{
+    FractionBox["1", "120"], " ", "\[ExponentialE]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "3"]}], "+", 
+   RowBox[{
+    FractionBox["1", "720"], " ", "\[ExponentialE]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "1"}], ")"}], "4"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "1"}], "]"}], "5"],
+    SeriesData[$CellContext`z, 1, {}, -2, 5, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 1, {
+   E, E, Rational[1, 2] E, Rational[1, 6] E, Rational[1, 24] E, 
+    Rational[1, 120] E, Rational[1, 720] E}, -2, 5, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.759788447005232*^9, 3.759788471191454*^9}, {
+  3.759788538065106*^9, 3.759788548507938*^9}, {3.75978866679804*^9, 
+  3.759788684319599*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The expression contained in the green cell above matches the answer in the \
+text.\
+\>", "Text",
+ CellChangeTimes->{{3.759788613009404*^9, 3.759788636442254*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", 
+     FractionBox["1", "2"], ",", 
+     FractionBox["1", "6"], ",", 
+     FractionBox["1", "24"], ",", 
+     FractionBox["1", "120"], ",", 
+     FractionBox["1", "720"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759788746167458*^9, 3.759788823882675*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"Pochhammer", "[", 
+   RowBox[{"1", ",", 
+    RowBox[{
+     RowBox[{"-", "1"}], "+", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.759788829731223*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.7597888340008793`*^9, 3.7597888393074102`*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"Gamma", "[", "n", "]"}]]], "Output",
+ CellChangeTimes->{3.759788840373425*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox["1", 
+      RowBox[{"Gamma", "[", " ", "n", "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "1"}], ")"}], "]"}], "1"], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759788868098399*^9, 3.759788877984274*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.7597888859413137`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2", ",", "3", ",", "4"}], 
+    "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597889292074327`*^9, 3.7597889694683247`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "3"}], "+", "n"}]], "Output",
+ CellChangeTimes->{3.759788971101967*^9}]
+}, Open  ]],
+
+Cell["\<\
+As in problem 1 and for the same reason, I will express the radius of \
+convergence as 0<|z - 1|<\[Infinity], in agreement with the answer in the \
+text.\
+\>", "Text",
+ CellChangeTimes->{{3.7597890040695133`*^9, 3.7597890321217833`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"11.", "  ", 
+   FractionBox[
+    SuperscriptBox["z", "2"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}]}], ")"}], "4"]]}], " ", ",", 
+  " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", 
+   RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}]}]}]], "Text",
+ CellChangeTimes->{{3.759706489866304*^9, 3.759706538687388*^9}, 
+   3.759706676941646*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fm", "[", "z_", "]"}], "=", 
+  FractionBox[
+   SuperscriptBox["z", "2"], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"z", "-", 
+      RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}]}], ")"}], "4"]]}]], "Input",
+ CellChangeTimes->{{3.759789145305551*^9, 3.759789160895557*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "2"], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Pi]"}], "+", "z"}], ")"}], 
+   "4"]]], "Output",
+ CellChangeTimes->{3.7597891633086643`*^9, 3.7598770329876003`*^9, 
+  3.759878986764062*^9, 3.759938558045384*^9, 3.759945343232493*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fm", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", 
+     RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}], ",", "10"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759789205846051*^9, 3.7597892257383337`*^9}, {
+   3.759789648161942*^9, 3.759789677903976*^9}, {3.759789988924013*^9, 
+   3.759790016754676*^9}, 3.7598770977163343`*^9}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox[
+     SuperscriptBox["\[Pi]", "2"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", 
+        RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "4"]]}], "+", 
+   FractionBox[
+    RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "3"]], "+", 
+   FractionBox["1", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "2"]], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", 
+       RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], "]"}], "11"],
+    SeriesData[$CellContext`z, Complex[0, 1] Pi, {}, -4, 11, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, Complex[0, 1] 
+   Pi, {-Pi^2, Complex[0, 2] Pi, 1}, -4, 11, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.759789208796502*^9, 3.759789226465891*^9}, {
+   3.759789649525337*^9, 3.759789678964991*^9}, {3.759789990197831*^9, 
+   3.759790017576705*^9}, {3.7598770250964203`*^9, 3.759877035819215*^9}, 
+   3.759877099626773*^9, 3.7598789913462477`*^9, 3.759945350517398*^9}]
+}, Open  ]],
+
+Cell["\<\
+I need to drop the higher-order remainder term. There is no remainder term, \
+because the series contains only three terms. It is not infinite. \
+\>", "Text",
+ CellChangeTimes->{{3.75987715628961*^9, 3.759877187112029*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.7598769794998302`*^9, 3.759876982920319*^9}, {
+  3.759877015832399*^9, 3.759877018005631*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    SuperscriptBox["\[Pi]", "2"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Pi]"}], "+", "z"}], ")"}], 
+     "4"]]}], "+", 
+  FractionBox[
+   RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]"}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Pi]"}], "+", "z"}], ")"}], 
+    "3"]], "+", 
+  FractionBox["1", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "\[ImaginaryI]"}], " ", "\[Pi]"}], "+", "z"}], ")"}], 
+    "2"]]}]], "Output",
+ CellChangeTimes->{
+  3.759876984020857*^9, {3.759877019277296*^9, 3.75987703918042*^9}, 
+   3.759877103790367*^9, 3.759878995315267*^9, 3.7599453545895853`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The green cell above matches the answer in the text. To understand the \
+meaning of the above sum, I might want to take a look at limits,\
+\>", "Text",
+ CellChangeTimes->{{3.7597893458102207`*^9, 3.759789361652508*^9}, {
+   3.7597897373654213`*^9, 3.75978978069169*^9}, 3.759876393140921*^9, {
+   3.759877176727656*^9, 3.7598771845045347`*^9}, {3.759881659601955*^9, 
+   3.7598817031189203`*^9}, {3.759946211162099*^9, 3.759946229502146*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["\[Pi]", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"z", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "4"]]}], "+", 
+     FractionBox[
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", 
+         RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "3"]], "+", 
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", 
+         RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "2"]]}], ")"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", 
+      RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}]}], "]"}], "\[Rule]", "0"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759790439612061*^9, 3.759790473306984*^9}, {
+  3.759790506168769*^9, 3.759790537591303*^9}, {3.759790631269434*^9, 
+  3.759790671146347*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "2"], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"\[Pi]", "+", 
+     RowBox[{"\[ImaginaryI]", " ", "z"}]}], ")"}], "4"]]], "Output",
+ CellChangeTimes->{3.759790672645154*^9, 3.75987900118943*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       SuperscriptBox["\[Pi]", "2"], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"z", "-", 
+          RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "4"]]}], "+", 
+     FractionBox[
+      RowBox[{"2", " ", "\[ImaginaryI]", " ", "\[Pi]"}], 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", 
+         RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "3"]], "+", 
+     FractionBox["1", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", 
+         RowBox[{"\[ImaginaryI]", " ", "\[Pi]"}]}], ")"}], "2"]]}], ")"}], 
+   ",", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", 
+      RowBox[{"\[Pi]", " ", "\[ImaginaryI]"}]}], "]"}], "\[Rule]", 
+    "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759790787383515*^9, 3.7597907904607763`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "2"], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"\[Pi]", "+", 
+     RowBox[{"\[ImaginaryI]", " ", "z"}]}], ")"}], "4"]]], "Output",
+ CellChangeTimes->{3.7597907918368607`*^9, 3.759879004800511*^9}]
+}, Open  ]],
+
+Cell["\<\
+For visualization purposes, I can make a function out of the sum of terms.\
+\>", "Text",
+ CellChangeTimes->{{3.759881714630384*^9, 3.759881731525964*^9}, {
+  3.75988269273942*^9, 3.759882695843506*^9}, {3.759946245308963*^9, 
+  3.759946251452571*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"chk", "[", "z_", "]"}], "=", 
+  FractionBox[
+   SuperscriptBox["z", "2"], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"\[Pi]", "+", 
+      RowBox[{"\[ImaginaryI]", " ", "z"}]}], ")"}], "4"]]}]], "Input",
+ CellChangeTimes->{{3.759790883255557*^9, 3.759790896404901*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "2"], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"\[Pi]", "+", 
+     RowBox[{"\[ImaginaryI]", " ", "z"}]}], ")"}], "4"]]], "Output",
+ CellChangeTimes->{3.7597908976194077`*^9, 3.7598790094943953`*^9, 
+  3.7599385668141403`*^9, 3.759945358959833*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Going back to the problem instructions, the ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "0"], TraditionalForm]]],
+ " point is strictly prohibited, and admitting that, I would have to assert \
+that R=\[Infinity]. The singularity should show up as ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{
+    SubscriptBox["z", "0"], "=", 
+    RowBox[{"0", "+", 
+     RowBox[{"\[ImaginaryI]", " ", 
+      RowBox[{"\[Pi]", "."}]}]}]}], TraditionalForm]]],
+ " In accordance with the previous radius interpretation, maybe I can picture \
+this one as an all-encompassing disk with the one singularity as the \
+\[OpenCurlyDoubleQuote]hole\[CloseCurlyDoubleQuote] , though in this case the \
+hole is not central."
+}], "Text",
+ CellChangeTimes->{{3.759791992505468*^9, 3.7597920562058697`*^9}, {
+   3.759792136954644*^9, 3.759792196072529*^9}, {3.759881456657834*^9, 
+   3.759881488418988*^9}, {3.75988155482835*^9, 3.759881576315587*^9}, {
+   3.759946271763257*^9, 3.759946275259142*^9}, 3.759946397998331*^9, {
+   3.759946750675362*^9, 3.7599468174614363`*^9}, {3.759946855965416*^9, 
+   3.7599468561306553`*^9}, {3.7599472848129*^9, 3.759947285044742*^9}}],
+
+Cell["\<\
+It might be interesting to look at a plot of the problem function.\
+\>", "Text",
+ CellChangeTimes->{{3.759878767557063*^9, 3.7598787826272297`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"rekk", "=", 
+   RowBox[{"N", "[", 
+    RowBox[{"Table", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"Re", "[", 
+         RowBox[{"chk", "[", "z", "]"}], "]"}], ",", 
+        RowBox[{"Im", "[", 
+         RowBox[{"chk", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{"z", ",", 
+        RowBox[{"-", "100"}], ",", "100"}], "}"}]}], "]"}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.759880328171075*^9, 3.75988034741671*^9}, 
+   3.7598809167430477`*^9, {3.759939044790964*^9, 3.759939048693261*^9}, 
+   3.759945267944688*^9}],
+
+Cell["\<\
+Using the y-axis convention for the complex plane, the singularity can be \
+given a numerical value.\
+\>", "Text",
+ CellChangeTimes->{{3.759881774285606*^9, 3.759881813570896*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"reki", "=", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "\[Pi]"}], "}"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.7598812460255003`*^9, 3.759881248423448*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "\[Pi]"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.759879026591463*^9, 3.75988125012888*^9, 
+  3.75993913228679*^9, 3.7599453661081142`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot7", "=", 
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Re", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}], ",", 
+       RowBox[{"Im", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "0.7"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Thickness", "[", "0.001", "]"}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Re\>\"", ",", "\"\<Im\>\""}], "}"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.759938822245708*^9, 3.759938838428815*^9}, {
+   3.7599390149211683`*^9, 3.759939018871037*^9}, 3.759939197389173*^9, {
+   3.759939388512226*^9, 3.7599393941023006`*^9}, {3.75994557486198*^9, 
+   3.759945575013093*^9}, {3.7599456166263933`*^9, 3.759945617410486*^9}, {
+   3.759946008287754*^9, 3.759946024733198*^9}, {3.759946090258059*^9, 
+   3.75994609048839*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot4", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"rekk", ",", "reki"}], "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"Black", ",", 
+          RowBox[{"PlotMarkers", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\[Bullet]", ",", "12"}], "}"}]}]}], "}"}], ",", 
+        RowBox[{"{", 
+         RowBox[{"Red", ",", 
+          RowBox[{"PlotMarkers", "\[Rule]", 
+           RowBox[{"{", 
+            RowBox[{"\[Bullet]", ",", "18"}], "}"}]}]}], "}"}]}], "}"}]}]}], 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759880554392177*^9, 3.759880559290267*^9}, 
+   3.7598808308564663`*^9, 3.7598809693952503`*^9, {3.759945302330134*^9, 
+   3.759945321967231*^9}, 3.759945386124468*^9, {3.759945487390512*^9, 
+   3.7599454979147663`*^9}, 3.759945980696054*^9, {3.759946464007452*^9, 
+   3.759946583861642*^9}, {3.759946652562532*^9, 3.759946673599433*^9}, {
+   3.759947362719305*^9, 3.7599473655048847`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot5", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{"{", "rekk", "}"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\[Bullet]", ",", "12"}], "}"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759881293279488*^9, 3.759881311741191*^9}, 
+   3.759881382020894*^9, {3.7599458920863657`*^9, 3.759945900117901*^9}, {
+   3.759945945209436*^9, 3.759945970466219*^9}}],
+
+Cell["\<\
+The plot of show1 presents the function trace together with some \
+representative points.\
+\>", "Text",
+ CellChangeTimes->{{3.759946893745261*^9, 3.759946929597416*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"show1", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plot7", ",", " ", "plot5"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.759881340597617*^9, 3.759881342412178*^9}, {
+  3.759881523991301*^9, 3.759881526246964*^9}, {3.7599390940912733`*^9, 
+  3.759939095113326*^9}, {3.759945989295206*^9, 3.75994599370277*^9}, {
+  3.759946037493763*^9, 3.7599460377075253`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], Thickness[0.001], Opacity[1.], 
+     FaceForm[Opacity[0.3]], LineBox[CompressedData["
+1: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
+54bYZuX7fBrTxP/3fwvx/wD2fAAS
+      "]]}}, {{}, {
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], CompressedData["
+1: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
+fhcY3wuM/wV2PhDY+UFg5wuBnT+E/wOHFuHC
+       "]]}, {}}, {}}},
+  AspectRatio->0.7,
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Re\"", TraditionalForm], 
+    FormBox["\"Im\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{"ScalingFunctions" -> None},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7598813438182592`*^9, 3.759881527174264*^9, {3.759939096302302*^9, 
+   3.759939139917206*^9}, 3.7599392077221537`*^9, {3.759945994301111*^9, 
+   3.759946038488516*^9}, 3.759946095524934*^9, 3.759946618086372*^9}]
+}, Open  ]],
+
+Cell["\<\
+As shown in show2, the singularity is a large relative distance from the rest \
+of the function trace.\
+\>", "Text",
+ CellChangeTimes->{
+  3.759946416748657*^9, {3.7599466938056383`*^9, 3.759946717500224*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"show2", "=", 
+  RowBox[{"Show", "[", 
+   RowBox[{"plot7", ",", " ", "plot4"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.759946062723003*^9, 3.759946069545608*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], Thickness[0.001], Opacity[1.], 
+     FaceForm[Opacity[0.3]], LineBox[CompressedData["
+1:eJxdmnk4Vd/3x5M0IamIa46PhFJIMtxlqGTKPGSe3Uvmecg8XtPNfBWVSEpp
+QCUsREmSyFQkUeYGQ0T0u99/f/+c/ez9PvucvdY+Z71f53mOkIOXofPmTZs2
+SdEP/2uvTO+LGl3khnXrAkeDk9MN/TLutKW/3BDlV+daenq6odUsLoCViQAx
+aXf/YzCcbvA01Y88y0GAKnO5ibdu0w0OgrOE2eMEsG6vknh9ZbohUocjfiaI
+AKcNloWJm2ca+E/x8g9tEMBg1xlTtZ6ZhobJdeoebl44e54aqZQx16CXyT5g
++owfUnwnbQxmfzas5Qp/XWgRBOegK2X5+gsN5KSHXt9ND4D2ukcEE//vBq2s
+LK85XRF4+ktVeEvnn4b3TkJtsV6i0N94S/A500bD2Z372jZEDgHfX1O2k4MM
+yPg0VDflnCTUmKbu9LdlwqRt99R1uqXgWbLuoc6UHWgRfuZN/HFpSAg3Nop2
+YkOdnM+D5u9loaNYbjuv5l7cwbW20Lp6ApZNdRq45/djt8G/Smt1Jfiy9cGa
+zhA/tkv9OXzkngpckN2v/HlJGL/eufyOdPYULG8W57lOkMDcFfefr3Zowuw1
+0QXnKWkMk/XlD+bXhJzhsIt6m2VQO0lslSijCRNut5KdeGRQj0FVf7+1Jhzc
+2Fu855wMOte+ufL7gSacseF0TK6Wwco25uZLdlrA5Rv8XT5NFiNI9dvOd2vD
+jT5mzjwHOZzN+STLv0cPrq+Oyh1sUsBPL7oN7x/Vg+xHMcLfZxSwQ0DmpIee
+HnBr+WWy7VfE1COrCaQ0PWB631Pp7KmI13iq7tYw6YNh/6v8ECElHBhYq/yT
+qA9OIQ8fCxQo4w2JKoecIgOQDRllSPZUwYgTV3703zcA1+RHLTSKCqLLfebj
+zw3g08n4T1M3VZDRm/EOTBpAxBbCsNZnFVTkqblzWcYQlno//BI2VcWB0sDv
++W8N4QaBY3DwnBoW+yRbMvMbA08DyZE39BQejWCzSJI2hnsrcq/4Ck8hT3jQ
+7gMaxrBHa43Ts/EUSrUXWFd4G8PgROrHjW2n8f1hnyyhVmMoUrBp+lNwGoXe
+xm594mcCL8V1rom8O4NN82xX5yZNQZOQuRQcr4nlb5442TKYwUNWhl/KVZq4
+IeO2b5HbDGwG7pT7jWmirvjXLYnaZvBZ0eSSnLoWhomW/za/bwZHKlUWYbs2
+At+D4Y9R5vDDaWq4qFwHK++VlPURLWB+q6urtrg+jtRKa0bZWMDFlYuXh3X0
+0fVS9iuLCAvgONn0vMtLH6+RS7xvNFhAglaSxEiNPqaMnUmkqFrCwk5f/mZN
+A3zeLPtoQt8KPu8aNhmNNcSJwBpiQJ4N3Dqgu9xvbIJJng/tK+ttwLTblyk2
+wQSV5udOCI3bwO9Bpz8tT0yQlnUnvOKYLYSKxZhwCpiiT5SeldNbW3jz8qDm
+kQVTTI2Llq+i2EGgd98TvWfmuOL7RKP5qz3Unw0RyPlkhYNqZ63n1+zBK3p2
+vFPUGlMU2lYV9zgA05OQknkvaxT44LxGAAdIc5t12cpkg9v/CEQxFDiA5Y/X
+/S8UbJHw02bnEWNHeN2X584+a4dKHPyuve6OwGpAvevCZY9nTydtuxTrCIZN
+3BSD0/bI7RW0Xf2RI1gvJ6T8umaPhwfMz8TsdYIKvmjbq7YOeF1Nuauvzwms
+tvx8vf7XEU1DZb8F/HACmffysZ9lnNAtiecS33ZnMJF8vD3O3QlnY6d9Yk46
+g5aM+G7CsBMqxjTYxFxxBrkdATD8yhm7jvA6n6l2huUHp+SEtrngxYPK5js6
+nUHsa1KxymkXXIxcO5LwzxlcYpjMBVtckGPHEXMpBxdI517U6uhwxa9zPJ8b
+Ql1giydvpjE7Ccl9RptUslzgRP4Opn5TErYyvt3B1uIC6lDM93GchJm1HTU3
+RFxBQPAK53lWN3z62mYlVskVTGbYTkpYuGHUfqOr6sauwOnmNkq45YYKpzeI
+prGucCxTa8FZwx23LvqVB464wsOa9ANy2RdQrstJNXLRFYyj4cHt8QsYMWNz
+0nQHCTh1Nj1XkPNApWveFxylScDzJlsVhzww9+KNgKwzJCi7ZNVSd8wT4zed
+Com3IEEyb/TviURP3NHg//Z6NAnITUy2H054obrVty2t2SSYK7ODO5e8kGbq
+t3K5jATlDq7C9bNeKHNMKtCkgwTrl1V3WRl5o2h+dUg0OxkcMu7tPsfhgxcY
+G450CpFBz2p4IUbDB0nZ3tQ7x8jwu8gswiPUB294uL5i1CfD+K3zg55ffFDY
++d1XPxsyLHoouqfs90Vfh71ythfI4NgmfJCs64ux2U2jGQlk+Hucm83/mS+a
+sjHNt2WSgSbpo1u24Iv/jOGKUxEZDhWafCiT9MPHGc+lrMrJ8C9zy0Cwix+e
+e97beOsRGdQJd3z5rvuhXtRtUfV6MgQJ6H/OH/LDQRWTP8IvyDA7Xmv3ncsf
+r42UZKh30vV6Y2UhU39sypn7S+slQ2AN0yvZbH+UncRdAkNkYOpjtpPs8cel
+qRSt9lEyzKR2uDLvDUAn2aMzmd/IULJ09VyvUQASFvw+eU2Tod0vJyUtJwBz
+rN2bzebI0KpyrOjEQAA2LbZ+UflBj9f9wK5+nkAU6meSE/pJhsa2n25edoHo
+FHbV4jtdt9Qt1t5yMxC7eRmyC7+TIVHJ7BxtNhDFhKNfCs+SgTV7aL+0bBDe
+ei0dEjBJhqzdskbd4UF41fRaW8IYGfL42B9cfBGE5FWyh/YwGch/NCdOsAcj
+9UPboxp6fPNaSve3WAcjq8pS8LMOMrhZirRPlAfj9nNeB3WaycBGcPk9vhyM
+vR6HHlnUkOEY48uVf2dCUKAiK2fgFhm2/c7LVcoLwRzVxFc1NDLsXn6TUzQZ
+gjwx7C+/JpFhrmN73SHFUJz25Is0CaTn0zThzWh6KOaJr5ku2ZNBwpUhtX0s
+FJPli/6LkqHPH5jZrHwpDEHi/WYNbjKcm/4k2jkVhusl75qX/pLAb+PH6yL1
+cPQul377rJ4EvWoX9rCuhWOMcMXn8gIS0EaNux+YX0S32TWjwwEk2D4Yp1Py
++CJe1JdkLzhAAt3M2fXIkAhsZuYUd/rlCqa0F7bvxyMQlaS/fK1zBdEK6ptG
+g0is5xw6larpCi/zRinyXFEYLMz+132nK/SLsO3lN4hC69aTZiEvXSDZSbW7
+jxKFl35e3B5/3AUo/14ytG2Kxuw7HBsy35yB6+XEf4zK0Sjzib3RJ9MZOG1O
+fOEMjUbzt6pL00NOoKChNvj6dzSen+E6Vi3rCApSk59DV2Po9aYjp7XOAQZ5
+H45RlGMxI9B01zDRAUwTz5gFRMfie+5tS4pH7YEhsZfcyxyHTZtOTDNftaO/
+X8WcZw3jsLGbaXJhqx00JCypZtDiUCQygcwaYw0MtDuNVPF4jB4hEYz+s4Ls
+1Fw85R+PJJXCnltPLGDqkG5MY0M8hrZwNMncNQN5Pu+mvyYJyPX7KFdGnT7c
+L9Xd/iU1EbXkrwcFFenCVGNLxrGhRJyUPrnzKU0Tkmxlotglk5Dn8N5eQRZV
+WLL++9v0TRKazfomJ206CYvHWHaW8Cdj7f6MPeLsUhBUORem752MyoQ9k8lG
+e3CE8V9I8j4KHs0yGWSJOYIr4oYlCy4UTMp7dPuGhQK253UpBz+loI9BItPB
++bM4kKcqF2aTgoRsjdHmw3rYIRUU134/BYv3OPgW9xii9vq36d7NqRiWLHrq
+6d3zyMFxpORuaSpe/2VXsKBjjYJ+M58Ufqfi5/XjFP9EO2z69qmJ6UwaateP
+m3lHOuGfB/sbnn1JQz6tp3mkPBe8veNbrZFUOsbLDi/daSZhaMToUExoOn75
+hsWrxh7opmCSMsKcgYszTU2LdV7IXuNkdt0gA69tMZVg5vNBk1nxgAM5GZh8
+y6PU1cUX33qfZRbpy0De4br01lo/vIO2947tpOK2w2f/mhECcGljpLPjIBWF
+D3D0n4sPRE5FxfF6dSqeDPug27cWhNfauU4OW1PxKemjPGdECDYxXOvaFEhF
+RS6qpNuvUGQd27WdRqEiIdx3Q8IrHOW4ltYPFVJRsnnmqufyRYzT+daWcpeK
+V1V+hAIlEgfjD6VmP6Ni4YvW8e6sKFzF6gtcL6noKn3oZ5drNG57X5I49ZaK
+IyPBxzlVY1Bagjzd30vF1O9H3hQIxOL3IZ60BwNULFFfFTJkjMN4VNNTo/fj
+VhKCxWfjULUkeNnoPRX3/QIvlg/xyBjmIXevg4qThX0BHzoScI3ceJeziX5/
+f3cl75ZEXGVSX9N/QEWXKDVCcWMSwjO1V/z09a+zbbmg1JSMb9njxiGOnq/I
+4qnNLygYW3Pb3NeFihJrPIuVnSlYujCQ5UvPV1mW78eFD6no6WifuUagIkuy
+DZ//dBpe/zAjmj6Yga/cvArb/6bjiZyiSh6fDHzu0eLevJ2KWhz3+9jo4zK6
+iwns2VSMGJ9aGgxJR2IDZy2z4CXkVRTxmppKQ1FqToVDxSX82K6XcU87DSVS
+P4g1ymdi99I36uWiVNRzCnvU2pKJXTKajf99ScFdsw/+Y9HPwkdn41tecKTg
+muSkjvCHLJSPYmXbkKfg5LrrpUsO2ej14qm/oXYy5mqk3uyZzKY/B0bzRjpJ
+qDcrqmF1IQf5LpQVFSomYvkPMYbs2Rzcbfz2dT9XAjYbrO4dJOXisdsj5rVj
+cRiw28g58nMu5i1UyLJdicXLAW+oXYZ5iGVU9mr6Pj7Tf8fJgnm4sqikWfw+
+CtM9hytdRfLx/iXp4bflEchilvOKLSYfxXIf7XOLp9dnLgMZsf58PNCwee2R
+UjAOtMltenOAhmv9QVvzu/yxqoSndK8TDW/YL2QaqPngJ90Ec5YCGl7cd9Nk
+UtQdlYZEnj1/TsP3v4NoX1MccddIX+epzzSce5Mqd8XbDFPZGNUuf6dheHHa
+lsg0ZaQtndnXN0fDB4X2H9aZ1EBrZ37+zmEadskLZ917dB6KNAr7zZ7RcMLU
+1n7+nDNcLdc3mk6kIbw4+sC13wNu2r4R36RGQ3Hm1E2Osn7Q0BlfMDeZj3fX
+GTNfhQVBb+b0O6HwfBwau/Ww7FkYxDG83iu5locuRYd+EecigYnssqfJOQ8H
+OknFFVtioDdBw6/xWS5elRErOrQlDuY9S+0V1nOQWmX9Yd+veChiVNodIJ6D
+r/+D6tMvE8EvIoxpXj0bi5x+GwfFJIPp2aatflpZOHdipNyEPwV0E9R8NoiZ
+KD/MW56amwqr7U9efTlwCRWf9jQMfksDouLxdN8fGXhi9LGTAHMGqJlqSHdG
+pOHIY59Hof8yQEPWyEhhhYJh1h9NDttRIXjQh6/XIwn9N47EyJVQIfv3vKbO
+QDzuYZxkaeyggsr6A0d1uq/0eUdxvR+gwravslPPi6Pwa/BiR9dLKiif0Ckx
+5A/Hp4Ty//xoVEjYIsHPvicItanFNZ91qRDVHSwtesQXuZ7Yjdu+zgC5fnmb
+/n9ueKKccXzoeTqwmFbqvxNzQFW3oWTNpDR45KXdsO2zEY7/R067x5sKSzPV
+la4OMijXySe8LYECGkKyB6TkVcH+waipbHsSyPSv165aGkPbJiOTyR8JkM/6
+y6pWxwZaJz7aJG/EQfFuZVWvI46wQ0nWl2UjBkw9kp/aqrnAFZazPG2/o+Dm
+f8/JRY503o12DI76chGazZ8/5KDzSQBTlOjATAg8VAp4IUfnK5HR5+d/cgdC
+Tijjrb4gOn90YBlLuC8oCW5ZHtAkwazNr7zH4AmSStKlZVEu4EAoq/8rRILD
+e6v3hCg6wWbp/uPSDxxgs+TBXNIVe3ilsDPn84IliH7zYO1KtwZnVmgWYjKG
+0m+9l0WbzYDz0lFxawltWBE7p/eFYAg2H2681ZNShbaJ4vDHtZqQmllOVGuU
+gYok5rigDBUQn//W2lQnDE93lyk/JEqDnuubhapwNojcai8uxMQPPOox9kkm
+P4lH900ezBD7TTxNiCcuxVcR71MYvhY7thAbgkK2ymaSGwJOpXBe3s0GhSbs
+5fZHBhqimu5qW74UA+Y7H6rz/BnwcNzHcw+16f7MSuY5tImAGl+eiPpvPg2t
+tn93fy6VxL3rPMGq386Bi3iLwN9YBfxJwHzH78ag1tn2OnLsNOZvKM64PbCA
+yy1vrWVu6eP343vd+xTswCK3gLllwAwLBF/0c/9xgGNDdTOnTtthgPOnb3u8
+nKGn6ujidUtnFNVM/UcLcYUe8+zSif/csUesQWdmmQSq236iers32um6+RTT
++XRVP8RZV9Mf7YzM8lM+0fmUyq5lxhiM7/mEs0/ReTHKxoi3j86LsSMOpnc8
+XOHQVoHaqdlI9F7wDuPudgJCYvHL7+vR2I0RXzzV7OHS2fCins1xqJzTbfEp
+8jyYavQkVP6NxwGWP4yf1HUhzIPjpNlYInZer+g8skMQdoZYvuaqTMZ7pt+W
+DiedxVubzv4dN09BPueTOurbrXA8kmLjTfcZl90bNoxUF3z8qv6QzpF0rGrE
+opa7XtgVld35Wy8D/2PD6F/X/VE0u9Zyno+Kv1y3Plm8HILphcJzjUFUFDl5
+qzHucQSmVP4KyK2iYoGQx1j5QjSmLy5ROen+GfjmSNXxjDi8xrcTDfqo6O0c
+zX5MLBFt52f16v7n36/3vZz6kYwW/9xuqERScfHnTMrQzVQUrD8sqyxMxS/m
+AWY9ZzJQ0ID/zm/DDOTWnvks9pXOBRESCzxi6diSHb77HGcmJi6M+Ee3pyJ/
+j2/5kGwWpqsqUtggBdUCtqyfgGwU/Jw5NUpJxu7u538EZHNQRaG2QvJRItJ8
+op0r9uTitNHKBZH6eJQuZp8/8yEX+a3PZ03djcUiXtvoEgq9nmabfAqkRKPa
+1W3j9cL5yIhXd4pWRiB3Rp9RW2k+jnT4XaXIhCLtpMXoYXYa3nS066LdDkCO
+hysMCS40TNVeNDnO64PIV+yQfpOG+xZty2UFyPizqoEg0k1Dosj3uFpOO9SS
+tjNSnqahy7XwobN3dPB8oaD32A8aLlYXcL6/eghGDAOaDo/TcOQ08e43K2OQ
+o6U+V2qjYcXT53XJFAcI99qYPF5IQ3JcqbtzmRtsJxfMAd3fvk5yvigGH1iL
+MrkTyU9Dkz33wp5sDYB3XFVkjjf5aDh93o29LBgE5L8XEXzy8a+CMElRIByk
+xO24rzHnY1gE701xz0hg+0lJrCjMw+ZNbct5mtHw7suYsaJYHi6brectv4iB
+pqrJd4oVuXhb0ktSQioO2GzOFVHFc3GsZru1Vkw8FIgX67CV5GDi88ELyY0J
+MNeveSKKOwclmITdjk8nQhuXb2RRSjaOOzSX3P+XBDvEhKW41rJw5+Eqdy8G
+CnTssApOJ2Xhg+m97Es/KCBzrZY5930mUvw2y7x7nQLVnb3RjyETR7fv0ijM
+SYWPZKYer9uX8Ee8sPOqbhqYyH8ePMpxCYXLSs9lLKWB6CaFYfsoKu6+y3Bv
+a1o6iBBblBsHMjDg608KK0cGzK9cGdx4mI5teok/DNIz4M3SRWcOahpK1cvU
+Rv/JgKjWQI5k71Ssv+bfUSJBBQV1mdy3ximYEDy+T9yYCrl3/gjpK1OQ1fJr
+UUkgFXyMfqQ6iSej+ur2QpcsKqyFWGtY8CZhkJGLVuNtKsj/ZjLx25uIdb/M
+qv/VUaF+y6j8BFsCsi9J5ni3U4Hjysf3Y+zxeDQw5ZBVDxU+Vtsrp3PHoddX
+qwM76P7YwHMnivFgLA6dkMt4Ru9/vjJuf14hBi8Pne6t6qVCJuHC9qtG0Thh
+P3lb5i0VehIu3Bj2jcJwbQKXfysVLPb7bJE+Gok+79jDKp9Q4WrdVfVrCRfR
+kdmGyltOBe7nO+zWJsNwyHP14o9cKognX9xxzCwUPSi9n8/H0OOPuC8s9i4Y
+d2eZD1HcqfCj5mR2k2kQrtdTJCoN6ecXvPk3MBGAehlBMr9OUEHiS99UxWV/
+dOhwWLnAR4X17xWfFM774bTar8IEBiqwVZ75Yinoi+IpjGM1bRnwj31Xw7ef
+3jhwbPeFXakZ0C7me88uxwu1uEqcz+pmwJFmi7X9lh5IuU+Ny2XJALs7CqNR
+PGRc8TnvL5aQDorjTx75c7hiaB6Df7NKOug6Rv9mF3RG2cLDUnyraaCxqcam
+ydkeBYlex8vIaWDz7l4Hn4otWk0Z6BEE04Df6qDParclWgjnLvX2psK/75t3
+uemboJfR0L98SIVrc7OsIScN8atPDFPvQgo8flQ9HBd2DgP2Xt/2vCwFUogx
+ICKujnkP1O+zsKXAuee7n+UWKGKNyJZ8ajMFJNqWJRTUjmHZ9KTI/kAKcOvc
+OHCjYjMEeA2HeQ4nw20h8f2jsgchKMqHYn0pGRRcwmbak2Thn+fhiZTTyaDq
+V/yep0YNChLLqvrvJcFPZ5afReP6sOyr+8cgIRE6pYTKWQsMwcdp9z6yciLo
+7PUcvkI0BsnhZyIsSwnAWXcxUN7MDLJStBZ2uSRApuuhAc0Oc2j9q3g7RCAB
+ojYxPI+XtoCPy3ctEgbjoXWTyobdeytwMD/LmqsXD3U7t7yc2m0DL3MpoteY
+4+GcdIyot4otCBEvBVi0xYFdFJ/Tnno74FdwzptSj4ONb7UHS+lcQlk1qy1R
+jwXTTp8XIUKOUHG3hdWFKRZY5WP5TFIdQe5bsNfYyxhoviG23mbkBCtuhwP3
+6sVAzPrH1w/vO4F2mo34i70x0LLV8ufpHc7Ao6K95/hgNGwXICuu33UGiTN3
+8LRLNNCsdv4hrTqDHs+A5rfD0fC6jVWbVd0FxBRaclXoPOYtT3oW88oFEnYN
+lfInR4Gp9MW2zG2u4GFZpXjNKApUBztMz6u5Qr/VJpV+/igwp4QwX7znCqd1
+H8Y30utj+ovJiv3jrnBW8wflx6ZIWM7YJG3BSQKa5YTks+wIiOx51WzqQ4K8
+cKsdXE0XQTa38KduAQlMtlO6rp2/CA0+TuddG0kgo0ExqV4Ih62OmYVeW8iw
+bWxfhpdkOOSxF5GzDpAh5aoUK8vrMCj07nVQJ5IhrZPpi5B7GFQRlmryzMhg
+ey5Nt4IlDM788Htc5kmGkVOx8TcrQ6FjG+9ociwZbEilj5mNQyH+hsuYUS4Z
+jE81Mff/CYFf2lfKCGVkKOS9Usp4PQTmI2vN5qvJsD5VfTNVMwQuKQk6f28m
+w2jLlJTHQjAYNm3OEOokw5mfcw7XioJBYv7OZGE/GcKzqx2FtINhR33siP8I
+mb6umvMzK0HQNfVV5fFXMnxYY/f5UxYERc9aIWCaDAlPb388Yx4Ela8EQxvm
+yBBcyNPduSMIXP3UNq7T+beruSg7tS4QdusP6h35SQbh3mH3MO9AIC+PXPCh
+63ofK8tz/wuE6lCL7mD6/P16reWDHwMgZ3QqyoB+/f2V6t2QFQA3l+UYtn8j
+g9VNg+wW7QDQe3icdOszGbh6si84MgXAnKeaJfEDGcxEi8f2N/pDmzphX283
+GTxe2KcPh/mDRm6lU1A7GTT0XXfdl/cHmwNDtVJNZCCfhj0pv/0gNu+X8PbH
+dD4nPTRxq/YDg8lD+jsryLBW+++6ZoAfqDms5MA1MtR2snaKyPnB+GWlpftZ
+ZBD4m9WwvOwLRtVi9m7BZIi8UN/qH+EL4bSv/c1kMhx+9nOGU90Xlhi+qgZb
+kOHl5pGla9t9QfpYfO5+BTKwnjzmbZ3rA/7xC7fYDpFB8E2nfZKND+Sm8jNG
+7yeD3I3sk6kHfWAMXvBPzZPo4ycUdtd5w/svH/bOjpBgiuOmSXKiNzhUsddF
+dZBAO1pJ6Y2RN/wcD5UMKCHBx6G9PXrDXkCi+NRy65Mgy2DVv8DCEya8cVVB
+gQSXmPXjo9c9oOuz814OERK8yB6eaL/uASrt9/m3LLvCsMDs8oXvF4DJvCzn
+RIErSOxS5jqX5w5FEfvq/8TQ9ZJWY9Ez7nCws1I8y53Ow7ynV8R+u8GbvyNg
+puQKkubDc7TzbhDodNLZc8gFSs7Uxd48TIY3LL1zH7lc4Pnts+9TtrpCw8HN
+znKbXCDlRumn6VYXUBT0V0uZcIbDwUeVpRJcgBRlbCZe4wzDFBmZ8ztcwFRO
+usrZyBluLBgqdXI7w3xrMmUs3Qmkppi0DOwcYUQ4xjEqkF5vrML43SUdIeQL
++2lxGyf4fstKTI7+nSAbyKx967ATFF30rnuf7QC72ftv2L9xhNtt/TWTPfaw
+cuBmlOFuR/BeHsuQ97IDUc62x1Jl9hCnJdK9ymEFW/mkuScz7cHmQUL8TK8l
+xI0aweMIe0g/u680P9cSqEMGagWm9iB4ZKGdj2AJXBL7UgO22dM5qcEx7ZAF
+VBZ9JKd72IF+jo77D1dziKm81/sq1wZ2jRT9+mNkAuOh1Svs/jYgeiv54IGD
+JuB1bNosycAGdkt0tresGkOqZ4vJPxYbsORp2+F3wxi09cz69iRYQ8Gty5Sz
+q0YQOP4x736UFYSPUGSz6gyh10nywPVcC/gVwlhBpejDmMWlyR+BFsBz0cex
+3FUfuifyuzzNLEA7qvPIgdP6ELjisvkvlwVsjQ9cO8KgD1q02Jc6RefhblDP
+TdG1c6D8PWR7+gNzMJY9mruTVRcOrqQ716+YQkH4olXVDU0ov15oQ1szggyb
+4I9xcAoy35hV2E4YwcWCQf1TfKfgWoi6sFqPEQg3VI/oralDzrTwgMUdIzhD
+u85y9ok6nBuQCu+zMoKNc1yJN4/TdQNWn64WQ3jXoi7jp6wGIZQso9tlBkAs
+3VMSFq4CksFPwpXs9aCEd8c+nqOKMNbr61asrQkxs6b2E/IyoDNBkw/2PQU0
+67rlE34SMP739/oLVlXosrlqq1wuAhXsrbHuQUpQX9y4y09WAKqebVW0sJSH
+rU6S4aqJXNAaXF3AKHgcOnR/VDNU7wVVxob9B7WkYT8b18vlAjbwv7mZo1fg
+KNj8Gr2usGcnJJpwqEpaS4I786iHhjcTCBmwKrcdPQSXZ1PZ578yQM+k0vix
+SlHgam1RC0rcIFZX2NeEWItAlqKl2cbMH6IS8VeHQfQBsO+StCx0/018t6ue
++nlaEKw37Ff6MheIbsoCgRrv+cF1w8OWm+EX0TeLSuyy4YXIdIKB9cYc8evr
++6Ixxrzw7/z+msm5OWJ5yavSk1q8YHWxXCBqeI6Y9Pet+dPjvLDZ8dX77ro5
+YspdxwNrLLwgqSGTtzV8jvgjZKorro4Hegl/RYr+zhLnp+pqcwR4gNp3eu3U
+1lki0/37f+Y5eKBUo5SmtDxDLNtLMTFh4YHhKLFF4uQM8flkksmhPwRYzLF9
+7Ng+Q5zSLd2zq4cAYiVHPCQzZoikzjW3l4kESIrmufCQMEMsTpvp9I8gADX4
+hosBywxRvTt7/8EAAkwLTietrk8TxyZ8NQscCDB687ug++g08Rfv5a5aZQIU
+GUbfbLk1TSQxRK2lyxIgrov07VHBNHGxUOynqwQBSpKCt91NnSbul4k+JMZN
+gKsz/u113tPEPe65rmy7CXDNXdyyx4Guvz/psLaVAEtPabcXjKeJB0X/45xd
+54bYZuX7fBrTxP/3fwvx/wD2fAAS
+      "]]}}, {{}, {{}, 
+     {GrayLevel[0], PointSize[0.009166666666666668], AbsoluteThickness[1.6], 
+      StyleBox[PointBox[CompressedData["
+1:eJxdl3k4V3kbxn9JG5pXSUaRJcvvpwj5lWTOTQhJC40sRZZCQ0olaVSSZI3o
+bRlKk8SYNm8aNM5DM0ajlcqMJpXJElomWdL6vu+/z7muc50/znXO+Z7nee77
+/nz1gqI81ipIJJLf/3f+/3qiZ9Lutn5NSPyPBS+f1yNWSZUvRMVNwdTE1hfT
+RveKgxYNq5UVp2Kpvbvq13/1im/Vu+sfZU+F1u1JS4Mrn4uyqBavyQZa8Lz+
+ybSm4IVoa2JIT6q0YFPYfqk7+6VYZSg1ivLShvTX8M9rM16JrUVxrgOD2lDw
+yXje5vqPWHt8YUlJ3jSkhuT852bTPyJQX17nrAPfM/s21ge+Fn+LtZbse6uD
+0fGPfjQcei32rK6de2ilLroUw2465vSJNet32L4v18Xh8scpyXPeiL6jr5w7
+oqEHiw+ZUSvb3oiBr8rlOd/q4Y6R+kbD3H5xUbziqYkdekjKPB2/fumA2Gmn
+rWm/XB8bLWfOKVYbFG2K+qzcavWxJXjweHjboLgs7aPNGvl0OO063+dQOSR6
+FI9xKTs7HTt6qxL/+O6tGLRjwr4YEwN0p8jL76QMi6XulWs7Sg3Q8dJyfHfi
+O3HncM5DG0tD7NHUCX6W+l58ndhffLnaENSTYVp04oP4fdrZ7/KWGMHx46w3
+Sr98FG9ahz6z6jACjZz+dMLgJ/HxsDz+RoIxFiSXLe7QkpDxbMugcgMpKjIi
+Us/WS6gmokvP+ZYUpg+S+iTfjqCAe6nzH++UIcsyyC3dRoEUE0YVtM0xQVVt
+xWxlxZHU5vTZpnLQBOYZHoWuLSNJM3d+yp/iDCzaonnC8Ioizcv65auqAzNR
+vWr/hOwfRpHyveShtnBTyFW2vc4pHk0rzHzHtbqbIcXFPW/J5THkp7Tay8F2
+FkK3PUv4cG8slakW6T+cYo53DwcMh0Yp0bCkpHNrvjkme9vurVykTIGlP992
+N7JA/oOVnU8LVciw4kvrhnILeK65Nd9u8hdUVbm+zGexJRRKbcfWF/yLDqf9
+cW9zjyXCG/x2eZxSpaHOuinHsmbj+6s1ZbpJEyg9xPuJN6xQmvLpgv62iWSS
+2xHnMmQFRx87WVOcGlVPlEd/USnHtpEuF5uyJ5GL0t1H/klzUFk83XmoWp3+
+rf9N38dVc2F+/u8SlxEatOn+3fO1dtY41iSeU/H/kvw+LGzJsZiHjLpUutWs
+SaoB1lpbzG2gbmBZEb5hKummeSbGCfNx7dnEEDWpNiWYRVg/WGWL2uyY7vAx
+OmR3Ju9ke/pXiPAbV2u/X5d0UqI7Ve4IuJo0Ok5SqEdm+/oGBtTscL7E+cfs
+Fn2avLP/G/3rdjiQFfmyb4YBNd5p10jKtEekX4As87ghTfSJv2sRsAAZ0b9d
+d5Mb04izYX6+ggMuV2inF/dLKcLHYryHqSP60wf33m4zIfMCO6ODpk4wkCT9
+UKlgSkeOaOSKdguxpm3rA0//WeQWfW5daZgz8htHZXp9Mqem4PsDQWdcoF66
+KPXwZkuyrnl9beZnV6g5/HVy0yQrMs7bs/hQtBuaU4JmhHTJqb2t1ztG0R2q
+Vn3Ptfvnkv2RM7skFUswee2pHtHBhqpHFcUHuSyDz6n2GyZtthQrffAuwHU5
+9rxoLtzYAnIqky2yCPSA3pSBWcbH7WlIeN7pftATxgPnZBGZDtRw91uzqMcr
+YNslTJD+7kSe12VJWW5eyOnJV89f5UJbQ8+t6WlZiarLuiODfd2o+dLXie0Z
+PrjvX6Dk+ecSunI5yX94vR9aHU9oPI5dTnWtvVd3b1mNmKIlznvbPSlQev6n
+5WcDsLQr+lLnr150wVE9LEs5EA3L9mx4JPelo/fFZT95B0G3MbDExs+fdn9S
+aG+9EowII9md0ouBpNR485X9rLUIuKbd5FoXQtNCFFTVzqzDsf1bI14dCKPO
+yE0xeuPD8PNArsTVKZLcuy6a75wXDvmCcS98czfR0WsmfTc6whEC4XSoy1YK
+a343HHA4HBqRmafT+7eT1t/uT7K3h8Kj6GgkmnfRe2qsDpsWhIKTDRtyDybS
+8Pa9h/vWL0b/wMfuVf3J5Kqitcu735eSZWodsVfTKe65SnnhkVi62eFfIAnL
+otix9r35dqmUQAW2jjFZNPvdE1nolUOUWt8amJC2jzZnmr15VXeU3iY3auap
+BqNxoc6kpyvSqLEmKd54RRak62Ysff95HfTcZKWuvrshYQe7T+x5/n7+fbD1
+ga0f7P/A/h+sPmD1A6svWP3B+gPWP7D+gvUfbD7A5gdsvsDmD2w+weYXbL7B
+5h9MH2D6AdMXmP7A9AmmXzB9g+kfzB/A/APMX8D8B8yfwPwLzN/A/A/MH8H8
+E8xfwfwXzJ/B/BvM38H8HywfwPIDLF/A8gcsn8DyCyzfwPIPLB/B8hMsX8Hy
+FyyfwfIbLN/B8h+MD8D4AYwvwPgDjE/A+AWMb8D4B4yPwPgJjK8Exl8C4zOB
+8ZvA+E5g/CcwPhQYPwqMLwXGnwLjU4Hxq8D4VmD8KzA+Fhg/C4yvBcbfAuNz
+gfG7wPheYPwvsP2BwPYPAttfCGz/IfwXZArhwA==
+        "]],
+       PlotMarkers -> {$CellContext`\[Bullet], 12}]}, 
+     {RGBColor[1, 0, 0], PointSize[0.009166666666666668], AbsoluteThickness[
+      1.6], 
+      StyleBox[PointBox[{{0., 3.141592653589793}, {0., 3.141592653589793}}],
+       PlotMarkers -> {$CellContext`\[Bullet], 18}]}, {}}, {}}},
+  AspectRatio->0.7,
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Re\"", TraditionalForm], 
+    FormBox["\"Im\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->300,
+  Method->{"ScalingFunctions" -> None},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{{3.759946070280384*^9, 3.759946099724774*^9}, {
+   3.7599464965462017`*^9, 3.759946500259568*^9}, {3.759946544392736*^9, 
+   3.759946589662491*^9}, 3.759946621793633*^9, {3.759946660517954*^9, 
+   3.759946678771653*^9}, 3.7599473700541277`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The text does not list an answer for this problem, but I believe that R is \
+defined by 0<|\[Pi] \[ImaginaryI]|<\[Infinity].\
+\>", "Text",
+ CellChangeTimes->{{3.7599485211838217`*^9, 3.759948608896489*^9}, {
+  3.759948748358658*^9, 3.7599487491906633`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"13.", "  ", 
+   FractionBox["1", 
+    RowBox[{
+     SuperscriptBox["z", "3"], 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", " ", "\[ImaginaryI]"}], ")"}], "2"]}]]}], " ", ",", 
+  " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "\[ImaginaryI]"}]}]], "Text",
+ CellChangeTimes->{{3.759706542777605*^9, 3.759706598285239*^9}, 
+   3.7597066860853043`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fn", "[", "z_", "]"}], "=", 
+  FractionBox["1", 
+   RowBox[{
+    SuperscriptBox["z", "3"], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", " ", "\[ImaginaryI]"}], ")"}], "2"]}]]}]], "Input",
+ CellChangeTimes->{{3.759792244970956*^9, 3.759792263048993*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{
+   SuperscriptBox["z", "3"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]}]]], "Output",
+ CellChangeTimes->{3.759792264920888*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fn", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", "\[ImaginaryI]", ",", "4"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759792290694613*^9, 3.7597922957888327`*^9}, {
+  3.7597924280980883`*^9, 3.759792428391893*^9}, {3.759792482759865*^9, 
+  3.759792498037434*^9}, {3.759792611626152*^9, 3.759792611841566*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["\[ImaginaryI]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]], "-", 
+   FractionBox["3", 
+    RowBox[{"z", "-", "\[ImaginaryI]"}]], "-", 
+   RowBox[{"6", " ", "\[ImaginaryI]"}], "+", 
+   RowBox[{"10", " ", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}]}], "+", 
+   RowBox[{"15", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]}], "-", 
+   RowBox[{"21", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "3"]}], "-", 
+   RowBox[{"28", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "4"]}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}], "5"],
+    SeriesData[$CellContext`z, 
+     Complex[0, 1], {}, -2, 5, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 
+   Complex[0, 1], {
+    Complex[0, 1], -3, 
+    Complex[0, -6], 10, 
+    Complex[0, 15], -21, 
+    Complex[0, -28]}, -2, 5, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.759792296596818*^9, 3.75979242923173*^9, {3.759792484578511*^9, 
+   3.7597924989122562`*^9}, 3.7597926138518744`*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell above matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.7597924572509947`*^9, 3.759792469798308*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"\[ImaginaryI]", ",", 
+     RowBox[{"-", "3"}], ",", 
+     RowBox[{
+      RowBox[{"-", "6"}], " ", "\[ImaginaryI]"}], ",", "10", ",", 
+     RowBox[{"15", " ", "\[ImaginaryI]"}], ",", 
+     RowBox[{"-", "21"}], ",", 
+     RowBox[{
+      RowBox[{"-", "28"}], " ", "\[ImaginaryI]"}]}], "}"}], ",", "n"}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.759792587675851*^9, 3.759792688414789*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "2"], " ", 
+  SuperscriptBox["\[ImaginaryI]", "n"], " ", "n", " ", 
+  RowBox[{"(", 
+   RowBox[{"1", "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{{3.759792605620099*^9, 3.759792628187635*^9}, 
+   3.759792690709613*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      RowBox[{
+       FractionBox["1", "2"], " ", 
+       SuperscriptBox["\[ImaginaryI]", "n"], " ", "n", " ", 
+       RowBox[{"(", 
+        RowBox[{"1", "+", "n"}], ")"}]}], "1"], 
+     RowBox[{"(", 
+      FractionBox["1", 
+       RowBox[{
+        FractionBox["1", "2"], " ", 
+        SuperscriptBox["\[ImaginaryI]", 
+         RowBox[{"(", 
+          RowBox[{"n", "+", "1"}], ")"}]], " ", 
+        RowBox[{"(", 
+         RowBox[{"n", "+", "2"}], ")"}], " ", 
+        RowBox[{"(", 
+         RowBox[{"1", "+", "n"}], ")"}]}]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.75979286503561*^9, 3.759792903543367*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.7597929053911057`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "2", ",", "3", ",", "4"}], 
+    "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759792936567327*^9, 3.759793017130865*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "3"}], "+", "n"}]], "Output",
+ CellChangeTimes->{3.759793019311202*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["1", 
+  RowBox[{"1", "/", "1"}]]], "Input",
+ CellChangeTimes->{{3.759793026057806*^9, 3.7597930292904043`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759793030636537*^9}]
+}, Open  ]],
+
+Cell["\<\
+As in problem 1 and for the same reason, I will express the radius of \
+convergence as 0<|z - 1|<1, in agreement with the answer in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.759793072499304*^9, 3.759793078128386*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"15.", "  ", 
+   FractionBox[
+    RowBox[{"Cos", "[", "z", "]"}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", " ", "\[Pi]"}], ")"}], "2"]]}], ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "\[Pi]"}]}]], "Text",
+ CellChangeTimes->{{3.759706600781555*^9, 3.7597066393649807`*^9}, 
+   3.75970669787698*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fo", "[", "z_", "]"}], "=", 
+  FractionBox[
+   RowBox[{"Cos", "[", "z", "]"}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"z", "-", " ", "\[Pi]"}], ")"}], "2"]]}]], "Input",
+ CellChangeTimes->{{3.759793172978848*^9, 3.759793186943519*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Cos", "[", "z", "]"}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "\[Pi]"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.759793188959362*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fo", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", "\[Pi]", ",", "8"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759793203861539*^9, 3.7597932119007597`*^9}, {
+  3.7597934009736757`*^9, 3.759793432827586*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", "\[Pi]"}], ")"}], "2"]]}], "+", 
+   FractionBox["1", "2"], "-", 
+   RowBox[{
+    FractionBox["1", "24"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[Pi]"}], ")"}], "2"]}], "+", 
+   RowBox[{
+    FractionBox["1", "720"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[Pi]"}], ")"}], "4"]}], "-", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[Pi]"}], ")"}], "6"], "40320"], "+", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[Pi]"}], ")"}], "8"], "3628800"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "\[Pi]"}], "]"}], "9"],
+    SeriesData[$CellContext`z, Pi, {}, -2, 9, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, Pi, {-1, 0, 
+    Rational[1, 2], 0, 
+    Rational[-1, 24], 0, 
+    Rational[1, 720], 0, 
+    Rational[-1, 40320], 0, 
+    Rational[1, 3628800]}, -2, 9, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{
+  3.759793213522629*^9, {3.759793402420363*^9, 3.7597934336488647`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.759793281589345*^9, 3.759793293240725*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     FractionBox["1", "2"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "24"]}], ",", 
+     FractionBox["1", "720"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "40320"]}], ",", 
+     FractionBox["1", "3628800"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759793334584873*^9, 3.759793396260985*^9}, {
+  3.759793442219611*^9, 3.759793471970755*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"-", "1"}], ")"}], "n"], " ", 
+   SuperscriptBox["4", 
+    RowBox[{"1", "-", "n"}]]}], 
+  RowBox[{
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}], " ", 
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}]}]]], "Output",
+ CellChangeTimes->{3.7597934767780027`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.759793480030308*^9, 3.7597934845556498`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"-", "1"}], ")"}], "n"], 
+  RowBox[{"Gamma", "[", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"2", " ", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.75979348526103*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "n"], 
+      RowBox[{"Gamma", "[", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"2", " ", "n"}]}], "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"2", 
+          RowBox[{"(", " ", 
+           RowBox[{"n", "+", "1"}], ")"}]}]}], "]"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"n", "+", "1"}]]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759793543715213*^9, 3.7597935766309767`*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759793577974701*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", "2", ",", "4", ",", "6", ",", "8"}], 
+    "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.75979360436757*^9, 3.7597936327183857`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "2"}], "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.759793634818782*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["\[Infinity]", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.7597936480223293`*^9, 3.759793654572105*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.7597936559834414`*^9}]
+}, Open  ]],
+
+Cell["\<\
+As in problem 1 and for the same reason, I will express the radius of \
+convergence as 0<|z - \[Pi]|<\[Infinity], in agreement with the answer in the \
+text.\
+\>", "Text",
+ CellChangeTimes->{{3.759793685125572*^9, 3.7597937052185173`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[TextData[{
+ "19 - 25 Taylor and Laurent series\nFind all Taylor and Laurent series with \
+center ",
+ Cell[BoxData[
+  FormBox[
+   SubscriptBox["z", "0"], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ ". Determine the precise regions of convergence."
+}], "Text",
+ CellChangeTimes->{{3.759706745345646*^9, 3.7597067893594437`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"19.", "  ", 
+   FractionBox["1", 
+    RowBox[{"1", "-", " ", 
+     SuperscriptBox["z", "2"]}]]}], " ", ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "0"}]}]], "Text",
+ CellChangeTimes->{{3.7597068005043373`*^9, 3.759706848221376*^9}, 
+   3.7597069628428383`*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fp", "[", "z_", "]"}], "=", 
+  FractionBox["1", 
+   RowBox[{"1", "-", " ", 
+    SuperscriptBox["z", "2"]}]]}]], "Input",
+ CellChangeTimes->{{3.7597938358506727`*^9, 3.759793849448217*^9}}],
+
+Cell[BoxData[
+ FractionBox["1", 
+  RowBox[{"1", "-", 
+   SuperscriptBox["z", "2"]}]]], "Output",
+ CellChangeTimes->{3.7597938508570757`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fp", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", "0", ",", "14"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759793867670412*^9, 3.759793891451955*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"1", "+", 
+   SuperscriptBox["z", "2"], "+", 
+   SuperscriptBox["z", "4"], "+", 
+   SuperscriptBox["z", "6"], "+", 
+   SuperscriptBox["z", "8"], "+", 
+   SuperscriptBox["z", "10"], "+", 
+   SuperscriptBox["z", "12"], "+", 
+   SuperscriptBox["z", "14"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "z", "]"}], "15"],
+    SeriesData[$CellContext`z, 0, {}, 0, 15, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 0, {1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1},
+    0, 15, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.7597938696004877`*^9, 3.7597938923086443`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.759793995180687*^9, 3.759794008583933*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+     "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7597940339687853`*^9, 3.759794044326673*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.7597940459751368`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox["1", "1"], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759794069583638*^9, 3.759794084485321*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759794097475966*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "4", ",", "6", ",", "8", ",", "10"}], "}"}], 
+   ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759794116461749*^9, 3.759794125267837*^9}}],
+
+Cell[BoxData[
+ RowBox[{"2", " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.7597941271858597`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["1", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759794138792531*^9, 3.759794145923151*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759794147228951*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Abs", "[", "z", "]"}], "<", "1"}]], "Input",
+ CellChangeTimes->{{3.7597941937191763`*^9, 3.7597942023049717`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["\<\
+Okay, caught me napping. I see from the answer that I am back to the same \
+examples 3 and 4 that I worked with in problem 5. If Abs[z]>1 then I can look \
+at\
+\>", "Text",
+ CellChangeTimes->{{3.7597943480690413`*^9, 3.7597944030419903`*^9}, {
+  3.7597966590602818`*^9, 3.759796671866206*^9}, {3.759846173892645*^9, 
+  3.7598462092528267`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox["1", 
+    RowBox[{"1", "-", 
+     SuperscriptBox["z", "2"]}]], "\[Equal]", 
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{
+      SuperscriptBox["z", "2"], 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SuperscriptBox["z", 
+         RowBox[{"-", "2"}]]}], ")"}]}]]}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759796706094427*^9, 3.759796758208794*^9}}],
+
+Cell["and taking the cue from example 4,", "Text",
+ CellChangeTimes->{{3.759796775654275*^9, 3.75979679023009*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"-", 
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    SuperscriptBox["z", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], "n"}], " ", "-", "2"}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}], "      ", 
+  RowBox[{"(*", "  ", 
+   RowBox[{
+    RowBox[{"Abs", "[", "z", "]"}], ">", "1"}], "  ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7597967945621157`*^9, 3.759796853379986*^9}, {
+  3.759800970082106*^9, 3.759801006400899*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    SuperscriptBox["z", "2"]}]]}]], "Output",
+ CellChangeTimes->{3.759796856795046*^9}]
+}, Open  ]],
+
+Cell["The green cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.759801047184371*^9, 3.759801047686327*^9}, {
+  3.7598013903379993`*^9, 3.759801408129381*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"21.", " ", 
+   FractionBox[
+    RowBox[{"Sin", "[", "z", "]"}], 
+    RowBox[{"z", "+", 
+     FractionBox["\[Pi]", "2"]}]]}], " ", ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", 
+   RowBox[{"-", 
+    FractionBox["\[Pi]", "2"]}]}]}]], "Text",
+ CellChangeTimes->{{3.7597068505511827`*^9, 3.7597069138993*^9}, 
+   3.759706971762713*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fq", "[", "z_", "]"}], "=", 
+  FractionBox[
+   RowBox[{"Sin", "[", "z", "]"}], 
+   RowBox[{"z", "+", 
+    FractionBox["\[Pi]", "2"]}]]}]], "Input",
+ CellChangeTimes->{{3.759801554045948*^9, 3.75980156599019*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"Sin", "[", "z", "]"}], 
+  RowBox[{
+   FractionBox["\[Pi]", "2"], "+", "z"}]]], "Output",
+ CellChangeTimes->{3.759801575033615*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fq", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", 
+     RowBox[{"-", 
+      FractionBox["\[Pi]", "2"]}], ",", "14"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7598016378832417`*^9, 3.759801657592904*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    FractionBox["1", 
+     RowBox[{"z", "+", 
+      FractionBox["\[Pi]", "2"]}]]}], "+", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"z", "+", 
+      FractionBox["\[Pi]", "2"]}], ")"}]}], "-", 
+   RowBox[{
+    FractionBox["1", "24"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "3"]}], "+", 
+   RowBox[{
+    FractionBox["1", "720"], " ", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "5"]}], "-", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "7"], "40320"], "+", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "9"], "3628800"], "-", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "11"], "479001600"], "+", 
+   FractionBox[
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], ")"}], "13"], "87178291200"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "+", 
+       FractionBox["\[Pi]", "2"]}], "]"}], "15"],
+    SeriesData[$CellContext`z, Rational[-1, 2] Pi, {}, -1, 15, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, Rational[-1, 2] Pi, {-1, 0, 
+    Rational[1, 2], 0, 
+    Rational[-1, 24], 0, 
+    Rational[1, 720], 0, 
+    Rational[-1, 40320], 0, 
+    Rational[1, 3628800], 0, 
+    Rational[-1, 479001600], 0, 
+    Rational[1, 87178291200]}, -1, 15, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.7598016399862747`*^9, 3.759801659304439*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     FractionBox["1", "2"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "24"]}], ",", 
+     FractionBox["1", "720"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "40320"]}], ",", 
+     FractionBox["1", "3628800"], ",", 
+     FractionBox[
+      RowBox[{"-", "1"}], "479001600"]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759846391426106*^9, 3.759846496064577*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"-", "1"}], ")"}], "n"], " ", 
+   SuperscriptBox["4", 
+    RowBox[{"1", "-", "n"}]]}], 
+  RowBox[{
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{
+     FractionBox["1", "2"], ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}], " ", 
+   RowBox[{"Pochhammer", "[", 
+    RowBox[{"1", ",", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", "n"}]}], "]"}]}]]], "Output",
+ CellChangeTimes->{{3.7598464742319527`*^9, 3.759846497772011*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", "%", "]"}]], "Input",
+ CellChangeTimes->{{3.759846524065998*^9, 3.759846530854604*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{"-", "1"}], ")"}], "n"], 
+  RowBox[{"Gamma", "[", 
+   RowBox[{
+    RowBox[{"-", "1"}], "+", 
+    RowBox[{"2", " ", "n"}]}], "]"}]]], "Output",
+ CellChangeTimes->{3.759846532082659*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    RowBox[{
+     FractionBox[
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"-", "1"}], ")"}], "n"], 
+      RowBox[{"Gamma", "[", 
+       RowBox[{
+        RowBox[{"-", "1"}], "+", 
+        RowBox[{"2", " ", "n"}]}], "]"}]], 
+     RowBox[{"(", 
+      FractionBox[
+       RowBox[{"Gamma", "[", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         RowBox[{"2", 
+          RowBox[{"(", " ", 
+           RowBox[{"n", "+", "1"}], ")"}]}]}], "]"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"-", "1"}], ")"}], 
+        RowBox[{"n", "+", "1"}]]], ")"}]}], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input"],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759846610120126*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "1", ",", "3", ",", "5", ",", "7", ",", "9", 
+     ",", "11"}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{
+  3.75984665332694*^9, {3.7598466872761707`*^9, 3.759846715184986*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "3"}], "+", 
+  RowBox[{"2", " ", "n"}]}]], "Output",
+ CellChangeTimes->{3.759846716509869*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["\[Infinity]", 
+  RowBox[{"1", "/", "2"}]]], "Input",
+ CellChangeTimes->{{3.759846742104755*^9, 3.759846749342205*^9}}],
+
+Cell[BoxData["\[Infinity]"], "Output",
+ CellChangeTimes->{3.759846750472682*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "The only modification to this result is the allowance for the singularity, \
+so 0<|z+",
+ Cell[BoxData[
+  FormBox[
+   StyleBox[
+    FractionBox["\[Pi]", "2"],
+    FontSize->21], TraditionalForm]],
+  FormatType->"TraditionalForm"],
+ "|<\[Infinity]"
+}], "Text",
+ CellChangeTimes->{{3.759846856686616*^9, 3.75984688586047*^9}, {
+  3.759846944945636*^9, 3.759847003760275*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"23.", " ", 
+   FractionBox[
+    SuperscriptBox["z", "8"], 
+    RowBox[{"1", "-", " ", 
+     SuperscriptBox["z", "4"]}]]}], " ", ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "0"}]}]], "Text",
+ CellChangeTimes->{{3.759706917765045*^9, 3.759706950354295*^9}, 
+   3.759706988714176*^9},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fr", "[", "z_", "]"}], "=", 
+  FractionBox[
+   SuperscriptBox["z", "8"], 
+   RowBox[{"1", "-", " ", 
+    SuperscriptBox["z", "4"]}]]}]], "Input",
+ CellChangeTimes->{{3.759802007137744*^9, 3.759802030382442*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "8"], 
+  RowBox[{"1", "-", 
+   SuperscriptBox["z", "4"]}]]], "Output",
+ CellChangeTimes->{3.7598020353057327`*^9, 3.759849430985342*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"fr", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", "0", ",", "32"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759802052635886*^9, 3.7598020740824823`*^9}, {
+  3.7598494219102707`*^9, 3.759849442922124*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   SuperscriptBox["z", "8"], "+", 
+   SuperscriptBox["z", "12"], "+", 
+   SuperscriptBox["z", "16"], "+", 
+   SuperscriptBox["z", "20"], "+", 
+   SuperscriptBox["z", "24"], "+", 
+   SuperscriptBox["z", "28"], "+", 
+   SuperscriptBox["z", "32"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", "z", "]"}], "33"],
+    SeriesData[$CellContext`z, 0, {}, 8, 33, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 0, {1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 
+   0, 1, 0, 0, 0, 1, 0, 0, 0, 1}, 8, 33, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.759802063824293*^9, 3.759802075213376*^9}, {
+  3.7598494233250923`*^9, 3.7598494438926487`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["The green cell matches the answer in the text.", "Text",
+ CellChangeTimes->{{3.759849645670636*^9, 3.759849654565014*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1"}],
+     "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.7598494822172613`*^9, 3.7598494878951387`*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759849491227544*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox["1", "1"], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759849513199409*^9, 3.759849519933463*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759849522115058*^9}]
+}, Open  ]],
+
+Cell["\<\
+The only modification to this result is the allowance for the singularity, so \
+|z|<1\
+\>", "Text",
+ CellChangeTimes->{{3.759849683125787*^9, 3.7598497250327377`*^9}, {
+  3.7598497686301327`*^9, 3.7598497688141527`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell["\<\
+I note that this problem function is like problem 5 and problem 19, in that \
+the radius is split into two parts. Another part with Abs[z]>1 also exists. \
+In this case\
+\>", "Text",
+ CellChangeTimes->{{3.759849830707468*^9, 3.759849889510775*^9}, {
+  3.759849925238098*^9, 3.7598499356840878`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   FractionBox[
+    SuperscriptBox["z", "8"], 
+    RowBox[{"1", "-", 
+     SuperscriptBox["z", "4"]}]], "\[Equal]", 
+   RowBox[{
+    FractionBox[
+     SuperscriptBox["z", 
+      RowBox[{"-", "8"}]], 
+     SuperscriptBox["z", 
+      RowBox[{"-", "8"}]]], 
+    FractionBox[
+     SuperscriptBox["z", "8"], 
+     RowBox[{"1", "-", 
+      SuperscriptBox["z", "4"]}]]}], "==", 
+   FractionBox["1", 
+    RowBox[{
+     SuperscriptBox["z", 
+      RowBox[{"-", "8"}]], "-", 
+     SuperscriptBox["z", 
+      RowBox[{"-", "4"}]]}]], "==", 
+   FractionBox["1", 
+    RowBox[{
+     SuperscriptBox["z", 
+      RowBox[{"-", "8"}]], 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       SuperscriptBox["z", "4"]}], ")"}]}]]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759852139192832*^9, 3.759852148310894*^9}}],
+
+Cell[TextData[{
+ "According to the website referred to earlier, expanding a series around \
+Infinity causes Mathematica to automatically expand in terms of",
+ StyleBox[" ",
+  FontSize->21],
+ Cell[BoxData[
+  FormBox[
+   FractionBox["1", "z"], TraditionalForm]]],
+ ". A comment on the website indicates that this is sometimes performed to \
+examine the outer region of an annular domain."
+}], "Text",
+ CellChangeTimes->{{3.759878395954915*^9, 3.759878478502812*^9}, {
+  3.759947534436973*^9, 3.75994755428216*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"fs", "[", "z_", "]"}], "=", 
+  RowBox[{"Series", "[", 
+   RowBox[{
+    FractionBox["1", 
+     RowBox[{
+      SuperscriptBox["z", 
+       RowBox[{"-", "8"}]], 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SuperscriptBox["z", "4"]}], ")"}]}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"z", ",", "\[Infinity]", ",", "20"}], "}"}]}], "]"}]}]], "Input",\
+
+ CellChangeTimes->{{3.7598514030075006`*^9, 3.759851533870129*^9}, {
+  3.759851777502651*^9, 3.759851782962365*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   RowBox[{"-", 
+    SuperscriptBox["z", "4"]}], "-", "1", "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "z"], ")"}], "4"], "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "z"], ")"}], "8"], "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "z"], ")"}], "12"], "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "z"], ")"}], "16"], "-", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     FractionBox["1", "z"], ")"}], "20"], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      FractionBox["1", "z"], "]"}], "21"],
+    SeriesData[$CellContext`z, 
+     DirectedInfinity[1], {}, -4, 21, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 
+   DirectedInfinity[1], {-1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 0, -1, 0, 0, 
+   0, -1, 0, 0, 0, -1, 0, 0, 0, -1}, -4, 21, 1],
+  Editable->False]], "Output",
+ CellChangeTimes->{{3.759851433228394*^9, 3.759851534776634*^9}, 
+   3.759851784269709*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["and matching this recast is", "Text",
+ CellChangeTimes->{{3.7598500232159*^9, 3.759850027158231*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"Sum", "[", 
+   RowBox[{
+    SuperscriptBox["z", 
+     RowBox[{
+      RowBox[{"4", "n"}], " ", "+", "8"}]], ",", 
+    RowBox[{"{", 
+     RowBox[{"n", ",", "0", ",", "\[Infinity]"}], "}"}]}], "]"}], "    ", 
+  RowBox[{"(*", "  ", 
+   RowBox[{
+    RowBox[{"Abs", "[", "z", "]"}], ">", "1"}], "  ", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7598513054080877`*^9, 3.759851364902174*^9}, {
+  3.759851657490823*^9, 3.759851658298306*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  SuperscriptBox["z", "8"], 
+  RowBox[{"1", "-", 
+   SuperscriptBox["z", "4"]}]]], "Output",
+ CellChangeTimes->{{3.759851307409429*^9, 3.7598513655169363`*^9}}]
+}, Open  ]],
+
+Cell["Heading towards finding a radius,", "Text",
+ CellChangeTimes->{{3.759852201043805*^9, 3.759852209764311*^9}, {
+  3.759859223707346*^9, 3.7598592249897137`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759851813812984*^9, 3.759851832122806*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", "1"}]], "Output",
+ CellChangeTimes->{3.7598518404572353`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"Abs", "[", 
+    FractionBox[
+     RowBox[{"-", "1"}], 
+     RowBox[{"-", "1"}]], "]"}], ",", 
+   RowBox[{"n", "\[Rule]", "\[Infinity]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.759851864258988*^9, 3.759851866305646*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759851867799458*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FindSequenceFunction", "[", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", "0", ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "8"}], ",", 
+     RowBox[{"-", "12"}], ",", 
+     RowBox[{"-", "16"}], ",", 
+     RowBox[{"-", "20"}]}], "}"}], ",", "n"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759851905824642*^9, 3.759851953790065*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", "4"}], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "2"}], "+", "n"}], ")"}]}]], "Output",
+ CellChangeTimes->{3.75985195610678*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ SuperscriptBox["1", 
+  RowBox[{
+   RowBox[{"-", "1"}], "/", "4"}]]], "Input",
+ CellChangeTimes->{{3.759851994856121*^9, 3.759852002628438*^9}}],
+
+Cell[BoxData["1"], "Output",
+ CellChangeTimes->{3.759852004234613*^9}]
+}, Open  ]],
+
+Cell["\<\
+For this second version of the analysis, the radius is |z| > 1.\
+\>", "Text",
+ CellChangeTimes->{{3.75985203785201*^9, 3.759852074329596*^9}, {
+  3.759859249823811*^9, 3.7598592507561617`*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"25.", "  ", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["z", "3"], "-", 
+     RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+      SuperscriptBox["z", "2"]}]}], 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", " ", "\[ImaginaryI]"}], ")"}], "2"]]}], " ", ",", " ", 
+  RowBox[{
+   SubscriptBox["z", "0"], "=", "\[ImaginaryI]"}]}]], "Text",
+ CellChangeTimes->{{3.7597070176188498`*^9, 3.759707087824691*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"ft", "[", "z_", "]"}], "=", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["z", "3"], "-", 
+    RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+     SuperscriptBox["z", "2"]}]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"z", "-", " ", "\[ImaginaryI]"}], ")"}], "2"]]}]], "Input",
+ CellChangeTimes->{{3.759859442018244*^9, 3.7598594491268177`*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    RowBox[{"-", "2"}], " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["z", "2"]}], "+", 
+   SuperscriptBox["z", "3"]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.759859451093392*^9, 3.75986369108455*^9, 
+  3.759864595897881*^9, 3.759877316085516*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Series", "[", 
+  RowBox[{
+   RowBox[{"ft", "[", "z", "]"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"z", ",", " ", "\[ImaginaryI]", ",", "12"}], "}"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7598594709656963`*^9, 3.7598595083455343`*^9}, {
+  3.7598595889098597`*^9, 3.7598597049087973`*^9}, {3.759859777385913*^9, 
+  3.759859793614827*^9}}],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{
+   FractionBox["\[ImaginaryI]", 
+    SuperscriptBox[
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]], "+", 
+   FractionBox["1", 
+    RowBox[{"z", "-", "\[ImaginaryI]"}]], "+", "\[ImaginaryI]", "+", 
+   RowBox[{"(", 
+    RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "+", 
+   InterpretationBox[
+    SuperscriptBox[
+     RowBox[{"O", "[", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}], "13"],
+    SeriesData[$CellContext`z, 
+     Complex[0, 1], {}, -2, 13, 1],
+    Editable->False]}],
+  SeriesData[$CellContext`z, 
+   Complex[0, 1], {
+    Complex[0, 1], 1, 
+    Complex[0, 1], 1}, -2, 13, 1],
+  Editable->False]], "Output",
+ GeneratedCell->False,
+ CellAutoOverwrite->False,
+ CellChangeTimes->{{3.759859590490881*^9, 3.759859706052109*^9}, {
+   3.759859781555644*^9, 3.759859794552225*^9}, 3.759863693415637*^9, 
+   3.7598645983421793`*^9, 3.759877319056244*^9, {3.759877542499422*^9, 
+   3.759877542889659*^9}}]
+}, Open  ]],
+
+Cell["\<\
+I need to drop the higher-order remainder term. There is no remainder term, \
+because the series contains only three terms. It is not infinite. \
+\>", "Text",
+ CellChangeTimes->{3.759877307589218*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Normal", "[", 
+  InterpretationBox[
+   RowBox[{
+    FractionBox["\[ImaginaryI]", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]], "+", 
+    FractionBox["1", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}]], "+", "\[ImaginaryI]", "+", 
+    RowBox[{"(", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "+", 
+    InterpretationBox[
+     SuperscriptBox[
+      RowBox[{"O", "[", 
+       RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}], "13"],
+     SeriesData[$CellContext`z, 
+      Complex[0, 1], {}, -2, 13, 1],
+     Editable->False]}],
+   SeriesData[$CellContext`z, 
+    Complex[0, 1], {
+     Complex[0, 1], 1, 
+     Complex[0, 1], 1}, -2, 13, 1],
+   Editable->False], "]"}]], "Input",
+ CellChangeTimes->{{3.7598773372236643`*^9, 3.759877341322979*^9}, {
+  3.759877441983775*^9, 3.759877495404118*^9}, {3.759877588617682*^9, 
+  3.7598776281987867`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"z", "+", 
+  FractionBox["\[ImaginaryI]", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]], "+", 
+  FractionBox["1", 
+   RowBox[{
+    RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}]]}]], "Output",
+ CellChangeTimes->{
+  3.7598773424610767`*^9, {3.759877448997781*^9, 3.759877496971698*^9}},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The above green cell matches the answer in the text, in content. Mathematica \
+made a slight simplification, which I do not know how to avoid.\
+\>", "Text",
+ CellChangeTimes->{{3.7598607476480227`*^9, 3.759860821907461*^9}, {
+  3.759877730508478*^9, 3.759877763361553*^9}, {3.75994771830523*^9, 
+  3.7599477264222*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["\[ImaginaryI]", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]], "+", 
+     FractionBox["1", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}]], "+", "\[ImaginaryI]", "+", 
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}]}], ")"}], ",", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}], "\[Rule]", "0"}]}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.7598599414085493`*^9, 3.759859948220766*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["z", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.759859950265461*^9, 3.759863696250355*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Limit", "[", 
+  RowBox[{
+   RowBox[{"(", 
+    RowBox[{
+     FractionBox["\[ImaginaryI]", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}], "2"]], "+", 
+     FractionBox["1", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}]], "+", "\[ImaginaryI]", "+", 
+     RowBox[{"(", 
+      RowBox[{"z", "-", "\[ImaginaryI]"}], ")"}]}], ")"}], ",", 
+   RowBox[{
+    RowBox[{"Abs", "[", 
+     RowBox[{"z", "-", "\[ImaginaryI]"}], "]"}], "\[Rule]", "\[Infinity]"}]}],
+   "]"}]], "Input",
+ CellChangeTimes->{{3.7598599638931923`*^9, 3.759859966395075*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["z", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.759859969168997*^9, 3.759863699159945*^9}]
+}, Open  ]],
+
+Cell["I can invent a function and make a table.", "Text",
+ CellChangeTimes->{{3.759860831842692*^9, 3.759860838618403*^9}, {
+  3.7599477561105347`*^9, 3.759947771170643*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"chk", "[", "z_", "]"}], "=", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["z", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]]}]], "Input",
+ CellChangeTimes->{{3.759860009926016*^9, 3.759860023338682*^9}}],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   SuperscriptBox["z", "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"-", "2"}], " ", "\[ImaginaryI]"}], "+", "z"}], ")"}]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", "\[ImaginaryI]"}], "+", "z"}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.7598600244578648`*^9, 3.759863703142982*^9, 
+  3.759864604421577*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TableForm", "[", 
+  RowBox[{"N", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"chk", "[", "z", "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "100"}], ",", 
+         RowBox[{"-", "5"}], ",", 
+         RowBox[{"-", "2"}], ",", 
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.5"}], ",", "0", ",", "0.5", ",", "1", ",", "2", ",", 
+         
+         RowBox[{"0.999", 
+          RowBox[{"(", " ", "\[ImaginaryI]", ")"}]}], ",", "5", ",", "100"}], 
+        "}"}]}], "}"}]}], "]"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759860071566577*^9, 3.759860144752737*^9}, {
+  3.759860256873281*^9, 3.759860258888843*^9}}],
+
+Cell[BoxData[
+ TagBox[GridBox[{
+    {
+     RowBox[{"-", "100.`"}], 
+     RowBox[{
+      RowBox[{"-", "100.00999700049994`"}], "+", 
+      RowBox[{"0.0001999600059992001`", " ", "\[ImaginaryI]"}]}]},
+    {
+     RowBox[{"-", "5.`"}], 
+     RowBox[{
+      RowBox[{"-", "5.177514792899408`"}], "+", 
+      RowBox[{"0.07396449704142012`", " ", "\[ImaginaryI]"}]}]},
+    {
+     RowBox[{"-", "2.`"}], 
+     RowBox[{
+      RowBox[{"-", "2.24`"}], "+", 
+      RowBox[{"0.32`", " ", "\[ImaginaryI]"}]}]},
+    {
+     RowBox[{"-", "1.`"}], 
+     RowBox[{
+      RowBox[{"-", "1.`"}], "+", 
+      RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}]},
+    {
+     RowBox[{"-", "0.5`"}], 
+     RowBox[{
+      RowBox[{"-", "0.26`"}], "+", 
+      RowBox[{"0.32`", " ", "\[ImaginaryI]"}]}]},
+    {"0.`", "0.`"},
+    {"0.5`", 
+     RowBox[{"0.26`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.32`", " ", "\[ImaginaryI]"}]}]},
+    {"1.`", 
+     RowBox[{"1.`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.5`", " ", "\[ImaginaryI]"}]}]},
+    {"2.`", 
+     RowBox[{"2.24`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.32`", " ", "\[ImaginaryI]"}]}]},
+    {
+     RowBox[{"0.`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.999`", " ", "\[ImaginaryI]"}]}], 
+     RowBox[{"0.`", "\[VeryThinSpace]", "-", 
+      RowBox[{"998999.0009999981`", " ", "\[ImaginaryI]"}]}]},
+    {"5.`", 
+     RowBox[{"5.177514792899408`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.07396449704142012`", " ", "\[ImaginaryI]"}]}]},
+    {"100.`", 
+     RowBox[{"100.00999700049994`", "\[VeryThinSpace]", "+", 
+      RowBox[{"0.0001999600059992001`", " ", "\[ImaginaryI]"}]}]}
+   },
+   GridBoxAlignment->{
+    "Columns" -> {{Left}}, "ColumnsIndexed" -> {}, "Rows" -> {{Baseline}}, 
+     "RowsIndexed" -> {}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "ColumnsIndexed" -> {}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}, "RowsIndexed" -> {}}],
+  Function[BoxForm`e$, 
+   TableForm[BoxForm`e$]]]], "Output",
+ CellChangeTimes->{{3.759860112962792*^9, 3.7598601461307898`*^9}, 
+   3.759860265170072*^9, 3.75986370686097*^9, 3.759864608020253*^9}]
+}, Open  ]],
+
+Cell["\<\
+For all points in the complex plane except the singularity, the expression \
+generates a valid value, and all such locations belong within the radius of \
+convergence.\
+\>", "Text",
+ CellChangeTimes->{{3.75986087379214*^9, 3.759860909421842*^9}, {
+  3.759861166110238*^9, 3.7598611801959333`*^9}, {3.759861213241836*^9, 
+  3.7598612319365473`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"chka", "[", "z_", "]"}], "=", 
+  RowBox[{"ComplexExpand", "[", 
+   RowBox[{"chk", "[", "z", "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.7598614971064157`*^9, 3.75986152603732*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"2", " ", "\[ImaginaryI]", " ", 
+    SuperscriptBox["z", "2"]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["z", "2"]}], ")"}], "2"]], "+", 
+  FractionBox[
+   RowBox[{"3", " ", 
+    SuperscriptBox["z", "3"]}], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["z", "2"]}], ")"}], "2"]], "+", 
+  FractionBox[
+   SuperscriptBox["z", "5"], 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      SuperscriptBox["z", "2"]}], ")"}], "2"]]}]], "Output",
+ CellChangeTimes->{3.759861527032686*^9, 3.759864360478998*^9, 
+  3.759864611731901*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot1", "=", 
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Re", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}], ",", 
+       RowBox[{"Im", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "300"}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Re\>\"", ",", "\"\<Im\>\""}], "}"}]}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "Automatic"}], ",", 
+     RowBox[{"GridLines", "->", "Automatic"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Thickness", "[", "0.003", "]"}], "}"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.75986134824292*^9, 3.759861382191045*^9}, {
+   3.7598614174869137`*^9, 3.759861452252387*^9}, {3.759861551829494*^9, 
+   3.7598615884413967`*^9}, {3.759861668460661*^9, 3.759861668884083*^9}, 
+   3.759861797275983*^9, {3.759861869662552*^9, 3.759861878174308*^9}, {
+   3.759861973768134*^9, 3.759861973959948*^9}, {3.75986271924809*^9, 
+   3.7598627264143677`*^9}, {3.7598631145212107`*^9, 3.759863119807465*^9}, {
+   3.759863150886365*^9, 3.759863151382139*^9}, {3.759863188876947*^9, 
+   3.7598631930444317`*^9}, {3.7598632534665003`*^9, 
+   3.7598632592502117`*^9}, {3.759863299962324*^9, 3.7598633287768183`*^9}, {
+   3.7598633621743593`*^9, 3.75986338308541*^9}, {3.759863453642747*^9, 
+   3.759863454898662*^9}, 3.7598636084382668`*^9, {3.759864383752798*^9, 
+   3.759864390882057*^9}, {3.759864704723845*^9, 3.759864728706543*^9}, {
+   3.759864832944289*^9, 3.7598648341983843`*^9}, 3.759864908333411*^9, {
+   3.759864965195252*^9, 3.759864967905651*^9}, {3.7598675011802607`*^9, 
+   3.759867513506381*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"rek", "=", 
+  RowBox[{"N", "[", 
+   RowBox[{"Table", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"Im", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "100"}], ",", 
+         RowBox[{"-", "5"}], ",", 
+         RowBox[{"-", "2"}], ",", 
+         RowBox[{"-", "1"}], ",", 
+         RowBox[{"-", "0.5"}], ",", "0", ",", "0.5", ",", "1", ",", "2", ",", 
+         "5", ",", "100"}], "}"}]}], "}"}]}], "]"}], "]"}]}]], "Input",
+ CellChangeTimes->{{3.759866056762219*^9, 3.759866067001649*^9}, {
+  3.7598677973931303`*^9, 3.7598677980168333`*^9}, {3.7598679206125507`*^9, 
+  3.759867922490933*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "100.`"}], ",", "0.0001999600059992001`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "5.`"}], ",", "0.07396449704142012`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2.`"}], ",", "0.32`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1.`"}], ",", "0.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "0.5`"}], ",", "0.32`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.5`", ",", "0.32`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1.`", ",", "0.5`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2.`", ",", "0.32`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5.`", ",", "0.07396449704142012`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"100.`", ",", "0.0001999600059992001`"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.759866069607193*^9, 3.759867799429484*^9, 
+  3.759867924963379*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"reki", "=", 
+  RowBox[{"{", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1"}], "}"}], "}"}]}]], "Input",
+ CellChangeTimes->{{3.759868039085948*^9, 3.759868050997766*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"{", 
+   RowBox[{"0", ",", "1"}], "}"}], "}"}]], "Output",
+ CellChangeTimes->{3.7598681065368357`*^9}]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot6", "=", 
+   RowBox[{"ParametricPlot", "[", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"Re", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}], ",", 
+       RowBox[{"Im", "[", 
+        RowBox[{"chk", "[", "z", "]"}], "]"}]}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"z", ",", 
+       RowBox[{"-", "100"}], ",", "100"}], "}"}], ",", 
+     RowBox[{"ImageSize", "\[Rule]", "700"}], ",", 
+     RowBox[{"AspectRatio", "\[Rule]", "0.2"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"Thickness", "[", "0.001", "]"}], "}"}]}], ",", 
+     RowBox[{"AxesLabel", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\"\<Re\>\"", ",", "\"\<Im\>\""}], "}"}]}]}], "]"}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.75986503051233*^9, 3.759865226647789*^9}, 
+   3.759865261760202*^9, {3.759866108640685*^9, 3.759866109334831*^9}, {
+   3.7598673532883463`*^9, 3.759867356568063*^9}, {3.75986822072935*^9, 
+   3.759868246054586*^9}, {3.759868321221374*^9, 3.759868322051875*^9}, {
+   3.7598684056809072`*^9, 3.759868411360332*^9}, {3.759868445223385*^9, 
+   3.75986844538313*^9}, {3.759868871514172*^9, 3.759868872240234*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot4", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Re", "[", "#", "]"}], ",", 
+         RowBox[{"Im", "[", "#", "]"}]}], "}"}], "&"}], " ", "/@", " ", 
+      "rek"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Black"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\[Bullet]", ",", "12"}], "}"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.75986704337307*^9, 3.7598670876180563`*^9}, {
+  3.759867117987966*^9, 3.759867136440255*^9}, {3.759867309923278*^9, 
+  3.75986732212127*^9}, {3.759867649198698*^9, 3.759867655028824*^9}, {
+  3.759868369557699*^9, 3.759868370425865*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"plot5", "=", 
+   RowBox[{"ListPlot", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"Re", "[", "#", "]"}], ",", 
+         RowBox[{"Re", "[", "#", "]"}]}], "}"}], "&"}], " ", "/@", " ", 
+      "reki"}], ",", 
+     RowBox[{"PlotRange", "\[Rule]", "All"}], ",", 
+     RowBox[{"PlotStyle", "\[Rule]", "Orange"}], ",", 
+     RowBox[{"PlotMarkers", "\[Rule]", 
+      RowBox[{"{", 
+       RowBox[{"\[Bullet]", ",", "18"}], "}"}]}]}], "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.759867949611106*^9, 3.759867971224992*^9}, {
+   3.759868060005349*^9, 3.759868095748204*^9}, {3.759868310117882*^9, 
+   3.759868312637364*^9}, 3.75986848400574*^9, {3.759868523039886*^9, 
+   3.759868544755392*^9}, {3.75986859637154*^9, 3.759868631672052*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Show", "[", 
+  RowBox[{"plot6", ",", "plot4", ",", "plot5"}], "]"}]], "Input",
+ CellChangeTimes->{{3.759865273153338*^9, 3.7598652807096453`*^9}, {
+  3.7598670738109093`*^9, 3.7598670751224613`*^9}, {3.759868119179545*^9, 
+  3.7598681211870747`*^9}, {3.759868177018758*^9, 3.7598682140235157`*^9}}],
+
+Cell[BoxData[
+ GraphicsBox[{{{}, {}, 
+    {RGBColor[0.368417, 0.506779, 0.709798], Thickness[0.001], Opacity[1.], 
+     FaceForm[Opacity[0.3]], LineBox[CompressedData["
+1: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
+0CYowg==
+      "]]}}, {{}, {
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{-100., 0.0001999600059992001}}, {{0., 
+       0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{-5., 0.07396449704142012}}, {{0., 
+       0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{-2., 0.32}}, {{0., 0.}}, {{0., 
+       0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{-1., 0.5}}, {{0., 0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{-0.5, 0.32}}, {{0., 0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{0., 0.}}, {{0., 0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{0.5, 0.32}}, {{0., 0.}}, {{0., 
+       0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{1., 0.5}}, {{0., 0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{2., 0.32}}, {{0., 0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{5., 0.07396449704142012}}, {{0., 
+       0.}}, {{0., 0.}}}]}, 
+     {GrayLevel[0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->12], {0., 0.}], {{{100., 0.0001999600059992001}}, {{0., 
+       0.}}, {{0., 0.}}}]}, {}}, {}}, {{}, {
+     {RGBColor[1, 0.5, 0], AbsolutePointSize[6], AbsoluteThickness[1.6], 
+      GeometricTransformationBox[InsetBox[
+        StyleBox["\[Bullet]",
+         StripOnInput->False,
+         FontSize->18], {0., 0.}], {{{0., 1.}}, {{0., 1.}}, {{0., 
+       1.}}}]}, {}}, {}}},
+  AspectRatio->0.2,
+  Axes->{True, True},
+  AxesLabel->{
+    FormBox["\"Re\"", TraditionalForm], 
+    FormBox["\"Im\"", TraditionalForm]},
+  AxesOrigin->{0, 0},
+  DisplayFunction->Identity,
+  FrameLabel->{{None, None}, {None, None}},
+  FrameTicks->{{Automatic, Automatic}, {Automatic, Automatic}},
+  GridLinesStyle->Directive[
+    GrayLevel[0.5, 0.4]],
+  ImageSize->700,
+  Method->{"ScalingFunctions" -> None},
+  PlotRange->{All, All},
+  PlotRangeClipping->True,
+  PlotRangePadding->{{
+     Scaled[0.05], 
+     Scaled[0.05]}, {
+     Scaled[0.05], 
+     Scaled[0.05]}},
+  Ticks->{Automatic, Automatic}]], "Output",
+ CellChangeTimes->{
+  3.7598652816663313`*^9, 3.759865390110733*^9, 3.759865426534388*^9, 
+   3.759865556932687*^9, 3.7598656147420607`*^9, {3.759865894036487*^9, 
+   3.75986590484944*^9}, 3.759865944231112*^9, {3.7598660993470497`*^9, 
+   3.75986611333547*^9}, {3.759866208328363*^9, 3.759866226923127*^9}, {
+   3.759866261867834*^9, 3.759866289854719*^9}, 3.759866321462295*^9, 
+   3.7598664543101273`*^9, {3.759866488052793*^9, 3.759866517035939*^9}, {
+   3.759866674674891*^9, 3.759866715341897*^9}, 3.759866783601347*^9, 
+   3.759867076427123*^9, {3.759867127598673*^9, 3.759867140460867*^9}, 
+   3.7598673278413773`*^9, 3.759867366459015*^9, {3.7598676591466303`*^9, 
+   3.7598676726117887`*^9}, 3.759867809887938*^9, 3.759867938311281*^9, 
+   3.7598681225504007`*^9, 3.759868182563092*^9, {3.759868215330655*^9, 
+   3.759868250110594*^9}, {3.759868316807*^9, 3.7598683275472193`*^9}, 
+   3.759868374473896*^9, 3.759868415674603*^9, 3.759868449361364*^9, {
+   3.759868534219751*^9, 3.759868548473268*^9}, {3.75986860971523*^9, 
+   3.7598686348642807`*^9}, 3.7598688782482433`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The orange dot shows the position of the singularity in relation to the \
+function trace. \
+\>", "Text",
+ CellChangeTimes->{{3.759948281256518*^9, 3.759948314277158*^9}, 
+   3.759948348994732*^9}],
+
+Cell["\<\
+The text does not list an answer for this problem, but I believe that R is \
+defined by 0<|0 + \[ImaginaryI]|<\[Infinity].\
+\>", "Text",
+ CellChangeTimes->{
+  3.7599486284258337`*^9, {3.75994867436544*^9, 3.7599486755958853`*^9}, {
+   3.759948706009823*^9, 3.759948711433413*^9}}]
+},
+WindowSize->{1376, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[492, 17, 221, 5, 51, "Text",
+ Evaluatable->False],
+Cell[716, 24, 668, 12, 120, "Text"],
+Cell[1387, 38, 73, 1, 45, "Input"],
+Cell[1463, 41, 252, 5, 120, "Text"],
+Cell[1718, 48, 255, 7, 96, "Text"],
+Cell[1976, 57, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[2074, 62, 225, 6, 76, "Input"],
+Cell[2302, 70, 144, 4, 76, "Output"]
+}, Open  ]],
+Cell[2461, 77, 1142, 18, 189, "Text"],
+Cell[CellGroupData[{
+Cell[3628, 99, 288, 7, 45, "Input"],
+Cell[3919, 108, 973, 31, 105, "Output"]
+}, Open  ]],
+Cell[4907, 142, 261, 5, 86, "Text"],
+Cell[CellGroupData[{
+Cell[5193, 151, 521, 15, 76, "Input"],
+Cell[5717, 168, 528, 19, 94, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6282, 192, 133, 2, 45, "Input"],
+Cell[6418, 196, 283, 10, 83, "Output"]
+}, Open  ]],
+Cell[6716, 209, 374, 7, 120, "Text"],
+Cell[CellGroupData[{
+Cell[7115, 220, 836, 27, 86, "Input"],
+Cell[7954, 249, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[8049, 253, 405, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[8479, 264, 307, 8, 45, "Input"],
+Cell[8789, 274, 159, 5, 45, "Output"]
+}, Open  ]],
+Cell[8963, 282, 417, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[9405, 293, 149, 3, 49, "Input"],
+Cell[9557, 298, 82, 1, 45, "Output"]
+}, Open  ]],
+Cell[9654, 302, 403, 7, 110, "Text"],
+Cell[10060, 311, 660, 19, 104, "Text"],
+Cell[10723, 332, 283, 8, 105, "Text"],
+Cell[11009, 342, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[11107, 347, 248, 7, 86, "Input"],
+Cell[11358, 356, 179, 5, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11574, 366, 239, 6, 45, "Input"],
+Cell[11816, 374, 763, 25, 105, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12616, 404, 352, 9, 76, "Input"],
+Cell[12971, 415, 199, 6, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13207, 426, 130, 2, 45, "Input"],
+Cell[13340, 430, 122, 3, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13499, 438, 450, 13, 79, "Input"],
+Cell[13952, 453, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14069, 459, 297, 8, 45, "Input"],
+Cell[14369, 469, 135, 4, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14541, 478, 150, 3, 49, "Input"],
+Cell[14694, 483, 82, 1, 45, "Output"]
+}, Open  ]],
+Cell[14791, 487, 328, 6, 110, "Text"],
+Cell[15122, 495, 410, 13, 63, "Text"],
+Cell[15535, 510, 279, 8, 96, "Text"],
+Cell[15817, 520, 73, 1, 45, "Input"],
+Cell[15893, 523, 183, 4, 51, "Text"],
+Cell[16079, 529, 2517, 84, 179, "Text"],
+Cell[18599, 615, 506, 15, 113, "Text"],
+Cell[19108, 632, 1045, 28, 90, "Input"],
+Cell[20156, 662, 547, 17, 106, "Input"],
+Cell[20706, 681, 84, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[20815, 686, 995, 29, 90, "Input"],
+Cell[21813, 717, 752, 26, 106, "Output"]
+}, Open  ]],
+Cell[22580, 746, 240, 4, 86, "Text"],
+Cell[22823, 752, 246, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[23094, 761, 246, 6, 45, "Input"],
+Cell[23343, 769, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[23428, 773, 164, 2, 51, "Text"],
+Cell[23595, 777, 113, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[23733, 782, 350, 10, 45, "Input"],
+Cell[24086, 794, 87, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24210, 801, 283, 8, 75, "Input"],
+Cell[24496, 811, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[24581, 815, 221, 5, 75, "Text"],
+Cell[24805, 822, 163, 3, 51, "Text"],
+Cell[24971, 827, 260, 7, 93, "Text"],
+Cell[25234, 836, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[25332, 841, 245, 7, 75, "Input"],
+Cell[25580, 850, 171, 5, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[25788, 860, 247, 6, 45, "Input"],
+Cell[26038, 868, 975, 32, 102, "Output"]
+}, Open  ]],
+Cell[27028, 903, 136, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[27189, 908, 409, 11, 76, "Input"],
+Cell[27601, 921, 407, 14, 94, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28045, 940, 133, 2, 45, "Input"],
+Cell[28181, 944, 191, 6, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[28409, 955, 622, 20, 79, "Input"],
+Cell[29034, 977, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[29129, 981, 117, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[29271, 986, 335, 9, 45, "Input"],
+Cell[29609, 997, 115, 3, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29761, 1005, 151, 3, 49, "Input"],
+Cell[29915, 1010, 82, 1, 45, "Output"]
+}, Open  ]],
+Cell[30012, 1014, 275, 5, 110, "Text"],
+Cell[30290, 1021, 550, 16, 90, "Text"],
+Cell[30843, 1039, 400, 12, 103, "Text"],
+Cell[31246, 1053, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[31344, 1058, 281, 8, 84, "Input"],
+Cell[31628, 1068, 246, 7, 84, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[31911, 1080, 339, 8, 45, "Input"],
+Cell[32253, 1090, 1473, 42, 106, "Output"]
+}, Open  ]],
+Cell[33741, 1135, 172, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[33938, 1143, 386, 10, 76, "Input"],
+Cell[34327, 1155, 197, 6, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34561, 1166, 135, 2, 45, "Input"],
+Cell[34699, 1170, 122, 3, 79, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[34858, 1178, 450, 13, 79, "Input"],
+Cell[35311, 1193, 82, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[35430, 1199, 312, 8, 45, "Input"],
+Cell[35745, 1209, 110, 3, 45, "Output"]
+}, Open  ]],
+Cell[35870, 1215, 285, 6, 110, "Text"],
+Cell[36158, 1223, 472, 15, 106, "Text"],
+Cell[36633, 1240, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[36731, 1245, 310, 9, 86, "Input"],
+Cell[37044, 1256, 350, 10, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[37431, 1271, 409, 10, 45, "Input"],
+Cell[37843, 1283, 1269, 34, 86, "Output"]
+}, Open  ]],
+Cell[39127, 1320, 233, 4, 86, "Text"],
+Cell[CellGroupData[{
+Cell[39385, 1328, 176, 3, 45, "Input"],
+Cell[39564, 1333, 869, 29, 110, "Output"]
+}, Open  ]],
+Cell[40448, 1365, 452, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[40925, 1376, 1019, 31, 86, "Input"],
+Cell[41947, 1409, 250, 7, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42234, 1421, 935, 29, 86, "Input"],
+Cell[43172, 1452, 253, 7, 86, "Output"]
+}, Open  ]],
+Cell[43440, 1462, 261, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[43726, 1471, 311, 9, 86, "Input"],
+Cell[44040, 1482, 304, 8, 86, "Output"]
+}, Open  ]],
+Cell[44359, 1493, 1157, 24, 159, "Text"],
+Cell[45519, 1519, 158, 3, 51, "Text"],
+Cell[45680, 1524, 619, 18, 45, "Input"],
+Cell[46302, 1544, 190, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[46517, 1552, 196, 5, 45, "Input"],
+Cell[46716, 1559, 212, 5, 45, "Output"]
+}, Open  ]],
+Cell[46943, 1567, 1215, 29, 104, "Input"],
+Cell[48161, 1598, 1121, 27, 75, "Input"],
+Cell[49285, 1627, 563, 13, 45, "Input"],
+Cell[49851, 1642, 179, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[50055, 1650, 383, 7, 45, "Input"],
+Cell[50441, 1659, 15568, 270, 342, "Output"]
+}, Open  ]],
+Cell[66024, 1932, 219, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[66268, 1941, 187, 4, 45, "Input"],
+Cell[66458, 1947, 15776, 272, 347, "Output"]
+}, Open  ]],
+Cell[82249, 2222, 267, 5, 51, "Text"],
+Cell[82519, 2229, 443, 14, 101, "Text"],
+Cell[82965, 2245, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[83063, 2250, 307, 9, 82, "Input"],
+Cell[83373, 2261, 248, 8, 82, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[83658, 2274, 405, 9, 45, "Input"],
+Cell[84066, 2285, 1396, 42, 106, "Output"]
+}, Open  ]],
+Cell[85477, 2330, 136, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[85638, 2335, 480, 13, 45, "Input"],
+Cell[86121, 2350, 266, 7, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[86424, 2362, 779, 23, 102, "Input"],
+Cell[87206, 2387, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87315, 2393, 308, 8, 45, "Input"],
+Cell[87626, 2403, 110, 3, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[87773, 2411, 141, 3, 49, "Input"],
+Cell[87917, 2416, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[88002, 2420, 269, 5, 110, "Text"],
+Cell[88274, 2427, 400, 12, 101, "Text"],
+Cell[88677, 2441, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[88775, 2446, 282, 8, 81, "Input"],
+Cell[89060, 2456, 218, 7, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[89315, 2468, 299, 7, 45, "Input"],
+Cell[89617, 2477, 1272, 42, 110, "Output"]
+}, Open  ]],
+Cell[90904, 2522, 128, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[91057, 2527, 498, 14, 76, "Input"],
+Cell[91558, 2543, 505, 18, 94, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92100, 2566, 133, 2, 45, "Input"],
+Cell[92236, 2570, 258, 9, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[92531, 2584, 808, 26, 84, "Input"],
+Cell[93342, 2612, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93459, 2618, 278, 7, 45, "Input"],
+Cell[93740, 2627, 159, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[93936, 2637, 151, 3, 49, "Input"],
+Cell[94090, 2642, 82, 1, 45, "Output"]
+}, Open  ]],
+Cell[94187, 2646, 287, 6, 110, "Text"],
+Cell[94477, 2654, 341, 9, 88, "Text"],
+Cell[94821, 2665, 341, 10, 96, "Text"],
+Cell[95165, 2677, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[95263, 2682, 223, 6, 77, "Input"],
+Cell[95489, 2690, 140, 4, 77, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[95666, 2699, 243, 6, 45, "Input"],
+Cell[95912, 2707, 692, 19, 73, "Output"]
+}, Open  ]],
+Cell[96619, 2729, 128, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[96772, 2734, 268, 6, 45, "Input"],
+Cell[97043, 2742, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97152, 2748, 241, 6, 75, "Input"],
+Cell[97396, 2756, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97503, 2762, 256, 6, 45, "Input"],
+Cell[97762, 2770, 161, 5, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97960, 2780, 139, 3, 49, "Input"],
+Cell[98102, 2785, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[98187, 2789, 187, 4, 69, "Input"],
+Cell[98377, 2795, 354, 7, 86, "Text"],
+Cell[98734, 2804, 415, 14, 87, "Input"],
+Cell[99152, 2820, 115, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[99292, 2825, 534, 15, 78, "Input"],
+Cell[99829, 2842, 178, 6, 77, "Output"]
+}, Open  ]],
+Cell[100022, 2851, 179, 2, 51, "Text"],
+Cell[100204, 2855, 410, 13, 104, "Text"],
+Cell[100617, 2870, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[100715, 2875, 247, 7, 87, "Input"],
+Cell[100965, 2884, 169, 5, 87, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[101171, 2894, 295, 8, 70, "Input"],
+Cell[101469, 2904, 1855, 61, 193, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[103361, 2970, 513, 15, 76, "Input"],
+Cell[103877, 2987, 529, 18, 94, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104443, 3010, 131, 2, 45, "Input"],
+Cell[104577, 3014, 259, 9, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[104873, 3028, 740, 25, 84, "Input"],
+Cell[105616, 3055, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[105733, 3061, 315, 8, 45, "Input"],
+Cell[106051, 3071, 133, 4, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[106221, 3080, 149, 3, 49, "Input"],
+Cell[106373, 3085, 80, 1, 45, "Output"]
+}, Open  ]],
+Cell[106468, 3089, 428, 13, 91, "Text"],
+Cell[106899, 3104, 362, 11, 101, "Text"],
+Cell[107264, 3117, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[107362, 3122, 246, 7, 81, "Input"],
+Cell[107611, 3131, 186, 5, 81, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[107834, 3141, 296, 7, 45, "Input"],
+Cell[108133, 3150, 764, 20, 73, "Output"]
+}, Open  ]],
+Cell[108912, 3173, 128, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[109065, 3178, 270, 6, 45, "Input"],
+Cell[109338, 3186, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[109445, 3192, 241, 6, 75, "Input"],
+Cell[109689, 3200, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[109774, 3204, 268, 6, 75, "Text"],
+Cell[110045, 3212, 309, 6, 86, "Text"],
+Cell[110357, 3220, 824, 30, 91, "Input"],
+Cell[111184, 3252, 512, 12, 135, "Text"],
+Cell[CellGroupData[{
+Cell[111721, 3268, 507, 16, 87, "Input"],
+Cell[112231, 3286, 1054, 33, 101, "Output"]
+}, Open  ]],
+Cell[113300, 3322, 107, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[113432, 3327, 466, 13, 54, "Input"],
+Cell[113901, 3342, 188, 5, 81, "Output"]
+}, Open  ]],
+Cell[114104, 3350, 166, 2, 51, "Text"],
+Cell[CellGroupData[{
+Cell[114295, 3356, 408, 12, 45, "Input"],
+Cell[114706, 3370, 89, 2, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[114832, 3377, 283, 8, 75, "Input"],
+Cell[115118, 3387, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115225, 3393, 369, 10, 45, "Input"],
+Cell[115597, 3405, 176, 6, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[115810, 3416, 158, 4, 49, "Input"],
+Cell[115971, 3422, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[116056, 3426, 241, 5, 75, "Text"],
+Cell[116300, 3433, 492, 14, 106, "Text"],
+Cell[116795, 3449, 73, 1, 45, "Input"],
+Cell[CellGroupData[{
+Cell[116893, 3454, 385, 11, 86, "Input"],
+Cell[117281, 3467, 404, 12, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[117722, 3484, 364, 9, 45, "Input"],
+Cell[118089, 3495, 983, 28, 82, "Output"]
+}, Open  ]],
+Cell[119087, 3526, 210, 4, 86, "Text"],
+Cell[CellGroupData[{
+Cell[119322, 3534, 916, 26, 82, "Input"],
+Cell[120241, 3562, 411, 12, 106, "Output"]
+}, Open  ]],
+Cell[120667, 3577, 329, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[121021, 3587, 594, 17, 84, "Input"],
+Cell[121618, 3606, 375, 12, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[122030, 3623, 604, 17, 84, "Input"],
+Cell[122637, 3642, 375, 12, 86, "Output"]
+}, Open  ]],
+Cell[123027, 3657, 174, 2, 51, "Text"],
+Cell[CellGroupData[{
+Cell[123226, 3663, 440, 14, 86, "Input"],
+Cell[123669, 3679, 402, 13, 86, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[124108, 3697, 790, 22, 75, "Input"],
+Cell[124901, 3721, 2214, 62, 364, "Output"]
+}, Open  ]],
+Cell[127130, 3786, 358, 7, 86, "Text"],
+Cell[CellGroupData[{
+Cell[127513, 3797, 219, 5, 47, "Input"],
+Cell[127735, 3804, 671, 23, 94, "Output"]
+}, Open  ]],
+Cell[128421, 3830, 2000, 42, 104, "Input"],
+Cell[CellGroupData[{
+Cell[130446, 3876, 773, 21, 45, "Input"],
+Cell[131222, 3899, 1031, 32, 75, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[132290, 3936, 190, 5, 45, "Input"],
+Cell[132483, 3943, 141, 4, 45, "Output"]
+}, Open  ]],
+Cell[132639, 3950, 1258, 29, 104, "Input"],
+Cell[133900, 3981, 800, 20, 75, "Input"],
+Cell[134703, 4003, 825, 20, 75, "Input"],
+Cell[CellGroupData[{
+Cell[135553, 4027, 322, 5, 45, "Input"],
+Cell[135878, 4034, 17234, 309, 264, "Output"]
+}, Open  ]],
+Cell[153127, 4346, 206, 5, 51, "Text"],
+Cell[153336, 4353, 290, 6, 51, "Text"]
+}
+]
+*)
+
