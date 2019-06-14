@@ -1,0 +1,1042 @@
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[         0,          0]
+NotebookDataLength[     30181,       1041]
+NotebookOptionsPosition[     25017,        863]
+NotebookOutlinePosition[     25405,        880]
+CellTagsIndexPosition[     25362,        877]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.76877819288589*^9}],
+
+Cell[BoxData[""], "Input",
+ Evaluatable->False,
+ CellChangeTimes->{3.768778189348001*^9}],
+
+Cell["\<\
+1 - 10 Rank, row space, column space
+Find the rank. Find a basis for the row space. Find a basis for the column \
+space. Hint. Row-reduce the matrix and its transpose. (You may omit obvious \
+factors from the vectors of these bases.)\
+\>", "Text",
+ CellChangeTimes->{{3.768777012808816*^9, 3.768777076389727*^9}}],
+
+Cell[BoxData[
+ RowBox[{"1.", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"4", 
+      RowBox[{"-", "2"}], "6"},
+     {
+      RowBox[{"-", "2"}], "1", 
+      RowBox[{"-", "3"}]}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.768777089590276*^9, 3.7687771375328913`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675609560948818*^9, 3.675609562691957*^9}, 
+   3.7687769286332417`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"4", 
+      RowBox[{"-", "2"}], "6"},
+     {
+      RowBox[{"-", "2"}], "1", 
+      RowBox[{"-", "3"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6756096258192873`*^9, 3.67560966623895*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", 
+     RowBox[{"-", "2"}], ",", "6"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1", ",", 
+     RowBox[{"-", "3"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675609668224038*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{"RowReduce", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6756096731206408`*^9, 3.6756096795677347`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}], ",", 
+     FractionBox["3", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675609681413973*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+Above: The basis for the row space, in agreement with the text. The rank is 1.\
+\>", "Text",
+ CellChangeTimes->{{3.675609743264771*^9, 3.675609763563727*^9}, {
+  3.675609929726268*^9, 3.675609932201248*^9}, {3.6756099721647177`*^9, 
+  3.675609975828652*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  SuperscriptBox["e1", "\[Transpose]"]}]], "Input",
+ CellChangeTimes->{{3.675609773703722*^9, 3.675609795290896*^9}, {
+  3.6756098932413263`*^9, 3.675609895263681*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"4", ",", 
+     RowBox[{"-", "2"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"6", ",", 
+     RowBox[{"-", "3"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.675609784139763*^9, 3.6756097964596577`*^9}, 
+   3.6756098970910797`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e4", "=", 
+  RowBox[{"RowReduce", "[", "e3", "]"}]}]], "Input",
+ CellChangeTimes->{{3.675609802333919*^9, 3.6756098122356453`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "2"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675609812913046*^9, 3.67560990239137*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The basis for the column space, in agreement with the text. The rank \
+is 1.\
+\>", "Text",
+ CellChangeTimes->{{3.675609923851166*^9, 3.675609982796617*^9}}],
+
+Cell[BoxData[
+ RowBox[{"3.", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "3", "5"},
+     {"3", "5", "0"},
+     {"5", "0", "10"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.768777185955496*^9, 3.768777227057851*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675610014224249*^9, 3.6756100157168207`*^9}, 
+   3.768776936277179*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"0", "3", "5"},
+     {"3", "5", "0"},
+     {"5", "0", "10"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675610049615348*^9, 3.6756100864253387`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "3", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"3", ",", "5", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "0", ",", "10"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675610088195765*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{"RowReduce", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.675610097462257*^9, 3.6756101065621023`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756101073635817`*^9}]
+}, Open  ]],
+
+Cell["\<\
+The rank is 3. The three vectors shown are a basis for the row space.\
+\>", "Text",
+ CellChangeTimes->{{3.675610123145092*^9, 3.6756101539029617`*^9}, {
+  3.675610335554257*^9, 3.675610336704796*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  SuperscriptBox["e2", "\[Transpose]"]}]], "Input",
+ CellChangeTimes->{{3.6756101740357018`*^9, 3.6756101835983143`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756101855432034`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RowReduce", "[", "e3", "]"}]], "Input",
+ CellChangeTimes->{{3.675610192627688*^9, 3.675610200846843*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756102016491327`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Above: The rank is still three. The three vectors shown are a basis for the \
+column space. The bases which are exposed by ",
+ StyleBox["RowReduce", "Input"],
+ " are not too exciting, perhaps, but valid bases they remain. These are not \
+the bases contained in the text answer."
+}], "Text",
+ CellChangeTimes->{{3.675610217821753*^9, 3.67561024393989*^9}, {
+  3.768777408227985*^9, 3.768777444497332*^9}, {3.768777527598678*^9, 
+  3.768777538134439*^9}}],
+
+Cell[BoxData[
+ RowBox[{"5.", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0.2", 
+      RowBox[{"-", "0.1"}], "0.4"},
+     {"0", "1.1", 
+      RowBox[{"-", "0.3"}]},
+     {"0.1", "0", 
+      RowBox[{"-", "2.1"}]}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.7687775476564074`*^9, 3.7687775970141773`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675610517581778*^9, 3.6756105192049017`*^9}, 
+   3.7687769441435328`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"0.2", 
+      RowBox[{"-", "0.1"}], "0.4"},
+     {"0", "1.1", 
+      RowBox[{"-", "0.3"}]},
+     {"0.1", "0", 
+      RowBox[{"-", "2.1"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.67561052425529*^9, 3.675610589096546*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0.2`", ",", 
+     RowBox[{"-", "0.1`"}], ",", "0.4`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1.1`", ",", 
+     RowBox[{"-", "0.3`"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.1`", ",", "0", ",", 
+     RowBox[{"-", "2.1`"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675610592492352*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{"RowReduce", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.675610597234383*^9, 3.675610609033489*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675610610650235*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The row space rank is 3. The three vectors shown form a basis for the \
+row space.\
+\>", "Text",
+ CellChangeTimes->{{3.675610628424264*^9, 3.675610655766365*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  SuperscriptBox["e2", "\[Transpose]"]}]], "Input",
+ CellChangeTimes->{{3.675610660835868*^9, 3.67561066763726*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0.`", ",", "0.`", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756106692551928`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RowReduce", "[", "e3", "]"}]], "Input",
+ CellChangeTimes->{{3.675610673244936*^9, 3.675610680759048*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0.`", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0.`"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756106824355907`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above. The column space rank is 3. The three vectors shown form a basis for \
+the column space. The text agrees on the ranks. However, different bases are \
+shown in the text answer.\
+\>", "Text",
+ CellChangeTimes->{{3.675610691078027*^9, 3.675610714092355*^9}, {
+  3.675610752356097*^9, 3.6756107739863243`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"7.", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"8", "0", "4", "0"},
+     {"0", "2", "0", "4"},
+     {"4", "0", "2", "0"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.768777628668927*^9, 3.768777712523602*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675613083426784*^9, 3.6756130851034946`*^9}, 
+   3.768776952935199*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"8", "0", "4", "0"},
+     {"0", "2", "0", "4"},
+     {"4", "0", "2", "0"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.6756130918585033`*^9, 3.675613124829772*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"8", ",", "0", ",", "4", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "0", ",", "2", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756131264504633`*^9, 3.675614438870624*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{"RowReduce", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.67561313113826*^9, 3.675613140926553*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     FractionBox["1", "2"], ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675613142470046*^9, 3.675614442734921*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The row space rank is 2. The two non-zero vectors constitute a basis. \
+The text basis consists of a multiple of the basis above.\
+\>", "Text",
+ CellChangeTimes->{{3.675613592174636*^9, 3.6756136306283293`*^9}, {
+  3.675613693979609*^9, 3.675613765383397*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  RowBox[{"Transpose", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.6756137740979023`*^9, 3.675613782495082*^9}, {
+  3.675614384235219*^9, 3.675614384546268*^9}, {3.6756144966159*^9, 
+  3.6756145058149233`*^9}, {3.675614568598523*^9, 3.6756145787556543`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"8", ",", "0", ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"4", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "4", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{
+  3.6756137836379347`*^9, 3.67561438579976*^9, 3.67561444644372*^9, 
+   3.675614507907523*^9, {3.6756145795230207`*^9, 3.6756145975939617`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"RowReduce", "[", "e3", "]"}]], "Input",
+ CellChangeTimes->{{3.6756142537954817`*^9, 3.675614292253522*^9}, {
+  3.6756143912029467`*^9, 3.675614391657892*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", 
+     FractionBox["1", "2"]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.675614263600016*^9, 3.675614293586794*^9}, 
+   3.675614392897674*^9, 3.675614450706452*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The column space rank is 2. The two non-zero vectors constitute a \
+basis. The text basis consists of a multiple of the basis above.\
+\>", "Text",
+ CellChangeTimes->{{3.6756143047822123`*^9, 3.6756143344839*^9}, {
+  3.675614686385491*^9, 3.675614686760891*^9}}],
+
+Cell[BoxData[
+ RowBox[{"9.", " ", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"9", "0", "1", "0"},
+     {"0", "0", "1", "0"},
+     {"1", "1", "1", "1"},
+     {"0", "0", "1", "0"}
+    }], "\[NoBreak]", ")"}]}]], "Text",
+ CellChangeTimes->{{3.768777751250832*^9, 3.76877778200904*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675614722849922*^9, 3.67561472488004*^9}, 
+   3.768776961438768*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"9", "0", "1", "0"},
+     {"0", "0", "1", "0"},
+     {"1", "1", "1", "1"},
+     {"0", "0", "1", "0"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675614749976617*^9, 3.675614785884736*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756147871790743`*^9, 3.675614994763322*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e2", "=", 
+  RowBox[{"RowReduce", "[", "e1", "]"}]}]], "Input",
+ CellChangeTimes->{{3.675614798447812*^9, 3.675614807022402*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"1", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675614808136478*^9, 3.67561499888134*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The row rank is 3. The basis in row space constitutes the first three \
+vectors. This is a different basis than the one shown in the text.\
+\>", "Text",
+ CellChangeTimes->{{3.675614819676519*^9, 3.6756148674739313`*^9}, {
+  3.675615134066057*^9, 3.675615150119836*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e3", "=", 
+  SuperscriptBox["e1", "\[Transpose]"]}]], "Input",
+ CellChangeTimes->{{3.675615160570634*^9, 3.6756151615519247`*^9}, {
+  3.675615304210804*^9, 3.6756153090896397`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675615310258588*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: e1 is symmetric, so the rank and basis info already calculated for \
+rows also applies to column space.\
+\>", "Text",
+ CellChangeTimes->{{3.675615478726059*^9, 3.675615513515863*^9}}],
+
+Cell["\<\
+17 - 25 Linear independence
+Are the following sets of vectors linearly independent?\
+\>", "Text",
+ CellChangeTimes->{{3.768777803774824*^9, 3.768777826556776*^9}}],
+
+Cell["17. {3, 4, 0, 2}, {2, -1, 3, 7}, {1, 16, -12, -22}", "Text",
+ CellChangeTimes->{{3.768777845086062*^9, 3.768777889910099*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.67561568161087*^9, 3.675615683663186*^9}, 
+   3.768776970230728*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"3", "4", "0", "2"},
+     {"2", 
+      RowBox[{"-", "1"}], "3", "7"},
+     {"1", "16", 
+      RowBox[{"-", "12"}], 
+      RowBox[{"-", "22"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675616269924704*^9, 3.6756163089047337`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"3", ",", "4", ",", "0", ",", "2"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", 
+     RowBox[{"-", "1"}], ",", "3", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "16", ",", 
+     RowBox[{"-", "12"}], ",", 
+     RowBox[{"-", "22"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675616310385189*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixRank", "[", "e1", "]"}]], "Input",
+ CellChangeTimes->{{3.67561631396327*^9, 3.6756163206577663`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.6756163219476767`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The vectors are linearly dependent. So the answer to the problem \
+question is no, they are not linearly independent.\
+\>", "Text",
+ CellChangeTimes->{{3.675616340264504*^9, 3.6756163603747587`*^9}, {
+  3.768777928754747*^9, 3.768777949880666*^9}}],
+
+Cell["19. {0, 1, 1}, {1, 1, 1}, {0, 0, 1}", "Text",
+ CellChangeTimes->{{3.768777959651297*^9, 3.768777981026845*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675616418344885*^9, 3.675616421230214*^9}, 
+   3.768776977094019*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"0", "1", "1"},
+     {"1", "1", "1"},
+     {"0", "0", "1"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675616424113237*^9, 3.675616449235983*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "1"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756164500917664`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixRank", "[", "e1", "]"}]], "Input",
+ CellChangeTimes->{{3.675616455182227*^9, 3.675616460125024*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.67561646199678*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The vectors are linearly independent. So the answer is yes.\
+\>", "Text",
+ CellChangeTimes->{{3.675616468268159*^9, 3.675616480978569*^9}, {
+  3.768778000272272*^9, 3.7687780041990423`*^9}}],
+
+Cell["21. {2, 0, 0, 7}, {2, 0, 0, 8}, {2, 0, 0, 9}, {2, 0, 1, 0}", "Text",
+ CellChangeTimes->{{3.768778025226142*^9, 3.7687780398331337`*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675616488125887*^9, 3.6756164894472017`*^9}, 
+   3.7687769839179583`*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"2", "0", "0", "7"},
+     {"2", "0", "0", "8"},
+     {"2", "0", "0", "9"},
+     {"2", "0", "1", "0"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675616494423994*^9, 3.6756165352968597`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0", ",", "7"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0", ",", "8"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "0", ",", "9"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "0", ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.675616536692247*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixRank", "[", "e1", "]"}]], "Input",
+ CellChangeTimes->{{3.6756165388127823`*^9, 3.675616546577887*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.6756165476414623`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: The vectors are linearly dependent. So the answer is no, they are not \
+linearly independent.\
+\>", "Text",
+ CellChangeTimes->{{3.675616551977296*^9, 3.675616561519906*^9}, {
+  3.768778050103009*^9, 3.768778062981112*^9}}],
+
+Cell["23. {9, 8, 7, 6, 5}, {9, 7, 5, 3, 1}", "Text",
+ CellChangeTimes->{{3.768778081736065*^9, 3.768778099478889*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675616576381013*^9, 3.675616577992948*^9}, 
+   3.768776989533937*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"9", "8", "7", "6", "5"},
+     {"9", "7", "5", "3", "1"}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675616580988678*^9, 3.675616614446053*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"9", ",", "8", ",", "7", ",", "6", ",", "5"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"9", ",", "7", ",", "5", ",", "3", ",", "1"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.675616616426573*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixRank", "[", "e1", "]"}]], "Input",
+ CellChangeTimes->{{3.6756166202522173`*^9, 3.6756166255672407`*^9}}],
+
+Cell[BoxData["2"], "Output",
+ CellChangeTimes->{3.675616628253584*^9}]
+}, Open  ]],
+
+Cell["Above: Yes, the vectors are linearly independent.", "Text",
+ CellChangeTimes->{{3.675616635957982*^9, 3.675616648844936*^9}, {
+  3.768778121628541*^9, 3.768778125082987*^9}}],
+
+Cell["25. {6, 0, -1, 3}, {2, 2, 5, 0}, {-4, -4, -4, -4}", "Text",
+ CellChangeTimes->{{3.768778130957353*^9, 3.768778149421582*^9}},
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell[BoxData[
+ RowBox[{"Clear", "[", "\"\<Global`*\>\"", "]"}]], "Input",
+ CellChangeTimes->{{3.675616656376236*^9, 3.6756166578057528`*^9}, 
+   3.768776996053493*^9}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"e1", "=", 
+  RowBox[{"(", GridBox[{
+     {"6", "0", 
+      RowBox[{"-", "1"}], "3"},
+     {"2", "2", "5", "0"},
+     {
+      RowBox[{"-", "4"}], 
+      RowBox[{"-", "4"}], 
+      RowBox[{"-", "4"}], 
+      RowBox[{"-", "4"}]}
+    }], ")"}]}]], "Input",
+ CellChangeTimes->{{3.675616661832932*^9, 3.6756166968833647`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"6", ",", "0", ",", 
+     RowBox[{"-", "1"}], ",", "3"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"2", ",", "2", ",", "5", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "4"}], ",", 
+     RowBox[{"-", "4"}]}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.6756166978606377`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"MatrixRank", "[", "e1", "]"}]], "Input",
+ CellChangeTimes->{{3.67561670168751*^9, 3.675616706828576*^9}}],
+
+Cell[BoxData["3"], "Output",
+ CellChangeTimes->{3.6756167085005417`*^9}]
+}, Open  ]],
+
+Cell["\<\
+Above: Yes, the vectors are linearly independent. The answers above for nos \
+17 -- 25 agree with the text.\
+\>", "Text",
+ CellChangeTimes->{{3.6756167137399387`*^9, 3.6756167262264643`*^9}, {
+  3.675616772594207*^9, 3.6756167915361357`*^9}, {3.768778159891389*^9, 
+  3.7687781617057123`*^9}}]
+},
+WindowSize->{1366, 843},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+Magnification:>1.5 Inherited,
+FrontEndVersion->"10.3 for Mac OS X x86 (32-bit, 64-bit Kernel) (December 10, \
+2015)",
+StyleDefinitions->"Charter1.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[400, 13, 88, 2, 45, "Input",
+ Evaluatable->False],
+Cell[491, 17, 89, 2, 45, "Input",
+ Evaluatable->False],
+Cell[583, 21, 323, 6, 120, "Text"],
+Cell[909, 29, 326, 10, 100, "Text"],
+Cell[1238, 41, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[1430, 48, 262, 9, 74, "Input"],
+Cell[1695, 59, 296, 10, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[2028, 74, 157, 3, 45, "Input"],
+Cell[2188, 79, 341, 11, 99, "Output"]
+}, Open  ]],
+Cell[2544, 93, 306, 6, 75, "Text"],
+Cell[CellGroupData[{
+Cell[2875, 103, 203, 4, 51, "Input"],
+Cell[3081, 109, 389, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3507, 127, 155, 3, 45, "Input"],
+Cell[3665, 132, 339, 11, 75, "Output"]
+}, Open  ]],
+Cell[4019, 146, 173, 4, 51, "Text"],
+Cell[4195, 152, 281, 8, 130, "Text"],
+Cell[4479, 162, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[4671, 169, 220, 7, 102, "Input"],
+Cell[4894, 178, 303, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5234, 192, 155, 3, 45, "Input"],
+Cell[5392, 197, 304, 9, 45, "Output"]
+}, Open  ]],
+Cell[5711, 209, 210, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[5946, 217, 156, 3, 51, "Input"],
+Cell[6105, 222, 304, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6446, 236, 129, 2, 45, "Input"],
+Cell[6578, 240, 304, 9, 45, "Output"]
+}, Open  ]],
+Cell[6897, 252, 471, 9, 120, "Text"],
+Cell[7371, 263, 364, 11, 130, "Text"],
+Cell[7738, 276, 169, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[7932, 283, 296, 10, 102, "Input"],
+Cell[8231, 295, 386, 12, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8654, 312, 153, 3, 45, "Input"],
+Cell[8810, 317, 308, 9, 45, "Output"]
+}, Open  ]],
+Cell[9133, 329, 179, 4, 51, "Text"],
+Cell[CellGroupData[{
+Cell[9337, 337, 151, 3, 51, "Input"],
+Cell[9491, 342, 310, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9838, 356, 129, 2, 45, "Input"],
+Cell[9970, 360, 310, 9, 45, "Output"]
+}, Open  ]],
+Cell[10295, 372, 323, 6, 86, "Text"],
+Cell[10621, 380, 295, 8, 130, "Text"],
+Cell[10919, 390, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[11111, 397, 234, 7, 102, "Input"],
+Cell[11348, 406, 356, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11741, 420, 152, 3, 45, "Input"],
+Cell[11896, 425, 378, 10, 75, "Output"]
+}, Open  ]],
+Cell[12289, 438, 277, 5, 86, "Text"],
+Cell[CellGroupData[{
+Cell[12591, 447, 301, 5, 45, "Input"],
+Cell[12895, 454, 494, 13, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13426, 472, 182, 3, 45, "Input"],
+Cell[13611, 477, 467, 13, 75, "Output"]
+}, Open  ]],
+Cell[14093, 493, 278, 5, 86, "Text"],
+Cell[14374, 500, 321, 9, 162, "Text"],
+Cell[14698, 511, 164, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[14887, 518, 259, 8, 132, "Input"],
+Cell[15149, 528, 435, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15621, 544, 153, 3, 45, "Input"],
+Cell[15777, 549, 432, 11, 45, "Output"]
+}, Open  ]],
+Cell[16224, 563, 286, 5, 86, "Text"],
+Cell[CellGroupData[{
+Cell[16535, 572, 205, 4, 51, "Input"],
+Cell[16743, 578, 411, 11, 45, "Output"]
+}, Open  ]],
+Cell[17169, 592, 200, 4, 51, "Text"],
+Cell[17372, 598, 173, 4, 86, "Text"],
+Cell[17548, 604, 168, 2, 75, "Text"],
+Cell[17719, 608, 164, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[17908, 615, 303, 10, 102, "Input"],
+Cell[18214, 627, 398, 12, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18649, 644, 131, 2, 45, "Input"],
+Cell[18783, 648, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[18870, 652, 265, 5, 86, "Text"],
+Cell[19138, 659, 153, 2, 75, "Text"],
+Cell[19294, 663, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[19484, 670, 217, 7, 102, "Input"],
+Cell[19704, 679, 304, 9, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[20045, 693, 130, 2, 45, "Input"],
+Cell[20178, 697, 69, 1, 45, "Output"]
+}, Open  ]],
+Cell[20262, 701, 207, 4, 51, "Text"],
+Cell[20472, 707, 178, 2, 75, "Text"],
+Cell[20653, 711, 169, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[20847, 718, 261, 8, 132, "Input"],
+Cell[21111, 728, 411, 11, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21559, 744, 132, 2, 45, "Input"],
+Cell[21694, 748, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[21781, 752, 239, 5, 51, "Text"],
+Cell[22023, 759, 154, 2, 75, "Text"],
+Cell[22180, 763, 165, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[22370, 770, 215, 6, 74, "Input"],
+Cell[22588, 778, 276, 8, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22901, 791, 134, 2, 45, "Input"],
+Cell[23038, 795, 70, 1, 45, "Output"]
+}, Open  ]],
+Cell[23123, 799, 180, 2, 51, "Text"],
+Cell[23306, 803, 167, 2, 75, "Text"],
+Cell[23476, 807, 167, 3, 45, "Input"],
+Cell[CellGroupData[{
+Cell[23668, 814, 344, 12, 102, "Input"],
+Cell[24015, 828, 439, 14, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[24491, 847, 129, 2, 45, "Input"],
+Cell[24623, 851, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[24710, 855, 303, 6, 51, "Text"]
+}
+]
+*)
+
