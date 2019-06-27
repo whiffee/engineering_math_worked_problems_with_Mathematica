@@ -3,10 +3,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[         0,          0]
-NotebookDataLength[     48211,       1667]
-NotebookOptionsPosition[     41145,       1419]
-NotebookOutlinePosition[     41533,       1436]
-CellTagsIndexPosition[     41490,       1433]
+NotebookDataLength[     58619,       2016]
+NotebookOptionsPosition[     50121,       1721]
+NotebookOutlinePosition[     50509,       1738]
+CellTagsIndexPosition[     50466,       1735]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -1415,7 +1415,309 @@ Cell["\<\
 is skew-symmetric.\
 \>", "Text",
  CellChangeTimes->{{3.768842802148696*^9, 3.768842825954093*^9}},
- Background->RGBColor[1, 0.9, 0.8]]
+ Background->RGBColor[1, 0.9, 0.8]],
+
+Cell["\<\
+I get my example matrix from Wikipedia. When the problem says \
+\[OpenCurlyDoubleQuote]show\[CloseCurlyDoubleQuote], it usually refers to a \
+proof. However, I am only going to show in the sense of showing an example.\
+\>", "Text",
+ CellChangeTimes->{{3.770661839323266*^9, 3.770661884600327*^9}, {
+  3.770662728885932*^9, 3.770662770203293*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "2", 
+      RowBox[{"-", "1"}]},
+     {
+      RowBox[{"-", "2"}], "0", 
+      RowBox[{"-", "4"}]},
+     {"1", "4", "0"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.770661890032688*^9, 3.770661910061921*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "2", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "2"}], ",", "0", ",", 
+     RowBox[{"-", "4"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "4", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.770661913271144*^9}]
+}, Open  ]],
+
+Cell["Testing to see if it meets the definition of skew-symmetric.", "Text",
+ CellChangeTimes->{{3.770661945827796*^9, 3.7706619644905787`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"-", "A"}], "\[Equal]", 
+   RowBox[{"A", "\[Transpose]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.770661920423491*^9, 3.770661937861809*^9}}],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.770661939156706*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.770661987012426*^9, 3.7706619922026157`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Inverse", "::", "sing"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Matrix \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", \\\"2\\\", \
+\\\",\\\", RowBox[{\\\"-\\\", \\\"1\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\
+\\\"{\\\", RowBox[{RowBox[{\\\"-\\\", \\\"2\\\"}], \\\",\\\", \\\"0\\\", \
+\\\",\\\", RowBox[{\\\"-\\\", \\\"4\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\
+\\\"{\\\", RowBox[{\\\"1\\\", \\\",\\\", \\\"4\\\", \\\",\\\", \\\"0\\\"}], \
+\\\"}\\\"}]}], \\\"}\\\"}]\\)\[NoBreak] is singular. \\!\\(\\*ButtonBox[\\\"\
+\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", ButtonFrame->None, \
+ButtonData:>\\\"paclet:ref/message/General/sing\\\", ButtonNote -> \
+\\\"Inverse::sing\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.770661993027569*^9}],
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", "2", ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "2"}], ",", "0", ",", 
+      RowBox[{"-", "4"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"1", ",", "4", ",", "0"}], "}"}]}], "}"}], "]"}]], "Output",
+ CellChangeTimes->{3.77066199302991*^9}]
+}, Open  ]],
+
+Cell["\<\
+Oops, singular matrix, no inverse. I\[CloseCurlyQuote]d better find another \
+one. Here it is\
+\>", "Text",
+ CellChangeTimes->{{3.770662043703279*^9, 3.7706620598850107`*^9}, {
+  3.770662158616782*^9, 3.7706621618146276`*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", 
+      RowBox[{"-", "5"}], "4"},
+     {"5", "0", 
+      RowBox[{"-", "1"}]},
+     {
+      RowBox[{"-", "4"}], "1", "0"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.770662172046227*^9, 3.7706621989969473`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", "5"}], ",", "4"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"5", ",", "0", ",", 
+     RowBox[{"-", "1"}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "4"}], ",", "1", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.770662200084701*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"-", "A"}], "\[Equal]", 
+   RowBox[{"A", "\[Transpose]"}]}], "]"}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.770662220669032*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", "A", "]"}]], "Input",
+ CellChangeTimes->{{3.77066223045647*^9, 3.770662234260394*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  StyleBox[
+   RowBox[{"Inverse", "::", "sing"}], "MessageName"], 
+  RowBox[{
+  ":", " "}], "\<\"Matrix \[NoBreak]\\!\\(\\*RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"{\\\", RowBox[{\\\"0\\\", \\\",\\\", RowBox[{\\\"-\\\", \
+\\\"5\\\"}], \\\",\\\", \\\"4\\\"}], \\\"}\\\"}], \\\",\\\", \
+RowBox[{\\\"{\\\", RowBox[{\\\"5\\\", \\\",\\\", \\\"0\\\", \\\",\\\", \
+RowBox[{\\\"-\\\", \\\"1\\\"}]}], \\\"}\\\"}], \\\",\\\", RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"-\\\", \\\"4\\\"}], \\\",\\\", \\\"1\\\", \\\",\\\", \
+\\\"0\\\"}], \\\"}\\\"}]}], \\\"}\\\"}]\\)\[NoBreak] is singular. \
+\\!\\(\\*ButtonBox[\\\"\[RightSkeleton]\\\", ButtonStyle->\\\"Link\\\", \
+ButtonFrame->None, ButtonData:>\\\"paclet:ref/message/General/sing\\\", \
+ButtonNote -> \\\"Inverse::sing\\\"]\\)\"\>"}]], "Message", "MSG",
+ CellChangeTimes->{3.770662235273465*^9}],
+
+Cell[BoxData[
+ RowBox[{"Inverse", "[", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"0", ",", 
+      RowBox[{"-", "5"}], ",", "4"}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{"5", ",", "0", ",", 
+      RowBox[{"-", "1"}]}], "}"}], ",", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "4"}], ",", "1", ",", "0"}], "}"}]}], "}"}], 
+  "]"}]], "Output",
+ CellChangeTimes->{3.7706622352758293`*^9}]
+}, Open  ]],
+
+Cell[TextData[{
+ "Oops, a second singular matrix. I am starting to think that these might be \
+the norm. However, at ",
+ StyleBox["https://www.sciencedirect.com/science/article/pii/0024379594001995",
+  FontSize->14,
+  FontSlant->"Italic"],
+ ", I found an article specifically about non-singular skew-symmetric \
+matrices. Here\[CloseCurlyQuote]s one:"
+}], "Text",
+ CellChangeTimes->{{3.770662783322637*^9, 3.770662815264801*^9}, {
+  3.770662851608121*^9, 3.77066288764452*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"A", "=", 
+  RowBox[{"(", "\[NoBreak]", GridBox[{
+     {"0", "1", 
+      RowBox[{"-", "1"}], "1"},
+     {
+      RowBox[{"-", "1"}], "0", "1", "1"},
+     {"1", 
+      RowBox[{"-", "1"}], "0", "1"},
+     {
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}], 
+      RowBox[{"-", "1"}], "0"}
+    }], "\[NoBreak]", ")"}]}]], "Input",
+ CellChangeTimes->{{3.770662614676461*^9, 3.7706626500504627`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "1", ",", 
+     RowBox[{"-", "1"}], ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", "0", ",", "1", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", 
+     RowBox[{"-", "1"}], ",", "0", ",", "1"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", 
+     RowBox[{"-", "1"}], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.7706626522310677`*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"-", "A"}], "\[Equal]", 
+   RowBox[{"A", "\[Transpose]"}]}], "]"}]], "Input"],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.77066266747771*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"B", "=", 
+  RowBox[{"Inverse", "[", "A", "]"}]}]], "Input",
+ CellChangeTimes->{{3.770662673350943*^9, 3.7706626944082212`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}], ",", 
+     FractionBox["1", "3"], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "3"], ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}], ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", "3"]}], ",", 
+     FractionBox["1", "3"], ",", "0", ",", 
+     RowBox[{"-", 
+      FractionBox["1", "3"]}]}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{
+     FractionBox["1", "3"], ",", 
+     FractionBox["1", "3"], ",", 
+     FractionBox["1", "3"], ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.770662678012301*^9, 3.770662695432313*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Simplify", "[", 
+  RowBox[{
+   RowBox[{"-", "B"}], "\[Equal]", 
+   RowBox[{"B", "\[Transpose]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.770662708280807*^9, 3.770662714118866*^9}},
+ Background->RGBColor[0.88, 1, 0.88]],
+
+Cell[BoxData["True"], "Output",
+ CellChangeTimes->{3.770662715286232*^9},
+ Background->RGBColor[0.88, 1, 0.88]]
+}, Open  ]],
+
+Cell["\<\
+The above cell demonstrates the proposition of the problem, for this example.\
+\
+\>", "Text",
+ CellChangeTimes->{{3.7706629108431683`*^9, 3.770662931290085*^9}}]
 },
 WindowSize->{1366, 843},
 WindowMargins->{{4, Automatic}, {Automatic, 4}},
@@ -1661,7 +1963,54 @@ Cell[40138, 1387, 406, 12, 45, "Input"],
 Cell[40547, 1401, 74, 1, 45, "Output"]
 }, Open  ]],
 Cell[40636, 1405, 280, 5, 86, "Text"],
-Cell[40919, 1412, 222, 5, 75, "Text"]
+Cell[40919, 1412, 222, 5, 75, "Text"],
+Cell[41144, 1419, 356, 6, 86, "Text"],
+Cell[CellGroupData[{
+Cell[41525, 1429, 310, 10, 102, "Input"],
+Cell[41838, 1441, 365, 12, 45, "Output"]
+}, Open  ]],
+Cell[42218, 1456, 144, 1, 51, "Text"],
+Cell[CellGroupData[{
+Cell[42387, 1461, 206, 5, 45, "Input"],
+Cell[42596, 1468, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[42706, 1474, 128, 2, 45, "Input"],
+Cell[42837, 1478, 860, 15, 34, "Message"],
+Cell[43700, 1495, 408, 13, 45, "Output"]
+}, Open  ]],
+Cell[44123, 1511, 236, 5, 51, "Text"],
+Cell[CellGroupData[{
+Cell[44384, 1520, 312, 10, 102, "Input"],
+Cell[44699, 1532, 365, 12, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45101, 1549, 140, 4, 45, "Input"],
+Cell[45244, 1555, 73, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[45354, 1561, 125, 2, 45, "Input"],
+Cell[45482, 1565, 860, 15, 34, "Message"],
+Cell[46345, 1582, 414, 14, 45, "Output"]
+}, Open  ]],
+Cell[46774, 1599, 477, 10, 120, "Text"],
+Cell[CellGroupData[{
+Cell[47276, 1613, 420, 14, 132, "Input"],
+Cell[47699, 1629, 539, 17, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48275, 1651, 140, 4, 45, "Input"],
+Cell[48418, 1657, 72, 1, 45, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[48527, 1663, 151, 3, 45, "Input"],
+Cell[48681, 1668, 855, 29, 76, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[49573, 1702, 244, 6, 69, "Input"],
+Cell[49820, 1710, 111, 2, 69, "Output"]
+}, Open  ]],
+Cell[49946, 1715, 171, 4, 51, "Text"]
 }
 ]
 *)
